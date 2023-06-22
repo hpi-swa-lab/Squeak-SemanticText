@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"cleanUp:" : "ct 6/22/2023 23:54",
+		"defaultKey" : "ct 6/22/2023 23:55",
+		"defaultKey:" : "ct 6/22/2023 23:53",
+		"example" : "ct 6/23/2023 00:06" },
+	"instance" : {
+		"defaultModel" : "ct 6/22/2023 23:57",
+		"getCompletionFor:" : "ct 6/22/2023 23:51",
+		"initialize" : "ct 6/22/2023 23:57",
+		"key" : "ct 6/22/2023 23:52",
+		"key:" : "ct 6/22/2023 17:03",
+		"model" : "ct 6/22/2023 17:35",
+		"model:" : "ct 6/22/2023 17:35",
+		"newConversation" : "ct 6/22/2023 17:26",
+		"temperature" : "ct 6/22/2023 17:35",
+		"temperature:" : "ct 6/22/2023 17:35" } }

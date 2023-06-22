@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfChatGPT",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfChatGPT",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }

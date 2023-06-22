@@ -1,0 +1,17 @@
+{
+	"category" : "ChatGPT",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"type",
+		"parameter",
+		"code",
+		"message" ],
+	"name" : "ChatGPTError",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }

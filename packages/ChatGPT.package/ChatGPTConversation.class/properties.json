@@ -1,0 +1,15 @@
+{
+	"category" : "ChatGPT",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"chatGPT",
+		"messages" ],
+	"name" : "ChatGPTConversation",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
