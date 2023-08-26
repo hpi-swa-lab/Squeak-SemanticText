@@ -4,7 +4,7 @@ baseline: spec
 
 	spec for: #common do: [
 		"packages"
-		spec package: 'ChatGPT'.
+		spec package: 'SemanticText'.
 		
 		"groups"
-		spec group: #default with: #('ChatGPT')].
+		spec group: #default with: #('SemanticText')].

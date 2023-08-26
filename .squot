@@ -1,4 +1,4 @@
 OrderedDictionary {
-	'packages/BaselineOfChatGPT.package' : #SquotCypressCodeSerializer,
-	'packages/ChatGPT.package' : #SquotCypressCodeSerializer
+	'packages/BaselineOfSemanticText.package' : #SquotCypressCodeSerializer,
+	'packages/SemanticText.package' : #SquotCypressCodeSerializer
 }

@@ -1,15 +1,17 @@
 {
-	"category" : "ChatGPT",
+	"category" : "SemanticText",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"chatGPT",
-		"messages" ],
-	"name" : "ChatGPTConversation",
+		"type",
+		"parameter",
+		"code",
+		"message" ],
+	"name" : "ChatGPTError",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "Error",
 	"type" : "normal" }
