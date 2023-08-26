@@ -1,0 +1,1 @@
+I am the abstract superclass of mock models for SemanticText. These can be used for testing purposes and describe the required interface for models from other providers.

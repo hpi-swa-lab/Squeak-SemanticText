@@ -1,0 +1,4 @@
+accessing - generic
+arguments
+
+	^ arguments

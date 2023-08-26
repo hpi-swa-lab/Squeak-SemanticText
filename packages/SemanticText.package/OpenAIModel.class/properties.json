@@ -1,0 +1,16 @@
+{
+	"category" : "SemanticText-Providers-OpenAI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/26/2023 02:01",
+	"instvars" : [
+		"name",
+		"account",
+		"baseConfig" ],
+	"name" : "OpenAIModel",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

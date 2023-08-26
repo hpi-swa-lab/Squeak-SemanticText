@@ -1,0 +1,1 @@
+I represent a conversation between a user and an intelligent assistant that is powered by a model.

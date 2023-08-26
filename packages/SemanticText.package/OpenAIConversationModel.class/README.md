@@ -1,0 +1,1 @@
+I generate answers for a SemanticConversation using a large language model (LLM) such as GPT (Generative Pre-Trained Transformer) from the OpenAI API. Colloquially also referred to as ChatGPT, which however is a different service with additional features.

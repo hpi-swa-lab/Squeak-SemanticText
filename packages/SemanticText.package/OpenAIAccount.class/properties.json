@@ -1,0 +1,17 @@
+{
+	"category" : "SemanticText-Providers-OpenAI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"DefaultAccount" ],
+	"commentStamp" : "ct 8/20/2023 21:10",
+	"instvars" : [
+		"apiKey",
+		"subscriptionState",
+		"rateLimits",
+		"expensesPerUser" ],
+	"name" : "OpenAIAccount",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,1 @@
+I am the facade of the SemanticText package. I also maintain a registry of models of different types and a default model for each type.

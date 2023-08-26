@@ -1,0 +1,15 @@
+{
+	"category" : "SemanticText-Providers-OpenAI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/26/2023 02:00",
+	"instvars" : [
+		"exactCents",
+		"approximateCents" ],
+	"name" : "OpenAIAmount",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

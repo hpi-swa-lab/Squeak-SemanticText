@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/19/2023 21:35",
+	"instvars" : [
+		"arguments" ],
+	"name" : "SemanticConfig",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

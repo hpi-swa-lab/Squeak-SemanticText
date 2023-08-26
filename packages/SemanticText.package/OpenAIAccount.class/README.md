@@ -1,0 +1,1 @@
+I represent an account for the OpenAI Platform (https://platform.openai.com). I hold information about the subscription state, account-specific rate limits, and track expenses from API calls.

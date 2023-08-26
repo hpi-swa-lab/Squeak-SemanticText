@@ -1,0 +1,15 @@
+{
+	"class" : {
+		"approximateCents:" : "ct 8/20/2023 19:14",
+		"exactCents:" : "ct 8/20/2023 19:14",
+		"exactCents:approximateCents:" : "ct 8/20/2023 19:07",
+		"zero" : "ct 8/20/2023 19:07" },
+	"instance" : {
+		"*" : "ct 8/20/2023 19:17",
+		"+" : "ct 8/20/2023 19:07",
+		"/" : "ct 8/20/2023 19:21",
+		"approximateCents" : "ct 8/20/2023 19:07",
+		"approximateCents:" : "ct 8/20/2023 19:07",
+		"exactCents" : "ct 8/20/2023 19:00",
+		"exactCents:" : "ct 8/20/2023 19:00",
+		"printOn:" : "ct 8/20/2023 21:41" } }

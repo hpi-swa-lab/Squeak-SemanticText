@@ -1,0 +1,1 @@
+I represent an amount of money spent for the OpenAI API. I have an exact part (based on usage data reported from the API) and an estimated part (based on undercomplex heuristics for token counting).

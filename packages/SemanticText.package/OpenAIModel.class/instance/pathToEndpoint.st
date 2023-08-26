@@ -1,0 +1,4 @@
+private
+pathToEndpoint
+
+	^ self subclassResponsibility

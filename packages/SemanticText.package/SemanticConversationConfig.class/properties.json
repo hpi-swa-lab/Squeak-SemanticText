@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Conversation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SemanticConversationConfig",
+	"pools" : [
+		 ],
+	"super" : "SemanticConfig",
+	"type" : "normal" }

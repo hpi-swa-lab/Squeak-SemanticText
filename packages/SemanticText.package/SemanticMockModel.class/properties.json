@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Providers-Mocks",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/20/2023 12:40",
+	"instvars" : [
+		"baseConfig" ],
+	"name" : "SemanticMockModel",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,1 @@
+I represent an error from a call to the OpenAI API.

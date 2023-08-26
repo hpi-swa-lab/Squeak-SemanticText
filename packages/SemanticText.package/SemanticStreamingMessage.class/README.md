@@ -1,0 +1,1 @@
+I am a message of a SemanticConversation that is streamed from a model, i.e., my content will appended in chunks over time. Users can listen to my #newChunk and #completed events or use the 'ui support' protocol for connecting me to a text widget. See also SemanticConversation exampleStreaming.

@@ -1,0 +1,17 @@
+{
+	"category" : "SemanticText-Providers-OpenAI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/20/2023 12:58",
+	"instvars" : [
+		"type",
+		"parameter",
+		"code",
+		"message" ],
+	"name" : "OpenAIError",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }

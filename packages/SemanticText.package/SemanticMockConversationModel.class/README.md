@@ -1,0 +1,1 @@
+I mock a conversation model that generates answers for a SemanticConversation.

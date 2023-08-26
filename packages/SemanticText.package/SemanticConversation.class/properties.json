@@ -1,0 +1,16 @@
+{
+	"category" : "SemanticText-Model-Conversation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/19/2023 21:29",
+	"instvars" : [
+		"model",
+		"config",
+		"messages" ],
+	"name" : "SemanticConversation",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

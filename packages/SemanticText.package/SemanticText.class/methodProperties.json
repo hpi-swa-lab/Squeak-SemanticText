@@ -1,0 +1,28 @@
+{
+	"class" : {
+		"chooseDefaultConversationModel" : "ct 8/19/2023 19:22",
+		"chooseDefaultModelFor:" : "ct 8/19/2023 19:23",
+		"chooseModelFor:" : "ct 8/17/2023 19:50",
+		"chooseModelOrNilFor:" : "ct 8/17/2023 19:50",
+		"cleanUp:" : "ct 8/17/2023 19:31",
+		"defaultConversationModel" : "ct 8/17/2023 19:23",
+		"defaultConversationModel:" : "ct 8/17/2023 19:25",
+		"defaultConversationModel:during:" : "ct 8/18/2023 22:26",
+		"defaultModelFor:" : "ct 8/17/2023 19:13",
+		"defaultModelOrNilFor:" : "ct 8/17/2023 19:31",
+		"defaultModels" : "ct 8/17/2023 19:24",
+		"registerConversationModel:" : "ct 8/17/2023 19:14",
+		"registerEmbeddingModel:" : "ct 8/17/2023 20:11",
+		"registerModel:for:" : "ct 8/17/2023 19:14",
+		"registeredConversationModels" : "ct 8/17/2023 19:22",
+		"registeredModels" : "ct 8/17/2023 19:12",
+		"registeredModelsFor:" : "ct 8/17/2023 19:14",
+		"setModel:asDefaultFor:" : "ct 8/17/2023 19:26",
+		"setModel:asDefaultFor:during:" : "ct 8/18/2023 22:26",
+		"unregisterAllModels" : "ct 8/17/2023 19:31",
+		"unregisterConversationModel:" : "ct 8/17/2023 19:15",
+		"unregisterConversationModelsOf:" : "ct 8/17/2023 19:28",
+		"unregisterModel:for:" : "ct 8/17/2023 19:31",
+		"unregisterModelsOf:for:" : "ct 8/17/2023 19:30" },
+	"instance" : {
+		 } }

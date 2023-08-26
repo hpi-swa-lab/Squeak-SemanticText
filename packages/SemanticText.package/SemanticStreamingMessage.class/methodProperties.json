@@ -1,0 +1,18 @@
+{
+	"class" : {
+		"role:inBackgroundDo:" : "ct 8/19/2023 21:44" },
+	"instance" : {
+		"addChunk:" : "ct 8/13/2023 18:52",
+		"beComplete" : "ct 8/13/2023 18:47",
+		"cancel" : "ct 8/16/2023 21:55",
+		"content" : "ct 8/16/2023 21:22",
+		"cursorText" : "ct 8/19/2023 19:24",
+		"initialize" : "ct 8/13/2023 17:27",
+		"isComplete" : "ct 8/13/2023 17:27",
+		"isStreaming" : "ct 8/13/2023 17:27",
+		"process" : "ct 8/13/2023 18:45",
+		"process:" : "ct 8/13/2023 18:45",
+		"veryDeepCopyWith:" : "ct 8/16/2023 22:40",
+		"veryDeepFixupActionMapWith:" : "ct 8/17/2023 14:57",
+		"veryDeepFixupWith:" : "ct 8/16/2023 22:48",
+		"waitUntilComplete" : "ct 8/19/2023 21:32" } }
