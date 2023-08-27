@@ -1,5 +1,6 @@
 pricing
 priceFor: aConversation
+	"Note: Prices are hardcoded and might not encompass any recent pricing updates by OpenAI."
 
 	| priceForCompletion priceForPrompt |
 	priceForPrompt := (OpenAIAmount approximateCents: self centsPerPromptToken)

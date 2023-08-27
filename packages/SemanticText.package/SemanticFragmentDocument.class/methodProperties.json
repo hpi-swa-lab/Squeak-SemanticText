@@ -1,0 +1,18 @@
+{
+	"class" : {
+		"object:start:stop:" : "ct 8/14/2023 16:24" },
+	"instance" : {
+		"contentText" : "ct 8/14/2023 15:58",
+		"fullContentText" : "ct 8/14/2023 16:14",
+		"object" : "ct 8/14/2023 15:57",
+		"object:" : "ct 8/14/2023 15:57",
+		"object:start:stop:" : "ct 8/14/2023 16:02",
+		"printOn:" : "ct 8/14/2023 16:05",
+		"readHeaderFrom:for:" : "ct 8/14/2023 16:00",
+		"readObjectFrom:for:" : "ct 8/14/2023 16:00",
+		"readPositionFrom:" : "ct 8/14/2023 16:00",
+		"text" : "ct 8/14/2023 15:58",
+		"titleText" : "ct 8/14/2023 16:14",
+		"writeHeaderOn:" : "ct 8/14/2023 16:01",
+		"writeObjectOn:" : "ct 8/14/2023 16:01",
+		"writePositionOn:" : "ct 8/14/2023 16:02" } }

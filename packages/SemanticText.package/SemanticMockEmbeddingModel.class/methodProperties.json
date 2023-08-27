@@ -1,0 +1,14 @@
+{
+	"class" : {
+		"initialize" : "ct 8/17/2023 20:34",
+		"unload" : "ct 8/20/2023 17:01" },
+	"instance" : {
+		"countTokensIn:" : "ct 8/20/2023 12:45",
+		"embeddingSize" : "ct 8/20/2023 12:44",
+		"getEmbeddingFor:" : "ct 8/20/2023 12:48",
+		"getEmbeddingFor:config:" : "ct 8/20/2023 12:52",
+		"getEmbeddingsForAll:" : "ct 8/20/2023 12:47",
+		"getEmbeddingsForAll:config:" : "ct 8/20/2023 13:03",
+		"keywords" : "ct 8/17/2023 20:34",
+		"truncateString:minusString:minusWords:to:" : "ct 8/20/2023 13:11",
+		"truncateString:to:" : "ct 8/20/2023 13:11" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Search",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/19/2023 22:20",
+	"instvars" : [
+		"embedding" ],
+	"name" : "SemanticDocument",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

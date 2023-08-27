@@ -1,0 +1,1 @@
+I represent a textual document for a part of an object. (Some other terminologies would refer to me as a chunk of a document.) My text is based on my object's title and a substring of its #fullContentText.

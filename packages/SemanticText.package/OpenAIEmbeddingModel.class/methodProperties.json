@@ -1,0 +1,24 @@
+{
+	"class" : {
+		"ada002Name" : "ct 8/19/2023 22:12",
+		"initialize" : "ct 8/17/2023 20:15",
+		"unload" : "ct 8/17/2023 20:12" },
+	"instance" : {
+		"centsPerToken" : "ct 8/27/2023 16:55",
+		"defaultName" : "ct 8/19/2023 22:13",
+		"embeddingSize" : "ct 8/19/2023 22:13",
+		"embeddingSize:" : "ct 8/19/2023 22:14",
+		"expenseForUsage:" : "ct 8/20/2023 20:03",
+		"getEmbeddingFor:" : "ct 8/20/2023 12:49",
+		"getEmbeddingFor:config:" : "ct 8/20/2023 13:03",
+		"getEmbeddingsForAll:" : "ct 8/20/2023 22:55",
+		"getEmbeddingsForAll:config:" : "ct 8/20/2023 19:43",
+		"name:" : "ct 8/19/2023 22:15",
+		"pathToEndpoint" : "ct 8/17/2023 18:07",
+		"priceFor:" : "ct 8/27/2023 16:55",
+		"priceForAll:" : "ct 8/27/2023 16:55",
+		"pricePerMinute" : "ct 8/27/2023 16:55",
+		"requestsPerMinute" : "ct 8/26/2023 01:57",
+		"tokensPerMinute" : "ct 8/26/2023 01:57",
+		"truncateString:minusString:minusWords:to:" : "ct 8/20/2023 13:11",
+		"truncateString:to:" : "ct 8/20/2023 13:11" } }

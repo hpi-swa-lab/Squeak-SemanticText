@@ -1,0 +1,1 @@
+I represent an abstract textual document for an object inside a SemanticCorpus. Subclasses have to decide how they reference the object and retrieve its text.

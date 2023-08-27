@@ -1,0 +1,1 @@
+I mock an embedding model that computes embedding vectors for text.

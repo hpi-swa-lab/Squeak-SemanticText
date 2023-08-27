@@ -1,0 +1,4 @@
+embeddings
+estimateTimeToInitializeEmbeddings
+
+	^ self estimateTimeToInitializeEmbeddingsFor: self documents

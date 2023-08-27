@@ -1,0 +1,15 @@
+{
+	"category" : "SemanticText-Model-Search",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/20/2023 12:38",
+	"instvars" : [
+		"titleBlock",
+		"contentBlock" ],
+	"name" : "SemanticPluggableCorpus",
+	"pools" : [
+		 ],
+	"super" : "SemanticCorpus",
+	"type" : "normal" }

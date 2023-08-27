@@ -7,8 +7,8 @@
 		"initialize" : "ct 8/20/2023 17:02",
 		"unload" : "ct 8/17/2023 19:28" },
 	"instance" : {
-		"centsPerCompletionToken" : "ct 8/26/2023 01:58",
-		"centsPerPromptToken" : "ct 8/26/2023 01:58",
+		"centsPerCompletionToken" : "ct 8/27/2023 16:56",
+		"centsPerPromptToken" : "ct 8/27/2023 16:56",
 		"countTokensInConversation:" : "ct 8/20/2023 20:00",
 		"defaultConfig" : "ct 8/17/2023 17:49",
 		"defaultName" : "ct 8/17/2023 20:26",
@@ -20,5 +20,5 @@
 		"maxTokens" : "ct 8/26/2023 01:58",
 		"parseMessageFrom:" : "ct 8/17/2023 18:36",
 		"pathToEndpoint" : "ct 8/17/2023 17:35",
-		"priceFor:" : "ct 8/20/2023 21:38",
+		"priceFor:" : "ct 8/27/2023 16:56",
 		"streamEventDataFrom:" : "ct 8/20/2023 20:19" } }

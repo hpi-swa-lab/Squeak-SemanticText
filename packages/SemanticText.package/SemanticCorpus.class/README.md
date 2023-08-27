@@ -1,0 +1,8 @@
+I hold an (often large) set of objects that you can perform semantic searches and similarity searches on. Internally, each object is represented by one or many SemanticDocuments. To power the search, I compute an embedding for each document using my embeddingModel. See the examples on class side.
+
+An embedding is a (typically high-dimensional) vector that represents a piece of information (such as text) by assigning it different numbers for different features. E.g., a naive embedding format (or model) could encode the relatedness to different topics (programming, sports, musics), the type of language (sentiment, level of formality), autc. into different dimensions. In the resulting vector space, if two embeddings are located close to each other, their associated information (or documents) are similar to each other with regard to the features of the embedding model. In practice, large embedding models can represent single words or entire texts of natural language, source code, images, music, etc. by a large set of features that were identified to be relevant during the machine learning (or training) process.
+
+For more information on semantic search, read OpenAI's cookbook on "Embedding Wikipedia articles for search" [1] and "Question answering using embeddings" [2].
+
+[1] https://github.dev/openai/openai-cookbook/blob/main/examples/Embedding_Wikipedia_articles_for_search.ipynb
+[2] https://github.dev/openai/openai-cookbook/blob/main/examples/Question_answering_using_embeddings.ipynb

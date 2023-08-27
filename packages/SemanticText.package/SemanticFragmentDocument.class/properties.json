@@ -1,0 +1,16 @@
+{
+	"category" : "SemanticText-Model-Search",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/27/2023 17:03",
+	"instvars" : [
+		"object",
+		"start",
+		"stop" ],
+	"name" : "SemanticFragmentDocument",
+	"pools" : [
+		 ],
+	"super" : "SemanticDocument",
+	"type" : "normal" }

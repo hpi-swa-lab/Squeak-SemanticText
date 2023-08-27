@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Providers-OpenAI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/20/2023 13:02",
+	"instvars" : [
+		"embeddingSize" ],
+	"name" : "OpenAIEmbeddingModel",
+	"pools" : [
+		 ],
+	"super" : "OpenAIModel",
+	"type" : "normal" }

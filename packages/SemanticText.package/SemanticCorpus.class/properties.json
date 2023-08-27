@@ -1,0 +1,16 @@
+{
+	"category" : "SemanticText-Model-Search",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/26/2023 02:30",
+	"instvars" : [
+		"embeddingModel",
+		"documents",
+		"clusters" ],
+	"name" : "SemanticCorpus",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

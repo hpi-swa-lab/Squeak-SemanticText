@@ -1,0 +1,2 @@
+I provide a simpler way to create maintain arbitrary domain objects through pluggable blocks for retrieving object texts.
+I store all objects as SemanticPluggableFragmentDocuments. Note that pluggable documents may involve memory overhead. See the comment SemanticPluggableFragmentDocument for details.

@@ -1,0 +1,4 @@
+construction
+documentClass
+
+	^ SemanticDocument

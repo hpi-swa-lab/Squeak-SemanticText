@@ -1,0 +1,4 @@
+accessing
+corpus
+
+	^ corpus
