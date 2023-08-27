@@ -2,4 +2,4 @@
 semanticShortPrintString
 
 	self flag: #moveUpstream.
-	^ String streamContents: [:stream | self simShortPrintOn: stream]
+	^ String streamContents: [:stream | self semanticShortPrintOn: stream]
