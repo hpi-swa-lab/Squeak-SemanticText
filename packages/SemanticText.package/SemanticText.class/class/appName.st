@@ -1,0 +1,4 @@
+app - accessing
+appName
+
+	^ 'SemanticText'

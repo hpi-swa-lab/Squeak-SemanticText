@@ -4,7 +4,8 @@
 		 ],
 	"classvars" : [
 		"DefaultModels",
-		"Models" ],
+		"Models",
+		"SelfUpdateBranch" ],
 	"commentStamp" : "ct 8/19/2023 21:36",
 	"instvars" : [
 		 ],

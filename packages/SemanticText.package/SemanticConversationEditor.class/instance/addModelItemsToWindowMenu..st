@@ -14,3 +14,6 @@ addModelItemsToWindowMenu: menu
 	menu
 		add: 'edit preferences'
 		action: #openPreferences.
+	
+	menu addLine.
+	SemanticText appMenu: menu.
