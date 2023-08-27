@@ -6,6 +6,6 @@ requestsPerMinute
 		self flag: #todo. "#hasLongTimeSubscription should probably be per actually used model? The docs are not clear on this."
 		self flag: #modelConstants.
 		true caseOf:
-			{[self account isFreeUser] -> [3].
+			{[self account hasSubscription not] -> [3].
 			[self account hasLongTimeSubscription not] -> [60].
 			[self account hasLongTimeSubscription] -> [3500]}]
