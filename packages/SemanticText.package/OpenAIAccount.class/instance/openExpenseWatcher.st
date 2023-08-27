@@ -1,5 +1,6 @@
 ui
 openExpenseWatcher
+	"For the actual usage without estimations, see: https://platform.openai.com/account/usage"
 
 	| field inspector |
 	inspector := Inspector on: self.
