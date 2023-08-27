@@ -1,0 +1,1 @@
+I hold a simple text with no associated object. Note that I support neither truncation for large texts nor swapping large amounts of text to disk.
