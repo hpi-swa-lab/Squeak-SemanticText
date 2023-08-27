@@ -1,0 +1,1 @@
+I enable semantic search and conversations within the HelpSystem.

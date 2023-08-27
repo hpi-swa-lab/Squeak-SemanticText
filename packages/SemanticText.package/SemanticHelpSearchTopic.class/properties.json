@@ -1,0 +1,18 @@
+{
+	"category" : "SemanticText-Tools-HelpSystemSearch",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"DocumentCache",
+		"EnableSemanticHelpSearch",
+		"EnableSmartReplies" ],
+	"commentStamp" : "ct 8/20/2023 17:06",
+	"instvars" : [
+		"corpus",
+		"resultTopics",
+		"resultConversation" ],
+	"name" : "SemanticHelpSearchTopic",
+	"pools" : [
+		 ],
+	"super" : "SearchTopic",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Tools-HelpSystemSearch",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SemanticHelpSearchTopicListItemWrapper",
+	"pools" : [
+		 ],
+	"super" : "HelpTopicListItemWrapper",
+	"type" : "normal" }

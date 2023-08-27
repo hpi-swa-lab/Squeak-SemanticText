@@ -1,0 +1,4 @@
+accessing
+subtopics
+
+	^ resultTopics ifNil: [#()]
