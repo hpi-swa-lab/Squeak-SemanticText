@@ -1,0 +1,1 @@
+I provide a simple GUI to chat with an assistant by editing and completing a SemanticConversation.

@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Tools-Conversation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/20/2023 16:45",
+	"instvars" : [
+		"message" ],
+	"name" : "SemanticConversationEditorMessageAttribute",
+	"pools" : [
+		 ],
+	"super" : "TextAttribute",
+	"type" : "normal" }

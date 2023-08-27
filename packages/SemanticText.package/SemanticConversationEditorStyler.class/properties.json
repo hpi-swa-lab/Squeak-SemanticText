@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Tools-Conversation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 8/17/2023 17:00",
+	"instvars" : [
+		 ],
+	"name" : "SemanticConversationEditorStyler",
+	"pools" : [
+		 ],
+	"super" : "SHTextStyler",
+	"type" : "normal" }

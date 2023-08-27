@@ -1,0 +1,4 @@
+constants
+appName
+
+	^ 'Semantic Conversation'
