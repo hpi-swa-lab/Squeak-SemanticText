@@ -7,7 +7,7 @@
 - **[OpenAI API](https://platform.openai.com/docs/api-reference) client:** Currently supports chat completions and embeddings. Includes tools for managing rate limits, tracking expenses, and estimating prices for queries.
 - **SemanticConversation:** Framework for conversational agents like ChatGPT.
 - **ChatGPT:** Conversational GUI for Squeak. Supports streaming responses, editing conversations, and defining system messages.
-- **SemanticCorpus:** Framework for semantic search, similarity search, and retrieval-augmented generation (RAG, aka "chat with your data") through the power of text embeddings.
+- **SemanticCorpus:** Framework for semantic search, similarity search, and retrieval-augmented generation (RAG, aka "chat with your data") through the power of text embeddings. Implements a simple yet functional vector database.
 - **Experimental tools** such as an integration of semantic search and RAG into Squeak's Help Browser or Squeak's mailing list.
 
 For more details, install the package and dive into the class comments, or read below.
@@ -130,6 +130,11 @@ Do this:
 ```smalltalk
 OpenAIAccount openExpenseWatcher
 ```
+
+## Acknowledgments
+
+Thanks to Vincent Eichhorn ([@vincenteichhorn](https://github.com/vincenteichhorn)) for giving me an overview of indexing techniques for Vector DBs (will implement one soon!). 
+Thanks to [r/MachineLearning](https://www.reddit.com/r/MachineLearning/comments/14pgogs/d_best_embedding_models_for_retrieving_mixed/?utm_source=share&utm_medium=web2x&context=3) folks for suggesting alternative embedding models (your suggestions will maybe implemented one day).
 
 ---
 
