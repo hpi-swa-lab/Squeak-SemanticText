@@ -7,7 +7,8 @@
 		"defaultAccountSubscriptionState" : "ct 8/20/2023 21:06",
 		"defaultAccountSubscriptionState:" : "ct 8/20/2023 18:27",
 		"defaultApiKey" : "ct 8/20/2023 18:14",
-		"defaultApiKey:" : "ct 8/20/2023 12:54" },
+		"defaultApiKey:" : "ct 8/20/2023 12:54",
+		"openExpenseWatcher" : "ct 8/27/2023 18:38" },
 	"instance" : {
 		"apiKey" : "ct 8/20/2023 12:55",
 		"apiKey:" : "ct 8/20/2023 12:55",
@@ -19,6 +20,7 @@
 		"hasSubscription" : "ct 8/20/2023 18:16",
 		"initialize" : "ct 8/20/2023 21:03",
 		"noteExpense:forUser:model:" : "ct 8/20/2023 19:11",
+		"openExpenseWatcher" : "ct 8/27/2023 18:38",
 		"rateLimitForModel:ifUnknown:" : "ct 8/20/2023 19:09",
 		"rateLimitForModel:set:" : "ct 8/20/2023 19:09",
 		"rateLimits" : "ct 8/20/2023 18:07",
