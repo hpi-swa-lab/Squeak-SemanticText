@@ -2,4 +2,4 @@ app - accessing
 githubRepositoryParams
 	"{owner. name. directory}"
 
-	^ {'LinqLover'. 'squeak-chatgpt'. 'packages'}
+	^ {'LinqLover'. 'Squeak-SemanticText'. 'packages'}
