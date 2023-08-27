@@ -6,4 +6,5 @@ openExpenseWatcher
 	inspector := Inspector on: self.
 	field := inspector newCustomField valueGetter: [:account | account totalExpense].
 	inspector addCustomField: field.
+	field rememberInspector.
 	World dropInspectorField: field event: self currentEvent.
