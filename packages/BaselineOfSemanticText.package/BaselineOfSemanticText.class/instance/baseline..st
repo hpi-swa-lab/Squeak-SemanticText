@@ -4,7 +4,8 @@ baseline: spec
 
 	spec for: #common do: [
 		"packages"
-		spec package: 'SemanticText'.
+		spec package: #SemanticText with:
+			[spec postLoadDoIt: #postLoad].
 		
 		"groups"
-		spec group: #default with: #('SemanticText')].
+		spec group: #default with: #(SemanticText)].
