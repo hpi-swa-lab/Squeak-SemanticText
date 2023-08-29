@@ -32,6 +32,7 @@
 		"findDocuments:nearEmbedding:collect:" : "ct 8/17/2023 12:02",
 		"findDocuments:nearEmbedding:collect:thenSelect:" : "ct 8/19/2023 22:07",
 		"findDocuments:nearEmbedding:useClusters:" : "ct 8/16/2023 19:03",
+		"findDocuments:similarTo:" : "ct 8/29/2023 16:15",
 		"findDocuments:similarTo:collect:" : "ct 8/17/2023 12:03",
 		"findDocuments:similarTo:collect:thenSelect:" : "ct 8/29/2023 19:51",
 		"findDocuments:similarToObject:collect:" : "ct 8/16/2023 20:02",
