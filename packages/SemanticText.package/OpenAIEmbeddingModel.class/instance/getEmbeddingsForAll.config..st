@@ -1,6 +1,6 @@
 service
 getEmbeddingsForAll: strings config: aConfigOrNil
-	"Answer a collection with one embedding for each string. Each embedding vector is a Float32Array of numbers."
+	"Answer a collection with one embedding for each string. Each embedding vector is a Float32Array of numbers. Each vector is normalized, i.e., has a length very close to 1."
 
 	| embeddingResult |
 	embeddingResult := self

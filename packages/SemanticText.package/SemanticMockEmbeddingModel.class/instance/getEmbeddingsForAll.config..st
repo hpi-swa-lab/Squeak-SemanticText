@@ -1,6 +1,6 @@
 service
 getEmbeddingsForAll: strings config: aConfigOrNil
-	"Answer a collection with one embedding for each string. Each embedding vector is an array of numbers, commonly represented as a Float32Array."
+	"Answer a collection with one embedding for each string. Each embedding vector is an array of numbers, commonly represented as a Float32Array. Each vector is normalized, i.e., has a length very close to 1."
 
 	| config |
 	config := self baseConfig.
@@ -8,8 +8,9 @@ getEmbeddingsForAll: strings config: aConfigOrNil
 		[config := config updatedWith: aConfigOrNil].
 	
 	^ strings collect: [:string |
-		| words |
+		| words vector |
 		words := string substrings collect: [:word | word asLowercaseAlphabetic] as: Bag.
-		self keywords
+		vector := self keywords
 			collect: [:keyword | (words occurrencesOf: keyword) / words size]
-			as: Float32Array]
+			as: Float32Array.
+		vector /= vector length]

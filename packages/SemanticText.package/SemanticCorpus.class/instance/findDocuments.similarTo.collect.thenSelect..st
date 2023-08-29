@@ -10,7 +10,7 @@ findDocuments: number similarTo: documents collect: collectBlock thenSelect: sel
 	average := classifiedDocuments first embedding shallowCopy.
 	2 to: classifiedDocuments size do: [:i |
 		average += (classifiedDocuments at: i) embedding].
-	"average /= documents size." "NOT required because cosine distance only depends on vector direction"
+	"average /= documents size." "NOT required because ranking of results only depends on vector direction"
 	
 	^ self
 		findDocuments: number

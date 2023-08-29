@@ -1,5 +1,6 @@
 search-embeddings
 findAllDocuments: number nearEmbedding: embedding
+	"Note: Ranking of results is invariant of length of the embedding argument."
 
 	| relatednesses |
 	relatednesses := Array new: self documents size streamContents: [:stream |
