@@ -1,4 +1,9 @@
 private
 privateUnstyle: aText
 
-	aText removeAttributesThat: [:attribute | attribute isKindOf: TextColor].
+	| allMarkupAttributes |
+	allMarkupAttributes := messageMarkups ifNotNil:
+		[messageMarkups values gather: [:markup | markup values flattened]].
+	aText removeAttributesThat: [:attribute |
+		(attribute isKindOf: TextColor) or:
+			[allMarkupAttributes notNil and: [allMarkupAttributes includes: attribute]]].

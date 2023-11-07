@@ -6,7 +6,8 @@
 		 ],
 	"commentStamp" : "ct 8/17/2023 17:00",
 	"instvars" : [
-		 ],
+		"editor",
+		"messageMarkups" ],
 	"name" : "SemanticConversationEditorStyler",
 	"pools" : [
 		 ],

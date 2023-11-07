@@ -2,9 +2,16 @@
 	"class" : {
 		 },
 	"instance" : {
+		"applyMessageMarkupsFor:interval:to:" : "ct 10/15/2023 18:37",
 		"attributesForRole:" : "ct 8/12/2023 21:46",
+		"editor" : "ct 10/15/2023 18:19",
+		"editor:" : "ct 10/15/2023 18:19",
+		"initialize" : "ct 10/15/2023 18:14",
+		"messageMarkups" : "ct 10/15/2023 18:13",
+		"messageMarkups:" : "ct 10/15/2023 18:13",
 		"privateFormat:" : "ct 8/12/2023 21:28",
-		"privateStyle:" : "ct 8/20/2023 17:00",
-		"privateUnstyle:" : "ct 8/20/2023 16:59",
+		"privateStyle:" : "ct 10/15/2023 18:31",
+		"privateUnstyle:" : "ct 10/15/2023 19:08",
 		"roleAttributes" : "ct 8/12/2023 21:47",
+		"streamMatchingRangesFor:in:" : "ct 10/15/2023 18:36",
 		"unstyledTextFrom:" : "ct 8/20/2023 17:00" } }

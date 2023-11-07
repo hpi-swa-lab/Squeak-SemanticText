@@ -1,4 +1,10 @@
 initialize-release
 defaultConversation
 
-	^ SemanticConversation newStreaming
+	| defaultConversation |
+	defaultConversation := SemanticConversation newStreaming.
+	
+	self shouldShowWelcomeMessage ifTrue:
+		[self addWelcomeMessageTo: defaultConversation].
+	
+	^ defaultConversation
