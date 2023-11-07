@@ -17,7 +17,8 @@ invokeWithConfig: aConfigOrNil editInput: inputBlock handleResponse: responseBlo
 		content: input asJsonString squeakToUtf8
 		type: 'application/json'
 		do: [:request |
-			request headerAt: 'Authorization' put: 'Bearer ' , self account apiKey].
+			self account apiKey ifNotNil: [:apiKey |
+				request headerAt: 'Authorization' put: 'Bearer ' , apiKey]].
 	
 	output := (responseBlock ifNotNil: [responseBlock cull: response cull: config])
 		ifNil: [response content utf8ToSqueak parseAsJson].
