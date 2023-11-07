@@ -5,3 +5,4 @@ SystemOrganization addCategory: #'SemanticText-Tools-Conversation'!
 SystemOrganization addCategory: #'SemanticText-Providers-OpenAI'!
 SystemOrganization addCategory: #'SemanticText-Model'!
 SystemOrganization addCategory: #'SemanticText-Providers-Mocks'!
+SystemOrganization addCategory: #'SemanticText-Help'!

@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"appMenu:" : "ct 8/27/2023 22:32",
+		"appMenu:" : "ct 10/18/2023 17:10",
 		"appName" : "ct 8/27/2023 20:16",
 		"basicSelfUpdateBranch:" : "ct 8/27/2023 20:17",
 		"chooseDefaultConversationModel" : "ct 8/19/2023 19:22",
@@ -40,6 +40,7 @@
 		"sendFeedbackGitHub" : "ct 8/27/2023 20:17",
 		"setModel:asDefaultFor:" : "ct 8/17/2023 19:26",
 		"setModel:asDefaultFor:during:" : "ct 8/18/2023 22:26",
+		"showHelp" : "ct 10/15/2023 17:46",
 		"unregisterAllModels" : "ct 8/17/2023 19:31",
 		"unregisterConversationModel:" : "ct 8/17/2023 19:15",
 		"unregisterConversationModelsOf:" : "ct 8/17/2023 19:28",
