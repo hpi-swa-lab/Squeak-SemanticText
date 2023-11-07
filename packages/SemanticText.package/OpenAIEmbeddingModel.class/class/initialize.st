@@ -4,5 +4,5 @@ initialize
 	| model |
 	model := self new.
 	SemanticText registerEmbeddingModel: model.
-	(SemanticText defaultModelOrNilFor: #embedding) ifNil:
+	SemanticText defaultEmbeddingModelOrNil ifNil:
 		[SemanticText defaultEmbeddingModel: model].

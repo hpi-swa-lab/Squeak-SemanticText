@@ -6,7 +6,7 @@ initialize
 	
 	model := self new name: self gpt35Name.
 	SemanticText registerConversationModel: model.
-	(SemanticText defaultModelOrNilFor: #conversation) ifNil:
+	SemanticText defaultConversationModelOrNil ifNil:
 		[SemanticText defaultConversationModel: model].
 	
 	SemanticText registerConversationModel: (self new name: self gpt4Name).
