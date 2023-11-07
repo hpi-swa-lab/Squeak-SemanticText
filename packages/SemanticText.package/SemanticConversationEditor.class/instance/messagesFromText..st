@@ -6,7 +6,7 @@ messagesFromText: aText
 	
 	"^ newMessages"
 	"Interface convenience: Attempt to prolong the lifecycle of existing messages by associating them based on the message attributes (optional)."
-	messages := OrderedCollection new.
+	messages := OrderedDictionary new.
 	newMessages keysAndValuesDo: [:interval :newMessage |
 		| runMessage runMessages runText |
 		runText := aText copyFrom: interval start to: interval stop.
@@ -25,5 +25,5 @@ messagesFromText: aText
 			ifEmpty:
 				[newMessage].
 		
-		messages addLast: runMessage].
+		messages at: interval put: runMessage].
 	^ messages
