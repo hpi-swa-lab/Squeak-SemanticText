@@ -2,6 +2,10 @@ searching
 generateReply
 
 	| streamingMessage |
+	SemanticText assureConversationAvailableOr: [:requirements |
+		conversationRequirements := requirements.
+		^ self triggerUpdateContents].
+	
 	resultConversation := self corpus
 		newConversationForQuery: self term
 		systemMessage: 'You are an AI assistant that sits in the interactive help browser of Squeak/Smalltalk.'.

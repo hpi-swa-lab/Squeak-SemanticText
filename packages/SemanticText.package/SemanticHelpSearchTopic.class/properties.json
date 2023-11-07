@@ -3,14 +3,16 @@
 	"classinstvars" : [
 		 ],
 	"classvars" : [
+		"AutomaticSmartReplies",
 		"DocumentCache",
-		"EnableSemanticHelpSearch",
-		"EnableSmartReplies" ],
+		"EnableSemanticHelpSearch" ],
 	"commentStamp" : "ct 8/20/2023 17:06",
 	"instvars" : [
 		"corpus",
 		"resultTopics",
-		"resultConversation" ],
+		"resultConversation",
+		"searchRequirements",
+		"conversationRequirements" ],
 	"name" : "SemanticHelpSearchTopic",
 	"pools" : [
 		 ],

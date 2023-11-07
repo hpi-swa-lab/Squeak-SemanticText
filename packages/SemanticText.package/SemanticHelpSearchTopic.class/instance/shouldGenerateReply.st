@@ -1,4 +1,4 @@
 testing
 shouldGenerateReply
 
-	^ self class enableSmartReplies
+	^ self class automaticSmartReplies

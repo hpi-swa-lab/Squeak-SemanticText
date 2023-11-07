@@ -2,6 +2,8 @@
 	"class" : {
 		"appMenu:" : "ct 10/18/2023 17:10",
 		"appName" : "ct 8/27/2023 20:16",
+		"assureConversationAvailableOr:" : "ct 10/18/2023 17:12",
+		"assureSearchAvailableOr:" : "ct 10/18/2023 17:12",
 		"basicSelfUpdateBranch:" : "ct 8/27/2023 20:17",
 		"chooseDefaultConversationModel" : "ct 8/19/2023 19:22",
 		"chooseDefaultModelFor:" : "ct 8/19/2023 19:23",
@@ -21,6 +23,7 @@
 		"defaultModels" : "ct 8/17/2023 19:24",
 		"defaultSelfUpdateBranch" : "ct 8/27/2023 20:17",
 		"doSelfUpdate" : "ct 8/27/2023 23:11",
+		"formatRequirements:retry:" : "ct 10/15/2023 21:58",
 		"githubNewIssueUrl" : "ct 8/27/2023 20:16",
 		"githubNewIssueUrlWithBody:" : "ct 8/27/2023 20:16",
 		"githubRepositoryParams" : "ct 8/27/2023 23:36",

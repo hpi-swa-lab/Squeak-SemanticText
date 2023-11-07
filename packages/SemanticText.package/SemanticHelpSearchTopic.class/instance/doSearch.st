@@ -1,6 +1,8 @@
 searching
 doSearch
 
+	self triggerUpdateContents.
+	
 	self concurrentlyDoAll:
 		{[super doSearch].
 		

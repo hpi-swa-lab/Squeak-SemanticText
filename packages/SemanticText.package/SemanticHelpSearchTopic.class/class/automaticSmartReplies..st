@@ -1,6 +1,6 @@
 preferences
-enableSmartReplies: aBoolean
+automaticSmartReplies: aBoolean
 
 	aBoolean ifTrue: [self enableSemanticHelpSearch: true].
 	
-	EnableSmartReplies := aBoolean.
+	AutomaticSmartReplies := aBoolean.
