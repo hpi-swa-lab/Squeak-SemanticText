@@ -1,4 +1,4 @@
 preferences
 defaultApiKey: aString
 
-	self defaultAccount apiKey: aString.
+	self defaultAccount apiKey: (aString ifEmpty: []).
