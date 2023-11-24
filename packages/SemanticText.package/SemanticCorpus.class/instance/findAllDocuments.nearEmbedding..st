@@ -7,7 +7,7 @@ findAllDocuments: number nearEmbedding: embedding
 		self documents do: [:doc |
 			| distance |
 			distance := self distanceBetween: embedding and: doc embedding.
-			distance isInfinite ifFalse: [
+			(distance isInfinite or: [distance isNaN]) ifFalse: [
 				stream nextPut: doc -> distance]]].
 	self flag: #optimize. "use flat array instead of associations and write custom sort method. 56% of runtime comes from #->."
 	
