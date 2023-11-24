@@ -1,14 +1,15 @@
 {
 	"class" : {
 		"gpt35Name" : "ct 8/17/2023 18:17",
-		"gpt35_16kName" : "ct 8/17/2023 18:20",
+		"gpt35_16kName" : "ct 11/24/2023 09:59",
 		"gpt4Name" : "ct 8/17/2023 18:20",
+		"gpt4TurboPreviewName" : "ct 11/24/2023 09:47",
 		"gpt4_32kName" : "ct 8/17/2023 18:21",
-		"initialize" : "ct 10/18/2023 17:12",
+		"initialize" : "ct 11/24/2023 09:59",
 		"unload" : "ct 8/17/2023 19:28" },
 	"instance" : {
-		"centsPerCompletionToken" : "ct 8/27/2023 16:56",
-		"centsPerPromptToken" : "ct 8/27/2023 16:56",
+		"centsPerCompletionToken" : "ct 11/24/2023 09:50",
+		"centsPerPromptToken" : "ct 11/24/2023 09:53",
 		"countTokensInConversation:" : "ct 8/20/2023 20:00",
 		"defaultConfig" : "ct 8/17/2023 17:49",
 		"defaultName" : "ct 8/17/2023 20:26",
@@ -17,8 +18,9 @@
 		"getAnswerFor:" : "ct 8/17/2023 18:10",
 		"getAnswerFor:config:" : "ct 8/20/2023 20:29",
 		"handleStreamingReplyFor:from:config:" : "ct 8/20/2023 21:46",
-		"maxTokens" : "ct 8/26/2023 01:58",
+		"maxCompletionTokens" : "ct 11/24/2023 17:22",
+		"maxPromptTokens" : "ct 11/24/2023 10:01",
 		"parseMessageFrom:" : "ct 8/17/2023 18:36",
 		"pathToEndpoint" : "ct 8/17/2023 17:35",
-		"priceFor:" : "ct 8/27/2023 16:56",
+		"priceFor:" : "ct 11/24/2023 10:18",
 		"streamEventDataFrom:" : "ct 8/20/2023 20:19" } }

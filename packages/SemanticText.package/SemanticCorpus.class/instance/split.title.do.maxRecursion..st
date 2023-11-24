@@ -5,7 +5,7 @@ split: contentString title: titleString do: chunkBlock maxRecursion: maxRecursio
 	| fullString |
 	contentString ifNil: [^ self].
 	fullString := titleString , String cr, String cr , contentString.
-	(self embeddingModel countTokensIn: fullString) <= self maxTokens ifTrue: [
+	(self embeddingModel countTokensIn: fullString) <= self maxTokensPerDocument ifTrue: [
 		contentString ifNotEmpty: [
 			chunkBlock value: 1 value: contentString size].
 		^ self].
@@ -19,6 +19,6 @@ split: contentString title: titleString do: chunkBlock maxRecursion: maxRecursio
 					self split: half title: titleString do: chunkBlock maxRecursion: maxRecursion - 1]]
 			ifFound: [:delimiter | ^ self]].
 	
-	fullString := (self embeddingModel truncateString: fullString to: self maxTokens) semanticWithoutLeading: titleString.
+	fullString := (self embeddingModel truncateString: fullString to: self maxTokensPerDocument) semanticWithoutLeading: titleString.
 	fullString ifNotEmpty: [
 		chunkBlock value: 1 value: fullString size - (titleString size + 2 "crs")].

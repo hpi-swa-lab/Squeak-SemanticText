@@ -43,6 +43,6 @@ Answer:'.
 				truncateString: (similarTexts joinSeparatedBy: String cr, String cr)
 				minusString: (systemMessageOrNil ifNil: ['']) , userMessageTemplate
 				minusWords: 5
-				to: (self maxTokensForConversation flag: #todo "maybe better use conversation model maxTokens here"; yourself))}).
+				to: (self maxTokensForConversation clampHigh: conversation model maxPromptTokens))}).
 	conversation  getAssistantMessage.
 	^ conversation

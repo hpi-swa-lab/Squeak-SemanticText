@@ -10,3 +10,4 @@ initialize
 		[SemanticText defaultConversationModel: model].
 	
 	SemanticText registerConversationModel: (self new name: self gpt4Name).
+	SemanticText registerConversationModel: (self new name: self gpt4TurboPreviewName).
