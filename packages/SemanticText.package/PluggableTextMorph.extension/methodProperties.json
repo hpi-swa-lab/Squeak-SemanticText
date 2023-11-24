@@ -4,4 +4,6 @@
 	"instance" : {
 		"insertText:from:to:invisibly:" : "ct 8/27/2023 16:25",
 		"insertText:toReplace:invisibly:" : "ct 8/19/2023 20:55",
+		"semanticExplainIt" : "ct 11/22/2023 21:09",
+		"semanticSummarizeIt" : "ct 11/22/2023 21:10",
 		"update:with:" : "ct 8/19/2023 21:00" } }
