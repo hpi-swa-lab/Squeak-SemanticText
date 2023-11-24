@@ -21,7 +21,7 @@ invokeWithConfig: aConfigOrNil editInput: inputBlock handleResponse: responseBlo
 				request headerAt: 'Authorization' put: 'Bearer ' , apiKey]].
 	
 	output := (responseBlock ifNotNil: [responseBlock cull: response cull: config])
-		ifNil: [response content utf8ToSqueak parseAsJson].
+		ifNil: [response content utf8ToSqueak withoutTrailingBlanks parseAsJson].
 	
 	response isSuccess ifFalse:
 		[| error |
