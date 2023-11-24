@@ -1,16 +1,24 @@
 embeddings
 initializeEmbeddingsFor: someDocuments
 
-	| requestsPerMinute model tokensPerRequest |
+	| requestsPerMinute model tokensPerRequest stringsPerRequest |
 	"Update documents in chunks to minimize model overhead. Honor rate limits."
 	self flag: #magicNumbers. "We currently rely on the rate limits of the model to maximize embedded documents per time. We currently do not include any safety buffer since token approximations are rounded up. Some providers also indicate rate limits in headers (https://platform.openai.com/docs/guides/rate-limits/rate-limits-in-headers) which could possibly be relevant for us. See also: https://github.com/openai/openai-cookbook/blob/a74a7a7940928d504f6e9f7300ddef7f47e8659d/examples/api_request_parallel_processor.py"
 	requestsPerMinute := 1. "adjust at will"
 	
 	model := self embeddingModel.
-	requestsPerMinute := requestsPerMinute clampHigh: model requestsPerMinute.
-	tokensPerRequest := model tokensPerMinute / requestsPerMinute.
+	(model respondsTo: #requestsPerMinute)
+		ifTrue: [requestsPerMinute := requestsPerMinute clampHigh: model requestsPerMinute].
+	tokensPerRequest := (model respondsTo: #tokensPerMinute)
+		ifTrue: [model tokensPerMinute / requestsPerMinute]
+		ifFalse: [Float infinity].
+	stringsPerRequest := (model respondsTo: #maxStringsPerRequest)
+		ifTrue: [model maxStringsPerRequest]
+		ifFalse: [Float infinity].
 	
-	('Initializing embeddings (approx {1} per minute)...' format: {model pricePerMinute}) semanticDisplayRichProgressFrom: 0 to: someDocuments size during: [:bar |
+	((model respondsTo: #pricePerMinute)
+		ifTrue: ['Initializing embeddings (approx {1} per minute)...' format: {model pricePerMinute}]
+		ifFalse: ['Initializing embeddings...']) semanticDisplayRichProgressFrom: 0 to: someDocuments size during: [:bar |
 		
 		| nextRequest |
 		nextRequest := DateAndTime now.
@@ -22,16 +30,19 @@ initializeEmbeddingsFor: someDocuments
 				chunkTokens := 0.
 				[(nextDocument := fullStream peek) notNil and:
 					[nextText := fullStream peek text.
-					nextDocumentTokens := model countTokensIn: nextText.
-					(chunkTokens + nextDocumentTokens <= tokensPerRequest)
-						or:
-							[chunk isEmpty and:
-								[self notify: 'skipping too large document'.
-								fullStream next.
-								true "continue"]]]]
+					chunk size < stringsPerRequest
+						and:
+							[nextDocumentTokens := model countTokensIn: nextText.
+							(chunkTokens + nextDocumentTokens <= tokensPerRequest)
+								or:
+									[chunk isEmpty and:
+										[self notify: 'skipping too large document'.
+										fullStream next.
+										true "continue"]]]]]
 						whileTrue:
 							[chunk addLast: fullStream next.
-							chunkTexts addLast: nextText].
+							chunkTexts addLast: nextText.
+							chunkTokens := chunkTokens + nextDocumentTokens].
 				
 				((nextRequest - DateAndTime now) clampLow: 0 seconds) wait.
 				nextRequest := requestsPerMinute reciprocal minutes fromNow.
