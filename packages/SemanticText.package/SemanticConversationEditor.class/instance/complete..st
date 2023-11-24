@@ -14,7 +14,8 @@ complete: aText
 				ifNotNil: [:requirement | requirement third value].
 		^ false].
 	
-	self text: aText.
+	aText ifNotNil:
+		[self text: aText].
 	
 	response := self beBusyDuring:
 		[self conversation getAssistantMessage].
