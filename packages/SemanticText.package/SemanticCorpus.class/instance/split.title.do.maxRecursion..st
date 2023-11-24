@@ -3,6 +3,7 @@ split: contentString title: titleString do: chunkBlock maxRecursion: maxRecursio
 	"Based on split_strings_from_subsection() from the OpenAI Cookbook: https://github.com/openai/openai-cookbook/blob/4912564dc16745c9376e2b1f78c80cb1bab73f01/examples/Embedding_Wikipedia_articles_for_search.ipynb"
 
 	| fullString |
+	contentString ifNil: [^ self].
 	fullString := titleString , String cr, String cr , contentString.
 	(self embeddingModel countTokensIn: fullString) <= self maxTokens ifTrue: [
 		contentString ifNotEmpty: [
