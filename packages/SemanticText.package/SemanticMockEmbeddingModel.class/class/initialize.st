@@ -1,4 +1,6 @@
 initialize-release
 initialize
 
-	SemanticText registerEmbeddingModel: self new.
+	SemanticText registeredConversationModels
+		detect: [:ea | ea isMemberOf: self]
+		ifNone: [SemanticText registerEmbeddingModel: self new].

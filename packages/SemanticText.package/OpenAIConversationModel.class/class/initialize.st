@@ -5,9 +5,16 @@ initialize
 	self flag: #forLater. "Use OpenAI Models API and register an instance of each model."
 	
 	model := self new name: self gpt35Name.
-	SemanticText registerConversationModel: model.
-	SemanticText defaultConversationModelOrNil ifNil:
-		[SemanticText defaultConversationModel: model].
+	SemanticText registeredConversationModels
+		detect: [:ea | ea name = model name]
+		ifNone:
+			[SemanticText registerConversationModel: model.
+			SemanticText defaultConversationModelOrNil ifNil:
+				[SemanticText defaultConversationModel: model]].
 	
-	SemanticText registerConversationModel: (self new name: self gpt4Name).
-	SemanticText registerConversationModel: (self new name: self gpt4TurboPreviewName).
+	{self gpt4Name. self gpt4TurboPreviewName} do: [:modelName |
+		model := self new name: modelName.
+		SemanticText registeredConversationModels
+			detect: [:ea | ea name = model name]
+			ifNone:
+				[SemanticText registerConversationModel: model]].

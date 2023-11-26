@@ -1,4 +1,6 @@
 initialize-release
 initialize
 
-	SemanticText registerConversationModel: self new.
+	SemanticText registeredConversationModels
+		detect: [:ea | ea isMemberOf: self]
+		ifNone: [SemanticText registerConversationModel: self new].
