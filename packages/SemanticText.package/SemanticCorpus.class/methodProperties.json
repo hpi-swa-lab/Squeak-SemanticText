@@ -49,7 +49,7 @@
 		"initializeEmbeddings" : "ct 7/4/2023 10:37",
 		"initializeEmbeddingsFor:" : "ct 11/24/2023 09:09",
 		"makeClusters:maxIterations:" : "ct 8/19/2023 22:10",
-		"maxTokensForConversation" : "ct 11/24/2023 08:50",
+		"maxTokensForConversation" : "ct 11/26/2023 20:57",
 		"maxTokensPerDocument" : "ct 11/24/2023 10:19",
 		"newConversationForQuery:" : "ct 8/15/2023 18:24",
 		"newConversationForQuery:systemMessage:" : "ct 11/24/2023 17:27",
