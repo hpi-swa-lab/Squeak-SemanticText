@@ -4,21 +4,23 @@ initializeEmbeddingsFor: someDocuments
 	| requestsPerMinute model tokensPerRequest stringsPerRequest |
 	"Update documents in chunks to minimize model overhead. Honor rate limits."
 	self flag: #magicNumbers. "We currently rely on the rate limits of the model to maximize embedded documents per time. We currently do not include any safety buffer since token approximations are rounded up. Some providers also indicate rate limits in headers (https://platform.openai.com/docs/guides/rate-limits/rate-limits-in-headers) which could possibly be relevant for us. See also: https://github.com/openai/openai-cookbook/blob/a74a7a7940928d504f6e9f7300ddef7f47e8659d/examples/api_request_parallel_processor.py"
-	requestsPerMinute := 1. "adjust at will"
+	requestsPerMinute := 1 minute // 4 seconds. "for smoother progress updates"
 	
 	model := self embeddingModel.
-	(model respondsTo: #requestsPerMinute)
-		ifTrue: [requestsPerMinute := requestsPerMinute clampHigh: model requestsPerMinute].
-	tokensPerRequest := (model respondsTo: #tokensPerMinute)
-		ifTrue: [model tokensPerMinute / requestsPerMinute]
-		ifFalse: [Float infinity].
-	stringsPerRequest := (model respondsTo: #maxStringsPerRequest)
-		ifTrue: [model maxStringsPerRequest]
-		ifFalse: [Float infinity].
+	(model respondsTo: #requestsPerMinute) ifTrue:
+		[model requestsPerMinute ifNotNil: [:modelRequestsPerMinute |
+			requestsPerMinute := requestsPerMinute clampHigh: modelRequestsPerMinute]].
+	tokensPerRequest := ((model respondsTo: #tokensPerMinute)
+		ifTrue: [model tokensPerMinute])
+			ifNotNil: [:tokensPerMinute | tokensPerMinute / requestsPerMinute]
+			ifNil: [Float infinity].
+	stringsPerRequest := ((model respondsTo: #maxStringsPerRequest)
+		ifTrue: [model maxStringsPerRequest])
+			ifNil: [Float infinity].
 	
-	((model respondsTo: #pricePerMinute)
-		ifTrue: ['Initializing embeddings (approx {1} per minute)...' format: {model pricePerMinute}]
-		ifFalse: ['Initializing embeddings...']) semanticDisplayRichProgressFrom: 0 to: someDocuments size during: [:bar |
+	(((model respondsTo: #pricePerMinute) ifTrue: [model pricePerMinute])
+		ifNotNil: [:pricePerMinute | 'Initializing embeddings (approx {1} per minute)...' format: {pricePerMinute}]
+		ifNil: ['Initializing embeddings...']) semanticDisplayRichProgressFrom: 0 to: someDocuments size during: [:bar |
 		
 		| nextRequest |
 		nextRequest := DateAndTime now.

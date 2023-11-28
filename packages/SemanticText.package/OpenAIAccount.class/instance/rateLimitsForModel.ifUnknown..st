@@ -1,5 +1,5 @@
 accessing - rate limits
-rateLimitForModel: modelName set: requestsAndTokensPerMinute
+rateLimitsForModel: modelName ifUnknown: aBlock
 	"See: https://platform.openai.com/account/rate-limits. Hypothetically we could scrape this, in practice, users may enter relevant rate limits manually."
 
-	self rateLimits at: modelName put: requestsAndTokensPerMinute.
+	^ self rateLimits at: modelName ifAbsent: aBlock

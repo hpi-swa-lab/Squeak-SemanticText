@@ -1,4 +1,0 @@
-initialize-release
-defaultSubscriptionState
-
-	^ nil

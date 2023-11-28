@@ -3,6 +3,6 @@ initialize
 
 	super initialize.
 	
-	self subscriptionState: self defaultSubscriptionState.
-	rateLimits := Dictionary new.
+	usageTier := self defaultUsageTier.
+	customRateLimits := Dictionary new.
 	self resetExpenses.

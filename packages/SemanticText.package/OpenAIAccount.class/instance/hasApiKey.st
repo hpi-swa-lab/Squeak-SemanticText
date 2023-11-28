@@ -1,4 +1,4 @@
-accessing - subscription
+testing
 hasApiKey
 
 	^ self apiKey notNil
