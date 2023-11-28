@@ -2,6 +2,7 @@ searching
 generateReply
 
 	| streamingMessage |
+	conversationRequirements := nil.
 	SemanticText assureConversationAvailableOr: [:requirements |
 		conversationRequirements := requirements.
 		^ self triggerUpdateContents].

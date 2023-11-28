@@ -13,11 +13,11 @@
 		"concurrentlyDoAll:" : "ct 8/20/2023 17:08",
 		"corpus" : "ct 8/14/2023 19:41",
 		"doSearch" : "ct 11/7/2023 09:28",
-		"doSemanticSearch" : "ct 10/15/2023 22:17",
-		"generateReply" : "ct 10/15/2023 22:17",
+		"doSemanticSearch" : "ct 11/28/2023 19:07",
+		"generateReply" : "ct 11/28/2023 19:07",
 		"makeCorpus" : "ct 8/20/2023 17:09",
 		"shouldGenerateReply" : "ct 11/7/2023 09:32",
 		"stopSearch" : "ct 11/7/2023 09:29",
 		"subtopics" : "ct 8/14/2023 21:04",
 		"updateContents" : "ct 8/18/2023 21:17",
-		"writeResultText" : "ct 10/15/2023 22:25" } }
+		"writeResultText" : "ct 11/28/2023 19:02" } }

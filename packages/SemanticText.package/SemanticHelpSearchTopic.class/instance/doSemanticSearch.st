@@ -1,6 +1,7 @@
 searching
 doSemanticSearch
 
+	searchRequirements := nil.
 	SemanticText assureSearchAvailableOr: [:requirements |
 		searchRequirements := requirements.
 		^ self triggerUpdateContents].

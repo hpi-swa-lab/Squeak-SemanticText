@@ -6,10 +6,13 @@ writeResultText
 	resultText append: ('<b>Semantic search results (experimental, powered by AI)</b><br><br>{1}<br><br>' asTextFromHtml format:
 		{searchRequirements
 			ifNotNil:
-				['<i>To enable semantic search (experimental, powered by AI), you need to {1}.</i>' asTextFromHtml format:
+				['<i>To enable semantic search (experimental, powered by AI), you need to {1}. {2}</i>' asTextFromHtml format:
 					{SemanticText
 						formatRequirements: searchRequirements
-						retry: [self startSearch]}]
+						retry: [self startSearch].
+					'Click here to retry.' asText
+						addAttribute: (PluggableTextAttribute evalBlock: [self startSearch]);
+						yourself}]
 			ifNil:
 				[resultTopics
 					ifNil: ['...']
@@ -26,10 +29,13 @@ writeResultText
 				[conversationRequirements
 					ifNotNil:
 						[resultText append:
-							('<i>To enable smart replies, you need to {1}.</i>' asTextFromHtml format:
+							('<i>To enable smart replies, you need to {1}. {2}</i>' asTextFromHtml format:
 								{SemanticText
 									formatRequirements: conversationRequirements
-									retry: [self startSearch]})]
+									retry: [self generateReply].
+								'Click here to retry.' asText
+									addAttribute: (PluggableTextAttribute evalBlock: [self generateReply]);
+									yourself})]
 					ifNil:
 						[resultText append: '<b>Smart reply (experimental, powered by AI)</b><br><br>' asTextFromHtml.
 						resultConversation ifNotNil:
