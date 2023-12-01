@@ -11,3 +11,5 @@ appMenu: menu
 	menu
 		add: 'self-update' target: self action: #doSelfUpdate;
 		balloonTextForLastItem: ('download and install the latest updates for {1}' format: {self appName}).
+	
+	^ menu
