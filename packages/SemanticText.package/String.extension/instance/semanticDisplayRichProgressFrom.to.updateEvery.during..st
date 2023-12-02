@@ -1,5 +1,5 @@
 *SemanticText-toolbuilder-kernel
-semanticDisplayRichProgressFrom: minVal to: maxVal updateEvery: msecs during: workBlock 
+semanticDisplayRichProgressFrom: minVal to: maxVal updateEvery: msecs during: workBlock  
 
 	| lastUpdate startTime dist progress remaining |
 	startTime := DateAndTime now.
@@ -14,7 +14,7 @@ semanticDisplayRichProgressFrom: minVal to: maxVal updateEvery: msecs during: wo
 					[progress := val / (maxVal - minVal).
 					remaining := startTime semanticRemainingTimeForProgress: progress.
 					ProgressNotification signal: '' extra:
-						((remaining ifNil: ['{1}... ({2}%)'] ifNotNil: ['{1}... ({2}%, {3} remaining)'])
+						((remaining ifNil: ['{1} ({2}%)'] ifNotNil: ['{1} ({2}%, {3} remaining)'])
 							format: {
 								self.
 								(progress * 100s2) printFractionAsDecimal.
