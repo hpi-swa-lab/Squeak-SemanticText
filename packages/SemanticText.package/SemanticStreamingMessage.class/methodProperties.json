@@ -3,7 +3,7 @@
 		"role:inBackgroundDo:" : "ct 8/26/2023 20:19" },
 	"instance" : {
 		"addChunk:" : "ct 8/13/2023 18:52",
-		"beComplete" : "ct 8/13/2023 18:47",
+		"beComplete" : "ct 12/5/2023 20:35",
 		"cancel" : "ct 8/16/2023 21:55",
 		"content" : "ct 8/16/2023 21:22",
 		"cursorText" : "ct 8/19/2023 19:24",
@@ -12,7 +12,7 @@
 		"isStreaming" : "ct 8/13/2023 17:27",
 		"process" : "ct 8/13/2023 18:45",
 		"process:" : "ct 8/13/2023 18:45",
-		"sendUpdatesFromTextModel:selector:" : "ct 8/19/2023 20:59",
+		"sendUpdatesFromTextModel:selector:" : "ct 12/5/2023 20:36",
 		"veryDeepCopyWith:" : "ct 8/16/2023 22:40",
 		"veryDeepFixupActionMapWith:" : "ct 8/17/2023 14:57",
 		"veryDeepFixupWith:" : "ct 8/16/2023 22:48",

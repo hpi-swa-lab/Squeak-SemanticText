@@ -7,8 +7,9 @@ addWelcomeMessageTo: aConversation
 	(messageMarkups ifNil: [messageMarkups := WeakIdentityKeyDictionary new])
 		at: aConversation lastMessage put:
 			(Dictionary new
-				at: '[Learn more]' put: [self showHelp];
-				at: '[Don''t show again]' put: [self dontShowWelcomeMessage];
+				at: '[Learn more]' put: #showHelp;
+				at: '[Don''t show again]' put: #dontShowWelcomeMessage;
 				collect: [:action |
 					{TextEmphasis underlined.
-					PluggableTextAttribute evalBlock: action}]).
+					PluggableTextAttribute evalBlock:
+						(WeakMessageSend receiver: self selector: action)}]).

@@ -18,7 +18,7 @@ generateReply
 	self dependents do: [:dep |
 		((dep respondsTo: #currentTopic) and: [dep currentTopic == self]) ifTrue:
 			[streamingMessage sendUpdatesFromTextModel: dep selector: #topicContents]].
-	streamingMessage when: #completed evaluate:
-		[self triggerUpdateContents].
+	streamingMessage when: #completed send: #triggerUpdateContents to: self.
 	
-	streamingMessage process priority: process priority + 1 "to make stream look fluent".
+	streamingMessage process ifNotNil: [:streamingProcess |
+		streamingProcess priority: process priority + 1 "to make stream look fluent"].
