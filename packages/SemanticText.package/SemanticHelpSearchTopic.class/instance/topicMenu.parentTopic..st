@@ -1,4 +1,4 @@
-as yet unclassified
+menus
 topicMenu: menu parentTopic: parentTopic
 
 	^ (super topicMenu: menu parentTopic: parentTopic)
