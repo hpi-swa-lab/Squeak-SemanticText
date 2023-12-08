@@ -1,4 +1,7 @@
 fileIn/Out
 fromStream: aStream
 
-	^ self new readFrom: aStream
+	| class speciesName |
+	speciesName := aStream nextLine.
+	class := self environment classNamed: speciesName.
+	^ class new readFrom: aStream
