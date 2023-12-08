@@ -1,7 +1,7 @@
 embeddings
 initializeEmbeddingsFor: someDocuments
 
-	| requestsPerMinute model tokensPerRequest stringsPerRequest |
+	| requestsPerMinute model tokensPerRequest stringsPerRequest iterator |
 	"Update documents in chunks to minimize model overhead. Honor rate limits."
 	self flag: #magicNumbers. "We currently rely on the rate limits of the model to maximize embedded documents per time. We currently do not include any safety buffer since token approximations are rounded up. Some providers also indicate rate limits in headers (https://platform.openai.com/docs/guides/rate-limits/rate-limits-in-headers) which could possibly be relevant for us. See also: https://github.com/openai/openai-cookbook/blob/a74a7a7940928d504f6e9f7300ddef7f47e8659d/examples/api_request_parallel_processor.py"
 	requestsPerMinute := 1 minute // 4 seconds. "for smoother progress updates"
@@ -18,10 +18,14 @@ initializeEmbeddingsFor: someDocuments
 		ifTrue: [model maxStringsPerRequest])
 			ifNil: [Float infinity].
 	
-	(((model respondsTo: #pricePerMinute) ifTrue: [model pricePerMinute])
-		ifNotNil: [:pricePerMinute | 'Initializing embeddings (approx {1} per minute)...' format: {pricePerMinute}]
-		ifNil: ['Initializing embeddings...']) semanticDisplayRichProgressFrom: 0 to: someDocuments size during: [:bar |
-		
+	"show progress bar for more than 1 new documents"
+	iterator := someDocuments size > 1
+		ifTrue: [[:block | (((model respondsTo: #pricePerMinute) ifTrue: [model pricePerMinute])
+			ifNotNil: [:pricePerMinute | 'Initializing embeddings (approx {1} per minute)...' format: {pricePerMinute}]
+			ifNil: ['Initializing embeddings...']) semanticDisplayRichProgressFrom: 0 to: someDocuments size during: block]]
+		ifFalse: [[:block | block value: [:position |]]].
+	
+	iterator value: [:bar |
 		| nextRequest |
 		nextRequest := DateAndTime now.
 		someDocuments asArray readStream in: [:fullStream |
