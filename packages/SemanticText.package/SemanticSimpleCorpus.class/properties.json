@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Search",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SemanticSimpleCorpus",
+	"pools" : [
+		 ],
+	"super" : "SemanticCorpus",
+	"type" : "normal" }
