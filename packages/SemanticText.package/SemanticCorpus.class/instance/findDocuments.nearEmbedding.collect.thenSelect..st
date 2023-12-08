@@ -17,7 +17,7 @@ findDocuments: number nearEmbedding: embedding collect: collectBlock thenSelect:
 	objects := objects withoutDuplicates.
 	selectBlock ifNotNil:
 		[objects := objects select: selectBlock].
-	(objects size >= number or: [number * n >= documents size]) ifTrue:
+	(objects size >= number or: [number * n >= self documents size]) ifTrue:
 		[^ objects take: number].
 	n := n squared]
 		repeat.

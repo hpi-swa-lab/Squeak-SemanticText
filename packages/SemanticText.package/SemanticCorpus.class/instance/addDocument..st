@@ -1,4 +1,4 @@
 construction
 addDocument: aDocument
 
-	^ documents add: aDocument
+	^ self documents add: aDocument
