@@ -2,6 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
+		"semanticAsk:" : "ct 11/27/2023 17:01",
+		"semanticAskQuestionAboutIt" : "ct 11/27/2023 17:01",
 		"semanticDisplayRichProgressFrom:to:during:" : "ct 8/15/2023 14:41",
 		"semanticDisplayRichProgressFrom:to:updateEvery:during:" : "ct 12/2/2023 01:17",
 		"semanticExplain" : "ct 11/22/2023 21:06",
