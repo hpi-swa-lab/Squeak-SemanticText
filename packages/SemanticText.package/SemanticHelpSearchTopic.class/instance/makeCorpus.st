@@ -10,11 +10,9 @@ makeCorpus
 			(rootTopic semanticDeepSubtopicsSkip: [:topic |
 				topic title = 'All message categories'])].
 	
-	newCorpus := SemanticPluggableCorpus titleBlock: #title contentBlock: #contents.
+	newCorpus := self class makeNewCorpus.
 	allTopics do: [:topic |
-		newCorpus addAllDocuments:
-			(self cachedDocumentsFor: topic ifAbsentPut:
-				[newCorpus addFragmentDocumentsFrom: topic])].
-	newCorpus updateEmbeddings.
+		newCorpus addFragmentDocumentsFrom: topic].
+	self class updateEmbeddingsIn: newCorpus.
 	
 	^ newCorpus

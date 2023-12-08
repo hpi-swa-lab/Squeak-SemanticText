@@ -4,7 +4,8 @@
 		 ],
 	"classvars" : [
 		"AutomaticSmartReplies",
-		"DocumentCache",
+		"CachedEmbeddings",
+		"DefaultCorpus",
 		"EnableSemanticHelpSearch" ],
 	"commentStamp" : "ct 8/20/2023 17:06",
 	"instvars" : [
