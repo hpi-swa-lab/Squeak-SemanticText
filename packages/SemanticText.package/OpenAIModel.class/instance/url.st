@@ -1,4 +1,4 @@
 private
 url
 
-	^ self server , self pathToEndpoint
+	^ self baseUrl , self pathToEndpoint
