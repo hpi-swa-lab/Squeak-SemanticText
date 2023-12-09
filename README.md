@@ -23,6 +23,10 @@ For more details, install the package and dive into the class comments, or read 
 	    <strong><a href="#openai-api-expense-watcher">OpenAI API Expense Watcher</a></strong>
 		<img alt="OpenAI API Expense Watcher: self totalExpense of an OpenAIAccount: ¢2.92 + approx ¢24.8" src="./assets/expenseWatcher.png" />
 	  </p>
+	  <p>
+	    <strong><a href="#editor-integration">Editor Integration: Explain It / Summarize It</a></strong>
+		<img alt="Context menu on text field with class comment for SemanticCorpus: explain it, summarize, ask question about it..." src="./assets/explainIt.png">
+	  </p>
 	</td>
 	<td width="50%">
 	  <p>
@@ -118,6 +122,10 @@ resultsTopic browse.
 "RAG"
 (corpus newConversationForQuery: 'internet connection') open.
 ```
+
+### Editor Integration
+
+Yellow-click on any text editor (optionally select a portion of text before that), click <kbd>more...</kbd>, and select one of <kbd>explain it</kbd>, <kbd>summarize it</kbd>, and <kbd>ask question about it...</kbd>. Or shortly via keyboard: <kbd>Esc</kbd>, <kbd>🔼</kbd>, <kbd>Enter</kbd>, <kbd>q</kbd>. 🤓
 
 ### Squeak Inbox Talk Integration
 
