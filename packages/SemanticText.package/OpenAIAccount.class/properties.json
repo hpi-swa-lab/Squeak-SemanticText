@@ -8,6 +8,7 @@
 	"instvars" : [
 		"baseUrl",
 		"apiKey",
+		"ignoreCertificate",
 		"usageTier",
 		"customRateLimits",
 		"expensesPerUser" ],

@@ -12,13 +12,14 @@ invokeWithConfig: aConfigOrNil editInput: inputBlock handleResponse: responseBlo
 	inputBlock ifNotNil:
 		[inputBlock cull: input cull: config].
 	
-	response := WebClient new
-		httpPost: self url
-		content: input asJsonString squeakToUtf8
-		type: 'application/json'
-		do: [:request |
-			self account apiKey ifNotNil: [:apiKey |
-				request headerAt: 'Authorization' put: 'Bearer ' , apiKey]].
+	response := self account controlConnectionDuring:
+		[WebClient new
+			httpPost: self url
+			content: input asJsonString squeakToUtf8
+			type: 'application/json'
+			do: [:request |
+				self account apiKey ifNotNil: [:apiKey |
+					request headerAt: 'Authorization' put: 'Bearer ' , apiKey]]].
 	
 	output := (responseBlock ifNotNil: [responseBlock cull: response cull: config])
 		ifNil: [response content utf8ToSqueak withoutTrailingBlanks parseAsJson].
