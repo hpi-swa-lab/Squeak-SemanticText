@@ -1,5 +1,5 @@
 search-embeddings
-findClusteredDocuments: number nearEmbedding: embedding
+basicFindClusteredDocuments: number nearEmbedding: embedding
 
 	| relatedClusters relatednesses |
 	self flag: #wip. "not ready for prime time, see comment in #initializeClusters"
@@ -16,5 +16,4 @@ findClusteredDocuments: number nearEmbedding: embedding
 	self flag: #optimize. "use flat array instead of associations and write custom sort method. 56% of runtime comes from #->."
 	
 	relatednesses sort: [:assoc1 :assoc2 | assoc1 value <= assoc2 value]. "faster than sort function"
-	self flag: #forLater. "provide similarity value"
-	^ (relatednesses take: number) collect: [:assoc | assoc key]
+	^ relatednesses take: number
