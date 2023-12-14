@@ -14,20 +14,18 @@ findDocuments: number nearEmbedding: embedding collect: collectBlock thenSelect:
 	[similarDocuments := self findDocuments: number * n nearEmbedding: embedding includeRanks: includeRanks.
 	objects := includeRanks
 		ifFalse: [(similarDocuments collect: collectBlock as: OrderedCollection) withoutDuplicates]
-		ifTrue: [(similarDocuments keys orderedGroupBy: collectBlock) associations].
+		ifTrue: [similarDocuments keys orderedGroupBy: collectBlock].
 	selectBlock ifNotNil:
-		[objects := objects select:
-			(includeRanks
-				ifFalse: [selectBlock]
-				ifTrue: [[:assoc | selectBlock value: assoc key]])].
+		[objects := includeRanks
+			ifFalse: [objects select: selectBlock]
+			ifTrue: [objects associations select: [:assoc | selectBlock value: assoc key]]].
 	(objects size >= number or: [number * n >= self documents size]) ifTrue:
 		[objects := objects take: number.
 		^ includeRanks
 			ifFalse: [objects]
 			ifTrue:
-				[objects
-					collect: [:assoc | assoc key ->
-						(assoc value collect: [:doc | similarDocuments at: doc]) max]
-					as: OrderedDictionary]].
+				[(objects isDictionary ifTrue: [objects] ifFalse: [objects as: OrderedDictionary])
+					collect: [:documents |
+						(documents collect: [:doc | similarDocuments at: doc]) max]]].
 	n := n squared]
 		repeat.
