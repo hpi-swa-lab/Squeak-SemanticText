@@ -13,11 +13,12 @@ Is there anything else I can do for you?' format:
 		{('{1} earlier message' asPluralBasedOn: messages size)
 			format: {messages size}.
 		messages ifEmpty: [''] ifNotEmpty:
-			[' that started with the {1} {2} and ended with the words {3}' format:
-				{'word' asPluralBasedOn: messages size.
+			[' that started with the {1} {2} and ended with the {3} {4}' format:
+				{'word' asPluralBasedOn: startWords size.
 				(startWords collect: [:word |
 					word ifNil: ['<nil>'] ifNotNil: ['"{1}"' format: {word}]])
 						asCommaStringAnd.
+				'word' asPluralBasedOn: endWords size.
 				(endWords collect: [:word |
 					word ifNil: ['<nil>'] ifNotNil: ['"{1}"' format: {word}]])
 						asCommaStringAnd}]}
