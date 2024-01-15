@@ -26,7 +26,7 @@ getAnswers: number for: aConversation config: aConfigOrNil
 				allAtEnd := true.
 				streams with: messages do: [:stream :message |
 					| chunk |
-					[stream atEnd] whileFalse:
+					stream atEnd ifFalse:
 						[0.05 seconds wait.
 						chunk := stream upToAnyOf: Character separators.
 						stream atEnd ifFalse:
