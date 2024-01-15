@@ -11,8 +11,9 @@ makeCorpus
 				topic title = 'All message categories'])].
 	
 	newCorpus := self class makeNewCorpus.
-	allTopics do: [:topic |
-		newCorpus addFragmentDocumentsFrom: topic].
-	self class updateEmbeddingsIn: newCorpus.
+	self cacheSourcesDuring:
+		[allTopics do: [:topic |
+			newCorpus addFragmentDocumentsFrom: topic].
+		self class updateEmbeddingsIn: newCorpus].
 	
 	^ newCorpus
