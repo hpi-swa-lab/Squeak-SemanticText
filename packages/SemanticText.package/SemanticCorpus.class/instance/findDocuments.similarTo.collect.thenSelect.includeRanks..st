@@ -2,6 +2,8 @@ search
 findDocuments: number similarTo: documents collect: collectBlock thenSelect: selectBlock includeRanks: includeRanks
 
 	| classifiedDocuments average |
+	self flag: #todo. "Maybe do search for each element instead of average?"
+	
 	classifiedDocuments := (documents reject: [:doc | doc embedding isNil]) asArray.
 	classifiedDocuments ifEmpty:
 		[^ includeRanks
