@@ -12,6 +12,8 @@ getAnswers: number for: aConversation config: aConfigOrNil
 			
 			config temperature ifNotNil: [:temperature |
 				input temperature: temperature].
+			config nucleusSamplingMass ifNotNil: [:p |
+				input top_p: p].
 			
 			stream := false.
 			config shouldStream ifNotNil: [:shouldStream |
