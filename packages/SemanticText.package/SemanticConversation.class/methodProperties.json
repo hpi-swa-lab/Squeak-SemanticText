@@ -1,6 +1,8 @@
 {
 	"class" : {
 		"example" : "ct 8/17/2023 20:07",
+		"examplePlural" : "ct 1/8/2024 23:08",
+		"examplePluralStreaming" : "ct 1/9/2024 00:33",
 		"exampleStreaming" : "ct 1/9/2024 00:32",
 		"newStreaming" : "ct 8/19/2023 21:32" },
 	"instance" : {
@@ -16,6 +18,8 @@
 		"defaultModel" : "ct 8/17/2023 19:04",
 		"estimatePriceToGetAssistantMessage" : "ct 1/9/2024 10:37",
 		"getAssistantMessage" : "ct 8/17/2023 18:58",
+		"getAssistantMessages:" : "ct 1/15/2024 16:41",
+		"getAssistantReplies:" : "ct 1/8/2024 22:35",
 		"getAssistantReply" : "ct 8/19/2023 21:30",
 		"initialize" : "ct 8/17/2023 19:04",
 		"lastMessage" : "ct 10/15/2023 18:11",
@@ -24,6 +28,7 @@
 		"model" : "ct 8/17/2023 17:39",
 		"model:" : "ct 8/17/2023 17:39",
 		"open" : "ct 8/17/2023 16:58",
+		"postCopy" : "ct 1/15/2024 16:41",
 		"releaseForEventReceiver:" : "ct 12/5/2023 20:33",
 		"shouldStream" : "ct 8/19/2023 21:32",
 		"shouldStream:" : "ct 8/19/2023 21:32",

@@ -1,4 +1,4 @@
 service
 getAnswerFor: aConversation
 
-	^ self getAnswerFor: aConversation config: nil
+	^ self getAnswers: 1 for: aConversation

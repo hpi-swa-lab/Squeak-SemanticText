@@ -1,8 +1,8 @@
 private
-parseMessageFrom: chatCompletion
+parseMessageFrom: chatCompletionChoice
 
 	| messageResult |
-	messageResult := chatCompletion choices first message.
+	messageResult := chatCompletionChoice message.
 	^ SemanticMessage
 		role: messageResult role
 		content: messageResult content
