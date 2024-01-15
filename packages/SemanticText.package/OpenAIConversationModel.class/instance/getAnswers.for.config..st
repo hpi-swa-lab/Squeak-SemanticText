@@ -7,6 +7,8 @@ getAnswers: number for: aConversation config: aConfigOrNil
 		invokeWithConfig: aConfigOrNil
 		editInput: [:input :config |
 			input n: number.
+			config maxTokens ifNotNil: [:maxTokens |
+				input max_tokens: maxTokens].
 			
 			config temperature ifNotNil: [:temperature |
 				input temperature: temperature].

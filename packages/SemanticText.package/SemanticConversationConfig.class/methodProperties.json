@@ -2,6 +2,8 @@
 	"class" : {
 		"newStreaming" : "ct 8/21/2023 02:28" },
 	"instance" : {
+		"maxTokens" : "ct 1/15/2024 17:15",
+		"maxTokens:" : "ct 1/15/2024 17:15",
 		"shouldStream" : "ct 8/19/2023 21:37",
 		"shouldStream:" : "ct 8/19/2023 21:37",
 		"temperature" : "ct 8/19/2023 21:40",
