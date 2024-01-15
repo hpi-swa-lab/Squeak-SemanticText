@@ -1,0 +1,4 @@
+accessing
+minCents
+
+	^ self exactCents
