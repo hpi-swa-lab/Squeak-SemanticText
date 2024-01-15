@@ -2,7 +2,7 @@ service
 getAnswers: number for: aConversation config: aConfigOrNil
 	"Generate <number> assistant replies in response to aConversation. Answer a collection of new SemanticMessages for each new reply. If #shouldStream is set to true, the answers will be SemanticStreamingMessages that are completed in the background."
 
-	| stream chatCompletion |
+	| chatCompletion logRawOutput stream |
 	chatCompletion := self
 		invokeWithConfig: aConfigOrNil
 		editInput: [:input :config |
@@ -17,6 +17,9 @@ getAnswers: number for: aConversation config: aConfigOrNil
 			
 			config shouldLogProbabilities ifNotNil: [:shouldLogProbabilities |
 				input logprobs: shouldLogProbabilities].
+			logRawOutput := false.
+			config shouldLogRawOutput ifNotNil: [:shouldLogRawOutput |
+				logRawOutput := shouldLogRawOutput].
 			
 			stream := false.
 			config shouldStream ifNotNil: [:shouldStream |
@@ -31,6 +34,6 @@ getAnswers: number for: aConversation config: aConfigOrNil
 						yourself])]
 		handleResponse: [:response :config |
 			(stream and: [response isSuccess]) ifTrue:
-				[^ self handleStreamingReplies: number for: aConversation from: response config: config]].
+				[^ self handleStreamingReplies: number for: aConversation from: response config: config logRawOutput: logRawOutput]].
 	
-	^ self parseMessagesFrom: chatCompletion
+	^ self parseMessagesFrom: chatCompletion logRawOutput: logRawOutput

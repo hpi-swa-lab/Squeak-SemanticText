@@ -8,7 +8,8 @@
 	"instvars" : [
 		"role",
 		"content",
-		"tokenProbabilities" ],
+		"tokenProbabilities",
+		"rawOutput" ],
 	"name" : "SemanticMessage",
 	"pools" : [
 		 ],

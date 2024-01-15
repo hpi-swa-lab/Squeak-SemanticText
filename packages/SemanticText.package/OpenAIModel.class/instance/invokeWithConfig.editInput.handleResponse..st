@@ -11,6 +11,9 @@ invokeWithConfig: aConfigOrNil editInput: inputBlock handleResponse: responseBlo
 		yourself.
 	inputBlock ifNotNil:
 		[inputBlock cull: input cull: config].
+	config openAIRawConfig ifNotNil: [:rawConfig |
+		rawConfig keysAndValuesDo: [:key :value |
+			input at: key put: value]].
 	
 	response := self account controlConnectionDuring:
 		[WebClient new
