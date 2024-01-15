@@ -1,8 +1,15 @@
 private
 parseMessageFrom: chatCompletionChoice
 
-	| messageResult |
+	| messageResult message |
 	messageResult := chatCompletionChoice message.
-	^ SemanticMessage
+	message := SemanticMessage
 		role: messageResult role
-		content: messageResult content
+		content: messageResult content.
+	
+	chatCompletionChoice logprobs ifNotNil: [:logprobs |
+		| tokenProbabilities |
+		tokenProbabilities := self parseTokenProbabilitiesFrom: logprobs.
+		message tokenProbabilities: tokenProbabilities].
+	
+	^ message

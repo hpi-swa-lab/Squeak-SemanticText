@@ -15,6 +15,9 @@ getAnswers: number for: aConversation config: aConfigOrNil
 			config nucleusSamplingMass ifNotNil: [:p |
 				input top_p: p].
 			
+			config shouldLogProbabilities ifNotNil: [:shouldLogProbabilities |
+				input logprobs: shouldLogProbabilities].
+			
 			stream := false.
 			config shouldStream ifNotNil: [:shouldStream |
 				stream := shouldStream.
