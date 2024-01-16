@@ -8,5 +8,5 @@ array: size role: role inBackgroundDo: streamBlock
 		ensure: [messages do: [:message | message beComplete]]]
 			forkAt: Processor userBackgroundPriority.
 	messages do: [:message |
-		message process: message].
+		message process: process].
 	^ messages
