@@ -6,5 +6,7 @@ asOpenAIObject
 			{[self type isNil] -> [JsonObject new].
 			[self type isString] -> [JsonObject new type: self type; yourself]}
 		otherwise: [self type])
-			description: self description;
+			in: [:json |
+				self description ifNotNil:
+					[json description: self description]];
 			yourself

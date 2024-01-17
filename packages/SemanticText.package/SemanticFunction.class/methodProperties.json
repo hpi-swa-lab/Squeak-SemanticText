@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"fromSignatureString:" : "ct 1/16/2024 14:12",
+		"fromSignatureString:" : "ct 1/17/2024 02:33",
 		"fromSignatureString:action:" : "ct 1/15/2024 23:39",
 		"fromString:" : "ct 1/15/2024 21:20",
 		"fromString:action:" : "ct 1/15/2024 23:33",
@@ -14,7 +14,7 @@
 		"addParameter:description:type:required:" : "ct 10/13/2023 23:23",
 		"addParameter:type:" : "ct 1/16/2024 00:30",
 		"addParameter:type:required:" : "ct 1/16/2024 00:30",
-		"asOpenAIObject" : "ct 1/16/2024 00:20",
+		"asOpenAIObject" : "ct 1/17/2024 02:32",
 		"asOpenAIToolChoiceObject" : "ct 1/16/2024 00:19",
 		"asToolCall" : "ct 1/17/2024 00:46",
 		"defaultParameters" : "ct 1/15/2024 23:10",

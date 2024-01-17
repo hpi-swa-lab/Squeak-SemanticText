@@ -6,7 +6,9 @@ asOpenAIObject
 		function:
 			(OrderedJsonObject new
 				name: self name;
-				description: self description;
+				in: [:json |
+					self description ifNotNil:
+						[json description: self description]];
 				parameters:
 					(JsonObject new
 						type: #object;

@@ -8,14 +8,14 @@ fromSignatureString: aStringOrStream
 		(?<name>
 			[a-zA-Z0-9_-]{1,64}
 		)
-		\s+
+		\s*
 		( # comment
 			\"
 			(?<comment>
 				[^\"]*
 			)?
 			\"
-		)
+		)?
 		\s*
 		( # parameter list
 			\(
