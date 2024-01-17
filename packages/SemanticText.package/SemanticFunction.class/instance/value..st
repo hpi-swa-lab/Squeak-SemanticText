@@ -1,4 +1,4 @@
 calling
 value: arguments
 
-	^ self action value: arguments
+	^ self action cull: arguments
