@@ -1,0 +1,1 @@
+I associate a part of a SemanticConversationEditor text with an existing SemanticToolSpec. My usage is optional but makes it possible to prolong the lifecycle of messages after editing.

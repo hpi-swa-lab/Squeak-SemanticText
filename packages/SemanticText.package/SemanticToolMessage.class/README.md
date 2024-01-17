@@ -1,0 +1,1 @@
+I represent the output of calling a tool such as SemanticFunction that was requested via a SemanticToolCall.

@@ -1,5 +1,9 @@
 accessing
 text: aText
 
-	self conversation messages: (self messagesFromText: aText) asOrderedCollection.
+	| messagesAndToolSpecs |
+	messagesAndToolSpecs := self messagesAndToolSpecsFromText: aText.
+	self conversation
+		messages: messagesAndToolSpecs first asOrderedCollection;
+		toolSpecs: messagesAndToolSpecs second.
 	self changed: #text.

@@ -1,0 +1,14 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"addChunkKey:tool:arguments:do:" : "ct 1/16/2024 19:03",
+		"beComplete" : "ct 1/16/2024 18:17",
+		"cursorText" : "ct 1/16/2024 18:22",
+		"initialize" : "ct 1/16/2024 18:15",
+		"isComplete" : "ct 1/16/2024 18:16",
+		"isStreaming" : "ct 1/16/2024 18:16",
+		"printCallArgumentsOn:" : "ct 1/16/2024 18:21",
+		"veryDeepFixupActionMapWith:" : "ct 1/16/2024 18:18",
+		"veryDeepFixupWith:" : "ct 1/16/2024 18:18",
+		"waitUntilComplete" : "ct 1/16/2024 18:16" } }

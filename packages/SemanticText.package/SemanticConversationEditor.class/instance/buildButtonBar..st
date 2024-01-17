@@ -17,7 +17,15 @@ buildButtonBar: builder
 				add:
 					(builder pluggableActionButtonSpec new
 						model: self;
+						label: #advancedModeLabel;
+						action: #toggleAdvancedMode;
+						state: #isAdvancedMode;
+						yourself);
+				add:
+					(builder pluggableActionButtonSpec new
+						model: self;
 						label: 'Complete';
+						help: 'Complete this conversation (s)';
 						action: #complete;
 						enabled: #canComplete;
 						yourself);

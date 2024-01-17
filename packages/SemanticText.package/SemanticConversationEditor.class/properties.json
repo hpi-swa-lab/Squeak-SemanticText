@@ -7,6 +7,7 @@
 	"commentStamp" : "ct 8/26/2023 22:51",
 	"instvars" : [
 		"conversation",
+		"mode",
 		"messageMarkups" ],
 	"name" : "SemanticConversationEditor",
 	"pools" : [

@@ -5,3 +5,4 @@ postCopy
 	
 	config := config copy.
 	messages := messages copy.
+	toolSpecs := toolSpecs copy.

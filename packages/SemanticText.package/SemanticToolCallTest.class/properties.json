@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Conversation-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SemanticToolCallTest",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

@@ -1,0 +1,1 @@
+I am a SemanticToolCall that is streamed from a model as part of a SemanticStreamingMessage, i.e., my content (tool, arguments, ...) will appended in chunks over time. Users can listen to my #newChunk and #completed events.

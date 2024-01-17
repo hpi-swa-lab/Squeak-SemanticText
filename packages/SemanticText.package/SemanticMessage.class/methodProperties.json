@@ -2,12 +2,16 @@
 	"class" : {
 		"role:content:" : "ct 6/22/2023 17:28" },
 	"instance" : {
+		"asOpenAIObject" : "ct 1/16/2024 20:41",
 		"basicContent" : "ct 8/13/2023 18:48",
+		"basicToolCalls" : "ct 1/16/2024 20:40",
 		"content" : "ct 6/22/2023 17:28",
 		"content:" : "ct 6/22/2023 17:28",
 		"contentWithStyledProbabilities" : "ct 1/15/2024 19:36",
+		"hasToolCalls" : "ct 1/16/2024 20:41",
 		"isStreaming" : "ct 8/13/2023 17:26",
-		"postCopy" : "ct 1/15/2024 20:22",
+		"isToolMessage" : "ct 1/16/2024 01:27",
+		"postCopy" : "ct 1/16/2024 17:31",
 		"printOn:" : "ct 1/17/2024 01:00",
 		"printRoleOn:" : "ct 1/17/2024 01:01",
 		"probability" : "ct 1/15/2024 19:38",
@@ -15,5 +19,9 @@
 		"rawOutput:" : "ct 1/15/2024 20:10",
 		"role" : "ct 6/22/2023 17:28",
 		"role:" : "ct 6/22/2023 17:28",
+		"streamingToolCalls" : "ct 1/16/2024 20:41",
 		"tokenProbabilities" : "ct 1/15/2024 19:35",
-		"tokenProbabilities:" : "ct 1/15/2024 19:36" } }
+		"tokenProbabilities:" : "ct 1/15/2024 19:36",
+		"toolCalls" : "ct 1/16/2024 20:40",
+		"toolCalls:" : "ct 1/16/2024 23:17",
+		"waitUntilComplete" : "ct 1/16/2024 20:47" } }

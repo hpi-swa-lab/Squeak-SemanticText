@@ -1,8 +1,9 @@
 private
 handleStreamingReplies: number for: aConversation from: aWebResponse config: aConfig logRawOutput: logRawOutput
 
-	| promptTokens |
+	| promptTokens toolSpec |
 	promptTokens := self countTokensInConversation: aConversation.
+	toolSpec := aConversation activeToolSpec.
 	
 	^ SemanticStreamingMessage array: number role: #assistant inBackgroundDo: [:messages |
 		[| dataStream data |
@@ -28,7 +29,7 @@ handleStreamingReplies: number for: aConversation from: aWebResponse config: aCo
 			chunk choices do: [:choice |
 				| message |
 				message := messages at: choice index + 1.
-				self parseStreamedChunk: choice addTo: message rawChatCompletionChunk: (logRawOutput ifTrue: [chunk]).
+				self parseStreamedChunk: choice toolSpec: toolSpec addTo: message rawChatCompletionChunk: (logRawOutput ifTrue: [chunk]).
 				choice finish_reason ifNotNil: [message beComplete]]].
 		self assert: dataStream next isNil]
 			

@@ -27,13 +27,12 @@ getAnswers: number for: aConversation config: aConfigOrNil
 				input stream: stream].
 			
 			input messages:
-				(aConversation messages collect: [:message |
-					JsonObject new
-						role: message role;
-						content: message content;
-						yourself])]
+				(aConversation messages collect: [:message | message asOpenAIObject]).
+			
+			aConversation activeToolSpec ifNotNil: [:toolSpec |
+				self addToolSpec: toolSpec toInput: input]]
 		handleResponse: [:response :config |
 			(stream and: [response isSuccess]) ifTrue:
 				[^ self handleStreamingReplies: number for: aConversation from: response config: config logRawOutput: logRawOutput]].
 	
-	^ self parseMessagesFrom: chatCompletion logRawOutput: logRawOutput
+	^ self parseMessagesFrom: chatCompletion toolSpec: aConversation activeToolSpec logRawOutput: logRawOutput

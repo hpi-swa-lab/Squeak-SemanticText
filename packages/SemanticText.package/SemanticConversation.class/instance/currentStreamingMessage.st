@@ -4,6 +4,6 @@ currentStreamingMessage
 
 	| message |
 	self messages ifEmpty: [^ nil].
-	message := self messages last.
+	message := self lastMessage.
 	^ (message isStreaming and: [message isComplete not])
 		ifTrue: [message]

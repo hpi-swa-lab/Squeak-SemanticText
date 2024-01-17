@@ -1,0 +1,4 @@
+accessing
+toolCalls
+
+	^ toolCalls ifNil: [#()]

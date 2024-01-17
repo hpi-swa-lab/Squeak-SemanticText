@@ -1,5 +1,5 @@
 private
-parseMessageFrom: chatCompletionChoice rawChatCompletion: chatCompletionOrNil
+parseMessageFrom: chatCompletionChoice toolSpec: aToolSpecOrNil rawChatCompletion: chatCompletionOrNil
 
 	| messageResult message |
 	messageResult := chatCompletionChoice message.
@@ -14,9 +14,12 @@ parseMessageFrom: chatCompletionChoice rawChatCompletion: chatCompletionOrNil
 				chatCompletionChoice: chatCompletionChoice;
 				yourself)].
 	
+	messageResult tool_calls ifNotNil: [:toolCalls |
+		message toolCalls:
+			(self parseToolCallsFrom: toolCalls toolSpec: aToolSpecOrNil)].
+	
 	chatCompletionChoice logprobs ifNotNil: [:logprobs |
-		| tokenProbabilities |
-		tokenProbabilities := self parseTokenProbabilitiesFrom: logprobs.
-		message tokenProbabilities: tokenProbabilities].
+		message tokenProbabilities:
+			(self parseTokenProbabilitiesFrom: logprobs)].
 	
 	^ message

@@ -1,0 +1,1 @@
+I am a kind of tool that can be used in a SemanticConversation. I am specified through a SemanticToolSpec, requested to be called through a SemanticToolCall in a message's toolCalls, and my output is reported in a SemanticToolMessage.

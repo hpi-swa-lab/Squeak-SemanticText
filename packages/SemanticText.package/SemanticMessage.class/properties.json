@@ -8,6 +8,7 @@
 	"instvars" : [
 		"role",
 		"content",
+		"toolCalls",
 		"tokenProbabilities",
 		"rawOutput" ],
 	"name" : "SemanticMessage",

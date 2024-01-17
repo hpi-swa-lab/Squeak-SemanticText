@@ -1,0 +1,1 @@
+I am a request inside a SemanticMessage to call a tool such as a SemanticFunction with a set of arguments.

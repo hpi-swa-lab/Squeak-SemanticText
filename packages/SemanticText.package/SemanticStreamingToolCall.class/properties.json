@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Conversation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 1/17/2024 01:21",
+	"instvars" : [
+		"complete" ],
+	"name" : "SemanticStreamingToolCall",
+	"pools" : [
+		 ],
+	"super" : "SemanticToolCall",
+	"type" : "normal" }
