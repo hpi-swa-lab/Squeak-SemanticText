@@ -19,6 +19,12 @@ handleStreamingReplies: number for: aConversation from: aWebResponse config: aCo
 		[#('[DONE]' nil) includes: (data := dataStream next)] whileFalse:
 			[| chunk |
 			chunk := data utf8ToSqueak parseAsJson.
+			(chunk at: #error) ifNotNil: [:error |
+				OpenAIError
+					signalForType: error type
+					parameter: error param
+					code: error code
+					message: error message].
 			chunk choices do: [:choice |
 				| message |
 				message := messages at: choice index + 1.
