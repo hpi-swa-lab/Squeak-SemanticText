@@ -10,4 +10,4 @@ parseStreamedToolCallChunksFrom: toolCallChunks toolSpec: aToolSpecOrNil message
 			[newToolCalls at: index put:
 				(SemanticStreamingToolCall key: '' tool: ''arguments: '')].
 		self parseStreamedToolCallChunkFrom: toolCallChunk toolSpec: aToolSpecOrNil addTo: toolCall].
-	^ newToolCalls withKeysSorted
+	^ newToolCalls semanticWithKeysSorted

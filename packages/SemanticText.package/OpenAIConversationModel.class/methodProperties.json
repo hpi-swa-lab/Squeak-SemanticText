@@ -27,7 +27,7 @@
 		"parseMessagesFrom:toolSpec:logRawOutput:" : "ct 1/16/2024 00:46",
 		"parseStreamedChunk:toolSpec:addTo:rawChatCompletionChunk:" : "ct 1/16/2024 18:45",
 		"parseStreamedToolCallChunkFrom:toolSpec:addTo:" : "ct 1/16/2024 20:52",
-		"parseStreamedToolCallChunksFrom:toolSpec:message:" : "ct 1/16/2024 20:42",
+		"parseStreamedToolCallChunksFrom:toolSpec:message:" : "ct 1/17/2024 02:02",
 		"parseTokenProbabilitiesFrom:" : "ct 1/15/2024 19:37",
 		"parseToolCallFrom:toolSpec:" : "ct 1/16/2024 18:39",
 		"parseToolCallsFrom:toolSpec:" : "ct 1/16/2024 00:47",
