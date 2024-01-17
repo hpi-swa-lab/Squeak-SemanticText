@@ -1,9 +1,10 @@
 {
 	"class" : {
 		"example" : "ct 8/17/2023 20:07",
+		"exampleDeterminism" : "ct 1/17/2024 20:50",
 		"exampleEverything" : "ct 1/17/2024 02:34",
 		"exampleFunction" : "ct 1/17/2024 02:34",
-		"exampleFunctions" : "ct 1/17/2024 02:17",
+		"exampleFunctions" : "ct 1/17/2024 20:47",
 		"exampleMaxTokens" : "ct 1/15/2024 17:17",
 		"examplePlural" : "ct 1/8/2024 23:08",
 		"examplePluralStreaming" : "ct 1/9/2024 00:33",
