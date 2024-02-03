@@ -3,7 +3,6 @@
 		"initialize" : "ct 11/26/2023 21:46",
 		"unload" : "ct 8/20/2023 17:01" },
 	"instance" : {
-		"countTokensIn:" : "ct 8/20/2023 12:45",
 		"embeddingSize" : "ct 8/20/2023 12:44",
 		"getEmbeddingFor:" : "ct 8/20/2023 12:48",
 		"getEmbeddingFor:config:" : "ct 8/20/2023 12:52",

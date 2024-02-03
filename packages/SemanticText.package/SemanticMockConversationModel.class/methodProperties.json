@@ -8,4 +8,9 @@
 		"getAnswerFor:" : "ct 1/9/2024 00:14",
 		"getAnswerFor:config:" : "ct 1/8/2024 23:52",
 		"getAnswers:for:" : "ct 1/8/2024 23:42",
-		"getAnswers:for:config:" : "ct 1/15/2024 16:51" } }
+		"getAnswers:for:config:" : "ct 1/15/2024 16:51",
+		"priceFor:" : "ct 2/3/2024 21:49",
+		"priceFor:answers:" : "ct 2/4/2024 00:37",
+		"priceFor:answers:completionSize:" : "ct 2/4/2024 00:37",
+		"priceFor:completionSize:" : "ct 2/3/2024 21:49",
+		"priceForPrompt:" : "ct 2/4/2024 00:37" } }
