@@ -1,7 +1,7 @@
 pricing
 priceFor: aConversation
-	"Note: Prices are hardcoded and might not encompass any recent pricing updates by OpenAI."
+	"Note: Prices are hardcoded and might not encompass any recent pricing updates by OpenAI. Token counts are (upper) approximations."
 
 	^ self
 		priceFor: aConversation
-		completionSize: self maxCompletionTokens * 2 "this is really an upper approximation"
+		answers: 1

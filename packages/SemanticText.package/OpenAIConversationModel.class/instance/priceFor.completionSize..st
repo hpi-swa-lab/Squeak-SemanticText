@@ -1,10 +1,8 @@
 pricing
 priceFor: aConversation completionSize: completionSize
-	"Note: Prices are hardcoded and might not encompass any recent pricing updates by OpenAI."
+	"Note: Prices are hardcoded and might not encompass any recent pricing updates by OpenAI. Token counts are (upper) approximations."
 
-	| priceForCompletion priceForPrompt |
-	priceForPrompt := (OpenAIAmount approximateCents: self centsPerPromptToken)
-		* (self countTokensInConversation: aConversation).
-	priceForCompletion := (OpenAIAmount approximateCents: self centsPerCompletionToken)
-		* (completionSize / 2). "upper approximation, see OpenAIModel>>#countTokensIn:"
-	^ priceForPrompt + priceForCompletion
+	^ self
+		priceFor: aConversation
+		answers: 1
+		completionSize: completionSize

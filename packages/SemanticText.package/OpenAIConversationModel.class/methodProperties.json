@@ -32,7 +32,9 @@
 		"parseToolCallFrom:toolSpec:" : "ct 1/16/2024 18:39",
 		"parseToolCallsFrom:toolSpec:" : "ct 1/16/2024 00:47",
 		"pathToEndpoint" : "ct 8/17/2023 17:35",
-		"priceFor:" : "ct 1/17/2024 20:58",
-		"priceFor:completionSize:" : "ct 1/17/2024 20:58",
-		"priceForPrompt:" : "ct 12/14/2023 23:53",
+		"priceFor:" : "ct 2/3/2024 21:23",
+		"priceFor:answers:" : "ct 2/3/2024 22:04",
+		"priceFor:answers:completionSize:" : "ct 2/3/2024 21:24",
+		"priceFor:completionSize:" : "ct 2/3/2024 21:24",
+		"priceForPrompt:" : "ct 2/3/2024 21:23",
 		"streamEventDataFrom:" : "ct 8/20/2023 20:19" } }

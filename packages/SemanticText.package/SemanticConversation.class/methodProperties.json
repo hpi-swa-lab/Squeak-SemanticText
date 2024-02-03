@@ -28,6 +28,8 @@
 		"defaultModel" : "ct 8/17/2023 19:04",
 		"estimatePriceToGetAssistantMessage" : "ct 1/9/2024 10:37",
 		"estimatePriceToGetAssistantMessageOfSize:" : "ct 1/17/2024 20:58",
+		"estimatePriceToGetAssistantMessages:" : "ct 2/3/2024 21:22",
+		"estimatePriceToGetAssistantMessages:ofSize:" : "ct 2/3/2024 21:21",
 		"getAssistantMessage" : "ct 1/15/2024 23:52",
 		"getAssistantMessages:" : "ct 1/15/2024 23:53",
 		"getAssistantReplies:" : "ct 1/8/2024 22:35",
