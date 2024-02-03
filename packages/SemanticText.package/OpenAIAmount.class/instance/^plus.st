@@ -1,6 +1,6 @@
 arithmetic
-+ anotherExpense
++ anotherAmount
 
 	^ self species
-		exactCents: self exactCents + anotherExpense exactCents
-		approximateCents: self approximateCents + anotherExpense approximateCents
+		exactCents: self exactCents + anotherAmount exactCents
+		approximateCents: self approximateCents + anotherAmount approximateCents
