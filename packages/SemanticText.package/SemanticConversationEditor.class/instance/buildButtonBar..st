@@ -25,7 +25,7 @@ buildButtonBar: builder
 					(builder pluggableActionButtonSpec new
 						model: self;
 						label: 'Complete';
-						help: 'Complete this conversation (s)';
+						help: #helpForComplete;
 						action: #complete;
 						enabled: #canComplete;
 						yourself);
