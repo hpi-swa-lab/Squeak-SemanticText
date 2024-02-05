@@ -1,5 +1,6 @@
 copying
-updateWith: anotherConfig
+updateWith: anotherConfigOrNil
 
-	anotherConfig argumentsDo: [:name :value |
+	anotherConfigOrNil ifNil: [^ self].
+	anotherConfigOrNil argumentsDo: [:name :value |
 		self argumentAt: name put: value].

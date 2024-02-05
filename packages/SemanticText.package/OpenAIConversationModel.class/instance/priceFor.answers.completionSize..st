@@ -1,10 +1,15 @@
 pricing
-priceFor: aConversation answers: number completionSize: completionSize
+priceFor: aConversation answers: number completionSize: completionSizeOrNil
 	"Note: Prices are hardcoded and might not encompass any recent pricing updates by OpenAI. Token counts are (upper) approximations."
 
-	| priceForCompletion priceForPrompt |
+	| promptTokens completionTokens priceForPrompt priceForCompletion |
+	promptTokens := aConversation estimatePromptTokens.
+	completionTokens := aConversation maxCompletionTokens. "upper approximation!"
+	completionSizeOrNil ifNotNil:
+		[completionTokens := completionTokens max: (self maxCharactersInTokens: completionSizeOrNil)].
+	
 	priceForPrompt := (OpenAIAmount approximateCents: self centsPerPromptToken)
-		* (self countTokensInConversation: aConversation).
+		* promptTokens.
 	priceForCompletion := (OpenAIAmount approximateCents: self centsPerCompletionToken)
-		* (self maxTokensInStringOfSize: completionSize). "upper approximation, see OpenAIModel>>#countTokensIn:"
+		* completionTokens.
 	^ priceForPrompt + (priceForCompletion * number)

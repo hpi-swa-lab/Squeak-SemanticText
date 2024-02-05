@@ -1,4 +1,4 @@
 copying
-updatedWith: anotherConfig
+updatedWith: anotherConfigOrNil
 
-	^ self copy updateWith: anotherConfig
+	^ self copy updateWith: anotherConfigOrNil
