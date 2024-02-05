@@ -20,6 +20,9 @@
 		"maxTokensInStringOfSize:" : "ct 2/3/2024 21:19",
 		"name" : "ct 8/17/2023 17:25",
 		"name:" : "ct 8/17/2023 17:25",
+		"nameForRateLimits" : "ct 2/5/2024 20:07",
 		"pathToEndpoint" : "ct 8/17/2023 18:08",
 		"printOn:" : "ct 8/17/2023 20:05",
+		"requestsPerMinute" : "ct 2/5/2024 20:07",
+		"tokensPerMinute" : "ct 2/5/2024 20:08",
 		"url" : "ct 12/1/2023 23:28" } }

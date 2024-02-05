@@ -1,4 +1,4 @@
 initialize-release
 defaultName
 
-	^ self class gpt35Name
+	^ self class defaultModelNames first

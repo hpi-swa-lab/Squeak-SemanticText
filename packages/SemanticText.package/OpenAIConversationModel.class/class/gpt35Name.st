@@ -1,4 +1,5 @@
-constants
+constants - deprecated
 gpt35Name
 
-	^ 'gpt-3.5-turbo'
+	self deprecated: 'Use #gpt35TurboName instead'.
+	^ self gpt35TurboName
