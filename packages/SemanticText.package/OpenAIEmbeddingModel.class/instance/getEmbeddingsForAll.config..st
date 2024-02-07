@@ -7,6 +7,9 @@ getEmbeddingsForAll: strings config: aConfigOrNil
 	embeddingResult := self
 		invokeWithConfig: aConfigOrNil
 		editInput: [:input :config |
+			config user ifNotNil: [:user |
+				input user: user].
+			
 			input input: strings.
 			useBase64 ifTrue:
 				[input encoding_format: #base64]].

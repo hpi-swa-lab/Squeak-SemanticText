@@ -6,6 +6,9 @@ getAnswers: number for: aConversation config: aConfigOrNil
 	chatCompletion := self
 		invokeWithConfig: aConfigOrNil
 		editInput: [:input :config |
+			config user ifNotNil: [:user |
+				input user: user].
+			
 			input n: number.
 			config maxTokens ifNotNil: [:maxTokens |
 				input max_tokens: maxTokens].
