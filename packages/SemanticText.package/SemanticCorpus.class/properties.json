@@ -7,6 +7,7 @@
 	"commentStamp" : "ct 8/27/2023 23:21",
 	"instvars" : [
 		"embeddingModel",
+		"embeddingConfig",
 		"documents",
 		"clusters",
 		"swapFileName" ],

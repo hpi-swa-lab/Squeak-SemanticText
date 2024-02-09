@@ -11,6 +11,9 @@ getEmbeddingsForAll: strings config: aConfigOrNil
 				input user: user].
 			
 			input input: strings.
+			config embeddingSize ifNotNil: [:embeddingSize |
+				input dimensions: embeddingSize].
+			
 			useBase64 ifTrue:
 				[input encoding_format: #base64]].
 	

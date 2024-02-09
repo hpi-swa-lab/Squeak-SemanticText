@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Search",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SemanticEmbeddingConfig",
+	"pools" : [
+		 ],
+	"super" : "SemanticConfig",
+	"type" : "normal" }

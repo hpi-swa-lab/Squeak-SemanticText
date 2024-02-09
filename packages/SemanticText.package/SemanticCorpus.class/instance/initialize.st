@@ -4,4 +4,5 @@ initialize
 	super initialize.
 	
 	documents := Set new.
-	self embeddingModel: SemanticText defaultEmbeddingModel.
+	self embeddingModel: self defaultEmbeddingModel.
+	self embeddingConfig: self defaultEmbeddingConfig.

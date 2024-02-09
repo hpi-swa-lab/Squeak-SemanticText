@@ -1,10 +1,9 @@
 private
 embeddingModel: aModel
 
-	embeddingModel ifNil:
+	(embeddingModel isNil or: [embeddingModel = aModel]) ifTrue:
 		[embeddingModel := aModel.
 		^ self].
 	
-	self notify: 'If you change the embedding model, you will need to recompute all embeddings!'.
-	embeddingModel := aModel.
-	self halt initializeEmbeddings
+	self reinitializeEmbeddingsAround:
+		[embeddingModel := aModel].

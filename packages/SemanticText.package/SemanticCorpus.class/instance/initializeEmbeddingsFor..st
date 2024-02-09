@@ -52,7 +52,7 @@ initializeEmbeddingsFor: someDocuments
 				
 				((nextRequest - DateAndTime now) clampLow: 0 seconds) wait.
 				nextRequest := requestsPerMinute reciprocal minutes fromNow.
-				embeddings := model getEmbeddingsForAll: chunkTexts.
+				embeddings := model getEmbeddingsForAll: chunkTexts config: self embeddingConfig.
 				
 				chunk with: embeddings do: [:doc :embedding |
 					doc embedding: embedding].

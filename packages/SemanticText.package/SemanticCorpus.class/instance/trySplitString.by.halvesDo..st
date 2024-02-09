@@ -16,7 +16,7 @@ trySplitString: aString by: delimiter halvesDo: chunkBlock
 	[index := index + 1] doWhileTrue: [
 		| left  leftTokens diff |
 		left := (chunks first: index) joinSeparatedBy: delimiter.
-		leftTokens := embeddingModel countTokensIn: left.
+		leftTokens := self embeddingModel countTokensIn: left.
 		diff := (middle - leftTokens) abs.
 		diff >= bestDiff
 			ifFalse: [bestDiff := diff];
