@@ -8,6 +8,8 @@
 		"unload" : "ct 8/17/2023 20:12" },
 	"instance" : {
 		"centsPerToken" : "ct 2/7/2024 17:30",
+		"compressAllEmbeddings:toSize:" : "ct 2/9/2024 18:32",
+		"compressEmbedding:toSize:" : "ct 2/9/2024 18:32",
 		"defaultConfig" : "ct 2/7/2024 21:59",
 		"defaultName" : "ct 2/7/2024 17:46",
 		"expenseForUsage:" : "ct 8/20/2023 20:03",
