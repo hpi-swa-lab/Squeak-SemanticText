@@ -15,26 +15,27 @@ invokeWithConfig: aConfigOrNil editInput: inputBlock handleResponse: responseBlo
 		rawConfig keysAndValuesDo: [:key :value |
 			input at: key put: value]].
 	
-	response := self account controlConnectionDuring:
-		[WebClient new
-			httpPost: self url
-			content: input asJsonString squeakToUtf8
-			type: 'application/json'
-			do: [:request |
-				self account apiKey ifNotNil: [:apiKey |
-					request headerAt: 'Authorization' put: 'Bearer ' , apiKey]]].
+	self handleTransientServerErrorsDuring:
+		[response := self account controlConnectionDuring:
+			[WebClient new
+				httpPost: self url
+				content: input asJsonString squeakToUtf8
+				type: 'application/json'
+				do: [:request |
+					self account apiKey ifNotNil: [:apiKey |
+						request headerAt: 'Authorization' put: 'Bearer ' , apiKey]]].
 	
-	output := (responseBlock ifNotNil: [responseBlock cull: response cull: config])
-		ifNil: [response content utf8ToSqueak withoutTrailingBlanks parseAsJson].
+		output := (responseBlock ifNotNil: [responseBlock cull: response cull: config])
+			ifNil: [response content utf8ToSqueak withoutTrailingBlanks parseAsJson].
 	
-	response isSuccess ifFalse:
-		[| error |
-		error := output at: #error.
-		^ OpenAIError
-			signalForType: error type
-			parameter: error param
-			code: error code
-			message: error message].
+		response isSuccess ifFalse:
+			[| error |
+			error := output at: #error.
+			^ OpenAIError
+				signalForType: error type
+				parameter: error param
+				code: error code
+				message: error message]].
 	
 	output usage ifNotNil: [:usage |
 		| expense |
