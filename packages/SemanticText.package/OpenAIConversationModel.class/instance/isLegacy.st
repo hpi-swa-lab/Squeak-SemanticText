@@ -1,4 +1,4 @@
-accessing
+testing
 isLegacy
 
 	self flag: #modelConstants.

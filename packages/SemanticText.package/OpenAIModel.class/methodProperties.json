@@ -4,6 +4,7 @@
 	"instance" : {
 		"account" : "ct 8/17/2023 17:29",
 		"account:" : "ct 8/17/2023 17:29",
+		"asStringOrText" : "ct 2/4/2024 20:15",
 		"assureAvailableOr:" : "ct 10/15/2023 22:21",
 		"baseConfig" : "ct 8/17/2023 17:47",
 		"baseConfig:" : "ct 8/17/2023 17:48",
@@ -16,6 +17,7 @@
 		"initialize" : "ct 8/17/2023 19:27",
 		"invokeWithConfig:editInput:" : "ct 8/20/2023 19:43",
 		"invokeWithConfig:editInput:handleResponse:" : "ct 1/8/2024 16:39",
+		"isLegacy" : "ct 2/7/2024 17:47",
 		"maxCharactersInTokens:" : "ct 2/3/2024 21:17",
 		"maxTokensInStringOfSize:" : "ct 2/3/2024 21:19",
 		"name" : "ct 8/17/2023 17:25",

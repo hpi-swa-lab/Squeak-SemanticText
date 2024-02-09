@@ -1,5 +1,5 @@
 accessing
-embeddingSize
+maxEmbeddingSize
 
 	self flag: #modelConstants.
 	

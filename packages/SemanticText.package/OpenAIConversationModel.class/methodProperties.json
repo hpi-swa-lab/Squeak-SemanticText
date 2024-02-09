@@ -21,7 +21,6 @@
 		"unload" : "ct 8/17/2023 19:28" },
 	"instance" : {
 		"addToolSpec:toInput:" : "ct 1/16/2024 15:59",
-		"asStringOrText" : "ct 2/4/2024 20:15",
 		"centsPerCompletionToken" : "ct 2/5/2024 19:49",
 		"centsPerPromptToken" : "ct 2/5/2024 19:52",
 		"countTokensInConversation:" : "ct 1/17/2024 01:39",
