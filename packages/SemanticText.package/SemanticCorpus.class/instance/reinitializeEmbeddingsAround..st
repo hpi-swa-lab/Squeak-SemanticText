@@ -6,7 +6,7 @@ reinitializeEmbeddingsAround: aBlock
 		[^ aBlock value].
 	
 	self notify: 'If you change the embedding model, you will need to recompute all embeddings!'.
-	result := aBlock value.
-	self halt initializeEmbeddings.
+	result := aBlock halt value.
+	self initializeEmbeddings.
 	
 	^ result
