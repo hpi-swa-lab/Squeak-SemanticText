@@ -2,6 +2,8 @@ toolbuilder
 helpForComplete
 
 	| help |
+	thisContext insertSender: (Context contextOn: Error , Warning , Halt do: [:ex | ^ ex asString]).
+	
 	help := 'Complete this conversation (s)'.
 	
 	self metricsForCompletion in: [:metrics |
