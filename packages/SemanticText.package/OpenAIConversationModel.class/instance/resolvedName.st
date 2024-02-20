@@ -5,8 +5,8 @@ resolvedName
 	^ self name
 		caseOf:
 			{"GPT-3.5 Turbo"
-			[self class gpt35TurboName] -> [self class gpt35Turbo0613Name].
-			[self class gpt35Turbo16kName] -> [self class gpt35Turbo16k0613Name].
+			[self class gpt35TurboName] -> [self class gpt35Turbo0125Name].
+			[self class gpt35Turbo16kName] -> [self class gpt35Turbo0125Name].
 			
 			"GPT-4"
 			[self class gpt4Name] -> [self class gpt4_0613Name].
