@@ -5,7 +5,7 @@ rateLimitsForModel: modelName ifUnknown: aBlock
 	^ self rateLimits at: modelName ifAbsent:
 		["search for rate limits for more general model name (prefix, e.g., without version number/context size)"
 		| parts |
-		parts := modelName splitBy: '-'.
+		parts := modelName ifNotEmpty: [modelName splitBy: '-'].
 		parts ifNotEmpty:
 			[^ self
 				rateLimitsForModel: (parts allButLast joinSeparatedBy: '-')

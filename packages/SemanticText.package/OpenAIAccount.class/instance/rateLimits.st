@@ -9,5 +9,6 @@ rateLimits
 			(rateLimits
 				at: modelName
 				ifPresent: [:defaultModelLimit |
-					defaultModelLimit , modelLimit])].
+					defaultModelLimit , modelLimit]
+				ifAbsent: [modelLimit])].
 	^ rateLimits
