@@ -1,4 +1,4 @@
 constants
 gpt4TurboName
 
-	^ 'gpt-4-turbo-preview'
+	^ 'gpt-4-turbo'

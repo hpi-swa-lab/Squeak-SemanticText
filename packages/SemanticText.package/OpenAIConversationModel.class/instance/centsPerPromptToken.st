@@ -18,6 +18,7 @@ centsPerPromptToken
 		[self class gpt4_32k0613Name] -> [0.006].
 		
 		"GPT-4 Turbo"
+		[self class gpt4_20240409Name] -> [0.001].
 		[self class gpt4_0125Name] -> [0.001].
 		[self class gpt4_1106Name] -> [0.001].
 		"for later: vision: unclear"}

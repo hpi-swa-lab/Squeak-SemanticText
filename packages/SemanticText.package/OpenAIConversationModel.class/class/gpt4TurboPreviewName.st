@@ -1,5 +1,4 @@
-constants - deprecated
+constants
 gpt4TurboPreviewName
 
-	self deprecated: 'Use #gpt4TurboName instead'.
-	^ self gpt4TurboName
+	^ 'gpt-4-turbo-preview'

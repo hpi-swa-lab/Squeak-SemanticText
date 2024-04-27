@@ -1,6 +1,6 @@
 accessing - rate limits
 setCustomRateLimitsForModel: modelName to: rateLimitsSpec
-	"rateLimitsSpec: {requestsPerMinute. requestsPerDay. tokensPerMinute. tokensPerDay}
+	"rateLimitsSpec: {requestsPerMinute. requestsPerDay. tokensPerMinute. tokensPerDay. batchQueueLimit}
 	See: https://platform.openai.com/account/limits. Hypothetically we could scrape this, in practice, users may enter relevant rate limits manually."
 
 	self customRateLimits at: modelName put:
