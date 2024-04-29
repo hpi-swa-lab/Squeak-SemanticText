@@ -17,7 +17,7 @@
 	"instance" : {
 		"activeToolSpec" : "ct 1/15/2024 23:55",
 		"addAssistantMessage:" : "ct 8/16/2023 21:16",
-		"addMessage:" : "ct 6/22/2023 17:27",
+		"addMessage:" : "ct 2/19/2024 23:42",
 		"addMessageFrom:content:" : "ct 8/16/2023 21:21",
 		"addSystemMessage:" : "ct 8/16/2023 21:16",
 		"addUserMessage:" : "ct 8/16/2023 21:16",
@@ -48,7 +48,7 @@
 		"newToolSpecWith:forcedTools:" : "ct 1/16/2024 00:05",
 		"open" : "ct 8/17/2023 16:58",
 		"popToolSpecDuring:" : "ct 1/16/2024 15:44",
-		"postCopy" : "ct 1/15/2024 23:49",
+		"postCopy" : "ct 4/29/2024 23:32",
 		"pushFunctions:" : "ct 1/15/2024 23:48",
 		"pushFunctions:force:" : "ct 1/15/2024 23:48",
 		"pushTools:" : "ct 1/15/2024 23:49",

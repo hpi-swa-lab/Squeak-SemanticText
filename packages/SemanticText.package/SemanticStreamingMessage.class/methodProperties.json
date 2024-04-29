@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"array:role:inBackgroundDo:" : "ct 1/16/2024 16:00" },
+		"conversation:array:role:inBackgroundDo:" : "ct 2/10/2024 20:36" },
 	"instance" : {
 		"addChunk:" : "ct 1/16/2024 16:07",
 		"addChunk:toolCalls:tokenProbabilities:" : "ct 1/16/2024 20:41",

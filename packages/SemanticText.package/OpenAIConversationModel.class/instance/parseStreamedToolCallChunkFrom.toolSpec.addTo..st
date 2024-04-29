@@ -1,4 +1,4 @@
-private
+private - requests
 parseStreamedToolCallChunkFrom: toolCallChunk toolSpec: aToolSpecOrNil addTo: aStreamingToolCall
 
 	| argumentsChunk functionNameChunk keyChunk |

@@ -1,4 +1,4 @@
-private
+private - requests
 parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStreamingMessage rawChatCompletionChunk: chatCompletionChunkOrNil
 
 	| chunkText chunkToolCalls chunkTokenProbabilities |

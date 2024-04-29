@@ -17,20 +17,24 @@ getAnswers: number for: aConversation config: aConfigOrNil
 	^ config shouldStream
 		ifFalse:
 			[replies collect: [:reply |
-				SemanticMessage role: #assistant content: reply]]
+				SemanticMessage conversation: aConversation role: #assistant content: reply]]
 		ifTrue:
-			[SemanticStreamingMessage array: number role: #assistant inBackgroundDo: [:messages |
-				| streams |
-				streams := replies collect: [:reply | reply readStream].
-				[| allAtEnd |
-				allAtEnd := true.
-				streams with: messages do: [:stream :message |
-					| chunk |
-					stream atEnd ifFalse:
-						[0.05 seconds wait.
-						chunk := stream upToAnyOf: Character separators.
+			[SemanticStreamingMessage
+				conversation: number
+				array: number
+				role: #assistant
+				inBackgroundDo: [:messages |
+					| streams |
+					streams := replies collect: [:reply | reply readStream].
+					[| allAtEnd |
+					allAtEnd := true.
+					streams with: messages do: [:stream :message |
+						| chunk |
 						stream atEnd ifFalse:
-							[chunk := chunk , stream peekBack].
-						message addChunk: chunk.
-						allAtEnd := false]].
-				allAtEnd] whileFalse]]
+							[0.05 seconds wait.
+							chunk := stream upToAnyOf: Character separators.
+							stream atEnd ifFalse:
+								[chunk := chunk , stream peekBack].
+							message addChunk: chunk.
+							allAtEnd := false]].
+					allAtEnd] whileFalse]]

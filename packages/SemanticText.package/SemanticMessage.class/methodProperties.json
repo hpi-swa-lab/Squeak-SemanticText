@@ -1,5 +1,6 @@
 {
 	"class" : {
+		"conversation:role:content:" : "ct 2/10/2024 20:35",
 		"role:content:" : "ct 6/22/2023 17:28" },
 	"instance" : {
 		"asOpenAIObject" : "ct 1/16/2024 20:41",
@@ -8,6 +9,8 @@
 		"content" : "ct 6/22/2023 17:28",
 		"content:" : "ct 6/22/2023 17:28",
 		"contentWithStyledProbabilities" : "ct 1/15/2024 19:36",
+		"conversation" : "ct 2/10/2024 20:29",
+		"conversation:" : "ct 2/10/2024 20:29",
 		"hasToolCalls" : "ct 1/16/2024 20:41",
 		"isStreaming" : "ct 8/13/2023 17:26",
 		"isToolMessage" : "ct 1/16/2024 01:27",

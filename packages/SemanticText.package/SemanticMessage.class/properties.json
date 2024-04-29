@@ -6,6 +6,7 @@
 		 ],
 	"commentStamp" : "ct 8/19/2023 21:40",
 	"instvars" : [
+		"conversation",
 		"role",
 		"content",
 		"toolCalls",

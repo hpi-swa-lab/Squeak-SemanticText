@@ -1,4 +1,4 @@
-private
+private - requests
 parseToolCallsFrom: toolCalls toolSpec: aToolSpecOrNil
 
 	^ toolCalls collect: [:toolCall |

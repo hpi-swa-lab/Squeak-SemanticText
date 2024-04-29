@@ -38,4 +38,4 @@ getAnswers: number for: aConversation config: aConfigOrNil
 			(stream and: [response isSuccess]) ifTrue:
 				[^ self handleStreamingReplies: number for: aConversation from: response config: config logRawOutput: logRawOutput]].
 	
-	^ self parseMessagesFrom: chatCompletion toolSpec: aConversation activeToolSpec logRawOutput: logRawOutput
+	^ self parseMessagesFrom: chatCompletion for: aConversation logRawOutput: logRawOutput

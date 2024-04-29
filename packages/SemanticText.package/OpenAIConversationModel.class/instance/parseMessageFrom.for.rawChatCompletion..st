@@ -1,9 +1,10 @@
-private
-parseMessageFrom: chatCompletionChoice toolSpec: aToolSpecOrNil rawChatCompletion: chatCompletionOrNil
+private - requests
+parseMessageFrom: chatCompletionChoice for: aConversation rawChatCompletion: chatCompletionOrNil
 
 	| messageResult message |
 	messageResult := chatCompletionChoice message.
 	message := SemanticMessage
+		conversation: chatCompletionChoice
 		role: messageResult role
 		content: messageResult content.
 	
@@ -16,7 +17,7 @@ parseMessageFrom: chatCompletionChoice toolSpec: aToolSpecOrNil rawChatCompletio
 	
 	messageResult tool_calls ifNotNil: [:toolCalls |
 		message toolCalls:
-			(self parseToolCallsFrom: toolCalls toolSpec: aToolSpecOrNil)].
+			(self parseToolCallsFrom: toolCalls toolSpec: aConversation activeToolSpec)].
 	
 	chatCompletionChoice logprobs ifNotNil: [:logprobs |
 		message tokenProbabilities:

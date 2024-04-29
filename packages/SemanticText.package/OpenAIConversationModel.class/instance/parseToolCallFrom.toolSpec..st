@@ -1,4 +1,4 @@
-private
+private - requests
 parseToolCallFrom: toolCall toolSpec: aToolSpecOrNil
 
 	| arguments function functionName |

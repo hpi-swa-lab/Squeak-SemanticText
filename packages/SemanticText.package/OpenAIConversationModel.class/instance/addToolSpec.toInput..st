@@ -1,4 +1,4 @@
-private
+private - requests
 addToolSpec: aToolSpec toInput: input
 
 	input tools:
