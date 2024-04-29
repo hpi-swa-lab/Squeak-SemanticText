@@ -9,18 +9,15 @@ countTokensInMessage: aMessage hasMultipleToolMessages: hasMultipleToolMessages
 				[aMessage basicContent ifNotNil: [:content |
 					stream nextPutAll: content]]
 			ifTrue:
-				[stream nextPutAll: aMessage basicContent.
-				self flag: #todo. "should use JSON formatting of the API"].
+				[[self
+					printFunctionCallArguments: aMessage basicContent parseAsJson
+					on: stream]
+						on: JsonSyntaxError do:
+							[stream nextPutAll: aMessage basicContent]].
 		
 		"not yet implemented"
 		"aMessage messageName ifNotNil: [:messageName |
-			stream nextPutAll: messageName]."
-		
-		(aMessage role = #assistant and: [aMessage toolCalls notEmpty]) ifTrue:
-			[aMessage toolCalls do: [:toolCall |
-				stream
-					nextPutAll: toolCall toolName;
-					nextPutAll: toolCall arguments asJsonString]]].
+			stream nextPutAll: messageName]."].
 	
 	tokens := self countTokensIn: compiledContent.
 	
@@ -31,7 +28,7 @@ countTokensInMessage: aMessage hasMultipleToolMessages: hasMultipleToolMessages
 			[| toolContent |
 			tokens := tokens + 2.
 			toolContent := [aMessage basicContent parseAsJson] ifError: [nil].
-			toolContent isDictionary ifTrue:
+			(hasMultipleToolMessages and: [toolContent isDictionary]) ifTrue:
 				[tokens := tokens - toolContent keys size]].
 	
 	"not yet implemented"
