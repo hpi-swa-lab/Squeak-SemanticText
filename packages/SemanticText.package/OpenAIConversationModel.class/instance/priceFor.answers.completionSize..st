@@ -6,7 +6,7 @@ priceFor: aConversation answers: number completionSize: completionSizeOrNil
 	promptTokens := aConversation estimatePromptTokens.
 	completionTokens := aConversation maxCompletionTokens. "upper approximation!"
 	completionSizeOrNil ifNotNil:
-		[completionTokens := completionTokens max: (self maxCharactersInTokens: completionSizeOrNil)].
+		[completionTokens := completionTokens clampHigh: (self maxTokensInStringOfSize: completionSizeOrNil)].
 	
 	priceForPrompt := (OpenAIAmount approximateCents: self centsPerPromptToken)
 		* promptTokens.
