@@ -21,7 +21,7 @@
 		"initialize" : "ct 2/4/2024 19:49",
 		"unload" : "ct 8/17/2023 19:28" },
 	"instance" : {
-		"addToolSpec:toInput:" : "ct 1/16/2024 15:59",
+		"addToolSpec:toInput:" : "ct 3/14/2024 17:07",
 		"centsPerCompletionToken" : "ct 4/27/2024 22:23",
 		"centsPerPromptToken" : "ct 4/27/2024 22:23",
 		"countTokensInConversation:" : "ct 1/17/2024 01:39",

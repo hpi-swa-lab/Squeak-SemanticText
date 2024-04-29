@@ -18,5 +18,6 @@ asOpenAIObject
 							(self parameters asArray
 								select: [:parameter | parameter required]
 								thenCollect: [:parameter | parameter name]);
-						yourself));
+						yourself);
+				yourself);
 		yourself

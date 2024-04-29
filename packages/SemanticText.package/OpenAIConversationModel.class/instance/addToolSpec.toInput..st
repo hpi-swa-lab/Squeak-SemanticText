@@ -13,5 +13,5 @@ addToolSpec: aToolSpec toInput: input
 					forcedTools size > 1 ifTrue: [^ self error: 'cannot force multiple tools'].
 					forcedTool := forcedTools anyOne.
 					(forcedTool isString or: [forcedTool isText])
-						ifTrue: [forcedTool asString]
-						ifFalse: [forcedTool asOpenAIToolChoiceObject]])]
+						ifTrue: [forcedTool := aToolSpec toolNamed: forcedTool].
+					forcedTool asOpenAIToolChoiceObject])]
