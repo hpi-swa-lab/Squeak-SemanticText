@@ -1,5 +1,6 @@
 assistant
 getAssistantMessage
+	"Retrieve a new assistant message from the model, append it to the receiver, and answer it."
 
 	| response |
 	response := self popToolSpecDuring:

@@ -3,4 +3,4 @@ postCopy
 
 	super postCopy.
 	
-	parameters := parameters copy.
+	parameters := parameters collect: [:parameter | parameter copy].
