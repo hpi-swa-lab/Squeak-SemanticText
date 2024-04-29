@@ -1,4 +1,5 @@
 accessing
 estimatePromptTokens
 
-	^ self model countTokensInConversation: self
+	^ self withNextActiveToolSpecDo:
+		[self model countTokensInConversation: self]

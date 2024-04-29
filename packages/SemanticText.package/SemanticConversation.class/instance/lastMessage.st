@@ -1,4 +1,4 @@
 accessing
 lastMessage
 
-	^ self messages last
+	^ self messages atLast: 1 ifAbsent: [nil]

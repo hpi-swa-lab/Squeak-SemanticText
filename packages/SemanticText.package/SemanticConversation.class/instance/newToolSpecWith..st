@@ -1,6 +1,6 @@
 private
 newToolSpecWith: tools
 
-	^ self toolSpecClass new
+	^ self newToolSpec
 		addTools: tools;
 		yourself

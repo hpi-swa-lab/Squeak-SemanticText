@@ -8,5 +8,5 @@ popToolSpecDuring: aBlock
 	result := aBlock ensure:
 		[toolSpecs removeKey: #active].
 	toolSpec ifNotNil:
-		[toolSpecs at: (messages atLast: 1 ifAbsent: [#first]) put: toolSpec].
+		[toolSpecs at: (messages atLast: 1 ifAbsent: [#start]) put: toolSpec].
 	^ result
