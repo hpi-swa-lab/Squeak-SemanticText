@@ -4,10 +4,14 @@ mode: aSymbol
 	| wasAdvancedMode |
 	self assert: (self allModes includes: aSymbol).
 	
+	self mode = aSymbol ifTrue: [^ self].
+	
 	wasAdvancedMode := self isAdvancedMode.
-	mode := aSymbol.
+	wasAdvancedMode = (aSymbol = #advanced) ifTrue:
+		[mode := aSymbol.
+		self changed: #mode.
+		^ self].
 	
-	self changed: #mode.
-	
-	self isAdvancedMode = wasAdvancedMode ifFalse:
-		[self updateAdvancedMode].
+	self updateAdvancedModeAround:
+		[mode := aSymbol.
+		self changed: #mode].

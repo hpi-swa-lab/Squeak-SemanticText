@@ -7,13 +7,14 @@ buildButtonBar: builder
 		children:
 			(OrderedCollection new
 				addAll:
-					(self allRoles collect: [:role |
-						builder pluggableActionButtonSpec new
-							model: self;
-							label: ('+{1}' format: {role capitalized});
-							help: ('Add {1} message' format: {role});
-							action: ('add{1}Message' format: {role capitalized}) asSymbol;
-							yourself]);
+					((self allRoles copyWithout: (self isDisplayingRawConversation ifFalse: [#system]))
+						collect: [:role |
+							builder pluggableActionButtonSpec new
+								model: self;
+								label: ('+{1}' format: {role capitalized});
+								help: ('Add {1} message' format: {role});
+								action: ('add{1}Message' format: {role capitalized}) asSymbol;
+								yourself]);
 				add:
 					(builder pluggableActionButtonSpec new
 						model: self;

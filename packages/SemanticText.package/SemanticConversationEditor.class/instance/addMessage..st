@@ -1,6 +1,8 @@
 actions
 addMessage: aMessage
 
-	self containingWindow ifNil: [^ self].
+	(self anyTextPaneWithSelector: #text) ifNil: [^ self].
 	
-	^ self addDo: [self textFromMessages: {aMessage}]
+	^ self
+		addDo: [self textFromMessages: {aMessage}]
+		asPlaceholder: aMessage content isEmptyOrNil

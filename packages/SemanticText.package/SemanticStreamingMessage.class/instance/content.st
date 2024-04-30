@@ -3,4 +3,4 @@ content
 
 	self isComplete ifTrue: [^ super content].
 	
-	^ super content , self cursorText
+	^ (super content ifNil: ['']) , self cursorText

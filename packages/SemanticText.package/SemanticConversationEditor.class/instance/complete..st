@@ -2,17 +2,7 @@ actions
 complete: aText
 
 	| response |
-	self conversation model assureAvailableOr: [:requirements |
-		(Project uiManager
-			chooseOptionFromLabeledValues: 
-				((requirements
-					collect: [:requirement | requirement second -> requirement]
-					as: OrderedDictionary)
-						at: #cancel put: nil;
-						yourself)
-			title: 'To enable conversations, you need to configure SemanticText first.')
-				ifNotNil: [:requirement | requirement third value].
-		^ false].
+	self assureModelAvailableOr: [^ false].
 	
 	aText ifNotNil:
 		[self text: aText].
@@ -23,6 +13,6 @@ complete: aText
 	response isStreaming
 		ifFalse:
 			[self changed: #text.
-			self addUserMessage]
+			self noteMessageCompleted]
 		ifTrue:
 			[self updateStreamingMessage].

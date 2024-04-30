@@ -1,0 +1,4 @@
+testing
+isDisplayingSystemMessages
+
+	^ self isDisplayingRawConversation

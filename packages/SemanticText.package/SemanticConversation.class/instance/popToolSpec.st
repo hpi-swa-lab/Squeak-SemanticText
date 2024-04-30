@@ -1,0 +1,4 @@
+private
+popToolSpec
+
+	^ self popToolSpecDuring: []

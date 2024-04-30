@@ -1,4 +1,4 @@
-private
+private - text
 textFromToolMessage: aToolMessage
 
 	^ Text streamContents: [:stream |

@@ -33,6 +33,7 @@ buildAdvancedButtonBar: builder
 						label: 'Resolve';
 						help: 'Resolve all tool calls';
 						action: #resolveAllToolCalls;
+						enabled: #hasPendingToolCalls;
 						yourself);
 				add:
 					(builder pluggableActionButtonSpec new

@@ -1,11 +1,14 @@
 private
 privateStyle: aText
 
-	| messages |
+	| intervalMessages |
 	self privateUnstyle: aText.
 	
-	messages := (editor ifNil: [SemanticConversationEditor]) messagesFromText: aText.
-	messages keysAndValuesDo: [:interval :message |
+	intervalMessages := [(editor
+		ifNotNil: [editor intervalMessagesFromText: aText]
+		ifNil: [SemanticConversationEditor intervalMessagesFromText: aText isDisplayingRawConversation: false])]
+			ifError: [^ self].
+	intervalMessages keysAndValuesDo: [:message :interval |
 		self applyMessageMarkupsFor: message interval: interval to: aText.
 		aText
 			addAllAttributes: (self attributesForRole: message role)

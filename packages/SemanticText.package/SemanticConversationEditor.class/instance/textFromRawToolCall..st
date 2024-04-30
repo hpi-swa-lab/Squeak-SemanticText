@@ -1,5 +1,5 @@
-private
-textFromToolCall: aToolCall
+private - text
+textFromRawToolCall: aToolCall
 
 	^ Text streamContents: [:stream |
 		stream

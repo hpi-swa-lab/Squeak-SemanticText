@@ -1,6 +1,7 @@
 accessing
 lastToolCallMessageOrNil
 
-	^ self messages reversed
-		detect: [:message | message hasToolCalls]
-		ifNone: [nil]
+	| message |
+	message := self lastMessage ifNil: [^ nil].
+	message hasToolCalls ifFalse: [^ nil].
+	^ message

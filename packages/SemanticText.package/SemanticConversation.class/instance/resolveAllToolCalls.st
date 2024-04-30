@@ -1,7 +1,7 @@
 tools
 resolveAllToolCalls
 
-	^ self lastMessage toolCalls
+	^ (self lastMessage ifNil: [^ nil]) toolCalls
 		do: [:toolCall |
 			self addMessage: toolCall asToolMessageWithResult];
 		notEmpty

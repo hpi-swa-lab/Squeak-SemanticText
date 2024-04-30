@@ -1,0 +1,4 @@
+testing
+isDisplayingRawConversation
+
+	^ self isAdvancedMode

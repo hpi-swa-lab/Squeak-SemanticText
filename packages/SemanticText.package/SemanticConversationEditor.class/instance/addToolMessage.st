@@ -1,13 +1,21 @@
 actions
 addToolMessage
 
-	| toolCallMessage toolCalls toolMessages toolCall |
-	toolCallMessage := self conversation lastToolCallMessageOrNil.
+	| editText newConversation toolCallMessage toolCalls toolMessages toolCall |
+	"drop unused user message placeholder"
+	self canDiscardEdits ifTrue:
+		[self changed: #text].
+	editText := self editText.
+	
+	"find available tools"
+	newConversation := [self conversationFromUserText: editText]
+		ifError: [self conversation].
+	toolCallMessage := newConversation lastToolCallMessageOrNil.
 	toolCallMessage ifNil: [^ self inform: 'No tools were called'].
 	toolCalls := toolCallMessage toolCalls.
 	
 	"find unanswered tool calls"
-	toolMessages := (([(self messagesFromText: self editText) values] ifError: [self conversation messages]) copyAfter: toolCallMessage)
+	toolMessages := (newConversation messages copyAfter: toolCallMessage)
 		select: [:message | message role = #tool].
 	toolCalls := toolCalls reject: [:ea |
 		toolMessages anySatisfy: [:toolMessage | toolMessage toolCall key = ea key]].

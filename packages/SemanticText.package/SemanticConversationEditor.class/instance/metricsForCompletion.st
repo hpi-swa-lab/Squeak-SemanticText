@@ -1,12 +1,8 @@
 accessing
 metricsForCompletion
 
-	| messagesAndToolSpecs newConversation promptTokens |
-	messagesAndToolSpecs := self messagesAndToolSpecsFromText: self editText.
-	newConversation := self conversation copy
-		messages: messagesAndToolSpecs first asOrderedCollection;
-		toolSpecs: messagesAndToolSpecs second;
-		yourself.
+	| newConversation promptTokens |
+	newConversation := self conversationFromUserText: self editText.
 	
 	promptTokens := newConversation estimatePromptTokens.
 	^ Dictionary new

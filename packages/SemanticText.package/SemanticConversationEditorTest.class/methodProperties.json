@@ -1,0 +1,22 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"assert:predicts:" : "ct 3/16/2024 01:26",
+		"classToBeTested" : "ct 2/19/2024 10:18",
+		"conversationTextFixtures" : "ct 5/1/2024 01:40",
+		"setUp" : "ct 4/30/2024 18:00",
+		"testConversationFromText" : "ct 3/16/2024 01:11",
+		"testConversationFromTextAdvanced" : "ct 3/16/2024 16:19",
+		"testConversationFromTextMinimal" : "ct 3/16/2024 17:17",
+		"testEditText" : "ct 4/30/2024 18:01",
+		"testEditTextAdvanced" : "ct 4/30/2024 18:01",
+		"testEditTextMinimal" : "ct 4/30/2024 20:18",
+		"testPasteText" : "ct 4/30/2024 18:21",
+		"testPasteTextAdvanced" : "ct 4/30/2024 18:21",
+		"testPasteTextMinimal" : "ct 4/30/2024 18:21",
+		"testResolveAndEditText" : "ct 4/30/2024 21:39",
+		"testResolveAndEditTextAdvanced" : "ct 4/30/2024 21:39",
+		"testResolveAndEditTextMinimal" : "ct 4/30/2024 21:55",
+		"testTextFromConversation" : "ct 2/19/2024 17:18",
+		"testTextFromConversationAdvanced" : "ct 2/19/2024 17:18" } }

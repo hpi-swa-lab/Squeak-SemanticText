@@ -1,6 +1,8 @@
-private
+private - text
 textFromMessages: messages
 
-	^ self
-		textFromMessages: messages
-		toolSpecs: (Dictionary new flag: #suspicious)
+	^ self textFromConversation:
+		(self conversation copy
+			defaultToolSpec: nil;
+			messages: messages;
+			yourself)
