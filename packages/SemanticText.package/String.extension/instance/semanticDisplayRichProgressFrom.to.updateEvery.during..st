@@ -17,6 +17,6 @@ semanticDisplayRichProgressFrom: minVal to: maxVal updateEvery: msecs during: wo
 						((remaining ifNil: ['{1} ({2}%)'] ifNotNil: ['{1} ({2}%, {3} remaining)'])
 							format: {
 								self.
-								(progress * 100s2) printFractionAsDecimal.
+								(progress * 100) printShowingDecimalPlaces: 2.
 								remaining ifNotNil: [remaining semanticShortPrintString]})].
 				lastUpdate := Time millisecondClockValue]]]
