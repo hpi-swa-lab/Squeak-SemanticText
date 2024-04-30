@@ -2,21 +2,31 @@ documentation
 exampleFunctions
 	"NOTE: Parallel function calling within one assistant message require new models (gpt-4-1106-preview or gpt-3.5-turbo-1106)!"
 
-	| conversation message weather |
-	weather := SemanticFunction
-		fromString: 'getCurrentWeather "Get the current weather in a given location"
+	| temperature rain conversation message |
+	temperature := SemanticFunction
+		fromString: 'getTemperature "Get the current temperature in a given location"
+			(location: string "The city and state, e.g. San Francisco, CA",
+			unit?: {"type": "string", "enum": ["celsius", "fahrenheit"]})'
+		action: [:args |
+			(args location includesSubstring: 'New York')
+				ifTrue:
+					[JsonObject new location: args location; temperature: 21; unit: args unit; yourself]
+				ifFalse:
+					[JsonObject new location: args location; temperature: 11; unit: args unit; yourself]].
+	rain := SemanticFunction
+		fromString: 'getRain "Get amount of rain in a given location. Returns value between 0 (no rain) and 100 (very much rain."
 			(location: string "The city and state, e.g. San Francisco, CA")'
 		action: [:args |
 			(args location includesSubstring: 'New York')
 				ifTrue:
-					[JsonObject new location: args location; temperature: 21; unit: #celsius; forecast: #('sunny' 'windy'); yourself]
+					[JsonObject new location: args location; rain: 60; yourself]
 				ifFalse:
-					[JsonObject new location: args location; temperature: 11; unit: #celsius; forecast: #('rainy'); yourself]].
+					[JsonObject new location: args location; rain: 0; yourself]].
 
-	conversation := SemanticConversation newStreaming.
+	conversation := SemanticConversation new.
 	message := conversation
-		addUserMessage: 'Is the weather better in Boston or NYC?';
-		pushFunctions: {weather} "force: #(getCurrentWeather)";
+		addUserMessage: 'Is the weather better in Boston or NYC? Use all information sources you can access.';
+		pushFunctions: {temperature. rain} "force: #(getTemperature)";
 		getAssistantMessage.
 	message waitUntilComplete.
 	conversation resolveAllToolCalls ifTrue:
