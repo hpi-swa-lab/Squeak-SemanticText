@@ -1,0 +1,4 @@
+accessing
+maxTokens
+
+	^ Float infinity
