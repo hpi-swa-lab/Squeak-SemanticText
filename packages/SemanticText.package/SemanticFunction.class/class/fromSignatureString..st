@@ -2,9 +2,14 @@ instance creation
 fromSignatureString: aStringOrStream
 
 	| matcher |
-	aStringOrStream isStream ifFalse: [^ self fromSignatureString: aStringOrStream readStream].
+	aStringOrStream isStream ifFalse:
+		[| stream function |
+		stream := aStringOrStream readStream.
+		function := self fromSignatureString: stream.
+		self assert: stream atEnd.
+		^ function].
 	
-	matcher := '^
+	matcher := ['^
 		(?<name>
 			[a-zA-Z0-9_-]{1,64}
 		)
@@ -66,7 +71,7 @@ fromSignatureString: aStringOrStream
 			)*
 			\s*
 			\)
-		)?' semanticAsExtendedRegex.
+		)?' semanticAsExtendedRegex] once.
 	(matcher matchesStreamPrefix: aStringOrStream) ifFalse:
 		[^ self error: 'invalid function signature'].
 	
