@@ -15,11 +15,16 @@ fromSignatureString: aStringOrStream
 		)
 		\s*
 		( # comment
-			\"
+			"
 			(?<comment>
-				[^\"]*
-			)?
-			\"
+				(?:
+					(?<commentLetter> [^"\\] )
+					|
+					\\ (?<commentLetter> . )
+				)*
+				(?<commentLetter>)
+			)
+			"
 		)?
 		\s*
 		( # parameter list
@@ -57,11 +62,16 @@ fromSignatureString: aStringOrStream
 					(?<parameterSchema>) (?<parameterType>)
 				)
 				( # comment
-					\"
+					"
 					(?<parameterComment>
-						[^\"]*
+						(?:
+							(?<parameterCommentLetter> [^"\\] )
+							|
+							\\ (?<parameterCommentLetter> . )
+						)*
+						(?<parameterCommentLetter>)
 					)
-					\"
+					"
 					\s*
 					|
 					(?<parameterComment>)
@@ -77,14 +87,18 @@ fromSignatureString: aStringOrStream
 	
 	^ self
 		name: (matcher keyedSubexpression: 'name')
-		description: (matcher keyedSubexpression: 'comment')
+		description: ((matcher keyedSubexpressions: 'commentLetter') join ifEmpty: [])
 		build: [:function |
+			| parameterCommentLetters |
+			parameterCommentLetters := (matcher keyedSubexpressions: #parameterCommentLetter) readStream.
 			(matcher keyedSubexpressions: #parameterName) withIndexCollect: [:name :index |
 				function
 					addParameter: name
 					description:
 						(((matcher keyedSubexpressions: #parameterComment) at: index)
-							ifEmpty: [])
+							ifEmpty: [] ifNotEmpty:
+								[(parameterCommentLetters upTo: String empty) join
+									ifEmpty: []])
 					type:
 						(((matcher keyedSubexpressions: #parameterType) at: index)
 							ifEmpty:

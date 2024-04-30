@@ -6,7 +6,7 @@ printSignatureOn: aStream
 		[aStream
 			space;
 			nextPut: $";
-			nextPutAll: self description;
+			nextPutAll: (self description copyWithRegex: '(?=[\"])' matchesReplacedWith: '\'); "escape"
 			nextPut: $";
 			space].
 	
