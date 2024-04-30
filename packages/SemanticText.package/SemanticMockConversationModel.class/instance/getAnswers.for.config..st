@@ -7,31 +7,43 @@ getAnswers: number for: aConversation config: aConfigOrNil
 	aConfigOrNil ifNotNil:
 		[config := config updatedWith: aConfigOrNil].
 	
-	protoReply := self generateReplyFor: aConversation.
+	protoReply := self generateReplyFor: aConversation config: config.
 	replies := number > 1
-		ifFalse: [{protoReply}]
+		ifFalse:
+			[{(protoReply respondsTo: #cull:cull:)
+				ifTrue: [protoReply cull: aConversation cull: 1]
+				ifFalse: [protoReply]}]
 		ifTrue:
 			[(1 to: number) collect: [:index |
-				'[{1}] {2}' format: {index. protoReply}]].
+				(protoReply respondsTo: #cull:cull:)
+					ifTrue: [protoReply cull: aConversation cull: index]
+					ifFalse: ['[{1}] {2}' format: {index. protoReply}]]].
 	
 	^ config shouldStream
 		ifFalse:
 			[replies collect: [:reply |
-				SemanticMessage conversation: aConversation role: #assistant content: reply]]
+				(reply isKindOf: SemanticMessage)
+					ifTrue: [reply]
+					ifFalse: [SemanticMessage conversation: aConversation role: #assistant content: reply]]]
 		ifTrue:
 			[SemanticStreamingMessage
 				conversation: number
 				array: number
 				role: #assistant
 				inBackgroundDo: [:messages |
-					| streams |
-					streams := replies collect: [:reply | reply readStream].
+					| streams interChunkDuration |
+					interChunkDuration := (config mockConfig tokensPerSecond ifNil: [self defaultTokensPerSecond])
+						reciprocal seconds.
+					streams := replies collect: [:reply |
+						(reply isKindOf: SemanticMessage)
+							ifTrue: [self halt: 'streaming of mockConfig reply messages not yet supported']
+							ifFalse: [reply readStream]].
 					[| allAtEnd |
 					allAtEnd := true.
 					streams with: messages do: [:stream :message |
 						| chunk |
 						stream atEnd ifFalse:
-							[0.05 seconds wait.
+							[interChunkDuration wait.
 							chunk := stream upToAnyOf: Character separators.
 							stream atEnd ifFalse:
 								[chunk := chunk , stream peekBack].

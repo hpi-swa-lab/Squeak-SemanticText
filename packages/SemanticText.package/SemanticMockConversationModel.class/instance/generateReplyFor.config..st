@@ -1,7 +1,11 @@
 private
-generateReplyFor: aConversation
+generateReplyFor: aConversation config: aConfig
 
 	| endWords messages startWords |
+	aConfig mockConfig reply ifNotNil: [:reply |
+		"Can be a string, SemanticMessage, or a block ([:conversation :index | ...])."
+		^ reply].
+	
 	messages := aConversation messages.
 	startWords := messages collect: [:message |
 		message content substrings at: 1 ifAbsent: [nil]].

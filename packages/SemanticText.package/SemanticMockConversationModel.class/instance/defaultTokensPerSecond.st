@@ -1,0 +1,4 @@
+accessing
+defaultTokensPerSecond
+
+	^ 20
