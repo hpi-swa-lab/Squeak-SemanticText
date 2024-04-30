@@ -1,4 +1,4 @@
-*SemanticText-Tools-Conversations-very few messages
+*SemanticText-Tools-Conversation-very few messages
 xxxSemanticUnTrace: aChangeBlock
 
 	aChangeBlock == changeBlock ifTrue: [^ self xxxUnTrace].

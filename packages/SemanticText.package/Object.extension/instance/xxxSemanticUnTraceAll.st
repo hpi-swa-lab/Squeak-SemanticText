@@ -1,2 +1,2 @@
-*SemanticText-Tools-Conversations-ObjectViewer
+*SemanticText-Tools-Conversation-ObjectViewer
 xxxSemanticUnTraceAll
