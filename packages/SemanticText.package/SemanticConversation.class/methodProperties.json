@@ -56,7 +56,8 @@
 		"newToolSpec" : "ct 2/13/2024 19:48",
 		"newToolSpecWith:" : "ct 2/13/2024 19:48",
 		"newToolSpecWith:forcedTools:" : "ct 1/16/2024 00:05",
-		"nextActiveToolSpec" : "ct 4/30/2024 00:39",
+		"nextActiveToolSpec" : "ct 4/30/2024 23:51",
+		"nextToolSpec" : "ct 4/30/2024 23:51",
 		"open" : "ct 8/17/2023 16:58",
 		"popToolSpecDuring:" : "ct 4/30/2024 00:55",
 		"postCopy" : "ct 4/29/2024 23:40",
@@ -77,5 +78,5 @@
 		"toolSpecs" : "ct 1/15/2024 23:49",
 		"toolSpecs:" : "ct 1/15/2024 23:49",
 		"withConfigDo:" : "ct 8/17/2023 20:09",
-		"withNextActiveToolSpecDo:" : "ct 4/29/2024 22:20",
+		"withNextActiveToolSpecDo:" : "ct 4/30/2024 23:51",
 		"withToolSpec:do:" : "ct 4/29/2024 22:14" } }
