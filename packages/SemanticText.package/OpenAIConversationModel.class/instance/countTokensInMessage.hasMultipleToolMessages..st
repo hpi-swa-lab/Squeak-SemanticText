@@ -9,10 +9,13 @@ countTokensInMessage: aMessage hasMultipleToolMessages: hasMultipleToolMessages
 				[aMessage basicContent ifNotNil: [:content |
 					stream nextPutAll: content]]
 			ifTrue:
-				[[self
-					printFunctionCallArguments: aMessage basicContent parseAsJson
+				[[| object |
+				object := aMessage basicContent parseAsJson.
+				object isDictionary ifFalse: [self error: 'content does not represent a JSON object'].
+				self
+					printFunctionCallArguments: object
 					on: stream]
-						on: JsonSyntaxError do:
+						on: Error do:
 							[stream nextPutAll: aMessage basicContent]].
 		
 		"not yet implemented"
