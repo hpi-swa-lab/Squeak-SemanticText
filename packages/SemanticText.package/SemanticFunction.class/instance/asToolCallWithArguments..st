@@ -1,6 +1,8 @@
 converting
 asToolCallWithArguments: arguments
 
+	| key |
+	key := 'call_' , self makeRandomToolCallKey.
 	^ self
-		asToolCallWithKey: 'call_' , UUID new
+		asToolCallWithKey: key
 		arguments: arguments
