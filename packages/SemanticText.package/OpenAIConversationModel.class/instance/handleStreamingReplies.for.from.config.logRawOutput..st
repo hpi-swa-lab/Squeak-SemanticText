@@ -1,5 +1,5 @@
 private
-handleStreamingReplies: number for: aConversation from: aWebResponse config: aConfig logRawOutput: logRawOutput
+handleStreamingReplies: number for: aConversation from: responseBlock config: aConfig logRawOutput: logRawOutput
 
 	| promptTokens toolSpec |
 	promptTokens := self countTokensInConversation: aConversation.
@@ -11,7 +11,7 @@ handleStreamingReplies: number for: aConversation from: aWebResponse config: aCo
 		role: #assistant
 		inBackgroundDo: [:messages |
 			[| dataStream data |
-			dataStream := self streamEventDataFrom: aWebResponse.
+			dataStream := self streamEventDataFrom: responseBlock value.
 			
 			logRawOutput ifTrue:
 				[messages do: [:message |

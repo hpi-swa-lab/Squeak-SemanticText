@@ -2,7 +2,7 @@ service
 getAnswers: number for: aConversation config: aConfigOrNil
 	"Generate <number> assistant replies in response to aConversation. Answer a collection of new SemanticMessages for each new reply. If #shouldStream is set to true, the answers will be SemanticStreamingMessages that are completed in the background."
 
-	| chatCompletion logRawOutput stream |
+	| chatCompletion logRawOutput stream resumeStream |
 	chatCompletion := self
 		invokeWithConfig: aConfigOrNil
 		editInput: [:input :config |
@@ -33,9 +33,15 @@ getAnswers: number for: aConversation config: aConfigOrNil
 				(aConversation messages collect: [:message | message asOpenAIObject]).
 			
 			aConversation activeToolSpec ifNotNil: [:toolSpec |
-				self addToolSpec: toolSpec toInput: input]]
+				self addToolSpec: toolSpec toInput: input].
+			
+			(stream and: [self shouldStreamRequests]) ifTrue:
+				["For faster feedback, send even the request asynchronously."
+				^ self handleAsyncReplies: number for: aConversation config: config  logRawOutput: logRawOutput deferStreaming:
+					[:resumeBlock | resumeStream := resumeBlock]]]
 		handleResponse: [:response :config |
 			(stream and: [response isSuccess]) ifTrue:
-				[^ self handleStreamingReplies: number for: aConversation from: response config: config logRawOutput: logRawOutput]].
+				[resumeStream ifNotNil: [resumeStream value: response].
+				^ self handleStreamingReplies: number for: aConversation from: response config: config logRawOutput: logRawOutput]].
 	
 	^ self parseMessagesFrom: chatCompletion for: aConversation logRawOutput: logRawOutput
