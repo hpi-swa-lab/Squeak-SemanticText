@@ -23,3 +23,5 @@ postCopy
 	postCopyDocuments value: false.
 	
 	self flag: #todo. "swapping???"
+	
+	embeddingCache := nil.

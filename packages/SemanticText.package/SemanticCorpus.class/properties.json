@@ -10,7 +10,8 @@
 		"embeddingConfig",
 		"documents",
 		"clusters",
-		"swapFileName" ],
+		"swapFileName",
+		"embeddingCache" ],
 	"name" : "SemanticCorpus",
 	"pools" : [
 		 ],
