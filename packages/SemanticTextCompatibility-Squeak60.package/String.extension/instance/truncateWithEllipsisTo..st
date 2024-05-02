@@ -1,4 +1,4 @@
-*SemanticText-converting-pseudo-override
+*SemanticTextCompatibility-Squeak60-converting-pseudo-override
 truncateWithEllipsisTo: maxLength
 	"Return myself or a copy suitably shortened but with ellipsis added"
 
@@ -9,4 +9,4 @@ truncateWithEllipsisTo: maxLength
 			[(self copyFrom: 1 to: (maxLength - 3)), '...']
 
 
-	"'truncateWithElipsisTo:' truncateWithEllipsisTo: 20"
+	"'truncateWithEllipsisTo:' truncateWithEllipsisTo: 20"
