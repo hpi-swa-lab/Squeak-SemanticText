@@ -16,6 +16,7 @@ findDocuments: number similarTo: documents collect: collectBlock thenSelect: sel
 	2 to: classifiedDocuments size do: [:i |
 		average += (classifiedDocuments at: i) embedding].
 	"average /= documents size." "NOT required because ranking of results only depends on vector direction"
+	self flag: #todo. "isn't this because the distance only depends on vector direction? shouldn't we normalize the returned ranks?"
 	
 	^ self
 		findDocuments: number
