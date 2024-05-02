@@ -41,6 +41,6 @@ rankObjects: objects sampleForQuery: queryOrNil diverse: diverse take: anInteger
 								((relevances at: sender) + (diversities at: sender))]
 						as: Dictionary]].
 	
-	sample := scores randomSample: anInteger * 10.
+	sample := scores semanticRandomSample: anInteger * 10.
 	sample := (sample copyWithout: nil) withoutDuplicates.
 	^ sample take: anInteger

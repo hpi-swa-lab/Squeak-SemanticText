@@ -22,7 +22,7 @@ rankObjects: objects clusteredSampleForQuery: queryOrNil take: anInteger
 			localClusters keys
 				collect: [:center | center -> ((center dot: queryEmbedding) ** 5)]
 				as: Dictionary])
-			randomSample: anInteger * 10.
+			semanticRandomSample: anInteger * 10.
 	sample := sample collect: [:center |
 		(localClusters at: center)
 			ifNotEmpty: [:cluster | cluster removeFirst object]
