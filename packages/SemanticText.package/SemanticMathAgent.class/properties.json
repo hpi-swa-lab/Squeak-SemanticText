@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Agents",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SemanticMathAgent",
+	"pools" : [
+		 ],
+	"super" : "SemanticAgent",
+	"type" : "normal" }

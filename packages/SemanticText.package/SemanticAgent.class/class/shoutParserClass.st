@@ -1,0 +1,4 @@
+compiling
+shoutParserClass
+
+	^ SemanticAgentShoutParser

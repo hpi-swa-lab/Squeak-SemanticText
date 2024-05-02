@@ -1,0 +1,10 @@
+{
+	"class" : {
+		"example" : "ct 4/28/2024 01:29" },
+	"instance" : {
+		"calc:" : "ct 4/28/2024 22:44",
+		"exampleFunction:arg2:arg3:arg4:arg5:" : "ct 5/2/2024 15:10",
+		"initializeConversation:" : "ct 4/28/2024 22:05",
+		"makeCalcPatterns" : "ct 4/28/2024 22:45",
+		"parseNumber:" : "ct 4/28/2024 19:24",
+		"serializeNumber:" : "ct 4/28/2024 01:34" } }

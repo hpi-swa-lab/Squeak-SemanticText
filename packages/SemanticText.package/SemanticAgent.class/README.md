@@ -1,0 +1,1 @@
+I am a conversational agent that has specific instructions and can access its environment. Subclasses can override me to specify prompts or add functions. See SemanticMathAgent for an example.

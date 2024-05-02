@@ -1,4 +1,8 @@
-(PackageInfo named: 'SemanticText') postscript: '"openai: add account option to ignore certificate (599cd9c)"
+(PackageInfo named: 'SemanticText') postscript: '"post load actions"
+(Smalltalk globals removeKey: #SemanticTextPostLoadActions ifAbsent: [nil]) ifNotNil: [:actions |
+	actions do: #value].
+
+"openai: add account option to ignore certificate (599cd9c)"
 OpenAIAccount allSubInstancesDo: [:account |
 	(account instVarNamed: ''ignoreCertificate'') ifNil:
 		[account instVarNamed: ''ignoreCertificate'' put: false]].

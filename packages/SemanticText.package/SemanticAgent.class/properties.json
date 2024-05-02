@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Agents",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 5/2/2024 14:53",
+	"instvars" : [
+		 ],
+	"name" : "SemanticAgent",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
