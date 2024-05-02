@@ -14,7 +14,7 @@ newConversationForQuery: aString systemMessage: systemMessageOrNil
 Keep your answer short (2-3 paragraphs) and easy to scan. The goal is to give a rough overview. Bullet points preferred.
 
 
-Search query:
+Search query (only answer this query):
 
 
 ```
@@ -44,5 +44,5 @@ Answer:'.
 				minusString: (systemMessageOrNil ifNil: ['']) , userMessageTemplate
 				minusWords: 5
 				to: (self maxTokensForConversation clampHigh: conversation model maxPromptTokens))}).
-	conversation  getAssistantMessage.
+	conversation getAssistantMessage.
 	^ conversation
