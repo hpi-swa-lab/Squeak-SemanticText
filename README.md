@@ -2,7 +2,7 @@
 
 > ChatGPT, embedding search, and retrieval-augmented generation for Squeak/Smalltalk
 
-*Semantics* (from ancient Greek *sēmantikós*) refers to the significance or meaning of information. While the normal `String` and `Text` classes in Squeak take a syntactic view on text as a sequence of characters and formatting instructions, `SemanticText` focuses on the sense and understanding of text. With the advent of NLP (natural language processing) and LLMs (large language models), the availability of text interpretability in computing systems is expanding substantially. This package aims to make semantic context accessible in [Squeak/Smalltalk](https://squeak.org) by providing the following features:
+*Semantics* (from Ancient Greek *sēmantikós*) refers to the significance or meaning of information. While the normal `String` and `Text` classes in Squeak take a syntactic view on text as a sequence of characters and formatting instructions, `SemanticText` focuses on the sense and understanding of text. With the advent of NLP (natural language processing) and LLMs (large language models), the availability of text interpretability in computing systems is expanding substantially. This package aims to make semantic context accessible in [Squeak/Smalltalk](https://squeak.org) by providing the following features:
 
 - **[OpenAI API](https://platform.openai.com/docs/api-reference) client:** Currently supports chat completions and embeddings. Includes tools for managing rate limits, tracking expenses, and estimating prices for queries.
 - **SemanticConversation:** Framework for conversational agents like ChatGPT.
