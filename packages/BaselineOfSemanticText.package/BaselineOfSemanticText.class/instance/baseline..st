@@ -26,4 +26,4 @@ baseline: spec
 		spec package: #'SemanticTextCompatibility-Squeak60' with:
 			[spec requires: #('Regex-Core' 'Regex-Tests-Core')].
 		spec package: #SemanticText with: [
-			spec includes: #'SemanticTextCompatibility-Squeak60']].
+			spec requires: #'SemanticTextCompatibility-Squeak60']].
