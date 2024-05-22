@@ -11,6 +11,19 @@ baseline: spec
 		spec group: #default with: #(SemanticText)].
 	
 	spec for: #(#'squeak6.0.x.release') do: [
-		spec package: #'SemanticTextCompatibility-Squeak60'.
+		"dependencies"
+		spec
+			"Various required regex capabilities and fixes. So far, there seem to be no dependencies on other trunk changes."
+			package: 'Regex-Core' with:
+				[spec
+					repository: 'http://source.squeak.org/trunk';
+					file: 'Regex-Core-ct.89'];
+			package: 'Regex-Tests-Core' with:
+				[spec
+					repository: 'http://source.squeak.org/trunk';
+					file: 'Regex-Tests-Core-ct.36'].
+		
+		spec package: #'SemanticTextCompatibility-Squeak60' with:
+			[spec requires: #('Regex-Core' 'Regex-Tests-Core')].
 		spec package: #SemanticText with: [
 			spec includes: #'SemanticTextCompatibility-Squeak60']].
