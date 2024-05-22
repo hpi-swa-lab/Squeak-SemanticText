@@ -14,5 +14,8 @@ resolvedName
 			
 			"GPT-4 Turbo"
 			[self class gpt4TurboName] -> [self class gpt4_20240409Name].
-			[self class gpt4TurboPreviewName] -> [self class gpt4_0125Name]}
+			[self class gpt4TurboPreviewName] -> [self class gpt4_0125Name].
+			
+			"GPT-4o"
+			[self class gpt4oName] -> [self class gpt4o_20240513Name]}
 		otherwise: [:originalName | originalName]

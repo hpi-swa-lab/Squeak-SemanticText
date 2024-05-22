@@ -19,5 +19,8 @@ releaseDate
 			"GPT-4 Turbo"
 			[self class gpt4_20240409Name] -> [Date year: 2024 month: 4 day: 9].
 			[self class gpt4_0125Name] -> [Date year: 2024 month: 1 day: 25].
-			[self class gpt4_1106Name] -> [Date year: 2023 month: 11 day: 6]}
+			[self class gpt4_1106Name] -> [Date year: 2023 month: 11 day: 6].
+			
+			"GPT-4o"
+			[self class gpt4o_20240513Name] -> [Date year: 2024 month: 5 day: 13]}
 		otherwise: []
