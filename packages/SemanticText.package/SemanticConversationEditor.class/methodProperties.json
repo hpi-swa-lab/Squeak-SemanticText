@@ -1,6 +1,8 @@
 {
 	"class" : {
 		"appName" : "ct 8/19/2023 16:58",
+		"basicShouldShowWelcomeMessage" : "ct 5/22/2024 15:00",
+		"basicShouldShowWelcomeMessage:" : "ct 5/22/2024 15:00",
 		"cleanUp:" : "ct 10/15/2023 19:02",
 		"conversationFromText:isDisplayingRawConversation:intervalsDo:" : "ct 2/22/2024 17:09",
 		"initialize" : "ct 8/13/2023 15:39",
