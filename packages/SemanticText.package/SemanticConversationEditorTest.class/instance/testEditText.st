@@ -2,8 +2,9 @@ tests
 testEditText
 
 	| index messages |
-	editor conversation config mockConfig reply: [:conversation |
-		conversation lastMessage content reversed].
+	editor conversation config mockConfig reply: ([:conversation |
+		conversation lastMessage content reversed]
+			semanticBeClean flag: #workaround "required to avoid much-to-deep copy of config").
 	
 	editor conversation addUserMessage: 'plonk griffle'.
 	editor completeAsIs.

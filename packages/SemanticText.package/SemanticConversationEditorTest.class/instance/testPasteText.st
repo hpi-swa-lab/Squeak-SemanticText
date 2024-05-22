@@ -2,8 +2,9 @@ tests
 testPasteText
 
 	| otherEditor copy index placeholder |
-	editor conversation config mockConfig reply: [:conversation |
-		conversation lastMessage content reversed].
+	editor conversation config mockConfig reply: ([:conversation |
+		conversation lastMessage content reversed]
+			semanticBeClean flag: #workaround "required to avoid much-to-deep copy of config").
 	
 	otherEditor := editor veryDeepCopy.
 	otherEditor conversation addUserMessage: 'plonk griffle'.
