@@ -45,7 +45,7 @@ Very simple and incomplete prototype yet. More might follow. Feedback and contri
 
 ## Installation
 
-Get a [current Squeak Trunk image](https://squeak.org/downloads/) and do this in a workspace:
+[Get a current Squeak Trunk image (recommended) or a Squeak 6.0 image (only limited support)](https://squeak.org/downloads/) and do this in a workspace:
 
 ```smalltalk
 Metacello new
