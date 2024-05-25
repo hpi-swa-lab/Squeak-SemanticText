@@ -6,12 +6,15 @@ addToolSpec: aToolSpec toInput: input
 	
 	aToolSpec forcedTools ifNotNil: [:forcedTools |
 		input tool_choice:
-			(forcedTools
-				ifEmpty: [#none]
-				ifNotEmpty:
-					[| forcedTool |
-					forcedTools size > 1 ifTrue: [^ self error: 'cannot force multiple tools'].
-					forcedTool := forcedTools anyOne.
-					(forcedTool isString or: [forcedTool isText])
-						ifTrue: [forcedTool := aToolSpec toolNamed: forcedTool].
-					forcedTool asOpenAIToolChoiceObject])]
+			(forcedTools = #any
+				ifTrue: [#required]
+				ifFalse:
+					[forcedTools
+						ifEmpty: [#none]
+						ifNotEmpty:
+							[| forcedTool |
+							forcedTools size > 1 ifTrue: [^ self error: 'cannot force multiple tools'].
+							forcedTool := forcedTools anyOne.
+							(forcedTool isString or: [forcedTool isText])
+								ifTrue: [forcedTool := aToolSpec toolNamed: forcedTool].
+							forcedTool asOpenAIToolChoiceObject]])]

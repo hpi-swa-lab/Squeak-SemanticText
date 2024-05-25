@@ -26,7 +26,7 @@ exampleFunctions
 	conversation := SemanticConversation new.
 	message := conversation
 		addUserMessage: 'Is the weather better in Boston or NYC? Use all information sources you can access.';
-		pushFunctions: {temperature. rain} "force: #(getTemperature)";
+		pushFunctions: {temperature. rain} "force: #(getTemperature)" "force: #any";
 		getAssistantMessage.
 	message waitUntilComplete.
 	conversation resolveAllToolCalls ifTrue:

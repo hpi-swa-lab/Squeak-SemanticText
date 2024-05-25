@@ -37,14 +37,18 @@ countTokensInConversation: aConversation
 	
 	(aConversation activeToolSpec ifNotNil: [:toolSpec | toolSpec forcedTools]) ifNotNil: [:forcedTools |
 		tokens := tokens +
-			(forcedTools
-				ifEmpty: [1]
-				ifNotEmpty:
-					[forcedTools detectSum: [:tool |
-						| toolName |
-						toolName := (tool isString or: [tool isText])
-							ifTrue: [tool asString]
-							ifFalse: [tool asOpenAIToolChoiceObject name].
-						(self countTokensIn: toolName) + 4]])].
+			(forcedTools isCollection
+				ifTrue:
+					[forcedTools
+						ifEmpty: [1]
+						ifNotEmpty:
+							[forcedTools detectSum: [:tool |
+								| toolName |
+								toolName := (tool isString or: [tool isText])
+									ifTrue: [tool asString]
+									ifFalse: [tool asOpenAIToolChoiceObject name].
+								(self countTokensIn: toolName) + 4]]]
+				ifFalse:
+					[1 flag: #assumption "i don't know"])].
 	
 	^ tokens

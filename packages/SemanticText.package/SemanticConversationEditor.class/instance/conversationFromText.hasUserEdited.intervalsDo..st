@@ -51,10 +51,14 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 								ifNone: [newTool]])].
 				toolSpec forcedTools:
 					((newToolSpec ifNotNil: [newToolSpec forcedTools]) ifNotNil: [:forcedTools |
-						forcedTools collect: [:newTool |
-							toolSpec tools
-								detect: [:tool | tool name = newTool name]
-								ifNone: [newTool]]]).
+						(forcedTools isCollection and: [forcedTools isSymbol not])
+							ifTrue:
+								[forcedTools collect: [:newTool |
+								toolSpec tools
+									detect: [:tool | tool name = newTool name]
+									ifNone: [newTool]]]
+							ifFalse:
+								[forcedTools]]).
 				toolSpec]
 			ifEmpty: [newToolSpec].
 		

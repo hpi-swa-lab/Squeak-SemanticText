@@ -19,11 +19,14 @@ textFromToolSpec: aToolSpec
 					[stream
 						nextPutAll: ' (force: ';
 						nextPutAll:
-							(aToolSpec forcedTools ifNotNil: [:forcedTools |
-								forcedTools collect: [:tool |
-									(tool isString or: [tool isText])
-										ifTrue: [tool asString]
-										ifFalse: [tool name]]])
+							((aToolSpec forcedTools isCollection and: [aToolSpec forcedTools isSymbol not])
+								ifTrue:
+									 [aToolSpec forcedTools collect: [:tool |
+											(tool isString or: [tool isText])
+												ifTrue: [tool asString]
+												ifFalse: [tool name]]]
+								ifFalse:
+									[aToolSpec forcedTools])
 								storeString;
 						nextPut: $)].
 				stream nextPutAll: ': '.

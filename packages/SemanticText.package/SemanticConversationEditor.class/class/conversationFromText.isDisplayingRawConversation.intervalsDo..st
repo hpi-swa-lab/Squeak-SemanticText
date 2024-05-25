@@ -62,7 +62,7 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 									toolStream atEnd ifFalse:
 										[(toolStream next: 2) = ', ' ifFalse:
 											[toolStream position: toolStream position - 2]]].
-								forcedTools ifNotNil:
+								(forcedTools isCollection and: [forcedTools isSymbol not]) ifTrue:
 									[forcedTools := forcedTools collect: [:name |
 										tools detect: [:tool | tool name = name] ifNone: [name]]].
 								toolSpec := SemanticToolSpec new

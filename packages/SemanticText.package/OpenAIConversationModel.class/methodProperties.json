@@ -23,10 +23,10 @@
 		"initialize" : "ct 2/4/2024 19:49",
 		"unload" : "ct 8/17/2023 19:28" },
 	"instance" : {
-		"addToolSpec:toInput:" : "ct 3/14/2024 17:07",
+		"addToolSpec:toInput:" : "ct 5/25/2024 22:01",
 		"centsPerCompletionToken" : "ct 5/22/2024 16:05",
 		"centsPerPromptToken" : "ct 5/22/2024 16:06",
-		"countTokensInConversation:" : "ct 4/29/2024 22:56",
+		"countTokensInConversation:" : "ct 5/25/2024 22:01",
 		"countTokensInMessage:" : "ct 4/30/2024 01:33",
 		"countTokensInMessage:hasMultipleToolMessages:" : "ct 4/30/2024 18:36",
 		"countTokensInToolSpec:" : "ct 4/29/2024 22:55",
