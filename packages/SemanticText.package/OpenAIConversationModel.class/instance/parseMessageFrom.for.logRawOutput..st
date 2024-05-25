@@ -1,17 +1,16 @@
 private - requests
-parseMessageFrom: chatCompletionChoice for: aConversation rawChatCompletion: chatCompletionOrNil
+parseMessageFrom: chatCompletionChoice for: aConversation logRawOutput: logRawOutput
 
 	| messageResult message |
 	messageResult := chatCompletionChoice message.
 	message := SemanticMessage
-		conversation: chatCompletionChoice
+		conversation: aConversation
 		role: messageResult role
 		content: messageResult content.
 	
-	chatCompletionOrNil ifNotNil:
+	logRawOutput ifTrue:
 		[message rawOutput:
 			(JsonObject new
-				chatCompletion: chatCompletionOrNil;
 				chatCompletionChoice: chatCompletionChoice;
 				yourself)].
 	

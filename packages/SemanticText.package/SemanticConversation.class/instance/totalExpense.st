@@ -1,7 +1,7 @@
 accessing
-estimateTotalExpense
+totalExpense
 
-	^ ((self messages collect: [:message | message estimateExpense])
+	^ ((self messages collect: [:message | message expense])
 		copyWithout: nil)
 			ifEmpty: [nil]
 			ifNotEmpty: [:expenses | expenses sum]

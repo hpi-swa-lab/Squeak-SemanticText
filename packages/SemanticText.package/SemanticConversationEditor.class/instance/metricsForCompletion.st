@@ -11,5 +11,5 @@ metricsForCompletion
 		at: #promptTokenFraction put: promptTokens / newConversation model maxPromptTokens;
 		at: #maxCompletionTokens put: newConversation maxCompletionTokens;
 		at: #price put: newConversation estimatePriceToGetAssistantMessage;
-		at: #totalExpense put: self conversation estimateTotalExpense; "NB: If the user has manually edited the conversation before, this will be missing here. Store and aggregate expenses in the editor instead?"
+		at: #totalExpense put: self conversation totalExpense; "NB: If the user has manually edited the conversation before, this will be missing here. Store and aggregate expenses in the editor instead?"
 		yourself

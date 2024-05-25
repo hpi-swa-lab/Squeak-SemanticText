@@ -27,7 +27,13 @@ getAnswers: number for: aConversation config: aConfigOrNil
 			stream := false.
 			config shouldStream ifNotNil: [:shouldStream |
 				stream := shouldStream.
-				input stream: stream].
+				input stream: stream.
+				
+				stream ifTrue:
+					[input stream_options:
+						(JsonObject new
+							include_usage: true;
+							yourself)]].
 			
 			input messages:
 				(aConversation messages collect: [:message | message asOpenAIObject]).

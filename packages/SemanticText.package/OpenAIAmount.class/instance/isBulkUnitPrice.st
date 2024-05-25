@@ -1,0 +1,4 @@
+testing
+isBulkUnitPrice
+
+	^ bulkAmount notNil

@@ -1,12 +1,11 @@
 private - requests
-parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStreamingMessage rawChatCompletionChunk: chatCompletionChunkOrNil
+parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStreamingMessage
 
 	| chunkText chunkToolCalls chunkTokenProbabilities |
 	chunkText := chatCompletionChoice delta content.
 	
-	chatCompletionChunkOrNil ifNotNil:
-		[aStreamingMessage rawOutput chatCompletionChunks addLast: chatCompletionChunkOrNil.
-		aStreamingMessage rawOutput chatCompletionChunkChoices addLast: chatCompletionChoice].
+	aStreamingMessage rawOutput chatCompletionChunkChoices ifNotNil: [:rawChoices |
+		rawChoices addLast: chatCompletionChoice].
 	
 	chunkToolCalls := chatCompletionChoice delta tool_calls ifNotNil: [:toolCalls |
 		self parseStreamedToolCallChunksFrom: toolCalls toolSpec: aToolSpecOrNil message: aStreamingMessage].

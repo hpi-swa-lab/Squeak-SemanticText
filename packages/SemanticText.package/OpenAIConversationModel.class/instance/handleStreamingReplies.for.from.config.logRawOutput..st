@@ -10,6 +10,7 @@ handleStreamingReplies: number for: aConversation from: responseBlock config: aC
 		array: number
 		role: #assistant
 		inBackgroundDo: [:messages |
+			| expense |
 			[| dataStream data |
 			dataStream := self streamEventDataFrom: responseBlock value.
 			
@@ -30,15 +31,22 @@ handleStreamingReplies: number for: aConversation from: responseBlock config: aC
 						parameter: error param
 						code: error code
 						message: error message].
+				logRawOutput ifTrue:
+					[messages do: [:message |
+						message rawOutput chatCompletionChunks addLast: chunk]].
 				chunk choices do: [:choice |
 					| message |
 					message := messages at: choice index + 1.
-					self parseStreamedChunk: choice toolSpec: toolSpec addTo: message rawChatCompletionChunk: (logRawOutput ifTrue: [chunk]).
-					choice finish_reason ifNotNil: [message beComplete]]].
+					self parseStreamedChunk: choice toolSpec: toolSpec addTo: message.
+					choice finish_reason ifNotNil: [message beComplete]].
+				chunk usage ifNotNil: [:usage |
+					expense := self expenseForUsage: usage.
+					self assignExpense: expense toMessages: messages]].
 			self assert: dataStream next isNil]
 				
 				ensure:
 					[self account
-						noteExpense: (self expenseForReplies: messages after: promptTokens)
+						noteExpense:
+							(expense ifNil: [self expenseForReplies: messages after: promptTokens])
 						forUser: aConfig user
 						model: self name]]

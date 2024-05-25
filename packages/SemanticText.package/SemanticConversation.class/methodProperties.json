@@ -41,7 +41,6 @@
 		"estimatePriceToGetAssistantMessages:" : "ct 2/3/2024 21:22",
 		"estimatePriceToGetAssistantMessages:ofSize:" : "ct 2/3/2024 21:21",
 		"estimatePromptTokens" : "ct 4/30/2024 00:38",
-		"estimateTotalExpense" : "ct 2/12/2024 22:21",
 		"getAssistantMessage" : "ct 4/30/2024 00:06",
 		"getAssistantMessages:" : "ct 4/30/2024 00:10",
 		"getAssistantReplies:" : "ct 2/9/2024 23:50",
@@ -81,6 +80,8 @@
 		"toolSpecFor:put:" : "ct 4/30/2024 00:59",
 		"toolSpecs" : "ct 1/15/2024 23:49",
 		"toolSpecs:" : "ct 1/15/2024 23:49",
+		"totalExpense" : "ct 5/25/2024 23:09",
+		"validate" : "ct 2/19/2024 22:28",
 		"withConfigDo:" : "ct 8/17/2023 20:09",
 		"withNextActiveToolSpecDo:" : "ct 4/30/2024 23:51",
 		"withToolSpec:do:" : "ct 4/29/2024 22:14" } }

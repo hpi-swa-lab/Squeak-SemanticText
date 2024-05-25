@@ -23,3 +23,6 @@ printOn: aStream
 				((useDollars not and: [self approximateCents < 0.05] and: [self approximateCents > 0])
 					ifTrue: [(1 - ((self approximateCents * factor) log: 10)) ceiling]
 					ifFalse: [2])].
+	
+	self isBulkUnitPrice ifTrue:
+		[aStream nextPutAll: ' (unit price)'].
