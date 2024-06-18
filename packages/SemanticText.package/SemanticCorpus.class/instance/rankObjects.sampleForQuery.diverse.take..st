@@ -10,8 +10,8 @@ rankObjects: objects sampleForQuery: queryOrNil diverse: diverse take: anInteger
 	
 	localDocuments := Dictionary new: objects size.
 	self documents do: [:doc |
-		(objects includes: doc method) ifTrue:
-			[localDocuments at: doc method put: doc]].
+		(objects includes: doc object) ifTrue:
+			[localDocuments at: doc object put: doc]].
 	
 	diverse ifTrue:
 		[diversities := localDocuments
@@ -23,7 +23,7 @@ rankObjects: objects sampleForQuery: queryOrNil diverse: diverse take: anInteger
 	
 	queryEmbedding ifNotNil:
 		[relevances := documents
-			collect: [:doc | (doc embedding dot: queryEmbedding) ** 5]
+			collect: [:doc | doc -> ((doc embedding dot: queryEmbedding) ** 5)]
 			as: Dictionary.
 		relevances := relevances / relevances sum].
 	
@@ -36,9 +36,9 @@ rankObjects: objects sampleForQuery: queryOrNil diverse: diverse take: anInteger
 				ifNotNil:
 					["relevances + diversities"
 					objects
-						collect: [:sender |
-							sender ->
-								((relevances at: sender) + (diversities at: sender))]
+						collect: [:object |
+							object ->
+								((relevances at: object) + (diversities at: object))]
 						as: Dictionary]].
 	
 	sample := scores semanticRandomSample: anInteger * 10.
