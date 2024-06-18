@@ -8,7 +8,8 @@
 		"addPragmaFunctionsTo:" : "ct 5/2/2024 14:46",
 		"callFunctionAt:withArguments:" : "ct 4/27/2024 23:10",
 		"initializeConversation:" : "ct 5/2/2024 14:50",
-		"makeFunctionFromPragma:" : "ct 5/2/2024 14:52",
+		"invokeFunction:selector:withRawArguments:" : "ct 6/18/2024 23:11",
+		"makeFunctionFromPragma:" : "ct 6/18/2024 17:37",
 		"makeNewConversation" : "ct 4/27/2024 22:57",
 		"orderedFunctionNames" : "ct 5/2/2024 14:50",
 		"serializeError:" : "ct 4/27/2024 23:10" } }

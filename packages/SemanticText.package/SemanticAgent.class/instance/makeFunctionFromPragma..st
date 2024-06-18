@@ -6,9 +6,8 @@ makeFunctionFromPragma: aPragma
 	
 	function := protoFunction copy.
 	function action: [:args |
-		| arguments |
-		arguments := function parameters
-			collect: [:parameter | args at: parameter name]
-			as: Array.
-		self callFunctionAt: aPragma selector withArguments: arguments].
+		self
+			invokeFunction: function
+			selector: aPragma selector
+			withRawArguments: args].
 	^ function
