@@ -25,8 +25,8 @@
 	"instance" : {
 		"addToolSpec:toInput:" : "ct 5/25/2024 22:01",
 		"assignExpense:toMessages:" : "ct 5/25/2024 23:42",
-		"centsPerCompletionToken" : "ct 5/22/2024 16:05",
-		"centsPerPromptToken" : "ct 5/22/2024 16:06",
+		"centsPerCompletionToken" : "ct 6/18/2024 21:58",
+		"centsPerPromptToken" : "ct 6/18/2024 21:59",
 		"countTokensInConversation:" : "ct 5/25/2024 22:01",
 		"countTokensInMessage:" : "ct 4/30/2024 01:33",
 		"countTokensInMessage:hasMultipleToolMessages:" : "ct 4/30/2024 18:36",
