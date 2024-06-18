@@ -13,3 +13,7 @@ asSemanticCorpus
 	corpus updateEmbeddings.
 	
 	^ corpus
+
+	"data := #('dutch' 'densk' 'belgian' 'german' 'english' 'japanese' 'klingonic' 'JavaScript' 'Python' 'CPython' 'Smalltalk').
+	corpus := data asSemanticCorpus.
+	corpus rankObjects: data sampleForQuery: 'dutch' take: data size."
