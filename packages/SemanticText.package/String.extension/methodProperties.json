@@ -2,6 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
+		"openAIWithSqueakLineEndings" : "ct 6/18/2024 22:58",
+		"openAIWithUnixLineEndings" : "ct 6/18/2024 22:58",
 		"semanticAsExtendedRegex" : "ct 1/17/2024 01:30",
 		"semanticAsTextFromHtmlKeepNewlines" : "ct 2/19/2024 14:00",
 		"semanticAsk:" : "ct 11/27/2023 17:01",

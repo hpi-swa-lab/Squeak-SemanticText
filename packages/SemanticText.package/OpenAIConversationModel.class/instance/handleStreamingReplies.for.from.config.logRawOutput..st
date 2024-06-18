@@ -24,7 +24,7 @@ handleStreamingReplies: number for: aConversation from: responseBlock config: aC
 			
 			[#('[DONE]' nil) includes: (data := dataStream next)] whileFalse:
 				[| chunk |
-				chunk := data utf8ToSqueak parseAsJson.
+				chunk := data utf8ToSqueak parseAsJson openAIWithSqueakLineEndings.
 				(chunk at: #error) ifNotNil: [:error |
 					OpenAIError
 						signalForType: error type

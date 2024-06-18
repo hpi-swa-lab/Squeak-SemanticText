@@ -19,14 +19,14 @@ invokeWithConfig: aConfigOrNil editInput: inputBlock handleResponse: responseBlo
 		[response := self account controlConnectionDuring:
 			[WebClient new
 				httpPost: self url
-				content: input asJsonString squeakToUtf8
+				content: input openAIWithUnixLineEndings asJsonString squeakToUtf8
 				type: 'application/json'
 				do: [:request |
 					self account apiKey ifNotNil: [:apiKey |
 						request headerAt: 'Authorization' put: 'Bearer ' , apiKey]]].
 	
 		output := (responseBlock ifNotNil: [responseBlock cull: response cull: config])
-			ifNil: [response content utf8ToSqueak withoutTrailingBlanks parseAsJson].
+			ifNil: [response content utf8ToSqueak withoutTrailingBlanks parseAsJson openAIWithSqueakLineEndings].
 	
 		response isSuccess ifFalse:
 			[| error |

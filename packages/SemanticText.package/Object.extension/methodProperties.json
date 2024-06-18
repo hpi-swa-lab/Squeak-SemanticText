@@ -2,6 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
+		"openAIWithSqueakLineEndings" : "ct 6/18/2024 22:58",
+		"openAIWithUnixLineEndings" : "ct 6/18/2024 22:58",
 		"semanticCompletedConversation:for:" : "ct 12/5/2023 20:37",
 		"semanticNewChunk:fromConversation:for:" : "ct 12/5/2023 20:37",
 		"xxxSemanticUnTraceAll" : "ct 1/16/2024 23:15" } }

@@ -5,6 +5,8 @@
 		"asSemanticCorpus" : "ct 6/18/2024 20:42",
 		"do:semanticDisplayingRichProgress:" : "ct 8/15/2023 15:01",
 		"do:semanticDisplayingRichProgress:every:" : "ct 1/8/2024 23:27",
+		"openAIWithSqueakLineEndings" : "ct 6/18/2024 22:59",
+		"openAIWithUnixLineEndings" : "ct 6/18/2024 22:59",
 		"semanticConcurrentCollect:" : "ct 5/1/2024 01:00",
 		"semanticFindRankedObjects:similarToQuery:" : "ct 1/11/2024 17:23",
 		"semanticRandom:sample:" : "ct 5/2/2024 21:05",
