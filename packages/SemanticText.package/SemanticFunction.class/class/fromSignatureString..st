@@ -48,7 +48,15 @@ fromSignatureString: aStringOrStream
 					\s*
 					(
 						(?<parameterSchema>
-							\{ .* \}
+							\{
+							(?:
+								# HACK to simulate balanced pattern matching
+								(?!
+									\} \s* , \s* [^\s"]
+								)
+								.
+							)*
+							\}
 						)
 						(?<parameterType>)
 						|

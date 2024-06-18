@@ -8,11 +8,12 @@ testFromString
 			arg2!: boolean "arg2 is required",
 			arg3?: number "arg3 is optional",
 			arg4,
-			arg5: {"type": "string", "properties": {"enum_item": {"enum": ["plonk_griffle"]}, "pattern_string": {"type": "string", "pattern": "\\w+_[0-9]+"}}} "arg5 has highly complicated JSON schema")'.
+			arg5: {"items": {"type": "string"}},
+			arg6: {"type": "string", "properties": {"enum_item": {"enum": ["plonk_griffle"]}, "pattern_string": {"type": "string", "pattern": "\\w+_[0-9]+"}}} "arg6 has highly complicated JSON schema")'.
 	
 	self assert: 'name' equals: function name.
 	self assert: 'function comment with "quotes" and back\slash' equals: function description.
-	self assert: 5 equals: function parameters size.
+	self assert: 6 equals: function parameters size.
 	self assert: 'arg1' equals: function parameters first name.
 	self assert: 'arg1 comment with "quotes" and back\slash' equals: function parameters values first description.
 	self assert: 'string' equals: function parameters values first type.
@@ -30,6 +31,10 @@ testFromString
 	self assert: (function parameters values fourth type isDictionary and: [function parameters values fourth type isEmpty]).
 	self assert: function parameters values fourth required.
 	self assert: 'arg5' equals: function parameters values fifth name.
-	self assert: 'arg5 has highly complicated JSON schema' equals: function parameters values fifth description.
-	self assert: '{"type": "string", "properties": {"enum_item": {"enum": ["plonk_griffle"]}, "pattern_string": {"type": "string", "pattern": "\\w+_[0-9]+"}}}' parseAsOrderedJson equals: function parameters values fifth type.
+	self assert: nil equals: function parameters values fifth description.
+	self assert: '{"items": {"type": "string"}}' parseAsOrderedJson equals: function parameters values fifth type.
 	self assert: function parameters values fifth required.
+	self assert: 'arg6' equals: function parameters values sixth name.
+	self assert: 'arg6 has highly complicated JSON schema' equals: function parameters values sixth description.
+	self assert: '{"type": "string", "properties": {"enum_item": {"enum": ["plonk_griffle"]}, "pattern_string": {"type": "string", "pattern": "\\w+_[0-9]+"}}}' parseAsOrderedJson equals: function parameters values sixth type.
+	self assert: function parameters values sixth required.
