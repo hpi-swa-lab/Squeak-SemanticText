@@ -11,6 +11,9 @@ addModelItemsToWindowMenu: menu
 	menu
 		add: ('{1}streaming' format: {self isStreaming ifTrue: ['<on>'] ifFalse: ['<off>']})
 		action: #toggleStreaming.
+	menu
+		add: ('{1}voice' format: {self voiceModeEnabled ifTrue: ['<on>'] ifFalse: ['<off>']})
+		action: #toggleVoiceMode.
 	
 	menu addLine.
 	menu

@@ -25,17 +25,17 @@ buildButtonBar: builder
 				add:
 					(builder pluggableActionButtonSpec new
 						model: self;
-						label: 'Complete';
-						help: #helpForComplete;
-						action: #complete;
-						enabled: #canComplete;
+						label: #completeCancelLabel;
+						help: #helpForCompleteCancel;
+						action: #completeOrCancel;
 						yourself);
 				add:
 					(builder pluggableActionButtonSpec new
 						model: self;
-						label: 'Cancel';
-						action: #cancel;
-						enabled: #canCancel;
+						label: 'Voice';
+						action: #toggleVoiceMode;
+						state: #voiceModeEnabled;
+						color: #voiceButtonColor;
 						yourself);
 				yourself);
 		yourself

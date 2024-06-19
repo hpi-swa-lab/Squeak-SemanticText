@@ -9,6 +9,8 @@
 		"conversation",
 		"mode",
 		"messageMarkups",
+		"voiceModeEnabled",
+		"voiceAutomaton",
 		"originalLabel" ],
 	"name" : "SemanticConversationEditor",
 	"pools" : [

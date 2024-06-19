@@ -3,6 +3,7 @@ complete: aText
 
 	| response |
 	self assureModelAvailableOr: [^ false].
+	self voiceAutomaton stopListening.
 	
 	aText ifNotNil:
 		[self text: aText].

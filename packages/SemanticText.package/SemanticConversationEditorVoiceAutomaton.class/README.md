@@ -1,0 +1,1 @@
+I handle voice input and output for a SemanticConversationEditor.
