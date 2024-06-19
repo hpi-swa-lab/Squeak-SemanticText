@@ -16,5 +16,5 @@ noteMessageCompleted
 		[^ self].
 	(self resolveAllToolCallsFromUser: false async: true)
 		then:
-			[self shouldAutomaticallyCompleteToolMessages ifTrue:
+			[:x | self shouldAutomaticallyCompleteToolMessages ifTrue:
 				[(self future: 1) "hacked, otherwise text is not updated before???" completeAsIs]].
