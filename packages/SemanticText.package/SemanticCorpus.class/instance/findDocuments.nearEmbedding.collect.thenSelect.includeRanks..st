@@ -14,7 +14,7 @@ findDocuments: number nearEmbedding: embedding collect: collectBlock thenSelect:
 	[similarDocuments := self findDocuments: number * n nearEmbedding: embedding includeRanks: includeRanks.
 	objects := includeRanks
 		ifFalse: [(similarDocuments collect: collectBlock as: OrderedCollection) withoutDuplicates]
-		ifTrue: [similarDocuments keys orderedGroupBy: collectBlock].
+		ifTrue: [similarDocuments keys semanticOrderedGroupBy: collectBlock].
 	selectBlock ifNotNil:
 		[objects := includeRanks
 			ifFalse: [objects select: selectBlock]
