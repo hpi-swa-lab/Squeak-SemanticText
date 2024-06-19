@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Speech",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SemanticSpeechSynthesisConfig",
+	"pools" : [
+		 ],
+	"super" : "SemanticConfig",
+	"type" : "normal" }

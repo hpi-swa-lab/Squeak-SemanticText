@@ -1,0 +1,1 @@
+I synthetize text to speech (TTS) using the OpenAI API.

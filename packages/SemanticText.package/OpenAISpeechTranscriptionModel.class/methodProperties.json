@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"initialize" : "ct 6/12/2024 00:21",
+		"unload" : "ct 6/12/2024 00:22",
+		"whisper1Name" : "ct 6/12/2024 00:21" },
+	"instance" : {
+		"centsPerMinute" : "ct 6/18/2024 21:58",
+		"centsPerSecond" : "ct 6/11/2024 22:16",
+		"defaultConfig" : "ct 6/12/2024 00:39",
+		"defaultName" : "ct 6/11/2024 22:14",
+		"getTranscriptionFor:" : "ct 6/11/2024 22:17",
+		"getTranscriptionFor:config:" : "ct 6/18/2024 22:12",
+		"getTranscriptionFor:withConfigDo:" : "ct 6/12/2024 21:00",
+		"pathToEndpoint" : "ct 6/11/2024 22:17",
+		"priceFor:" : "ct 6/18/2024 21:53",
+		"printOn:" : "ct 6/11/2024 22:16",
+		"tokensPerMinute" : "ct 6/18/2024 22:14" } }

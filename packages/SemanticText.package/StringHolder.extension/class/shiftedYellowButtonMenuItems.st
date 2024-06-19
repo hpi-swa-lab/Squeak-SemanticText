@@ -26,9 +26,11 @@ shiftedYellowButtonMenuItems
 			{'send contents to printer' translated.		#sendContentsToPrinter}.
 			{'printer setup' translated.				#printerSetup}.
 			#-.
-			{'explain it'.		#semanticExplainIt}.
 			{'summarize it'.		#semanticSummarizeIt}.
+			{'explain it'.		#semanticExplainIt}.
 			{'ask question about it...'.		#semanticAskQuestionAboutIt}.
+			{'say it'. #semanticSayIt}.
+			{'speak to type'. #semanticSpeakToType}.
 			#-.
 		}.
 	Smalltalk isMorphic ifFalse: [ entries add: 

@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Providers-OpenAI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 6/19/2024 23:04",
+	"instvars" : [
+		 ],
+	"name" : "OpenAISpeechSynthesisModel",
+	"pools" : [
+		 ],
+	"super" : "OpenAIModel",
+	"type" : "normal" }

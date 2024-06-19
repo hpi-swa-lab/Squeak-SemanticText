@@ -1,0 +1,1 @@
+I transcribe speech to text (STT) using the OpenAI API.

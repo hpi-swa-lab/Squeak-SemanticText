@@ -1,0 +1,4 @@
+initialize-release
+unload
+
+	SemanticText unregisterSpeechTranscriptionModelsOf: self

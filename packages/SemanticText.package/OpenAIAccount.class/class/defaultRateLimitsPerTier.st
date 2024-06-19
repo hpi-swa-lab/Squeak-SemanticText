@@ -11,6 +11,8 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-large' put: #(3000 200 1000000 nil 3000000);
 				at: 'text-embedding-3-small' put: #(3000 200 1000000 nil 3000000);
 				at: 'text-embedding-ada-002' put: #(3000 200 1000000 nil 3000000);
+				at: 'whisper-1' put: #(3 200 nil nil nil);
+				at: 'tts-1' put: #(3 200 nil nil nil);
 				yourself);
 		at: 1 put:
 			(Dictionary new
@@ -21,6 +23,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-large' put: #(3000 nil 1000000 nil 3000000);
 				at: 'text-embedding-3-small' put: #(3000 nil 1000000 nil 3000000);
 				at: 'text-embedding-ada-002' put: #(3000 nil 1000000 nil 3000000);
+				at: 'whisper-1' put: #(50 nil nil nil nil);
+				at: 'tts-1' put: #(50 nil nil nil nil);
+				at: 'tts-1-hd' put: #(3 nil nil nil nil);
 				yourself);
 		at: 2 put:
 			(Dictionary new
@@ -31,6 +36,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-large' put: #(5000 nil 1000000 nil 20000000);
 				at: 'text-embedding-3-small' put: #(5000 nil 1000000 nil 20000000);
 				at: 'text-embedding-ada-002' put: #(5000 nil 1000000 nil 20000000);
+				at: 'whisper-1' put: #(50 nil nil nil nil);
+				at: 'tts-1' put: #(50 nil nil nil nil);
+				at: 'tts-1-hd' put: #(5 nil nil nil nil);
 				yourself);
 		at: 3 put:
 			(Dictionary new
@@ -41,6 +49,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-large' put: #(5000 nil 5000000 nil 100000000);
 				at: 'text-embedding-3-small' put: #(5000 nil 5000000 nil 100000000);
 				at: 'text-embedding-ada-002' put: #(5000 nil 5000000 nil 100000000);
+				at: 'whisper-1' put: #(100 nil nil nil nil);
+				at: 'tts-1' put: #(100 nil nil nil nil);
+				at: 'tts-1-hd' put: #(7 nil nil nil nil);
 				yourself);
 		at: 4 put:
 			(Dictionary new
@@ -51,6 +62,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-large' put: #(10000 nil 5000000 nil 500000000);
 				at: 'text-embedding-3-small' put: #(10000 nil 5000000 nil 500000000);
 				at: 'text-embedding-ada-002' put: #(10000 nil 5000000 nil 500000000);
+				at: 'whisper-1' put: #(100 nil nil nil nil);
+				at: 'tts-1' put: #(100 nil nil nil nil);
+				at: 'tts-1-hd' put: #(10 nil nil nil nil);
 				yourself);
 		at: 5 put:
 			(Dictionary new
@@ -61,6 +75,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-large' put: #(10000 nil 10000000 nil 4000000000);
 				at: 'text-embedding-3-small' put: #(10000 nil 10000000 nil 4000000000);
 				at: 'text-embedding-ada-002' put: #(10000 nil 10000000 nil 4000000000);
+				at: 'whisper-1' put: #(500 nil nil nil nil);
+				at: 'tts-1' put: #(500 nil nil nil nil);
+				at: 'tts-1-hd' put: #(20 nil nil nil nil);
 				yourself);
 		yourself.
 	^ flat collect: [:modelRateLimits |

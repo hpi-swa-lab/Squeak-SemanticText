@@ -1,0 +1,21 @@
+{
+	"class" : {
+		"allVoices" : "ct 12/11/2023 15:56",
+		"initialize" : "ct 12/11/2023 15:48",
+		"tts1HDName" : "ct 12/10/2023 21:35",
+		"tts1Name" : "ct 12/10/2023 20:29",
+		"unload" : "ct 12/11/2023 15:47" },
+	"instance" : {
+		"centsPerCharacter" : "ct 6/18/2024 21:58",
+		"defaultConfig" : "ct 12/11/2023 15:40",
+		"defaultName" : "ct 12/10/2023 21:35",
+		"defaultVoice" : "ct 6/19/2024 23:06",
+		"getSoundFor:" : "ct 12/10/2023 20:31",
+		"getSoundFor:config:" : "ct 12/11/2023 16:02",
+		"getSoundFor:withConfigDo:" : "ct 6/12/2024 21:00",
+		"maxCharacters" : "ct 12/10/2023 22:00",
+		"pathToEndpoint" : "ct 12/10/2023 20:34",
+		"priceFor:" : "ct 12/10/2023 22:00",
+		"printOn:" : "ct 2/10/2024 00:08",
+		"soundFromMp3FileNamed:" : "ct 6/18/2024 22:09",
+		"soundFromMp3Stream:" : "ct 6/11/2024 21:40" } }

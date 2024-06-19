@@ -1,4 +1,4 @@
-registry
+registry - embedding
 chooseDefaultEmbeddingModel
 
 	^ self chooseDefaultModelFor: #embedding
