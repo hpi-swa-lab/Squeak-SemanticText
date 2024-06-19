@@ -36,6 +36,7 @@
 		"allRoles" : "ct 8/13/2023 14:46",
 		"aspectDependencies" : "ct 6/12/2024 04:38",
 		"assureModelAvailableOr:" : "ct 4/30/2024 21:12",
+		"assureSpeechAvailableOr:" : "ct 6/19/2024 23:52",
 		"beBusyDuring:" : "ct 8/13/2023 15:03",
 		"buildAdvancedButtonBar:" : "ct 2/14/2024 22:19",
 		"buildButtonBar:" : "ct 6/12/2024 03:04",
@@ -126,7 +127,7 @@
 		"voiceAutomaton" : "ct 6/19/2024 23:29",
 		"voiceButtonColor" : "ct 6/18/2024 22:17",
 		"voiceModeEnabled" : "ct 6/12/2024 01:55",
-		"voiceModeEnabled:" : "ct 6/19/2024 23:29",
+		"voiceModeEnabled:" : "ct 6/19/2024 23:52",
 		"voiceState" : "ct 6/19/2024 23:29",
 		"windowIsClosing" : "ct 6/19/2024 23:29",
 		"windowReqNewLabel:" : "ct 6/19/2024 16:52" } }

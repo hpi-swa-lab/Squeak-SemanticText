@@ -5,6 +5,8 @@
 		"appName" : "ct 8/27/2023 20:16",
 		"assureConversationAvailableOr:" : "ct 10/18/2023 17:12",
 		"assureSearchAvailableOr:" : "ct 10/18/2023 17:12",
+		"assureSpeechSynthesisAvailableOr:" : "ct 6/19/2024 23:51",
+		"assureSpeechTranscriptionAvailableOr:" : "ct 6/19/2024 23:51",
 		"basicSelfUpdateBranch:" : "ct 8/27/2023 20:17",
 		"chooseDefaultConversationModel" : "ct 8/19/2023 19:22",
 		"chooseDefaultEmbeddingModel" : "ct 11/24/2023 09:05",
