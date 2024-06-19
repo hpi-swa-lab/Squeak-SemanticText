@@ -2,6 +2,9 @@ service
 getTranscriptionFor: aSound config: aConfigOrNil
 
 	| soundData result |
+	aSound duration seconds < self minLength ifTrue:
+		[^ ''].
+	
 	soundData := ByteArray streamContents: [:stream |
 		[aSound storeWAVSamplesOn: stream]
 			on: ProgressInitiationException do: [:ex |
