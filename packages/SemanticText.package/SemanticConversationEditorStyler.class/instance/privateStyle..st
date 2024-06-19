@@ -14,3 +14,5 @@ privateStyle: aText
 			addAllAttributes: (self attributesForRole: message role)
 			from: interval start
 			to: interval stop].
+	
+	self styleMessageText: aText from: 1 to: aText size. "not part of loop because intervals for multiple messages may overlap"
