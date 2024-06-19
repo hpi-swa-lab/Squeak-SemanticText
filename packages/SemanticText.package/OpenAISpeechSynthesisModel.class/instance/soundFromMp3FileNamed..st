@@ -8,8 +8,12 @@ soundFromMp3FileNamed: fullName
 	
 	| pipeableOSProcessClass |
 	self flag: #todo. "test and probably fix for windows!"
-	pipeableOSProcessClass := (Smalltalk classNamed: #PipeableOSProcess)
-		ifNil: [^ self error: 'Cannot convert mp3 without OSProcess'].
+	pipeableOSProcessClass := (Smalltalk classNamed: #PipeableOSProcess) ifNil:
+		[^ self error: 'Cannot convert mp3 without CommandShell'
+		"Install it via:
+			Installer ss project: 'OSProcess'; install: 'OSProcess'.
+			Installer ss project: 'CommandShell'; install: 'CommandShell'.
+		"].
 	^ FileStream readOnlyFileNamed: fullName do: [:mp3Stream |
 		| osProcess samples |
 		osProcess := pipeableOSProcessClass
