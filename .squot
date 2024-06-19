@@ -1,5 +1,6 @@
 OrderedDictionary {
 	'packages/BaselineOfSemanticText.package' : #SquotCypressCodeSerializer,
 	'packages/SemanticText.package' : #SquotCypressCodeSerializer,
-	'packages/SemanticTextCompatibility-Squeak60.package' : #SquotCypressCodeSerializer
+	'packages/SemanticTextCompatibility-Squeak60.package' : #SquotCypressCodeSerializer,
+	'packages/SemanticTextProviders-Klatt.package' : #SquotCypressCodeSerializer
 }

@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticTextProviders-Klatt",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 6/19/2024 23:21",
+	"instvars" : [
+		"baseConfig" ],
+	"name" : "SemanticKlattSpeechSynthesisModel",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

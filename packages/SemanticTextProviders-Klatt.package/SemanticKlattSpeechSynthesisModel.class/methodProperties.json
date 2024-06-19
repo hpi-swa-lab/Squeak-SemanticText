@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"allVoices" : "ct 12/11/2023 20:55",
+		"initialize" : "ct 12/11/2023 20:55",
+		"unload" : "ct 12/11/2023 20:55" },
+	"instance" : {
+		"baseConfig" : "ct 12/11/2023 20:58",
+		"baseConfig:" : "ct 12/11/2023 20:58",
+		"defaultConfig" : "ct 12/11/2023 20:59",
+		"defaultVoice" : "ct 12/11/2023 20:53",
+		"getSoundFor:" : "ct 12/11/2023 20:50",
+		"getSoundFor:config:" : "ct 12/11/2023 21:10",
+		"getSoundFor:withConfigDo:" : "ct 6/12/2024 21:00",
+		"initialize" : "ct 12/11/2023 20:57",
+		"makeSpeakerForConfig:" : "ct 6/19/2024 23:23",
+		"name" : "ct 12/11/2023 20:55",
+		"printOn:" : "ct 12/11/2023 20:57" } }

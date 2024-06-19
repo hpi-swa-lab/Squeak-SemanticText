@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticTextProviders-Klatt",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 6/19/2024 23:24",
+	"instvars" : [
+		"sounds" ],
+	"name" : "SemanticKlattBufferingVoice",
+	"pools" : [
+		 ],
+	"super" : "KlattVoice",
+	"type" : "normal" }

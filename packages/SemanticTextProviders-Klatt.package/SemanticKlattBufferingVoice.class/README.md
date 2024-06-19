@@ -1,0 +1,1 @@
+I buffer the phonetic events emitted by my superclass rather than playing them immediately.

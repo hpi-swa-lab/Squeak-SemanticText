@@ -6,9 +6,18 @@ baseline: spec
 		"packages"
 		spec package: #SemanticText with:
 			[spec postLoadDoIt: #postLoad].
+		spec package: #'SemanticTextProviders-Klatt' with:
+			[spec requires: 'Speech'].
 		
 		"groups"
-		spec group: #default with: #(SemanticText)].
+		spec group: #default with: #(SemanticText).
+		spec group: #full with: #(SemanticText #'SemanticTextProviders-Klatt').
+		
+		"dependencies"
+		spec package: 'Speech' with: [
+			spec
+				repository: 'http://www.squeaksource.com/Speech';
+				file: 'Speech-ct.13']].
 	
 	spec for: #(#'squeak6.0.x.release') do: [
 		"dependencies"
