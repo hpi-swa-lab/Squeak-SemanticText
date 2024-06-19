@@ -1,4 +1,4 @@
 instance creation
 openNewConversation
 
-	^ self makeNewConversation open
+	^ self new openNewConversation

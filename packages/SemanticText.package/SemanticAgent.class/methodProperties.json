@@ -1,15 +1,18 @@
 {
 	"class" : {
+		"agentName" : "ct 6/19/2024 16:42",
 		"makeNewConversation" : "ct 4/28/2024 01:24",
-		"openNewConversation" : "ct 4/28/2024 01:24",
+		"openNewConversation" : "ct 6/19/2024 17:11",
 		"parserClass" : "ct 4/28/2024 19:38",
 		"shoutParserClass" : "ct 4/28/2024 20:39" },
 	"instance" : {
 		"addPragmaFunctionsTo:" : "ct 5/2/2024 14:46",
+		"agentName" : "ct 6/19/2024 17:41",
 		"callFunctionAt:withArguments:" : "ct 4/27/2024 23:10",
 		"initializeConversation:" : "ct 5/2/2024 14:50",
 		"invokeFunction:selector:withRawArguments:" : "ct 6/18/2024 23:11",
 		"makeFunctionFromPragma:" : "ct 6/18/2024 17:37",
 		"makeNewConversation" : "ct 4/27/2024 22:57",
+		"openNewConversation" : "ct 6/19/2024 17:11",
 		"orderedFunctionNames" : "ct 5/2/2024 14:50",
 		"serializeError:" : "ct 4/27/2024 23:10" } }

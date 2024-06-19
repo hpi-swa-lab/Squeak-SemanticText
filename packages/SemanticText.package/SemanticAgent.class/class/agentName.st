@@ -1,0 +1,4 @@
+accessing
+agentName
+
+	^ self name

@@ -8,7 +8,8 @@
 	"instvars" : [
 		"conversation",
 		"mode",
-		"messageMarkups" ],
+		"messageMarkups",
+		"originalLabel" ],
 	"name" : "SemanticConversationEditor",
 	"pools" : [
 		 ],
