@@ -46,7 +46,7 @@ countTokensInConversation: aConversation
 								| toolName |
 								toolName := (tool isString or: [tool isText])
 									ifTrue: [tool asString]
-									ifFalse: [tool asOpenAIToolChoiceObject name].
+									ifFalse: [tool asOpenAIToolChoiceObject function name].
 								(self countTokensIn: toolName) + 4]]]
 				ifFalse:
 					[1 flag: #assumption "i don't know"])].
