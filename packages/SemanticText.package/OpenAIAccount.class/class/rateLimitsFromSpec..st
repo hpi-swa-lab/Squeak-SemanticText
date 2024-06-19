@@ -4,4 +4,4 @@ rateLimitsFromSpec: spec
 
 	^ (#(rpm rpd tpm tpd batchQueueLimit) with: spec collect: [:key :limit |
 		key -> limit])
-			asDictionary
+			as: Dictionary
