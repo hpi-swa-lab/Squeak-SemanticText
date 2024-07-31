@@ -1,6 +1,5 @@
 documentation
 exampleFunctions
-	"NOTE: Parallel function calling within one assistant message require new models (gpt-4-1106-preview or gpt-3.5-turbo-1106)!"
 
 	| temperature rain conversation message |
 	temperature := SemanticFunction

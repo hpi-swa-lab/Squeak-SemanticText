@@ -1,6 +1,6 @@
 documentation
 exampleDeterminism
-	"NOTE: Beta feature! Require new models (gpt-4-1106-preview or gpt-3.5-turbo-1106)!"
+	"NOTE: Beta feature!"
 
 	(#(false true) semanticConcurrentCollect: [:useSeed |
 		((1 to: 5) semanticConcurrentCollect: [:i |
