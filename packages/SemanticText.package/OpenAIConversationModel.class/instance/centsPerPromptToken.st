@@ -25,4 +25,8 @@ centsPerPromptToken
 		
 		"GPT-4o"
 		[self class gpt4o_20240513Name] -> [0.0005s].
+		"for later: vision: unclear"
+		
+		"GPT-4o mini"
+		[self class gpt4oMini_20240718Name] -> [0.000015s].
 		"for later: vision: unclear"}

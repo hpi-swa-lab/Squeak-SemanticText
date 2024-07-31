@@ -21,8 +21,11 @@ centsPerCompletionToken
 		[self class gpt4_20240409Name] -> [0.003s].
 		[self class gpt4_0125Name] -> [0.003s].
 		[self class gpt4_1106Name] -> [0.003s].
-		"for later: vision: unclear"
 		
 		"GPT-4o"
 		[self class gpt4o_20240513Name] -> [0.0015s].
+		"for later: vision: unclear"
+		
+		"GPT-4o mini"
+		[self class gpt4oMini_20240718Name] -> [0.00006s].
 		"for later: vision: unclear"}

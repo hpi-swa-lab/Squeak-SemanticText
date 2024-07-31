@@ -22,5 +22,8 @@ releaseDate
 			[self class gpt4_1106Name] -> [Date year: 2023 month: 11 day: 6].
 			
 			"GPT-4o"
-			[self class gpt4o_20240513Name] -> [Date year: 2024 month: 5 day: 13]}
+			[self class gpt4o_20240513Name] -> [Date year: 2024 month: 5 day: 13].
+			
+			"GPT-4o mini"
+			[self class gpt4oMini_20240718Name] -> [Date year: 2024 month: 07 day: 18]}
 		otherwise: []
