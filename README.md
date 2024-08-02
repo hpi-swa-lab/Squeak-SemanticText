@@ -145,7 +145,7 @@ At the moment, the following projects are known to make use of SemanticText:
 
 - [Squeak Inbox Talk](https://github.com/hpi-swa-lab/squeak-inbox-talk)
 - [SemanticSqueak](https://github.com/hpi-swa-lab/SemanticSqueak)
-- [Creative Toays/Dali](https://improvekit.github.io/)
+- [Creative Toays/Dalí](https://improvekit.github.io/)
 - [oRAGle](https://github.com/hpi-swa-lab/sandblocks-text)
 
 ## Acknowledgments
