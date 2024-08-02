@@ -145,14 +145,14 @@ At the moment, the following projects are known to make use of SemanticText:
 
 - [Squeak Inbox Talk](https://github.com/hpi-swa-lab/squeak-inbox-talk)
 - [SemanticSqueak](https://github.com/hpi-swa-lab/SemanticSqueak)
-- [Creative Toays/Dalí](https://improvekit.github.io/)
+- [Creative Toys/Dalí](https://improvekit.github.io/)
 - [oRAGle](https://github.com/hpi-swa-lab/sandblocks-text)
 
 ## Acknowledgments
 
 Thanks to Vincent Eichhorn ([@vincenteichhorn](https://github.com/vincenteichhorn)) for giving me an overview of indexing techniques for Vector DBs (will implement one soon!).
 Thanks to Toni Mattis ([@amintos](https://github.com/amintos)) for tips regarding embedding search (in particular for [`541ae49`](https://github.com/LinqLover/Squeak-SemanticText/commit/541ae49a76ee5ef80130a77017f0ed24aa65c897)).
-Thanks to [r/MachineLearning](https://www.reddit.com/r/MachineLearning/comments/14pgogs/d_best_embedding_models_for_retrieving_mixed/?utm_source=share&utm_medium=web2x&context=3) folks for suggesting alternative embedding models (your suggestions will maybe implemented one day).
+Thanks to [r/MachineLearning](https://www.reddit.com/r/MachineLearning/comments/14pgogs/d_best_embedding_models_for_retrieving_mixed/?utm_source=share&utm_medium=web2x&context=3) folks for suggesting alternative embedding models (your suggestions may be implemented one day).
 
 ---
 
