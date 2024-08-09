@@ -25,5 +25,6 @@ defaultModelNames
 	self gpt4_1106Name.
 	self gpt4_0613Name.
 	self gpt4_32k0613Name.
+	self gpt4o_20240806Name.
 	self gpt4o_20240513Name.
 	self gpt4oMini_20240718Name}

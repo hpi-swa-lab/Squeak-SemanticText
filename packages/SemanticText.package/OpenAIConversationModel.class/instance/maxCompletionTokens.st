@@ -10,7 +10,7 @@ maxCompletionTokens
 		^ 4096].
 	
 	(self resolvedName beginsWith: self class gpt4Name) ifTrue:
-		[(self resolvedName = self class gpt4o_20240513Name or: [self resolvedName = self class gpt4oMini_20240718Name] or: [self resolvedName = self class gpt4_20240409Name] or: [self resolvedName = self class gpt4_0125Name] or: [self resolvedName = self class gpt4_1106Name]) ifTrue: [^ 4096].
+		[(self resolvedName = self class gpt4o_20240513Name or: [self resolvedName = self class gpt4o_20240806Name] or: [self resolvedName = self class gpt4oMini_20240718Name] or: [self resolvedName = self class gpt4_20240409Name] or: [self resolvedName = self class gpt4_0125Name] or: [self resolvedName = self class gpt4_1106Name]) ifTrue: [^ 4096].
 		(self resolvedName beginsWith: self class gpt4oMiniName) ifTrue: [^ 16384].
 		(self resolvedName beginsWith: self class gpt4_32kName) ifTrue: [^ 32768].
 		^ 8192].

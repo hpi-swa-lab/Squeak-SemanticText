@@ -23,6 +23,7 @@ centsPerCompletionToken
 		[self class gpt4_1106Name] -> [0.003s].
 		
 		"GPT-4o"
+		[self class gpt4o_20240806Name] -> [0.001s].
 		[self class gpt4o_20240513Name] -> [0.0015s].
 		"for later: vision: unclear"
 		
