@@ -6,5 +6,5 @@ content: anObjectOrString
 		object := nil.
 		^ self].
 	
-	content := anObjectOrString asJsonString.
+	content := [anObjectOrString asJsonString] onDNU: #jsonWriteOn: do: [anObjectOrString printString].
 	object := anObjectOrString.
