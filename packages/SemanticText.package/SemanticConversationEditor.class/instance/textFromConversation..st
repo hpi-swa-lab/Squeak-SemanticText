@@ -17,7 +17,7 @@ textFromConversation: aConversation
 		aConversation messages do: [:message |
 			| displayMessage displayAsNewMessage messageAttribute |
 			displayMessage := message role = #system ==> [self isDisplayingSystemMessages]
-				and: [(self isMinimalMode and: [message role = #assistant]) ==> [message content isEmptyOrNil not]]
+				and: [(self isMinimalMode and: [message role = #assistant]) ==> [message content isEmptyOrNil not or: [message == aConversation messages last "to avoid disappearing assistant message while calling tool"]]]
 				and: [message isToolMessage ==> [self isDisplayingRawConversation]].
 			displayAsNewMessage := displayMessage and:
 				[self isDisplayingRawConversation not ==> [(message role = #assistant and: [previousPrintedMessage notNil] and: [previousPrintedMessage role = #assistant]) not]].
