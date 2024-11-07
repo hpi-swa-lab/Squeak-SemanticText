@@ -6,12 +6,12 @@ exampleFunctions
 		fromString: 'getTemperature "Get the current temperature in a given location"
 			(location: string "The city and state, e.g. San Francisco, CA",
 			unit?: {"type": "string", "enum": ["celsius", "fahrenheit"]})'
-		action: [:args |
-			(args location includesSubstring: 'New York')
+		argsAction: [:location :unit |
+			(location includesSubstring: 'New York')
 				ifTrue:
-					[JsonObject new location: args location; temperature: 21; unit: args unit; yourself]
+					[JsonObject new location: location; temperature: 21; unit: unit; yourself]
 				ifFalse:
-					[JsonObject new location: args location; temperature: 11; unit: args unit; yourself]].
+					[JsonObject new location: location; temperature: 11; unit: unit; yourself]].
 	rain := SemanticFunction
 		fromString: 'getRain "Get amount of rain in a given location. Returns value between 0 (no rain) and 100 (very much rain."
 			(location: string "The city and state, e.g. San Francisco, CA")'
