@@ -1,10 +1,10 @@
 *SemanticText-Model-Conversation
-semanticComplete: anInteger
+semanticComplete: anIntegerOrNil
 
 	self flag: #remark. "Note that true completion models are currently not supported."
 	
 	^ (SemanticConversation new
-		addSystemMessage: ('Complete the next {1} characters of the provided string. Answer only the new part of the string in a JSON object (\{"completion": "..."}).' format: {anInteger});
+		addSystemMessage: ('Complete {1}the provided string. Answer only the new part of the string in a JSON object (\{"completion": "..."}).' format: {anIntegerOrNil ifNil: [''] ifNotNil: ['the next {1} characters of ' format: {anIntegerOrNil}]});
 		addUserMessage: self asJsonString;
 		withConfigDo: [:config |
 			config temperature: 0.
