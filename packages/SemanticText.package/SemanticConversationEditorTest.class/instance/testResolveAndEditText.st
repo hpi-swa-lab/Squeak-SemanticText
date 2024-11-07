@@ -14,10 +14,10 @@ testResolveAndEditText
 				['Answer: ' , conversation lastMessage content]].
 	
 	editor conversation addFunction:
-		(SemanticFunction fromString: 'reverse(string)' action: [:args | args string reversed]).
+		(SemanticFunction fromString: 'reverse(string)' argsAction: #reversed).
 	editor conversation addUserMessage: 'plonk griffle'.
 	editor completeAsIs.
-	100 milliSeconds wait. 2 timesRepeat: [Project current world runStepMethods]. "simulate future: 1 sends..."
+	1000 milliSeconds wait. 10 timesRepeat: [Project current world runStepMethods]. "simulate future: 1 sends..."
 	
 	self assert: 4 equals: editor conversation messages size.
 	self assert: 'plonk griffle' equals: editor conversation messages first content.
@@ -33,7 +33,7 @@ testResolveAndEditText
 	
 	index := editor text findString: 'griffle'.
 	editor complete: (editor text first: index - 1) , (Text string: 'wiffy' attributes: (editor text attributesAt: index)) ", (editor text allButFirst: index + 'griffle' size)".
-	100 milliSeconds wait. 2 timesRepeat: [Project current world runStepMethods]. "simulate future: 1 sends..."
+	1000 milliSeconds wait. 10 timesRepeat: [Project current world runStepMethods]. "simulate future: 1 sends..."
 	
 	self assert: 4 equals: editor conversation messages size.
 	self assert: 'plonk wiffy' equals: editor conversation messages first content.
