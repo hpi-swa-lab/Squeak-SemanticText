@@ -14,4 +14,7 @@ maxTokens
 		(self resolvedName beginsWith: self class gpt4_32kName) ifTrue: [^ 32768].
 		^ 8192].
 	
+	((self resolvedName beginsWith: self class o1PreviewName) or: [self resolvedName beginsWith: self class o1MiniName]) ifTrue:
+		[^ 128000].
+	
 	^ self resolvedName caseError

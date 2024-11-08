@@ -29,4 +29,14 @@ centsPerCompletionToken
 		
 		"GPT-4o mini"
 		[self class gpt4oMini_20240718Name] -> [0.00006s].
-		"for later: vision: unclear"}
+		"for later: vision: unclear"
+		
+		"o1-preview"
+		[self class o1Preview_20240912Name] -> [0.006s].
+		
+		"o1-mini"
+		[self class o1Mini_20240912Name] -> [0.0012s]}
+
+"do any of the above constants have changed, based on the contents from the pricing website presented below? if yes, answer the updated source code of the above method. do not change the formatting. do not add new models that were not in included in the source code before.
+
+the pricing website:"

@@ -7,6 +7,8 @@ defaultModelNames
 	^ {"recommended"
 	self gpt4oMiniName.
 	self gpt4oName.
+	self o1PreviewName.
+	self o1MiniName.
 	
 	"all others, ordered by version ascending"
 	self gpt35TurboName.
@@ -27,4 +29,6 @@ defaultModelNames
 	self gpt4_32k0613Name.
 	self gpt4o_20240806Name.
 	self gpt4o_20240513Name.
-	self gpt4oMini_20240718Name}
+	self gpt4oMini_20240718Name.
+	self o1Preview_20240912Name.
+	self o1Mini_20240912Name}

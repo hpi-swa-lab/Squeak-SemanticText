@@ -20,5 +20,9 @@ resolvedName
 			[self class gpt4oName] -> [self class gpt4o_20240513Name].
 			
 			"GPT-4o mini"
-			[self class gpt4oMiniName] -> [self class gpt4oMini_20240718Name]}
+			[self class gpt4oMiniName] -> [self class gpt4oMini_20240718Name].
+			
+			"o1"
+			[self class o1PreviewName] -> [self class o1Preview_20240912Name].
+			[self class o1MiniName] -> [self class o1Mini_20240912Name]}
 		otherwise: [:originalName | originalName]
