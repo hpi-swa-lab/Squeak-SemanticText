@@ -17,7 +17,7 @@ resolvedName
 			[self class gpt4TurboPreviewName] -> [self class gpt4_0125Name].
 			
 			"GPT-4o"
-			[self class gpt4oName] -> [self class gpt4o_20240513Name].
+			[self class gpt4oName] -> [self class gpt4o_20240806Name].
 			
 			"GPT-4o mini"
 			[self class gpt4oMiniName] -> [self class gpt4oMini_20240718Name].
