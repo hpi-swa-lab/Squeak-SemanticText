@@ -2,4 +2,4 @@ app - accessing
 githubRepositoryParams
 	"{owner. name. directory}"
 
-	^ {'LinqLover'. 'Squeak-SemanticText'. 'packages'}
+	^ {'hpi-swa-lab'. 'Squeak-SemanticText'. 'packages'}

@@ -50,7 +50,7 @@ Still under development. More might follow. Feedback and contributions welcome!
 ```smalltalk
 Metacello new
 	baseline: 'SemanticText';
-	repository: 'github://LinqLover/Squeak-SemanticText:main';
+	repository: 'github://hpi-swa-lab/Squeak-SemanticText:main';
 	get; "for updates"
 	load.
 ```
