@@ -1,6 +1,4 @@
 pricing
 priceFor: aConversation
 
-	^ self
-		priceFor: aConversation
-		answers: 1
+	^ self maximumPriceFor: aConversation

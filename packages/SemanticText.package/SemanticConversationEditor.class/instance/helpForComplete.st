@@ -21,10 +21,10 @@ helpForComplete
 									ifFalse: [#()]);
 							yourself].
 				metrics at: #maxCompletionTokens}).
-		(metrics at: #price) ifNotNil: [:price |
+		(metrics at: #priceRange) ifNotNil: [:minMaxPrice |
 			help := help asText ,
-				('<br>This will cost <b>up to {1}</b> (depending on the length of the completed message).' asTextFromHtml format:
-					{price})].
+				('<br>This will cost <b>between {1} and {2}</b> (depending on the length of the completed message).' asTextFromHtml format:
+					{minMaxPrice first. minMaxPrice second})].
 		(metrics at: #totalExpense) in: [:expense |
 			help := help asText ,
 				('<br><br>The conversation so far has cost <b>{1}.</b>' asTextFromHtml format:
