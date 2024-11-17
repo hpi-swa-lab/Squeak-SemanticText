@@ -19,7 +19,7 @@ function
 				[stream nextPut: $".
 				currentComment
 					do: [:ea | stream nextPutAll: (ea copyWithRegex: '(?=[\\])' matchesReplacedWith: '\') "escape"]
-					separatedBy: [stream nextPutAll: '\"'].
+					separatedBy: [stream nextPutAll: '\"']. "quotes in pragma signature are escaped by two quotes, which looks like two comments in a row to the parser"
 				stream nextPut: $".
 				comment := currentComment copy.
 				currentComment := nil]]].
