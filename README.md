@@ -17,7 +17,7 @@ For more details, install the package and dive into the class comments and code,
     <td width="35%">
 	  <p>
 	    <strong><a href="#conversations-and-chatgpt">ChatGPT</a></strong><br>
-        <img width="50%" alt="ChatGPT: User: Why is Squeak the best programing system in the world (in 3 very short bullets) / Assistant: 1. Live Coding Environment: Squeak offers a dynamic, live coding environment that allows for real-time changes and immediate feedback, enhancing the development and debugging process. / 2. Powerful Object-Oriented Features: It is built on a pure object-oriented paradigm, encouraging clean, modular, and reusable code, which makes it excellent for educational purposes and complex projects alike. / 3. Active Community and Rich Tools: Squeak has a vibrant, supportive community and a wealth of built-in tools and libraries that simplify complex tasks and foster innovation. / User: " src="./assets/ChatGPT.png" />
+        <img alt="ChatGPT: User: Why is Squeak the best programing system in the world (in 3 very short bullets) / Assistant: 1. Live Coding Environment: Squeak offers a dynamic, live coding environment that allows for real-time changes and immediate feedback, enhancing the development and debugging process. / 2. Powerful Object-Oriented Features: It is built on a pure object-oriented paradigm, encouraging clean, modular, and reusable code, which makes it excellent for educational purposes and complex projects alike. / 3. Active Community and Rich Tools: Squeak has a vibrant, supportive community and a wealth of built-in tools and libraries that simplify complex tasks and foster innovation. / User: " src="./assets/ChatGPT.png" />
 	  </p>
 	  <p>
 	    <strong><a href="#editor-integration">Editor Integration: Explain It / Summarize It / Say It</a></strong><br>
@@ -69,10 +69,10 @@ From the world main docking bar, go to <kbd>Apps</kbd> > <kbd>ChatGPT</kbd>. Typ
 Check out the `*SemanticText` extension methods on `String`, `Collection`, `SequenceableCollection`, `AbstractSound`, and others. Some examples:
 
 ```smalltalk
-'smalltalk inventor' semanticAnswer.
-'It''s easier to invent the future than' semanticComplete.
+'smalltalk inventor' semanticAnswer. --> 'Alan Kay'
+'It''s easier to invent the future than' semanticComplete. --> ' to predict it.'
 
-#(apple banana cherry) semanticComplete: 5.
+#(apple banana cherry) semanticComplete: 5. --> #('date' 'elderberry' 'fig' 'grape' 'honeydew')
 
 Character comment asString semanticSummarize.
 Morph comment asString semanticAsk: 'difference between bounds and fullBounds'.
