@@ -228,7 +228,7 @@ You can also select <kbd>speak to type</kbd> for dictating text.
 Open a Help Browser from the world main docking bar and type in your query into search field. Note that at the moment, synonymous search terms work better than questions (e.g., prefer "internet connection" over "how can I access the internet?").
 
 > [!NOTE]  
-> This features needs to disabled in the preference browser first ("Semantic search in help browsers").
+> This features needs to enabled in the preference browser first ("Semantic search in help browsers").
 
 #### Squeak Inbox Talk Integration
 
@@ -265,7 +265,7 @@ Additionally, there is a speech synthesis provider for the **Klatt** plugin. It 
 
 ---
 
-More details on the architecture, APIs, and tools of SemanticText are available [in the appendix of my thesis](https://github.com/LinqLover/semexp-thesis/releases/download/submission/semexp-thesis.pdf#appendix.a). Note that possbly includes outdated information or not yet applied refactorings (but also nice diagrams and examples! and a bunch of theory behind it!).
+More details on the architecture, APIs, and tools of SemanticText are available [in the appendix of my thesis](https://github.com/LinqLover/semexp-thesis/releases/download/submission/semexp-thesis.pdf#appendix.a). Note that this possibly includes outdated information or not yet applied refactorings (but also nice diagrams and examples! and a bunch of theory behind it!).
 
 ## Users of SemanticText
 
