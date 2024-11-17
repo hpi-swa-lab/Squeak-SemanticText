@@ -1,6 +1,7 @@
 functions
 calc: aString
-	"Calculate a math expression."
+	"Calculate a math expression.
+	Second line."
 	<function: calc(expression: string "e.g., ""(2+3)*4"" or ""sqrt(5^2)-1""")>
 
 	"Recursive bottom-up evaluation"

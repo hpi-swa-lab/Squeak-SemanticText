@@ -4,7 +4,7 @@
 	"instance" : {
 		"assert:predicts:" : "ct 3/16/2024 01:26",
 		"classToBeTested" : "ct 2/19/2024 10:18",
-		"conversationTextFixtures" : "ct 5/1/2024 01:40",
+		"conversationTextFixtures" : "ct 11/9/2024 20:03",
 		"setUp" : "ct 5/22/2024 15:01",
 		"tearDown" : "ct 5/22/2024 15:01",
 		"testConversationFromText" : "ct 3/16/2024 01:11",

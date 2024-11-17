@@ -56,8 +56,11 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 								tools := OrderedDictionary new.
 								[toolStream atEnd] whileFalse:
 									[| tool |
-									tool := [SemanticFunction fromSignatureString: (toolStream upTo: Character cr)]
-										ifError: [toolStream upToEnd].
+									tool := '(?:"(?:\\.|[^"])*"|\\.|[^\r\n])+(?:$|(?!.))' asRegex "single line, excluding linebreaks inside comments"
+										matchesStreamPrefix: toolStream;
+										subexpression: 1.
+									self assert: (toolStream atEnd or: [String crlf includes: toolStream next]).
+									tool := SemanticFunction fromSignatureString: tool.
 									tools at: tool name put: tool.
 									toolStream atEnd ifFalse:
 										[(toolStream next: 2) = ', ' ifFalse:

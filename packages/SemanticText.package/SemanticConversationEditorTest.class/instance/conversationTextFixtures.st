@@ -47,7 +47,8 @@ conversationTextFixtures
 			labelToolCallMessage := toolCalls > 1.
 			
 			functions :=
-				{SemanticFunction fromSignatureString: 'plonk "comment"(arg: string)' action: #doPlonk.
+				{SemanticFunction fromSignatureString: 'plonk "comment
+second line"(arg: string)' action: #doPlonk.
 				SemanticFunction fromSignatureString: 'griffle' action: #doGriffle}.
 				
 			conversation := SemanticConversation new.
@@ -57,7 +58,8 @@ conversationTextFixtures
 				
 				stream nextPut:
 					{copy := conversation copy.
-					'`<i>Available tools (force: {1}): plonk "comment" (arg: string)
+					'`<i>Available tools (force: {1}): plonk "comment
+second line" (arg: string)
 griffle()</i>`[1]' semanticAsTextFromHtmlKeepNewlines
 						semanticFormat: {forceTool ifTrue: ['#(''plonk'')'] ifFalse: ['nil']}
 						attributes:
@@ -82,7 +84,8 @@ griffle()</i>`[1]' semanticAsTextFromHtmlKeepNewlines
 
 `<b>User:</b> user 1`[2]
 
-`<i>Available tools (force: {1}): plonk "comment" (arg: string)
+`<i>Available tools (force: {1}): plonk "comment
+second line" (arg: string)
 griffle()</i>`[3]' semanticAsTextFromHtmlKeepNewlines
 						semanticFormat: {forceTool ifTrue: ['#(''plonk'')'] ifFalse: ['nil']}
 						attributes:
@@ -108,7 +111,8 @@ griffle()</i>`[3]' semanticAsTextFromHtmlKeepNewlines
 				localToolSpec ifFalse:
 					[stream nextPut:
 						{copy := conversation copy.
-						'`<i>Available tools (force: {1}): plonk "comment" (arg: string)
+						'`<i>Available tools (force: {1}): plonk "comment
+second line" (arg: string)
 griffle()</i>`[1]
 
 `<b>System:</b> system 1`[2]
@@ -151,7 +155,8 @@ griffle()</i>`[1]
 			localToolSpec ifFalse:
 				[stream nextPut:
 					{copy := conversation copy.
-					('`<i>Available tools (force: {1}): plonk "comment" (arg: string)
+					('`<i>Available tools (force: {1}): plonk "comment
+second line" (arg: string)
 griffle()</i>`[1]
 
 `<b>System:</b> system 1`[2]
@@ -250,7 +255,8 @@ griffle()</i>`[1]
 			(localToolSpec not and: [forceTool]) ifTrue:
 				[stream nextPut:
 					{copy := conversation copy.
-					('`<i>Available tools (force: {1}): plonk "comment" (arg: string)
+					('`<i>Available tools (force: {1}): plonk "comment
+second line" (arg: string)
 griffle()</i>`[1]
 
 `<b>System:</b> system 1`[2]
@@ -319,7 +325,8 @@ griffle()</i>`[1]
 				(localToolSpec not and: [forceTool]) ifTrue:
 					[stream nextPut:
 						{copy := conversation copy.
-						('`<i>Available tools (force: {1}): plonk "comment" (arg: string)
+						('`<i>Available tools (force: {1}): plonk "comment
+second line" (arg: string)
 griffle()</i>`[1]
 
 `<b>System:</b> system 1`[2]
@@ -374,7 +381,8 @@ griffle()</i>`[1]
 			(localToolSpec not and: [forceTool] and: [toolCalls > 1]) ifTrue:
 				[stream nextPut:
 					{copy := conversation copy.
-					('`<i>Available tools (force: {1}): plonk "comment" (arg: string)
+					('`<i>Available tools (force: {1}): plonk "comment
+second line" (arg: string)
 griffle()</i>`[1]
 
 `<b>System:</b> system 1`[2]
@@ -425,7 +433,8 @@ griffle()</i>`[1]
 								SemanticConversationEditorMessageAttribute message: copy messages sixth}}].
 			
 			conversation addAssistantMessage: 'assistant 4']]).
-"'`<i>Available tools (force: nil): plonk ""comment"" (arg: string)
+"'`<i>Available tools (force: nil): plonk ""comment
+second line"" (arg: string)
 griffle()</i>`[1]
 
 `<b>System:</b> system 1`[2]
