@@ -26,6 +26,7 @@ buildButtonBar: builder
 					(builder pluggableActionButtonSpec new
 						model: self;
 						label: #completeCancelLabel;
+						enabled: #canCompleteOrCancel;
 						help: #helpForCompleteCancel;
 						action: #completeOrCancel;
 						yourself);

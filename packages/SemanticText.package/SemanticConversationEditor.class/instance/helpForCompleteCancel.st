@@ -1,6 +1,6 @@
 toolbuilder
 helpForCompleteCancel
 
-	^ self canComplete
-		ifTrue: [self helpForComplete]
-		ifFalse: [self helpForCancel]
+	^ self isStreamingResponse
+		ifFalse: [self helpForComplete]
+		ifTrue: [self helpForCancel]
