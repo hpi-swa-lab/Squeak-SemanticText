@@ -280,6 +280,10 @@ At the moment, the following projects are known to make use of SemanticText:
 
 While technically unrelated, [SqueakGPT](https://github.com/LinqLover/squeak-gpt) explores a similar approach to using generative AI for Squeak.
 
+## Further Reading
+
+- [\[squeak-dev\] \[ANN\] SemanticText: ChatGPT, embedding search, and retrieval-augmented generation for Squeak](https://lists.squeakfoundation.org/archives/list/squeak-dev@lists.squeakfoundation.org/thread/F6AVNH7MOVDTWYQI6WKDBWG6MBVGCIE5/)
+
 ## Acknowledgments
 
 Thanks to Marcel Taeumel ([@marceltaeumel](https://github.com/marceltaeumel)) for advising me throughout my studies and experiments.
