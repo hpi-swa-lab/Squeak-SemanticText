@@ -52,7 +52,7 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 								sep21 := (toolSpec findString: '):') - 1.
 								forcedTools := toolSpec first: sep21.
 								forcedTools := [Object readCarefullyFrom: forcedTools] ifError: [forcedTools].
-								toolStream := (toolSpec allButFirst: sep21 + '): ' size) readStream.
+								toolStream := toolSpec readStream skip: (sep21 + '): ' size clampHigh: toolSpec size); yourself. "robustness for typing"
 								tools := OrderedDictionary new.
 								[toolStream atEnd] whileFalse:
 									[| tool |
@@ -60,7 +60,7 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 										matchesStreamPrefix: toolStream;
 										subexpression: 1.
 									self assert: (toolStream atEnd or: [String crlf includes: toolStream next]).
-									tool := SemanticFunction fromSignatureString: tool.
+									tool := [SemanticFunction fromSignatureString: tool] ifError: [tool]. "robustness for typing"
 									tools at: tool name put: tool.
 									toolStream atEnd ifFalse:
 										[(toolStream next: 2) = ', ' ifFalse:

@@ -42,7 +42,7 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 					[toolSpec tools:
 						(newToolSpec tools collect: [:newTool |
 							toolSpec tools
-								detect: [:tool | tool name = newTool name]
+								detect: [:tool | tool isString "robustness for typing" not and: [tool name = newTool name]]
 								ifFound: [:tool |
 									tool name: newTool name.
 									tool description: newTool description.
