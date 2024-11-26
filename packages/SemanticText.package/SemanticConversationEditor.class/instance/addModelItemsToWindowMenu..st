@@ -14,6 +14,9 @@ addModelItemsToWindowMenu: menu
 	menu
 		add: ('{1}voice' format: {self voiceModeEnabled ifTrue: ['<on>'] ifFalse: ['<off>']})
 		action: #toggleVoiceMode.
+	menu
+		add: 'generate code'
+		action: #generateCode.
 	
 	menu addLine.
 	menu
