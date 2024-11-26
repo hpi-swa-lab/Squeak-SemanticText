@@ -58,16 +58,20 @@ second line"(arg: string)' action: #doPlonk.
 				
 				stream nextPut:
 					{copy := conversation copy.
-					'`<i>Available tools (force: {1}): plonk "comment
-second line" (arg: string)
-griffle()</i>`[1]' semanticAsTextFromHtmlKeepNewlines
+					'`<i>`Available tools (force: {1}):`[1] `plonk "comment
+second line" (arg: string)`[2]
+`griffle()`[3]</i>`[4]' semanticAsTextFromHtmlKeepNewlines
 						semanticFormat: {forceTool ifTrue: ['#(''plonk'')'] ifFalse: ['nil']}
 						attributes:
-							{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-							TextInspectIt on: copy defaultToolSpec}}.
-					'`<i>Available tools: plonk, griffle</i>`[1]' semanticAsTextFromHtmlKeepNewlines semanticFormatAttributes:
-						{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-						TextInspectIt on: copy defaultToolSpec}}.
+							{TextInspectIt on: copy defaultToolSpec.
+							TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+							TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+							SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec}.
+					'`<i>`Available tools:`[1] `plonk`[2], `griffle`[3]</i>`[4]' semanticAsTextFromHtmlKeepNewlines semanticFormatAttributes:
+						{TextInspectIt on: copy defaultToolSpec.
+						TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+						TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+						SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec}.
 					Text new}].
 			
 			conversation addSystemMessage: 'system 1'.
@@ -84,22 +88,26 @@ griffle()</i>`[1]' semanticAsTextFromHtmlKeepNewlines
 
 `<b>User:</b> user 1`[2]
 
-`<i>Available tools (force: {1}): plonk "comment
-second line" (arg: string)
-griffle()</i>`[3]' semanticAsTextFromHtmlKeepNewlines
+`<i>`Available tools (force: {1}):`[3] `plonk "comment
+second line" (arg: string)`[4]
+`griffle()`[5]</i>`[6]' semanticAsTextFromHtmlKeepNewlines
 						semanticFormat: {forceTool ifTrue: ['#(''plonk'')'] ifFalse: ['nil']}
 						attributes:
 							{SemanticConversationEditorMessageAttribute message: copy messages first.
 							SemanticConversationEditorMessageAttribute message: copy messages second.
-							{SemanticConversationEditorToolSpecAttribute toolSpec: (copy toolSpecFor: copy lastMessage).
-							TextInspectIt on: (copy toolSpecFor: copy lastMessage)}}.
+							TextInspectIt on: (copy toolSpecFor: copy lastMessage).
+							TextInspectIt on: ((copy toolSpecFor: copy lastMessage) toolNamed: #plonk).
+							TextInspectIt on: ((copy toolSpecFor: copy lastMessage) toolNamed: #griffle).
+							SemanticConversationEditorToolSpecAttribute toolSpec: (copy toolSpecFor: copy lastMessage)}.
 					'`<b>User:</b> user 1`[1]
 
-`<i>Available tools: plonk, griffle</i>`[2]' semanticAsTextFromHtmlKeepNewlines
+`<i>`Available tools:`[2] `plonk`[3], `griffle`[4]</i>`[5]' semanticAsTextFromHtmlKeepNewlines
 						semanticFormatAttributes:
 							{SemanticConversationEditorMessageAttribute message: copy messages second.
-							{SemanticConversationEditorToolSpecAttribute toolSpec: (copy toolSpecFor: copy lastMessage).
-							TextInspectIt on: (copy toolSpecFor: copy lastMessage)}}.
+							TextInspectIt on: (copy toolSpecFor: copy lastMessage).
+							TextInspectIt on: ((copy toolSpecFor: copy lastMessage) toolNamed: #plonk).
+							TextInspectIt on: ((copy toolSpecFor: copy lastMessage) toolNamed: #griffle).
+							SemanticConversationEditorToolSpecAttribute toolSpec: (copy toolSpecFor: copy lastMessage)}.
 					'`<b>User:</b> user 1`[1]' semanticAsTextFromHtmlKeepNewlines
 						semanticFormatAttributes:
 							{SemanticConversationEditorMessageAttribute message: copy messages second}}].
@@ -111,30 +119,34 @@ griffle()</i>`[3]' semanticAsTextFromHtmlKeepNewlines
 				localToolSpec ifFalse:
 					[stream nextPut:
 						{copy := conversation copy.
-						'`<i>Available tools (force: {1}): plonk "comment
-second line" (arg: string)
-griffle()</i>`[1]
+						'`<i>`Available tools (force: {1}):`[1] `plonk "comment
+second line" (arg: string)`[2]
+`griffle()`[3]</i>`[4]
 
-`<b>System:</b> system 1`[2]
+`<b>System:</b> system 1`[5]
 
-`<b>User:</b> user 1`[3]
+`<b>User:</b> user 1`[6]
 
-`<b>Assistant:</b> assistant 1`[4]' semanticAsTextFromHtmlKeepNewlines
+`<b>Assistant:</b> assistant 1`[7]' semanticAsTextFromHtmlKeepNewlines
 								semanticFormat: {forceTool ifTrue: ['#plonk'] ifFalse: ['nil']}
 								attributes:
-									{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-									TextInspectIt on: copy defaultToolSpec}.
+									{TextInspectIt on: copy defaultToolSpec.
+									TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+									TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+									SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 									SemanticConversationEditorMessageAttribute message: copy messages first.
 									SemanticConversationEditorMessageAttribute message: copy messages second.
 									SemanticConversationEditorMessageAttribute message: copy messages third}.
-						'`<i>Available tools: plonk, griffle</i>`[1]
+						'`<i>`Available tools:`[1] `plonk`[2], `griffle`[3]</i>`[4]
 
-`<b>User:</b> user 1`[2]
+`<b>User:</b> user 1`[5]
 
-`<b>Assistant:</b> assistant 1`[3]' semanticAsTextFromHtmlKeepNewlines
+`<b>Assistant:</b> assistant 1`[6]' semanticAsTextFromHtmlKeepNewlines
 								semanticFormatAttributes:
-									{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-									TextInspectIt on: copy defaultToolSpec}.
+									{TextInspectIt on: copy defaultToolSpec.
+									TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+									TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+									SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 									SemanticConversationEditorMessageAttribute message: copy messages second.
 									SemanticConversationEditorMessageAttribute message: copy messages third}.
 						'`<b>User:</b> user 1`[1]
@@ -155,19 +167,19 @@ griffle()</i>`[1]
 			localToolSpec ifFalse:
 				[stream nextPut:
 					{copy := conversation copy.
-					('`<i>Available tools (force: {1}): plonk "comment
-second line" (arg: string)
-griffle()</i>`[1]
+					('`<i>`Available tools (force: {1}):`[1] `plonk "comment
+second line" (arg: string)`[2]
+`griffle()`[3]</i>`[4]
 
-`<b>System:</b> system 1`[2]
+`<b>System:</b> system 1`[5]
 
-`<b>User:</b> user 1`[3]
+`<b>User:</b> user 1`[6]
 
-' , (forceTool ifFalse: ['`<b>Assistant:</b> assistant 1`[4]
+' , (forceTool ifFalse: ['`<b>Assistant:</b> assistant 1`[7]
 
 '] ifTrue: ['']) ,
-'`<b>Assistant:</b> {2}`<i>\[call_1] plonk(arg="one")</i>`[6]' , (toolCalls > 1 ifTrue: ['
-`<i>\[call_2] griffle()</i>`[7]'] ifFalse: ['']) , '`[5]') semanticAsTextFromHtmlKeepNewlines
+'`<b>Assistant:</b> {2}`<i>\[call_1] plonk(arg="one")</i>`[9]' , (toolCalls > 1 ifTrue: ['
+`<i>\[call_2] griffle()</i>`[10]'] ifFalse: ['']) , '`[8]') semanticAsTextFromHtmlKeepNewlines
 						semanticFormat:
 							{forceTool ifTrue: ['#(''plonk'')'] ifFalse: ['nil'].
 							labelToolCallMessage ifTrue: ['assistant 2
@@ -176,27 +188,29 @@ griffle()</i>`[1]
 
 ' flag: #todo "should be ''"]}
 						attributes:
-							{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-							TextInspectIt on: copy defaultToolSpec}.
+							{TextInspectIt on: copy defaultToolSpec.
+							TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+							TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+							SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 							SemanticConversationEditorMessageAttribute message: copy messages first.
 							SemanticConversationEditorMessageAttribute message: copy messages second.
 							SemanticConversationEditorMessageAttribute message: copy messages third.
 							SemanticConversationEditorMessageAttribute message: copy lastMessage.
 							TextInspectIt on: copy lastMessage toolCalls first.
 							TextInspectIt on: (copy lastMessage toolCalls at: 2 ifAbsent: [nil])}.
-					('`<i>Available tools: plonk, griffle</i>`[1]
+					('`<i>`Available tools:`[1] `plonk`[2], `griffle`[3]</i>`[4]
 
-`<b>User:</b> user 1`[2]
+`<b>User:</b> user 1`[5]
 
 `<b>Assistant:</b> ' , (forceTool
 	ifFalse:
 		[labelToolCallMessage
 			ifFalse:
-				['assistant 1`[3]
+				['assistant 1`[6]
 
 `']
 			ifTrue:
-				['assistant 1`[3]
+				['assistant 1`[6]
 
 `assistant 2
 
@@ -210,10 +224,12 @@ griffle()</i>`[1]
 			ifTrue:
 				['assistant 2
 
-']]) , '`<i>\[plonk...]</i>`[5]' , (toolCalls > 1 ifTrue: [' `<i>\[griffle...]</i>`[6]'] ifFalse: ['']) , '`[4]') semanticAsTextFromHtmlKeepNewlines
+']]) , '`<i>\[plonk...]</i>`[8]' , (toolCalls > 1 ifTrue: [' `<i>\[griffle...]</i>`[9]'] ifFalse: ['']) , '`[7]') semanticAsTextFromHtmlKeepNewlines
 							semanticFormatAttributes:
-								{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-								TextInspectIt on: copy defaultToolSpec}.
+								{TextInspectIt on: copy defaultToolSpec.
+								TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+								TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+								SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 								SemanticConversationEditorMessageAttribute message: copy messages second.
 								SemanticConversationEditorMessageAttribute message: copy messages third.
 								SemanticConversationEditorMessageAttribute message: copy lastMessage.
@@ -255,18 +271,18 @@ griffle()</i>`[1]
 			(localToolSpec not and: [forceTool]) ifTrue:
 				[stream nextPut:
 					{copy := conversation copy.
-					('`<i>Available tools (force: {1}): plonk "comment
-second line" (arg: string)
-griffle()</i>`[1]
+					('`<i>`Available tools (force: {1}):`[1] `plonk "comment
+second line" (arg: string)`[2]
+`griffle()`[3]</i>`[4]
 
-`<b>System:</b> system 1`[2]
+`<b>System:</b> system 1`[5]
 
-`<b>User:</b> user 1`[3]
+`<b>User:</b> user 1`[6]
 
-`<b>Assistant:</b> {2}`<i>\[call_1] plonk(arg="one")</i>`[5]' , (toolCalls > 1 ifTrue: ['
-`<i>\[call_2] griffle()</i>`[6]'] ifFalse: ['']) , '`[4]
+`<b>Assistant:</b> {2}`<i>\[call_1] plonk(arg="one")</i>`[8]' , (toolCalls > 1 ifTrue: ['
+`<i>\[call_2] griffle()</i>`[9]'] ifFalse: ['']) , '`[7]
 
-`<b>Tool:</b> `<i>\[call_1]</i> eins`[8]`[7]') semanticAsTextFromHtmlKeepNewlines
+`<b>Tool:</b> `<i>\[call_1]</i> eins`[11]`[10]') semanticAsTextFromHtmlKeepNewlines
 						semanticFormat:
 							{forceTool ifTrue: ['#(''plonk'')'] ifFalse: ['nil'].
 							labelToolCallMessage ifTrue: ['assistant 2
@@ -275,8 +291,10 @@ griffle()</i>`[1]
 
 ' flag: #todo "should be ''"]}
 						attributes:
-							{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-							TextInspectIt on: copy defaultToolSpec}.
+							{TextInspectIt on: copy defaultToolSpec.
+							TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+							TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+							SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 							SemanticConversationEditorMessageAttribute message: copy messages first.
 							SemanticConversationEditorMessageAttribute message: copy messages second.
 							SemanticConversationEditorMessageAttribute message: copy messages third.
@@ -284,9 +302,9 @@ griffle()</i>`[1]
 							TextInspectIt on: (copy messages third toolCalls at: 2 ifAbsent: [nil]).
 							SemanticConversationEditorMessageAttribute message: copy messages fourth.
 							TextInspectIt on: copy messages fourth content}.
-					('`<i>Available tools: plonk, griffle</i>`[1]
+					('`<i>`Available tools:`[1] `plonk`[2], `griffle`[3]</i>`[4]
 
-`<b>User:</b> user 1`[2]
+`<b>User:</b> user 1`[5]
 
 `<b>Assistant:</b> ' , (labelToolCallMessage
 	ifFalse:
@@ -296,10 +314,12 @@ griffle()</i>`[1]
 	ifTrue:
 		['assistant 2
 
-']) , '`<i>\[plonk]</i>`[4]' , (toolCalls > 1 ifTrue: [' `<i>\[griffle...]</i>`[5]'] ifFalse: ['']) , '`[3]') semanticAsTextFromHtmlKeepNewlines
+']) , '`<i>\[plonk]</i>`[7]' , (toolCalls > 1 ifTrue: [' `<i>\[griffle...]</i>`[8]'] ifFalse: ['']) , '`[6]') semanticAsTextFromHtmlKeepNewlines
 							semanticFormatAttributes:
-								{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-								TextInspectIt on: copy defaultToolSpec}.
+								{TextInspectIt on: copy defaultToolSpec.
+								TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+								TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+								SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 								SemanticConversationEditorMessageAttribute message: copy messages second.
 								SemanticConversationEditorMessageAttribute message: copy messages third.
 								TextInspectIt on: copy messages third toolCalls first -> 'eins'.
@@ -325,27 +345,29 @@ griffle()</i>`[1]
 				(localToolSpec not and: [forceTool]) ifTrue:
 					[stream nextPut:
 						{copy := conversation copy.
-						('`<i>Available tools (force: {1}): plonk "comment
-second line" (arg: string)
-griffle()</i>`[1]
+						('`<i>`Available tools (force: {1}):`[1] `plonk "comment
+second line" (arg: string)`[2]
+`griffle()`[3]</i>`[4]
 
-`<b>System:</b> system 1`[2]
+`<b>System:</b> system 1`[5]
 
-`<b>User:</b> user 1`[3]
+`<b>User:</b> user 1`[6]
 
 `<b>Assistant:</b> assistant 2
 
-`<i>\[call_1] plonk(arg="one")</i>`[5]
-`<i>\[call_2] griffle()</i>`[6]`[4]
+`<i>\[call_1] plonk(arg="one")</i>`[8]
+`<i>\[call_2] griffle()</i>`[9]`[7]
 
-`<b>Tool:</b> `<i>\[call_1]</i> eins`[8]`[7]
+`<b>Tool:</b> `<i>\[call_1]</i> eins`[11]`[10]
 
-`<b>Tool:</b> `<i>\[call_2]</i> ok`[10]`[9]') semanticAsTextFromHtmlKeepNewlines
+`<b>Tool:</b> `<i>\[call_2]</i> ok`[13]`[12]') semanticAsTextFromHtmlKeepNewlines
 							semanticFormat:
 								{forceTool ifTrue: ['#(''plonk'')'] ifFalse: ['nil']}
 							attributes:
-								{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-								TextInspectIt on: copy defaultToolSpec}.
+								{TextInspectIt on: copy defaultToolSpec.
+								TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+								TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+								SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 								SemanticConversationEditorMessageAttribute message: copy messages first.
 								SemanticConversationEditorMessageAttribute message: copy messages second.
 								SemanticConversationEditorMessageAttribute message: copy messages third.
@@ -355,16 +377,18 @@ griffle()</i>`[1]
 								TextInspectIt on: copy messages fourth content.
 								SemanticConversationEditorMessageAttribute message: copy messages fifth.
 								TextInspectIt on: copy messages fifth content}.
-						('`<i>Available tools: plonk, griffle</i>`[1]
+						('`<i>`Available tools:`[1] `plonk`[2], `griffle`[3]</i>`[4]
 
-`<b>User:</b> user 1`[2]
+`<b>User:</b> user 1`[5]
 
 `<b>Assistant:</b> assistant 2
 
-`<i>\[plonk]</i>`[4] `<i>\[griffle]</i>`[5]`[3]') semanticAsTextFromHtmlKeepNewlines
+`<i>\[plonk]</i>`[7] `<i>\[griffle]</i>`[8]`[6]') semanticAsTextFromHtmlKeepNewlines
 								semanticFormatAttributes:
-									{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-									TextInspectIt on: copy defaultToolSpec}.
+									{TextInspectIt on: copy defaultToolSpec.
+									TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+									TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+									SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 									SemanticConversationEditorMessageAttribute message: copy messages second.
 									SemanticConversationEditorMessageAttribute message: copy messages third.
 									TextInspectIt on: copy messages third toolCalls first -> 'eins'.
@@ -381,29 +405,31 @@ griffle()</i>`[1]
 			(localToolSpec not and: [forceTool] and: [toolCalls > 1]) ifTrue:
 				[stream nextPut:
 					{copy := conversation copy.
-					('`<i>Available tools (force: {1}): plonk "comment
-second line" (arg: string)
-griffle()</i>`[1]
+					('`<i>`Available tools (force: {1}):`[1] `plonk "comment
+second line" (arg: string)`[2]
+`griffle()`[3]</i>`[4]
 
-`<b>System:</b> system 1`[2]
+`<b>System:</b> system 1`[5]
 
-`<b>User:</b> user 1`[3]
+`<b>User:</b> user 1`[6]
 
 `<b>Assistant:</b> assistant 2
 
-`<i>\[call_1] plonk(arg="one")</i>`[5]
-`<i>\[call_2] griffle()</i>`[6]`[4]
+`<i>\[call_1] plonk(arg="one")</i>`[8]
+`<i>\[call_2] griffle()</i>`[9]`[7]
 
-`<b>Tool:</b> `<i>\[call_1]</i> eins`[8]`[7]
+`<b>Tool:</b> `<i>\[call_1]</i> eins`[11]`[10]
 
-`<b>Tool:</b> `<i>\[call_2]</i> ok`[10]`[9]
+`<b>Tool:</b> `<i>\[call_2]</i> ok`[13]`[12]
 
-`<b>Assistant:</b> assistant 3`[11]') semanticAsTextFromHtmlKeepNewlines
+`<b>Assistant:</b> assistant 3`[14]') semanticAsTextFromHtmlKeepNewlines
 						semanticFormat:
 							{forceTool ifTrue: ['#(''plonk'')'] ifFalse: ['nil']}
 						attributes:
-							{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-							TextInspectIt on: copy defaultToolSpec}.
+							{TextInspectIt on: copy defaultToolSpec.
+							TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+							TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+							SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 							SemanticConversationEditorMessageAttribute message: copy messages first.
 							SemanticConversationEditorMessageAttribute message: copy messages second.
 							SemanticConversationEditorMessageAttribute message: copy messages third.
@@ -414,18 +440,20 @@ griffle()</i>`[1]
 							SemanticConversationEditorMessageAttribute message: copy messages fifth.
 							TextInspectIt on: copy messages fifth content.
 							SemanticConversationEditorMessageAttribute message: copy messages sixth}.
-					('`<i>Available tools: plonk, griffle</i>`[1]
+					('`<i>`Available tools:`[1] `plonk`[2], `griffle`[3]</i>`[4]
 
-`<b>User:</b> user 1`[2]
+`<b>User:</b> user 1`[5]
 
 `<b>Assistant:</b> assistant 2
 
-`<i>\[plonk]</i>`[4] `<i>\[griffle]</i>`[5]`[3]
+`<i>\[plonk]</i>`[7] `<i>\[griffle]</i>`[8]`[6]
 
-`assistant 3`[6]') semanticAsTextFromHtmlKeepNewlines
+`assistant 3`[9]') semanticAsTextFromHtmlKeepNewlines
 							semanticFormatAttributes:
-								{{SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
-								TextInspectIt on: copy defaultToolSpec}.
+								{TextInspectIt on: copy defaultToolSpec.
+								TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+								TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+								SemanticConversationEditorToolSpecAttribute toolSpec: copy defaultToolSpec.
 								SemanticConversationEditorMessageAttribute message: copy messages second.
 								SemanticConversationEditorMessageAttribute message: copy messages third.
 								TextInspectIt on: copy messages third toolCalls first -> 'eins'.
@@ -433,24 +461,26 @@ griffle()</i>`[1]
 								SemanticConversationEditorMessageAttribute message: copy messages sixth}}].
 			
 			conversation addAssistantMessage: 'assistant 4']]).
-"'`<i>Available tools (force: nil): plonk ""comment
-second line"" (arg: string)
-griffle()</i>`[1]
+"'`<i>`Available tools (force: nil):`[1] `plonk ""comment
+second line"" (arg: string)`[2]
+`griffle()`[3]</i>`[4]
 
-`<b>System:</b> system 1`[2]
+`<b>System:</b> system 1`[5]
 
-`<b>User:</b> user 1`[3]
+`<b>User:</b> user 1`[6]
 
-`<b>Assistant:</b> assistant 1`[4]
+`<b>Assistant:</b> assistant 1`[7]
 
-`<i>`\[call_1] plonk(arg=""one"")`[6]</i>`[5]
+`<i>`\[call_1] plonk(arg=""one"")`[9]</i>`[8]
 
-`<b>Tool:</b> `<i>\[call_1]</i> eins`[8]`[7]
+`<b>Tool:</b> `<i>\[call_1]</i> eins`[11]`[10]
 
-`<b>Assistant:</b> assistant 2`[9]' semanticAsTextFromHtmlKeepNewlines
+`<b>Assistant:</b> assistant 2`[12]' semanticAsTextFromHtmlKeepNewlines
 					formatAttributes:
-						{{SemanticConversationEditorToolSpecAttribute toolSpec: conversation defaultToolSpec.
-						TextInspectIt on: conversation defaultToolSpec}.
+						{TextInspectIt on: copy defaultToolSpec.
+						TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+						TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+						SemanticConversationEditorToolSpecAttribute toolSpec: conversation defaultToolSpec.
 						SemanticConversationEditorMessageAttribute message: conversation messages first.
 						SemanticConversationEditorMessageAttribute message: conversation messages second.
 						SemanticConversationEditorMessageAttribute message: conversation messages third.
@@ -459,19 +489,21 @@ griffle()</i>`[1]
 						SemanticConversationEditorMessageAttribute message: conversation messages fourth.
 						TextInspectIt on: conversation messages fourth object.
 						SemanticConversationEditorMessageAttribute message: conversation messages fifth}.
-'`<i>Available tools: plonk, griffle</i>`[1] 
+'`<i>`Available tools:`[1] `plonk`[2], `griffle`[3]</i>`[4] 
 
-`<b>User:</b> user 1`[2]
+`<b>User:</b> user 1`[5]
 
-<b>Assistant:</b> `assistant 1`[3]
+<b>Assistant:</b> `assistant 1`[6]
 
-<i>`\[plonk]`[4]</i> 
+<i>`\[plonk]`[7]</i> 
 
-`assistant 2`[5]' semanticAsTextFromHtmlKeepNewlines
+`assistant 2`[8]' semanticAsTextFromHtmlKeepNewlines
 					flag: #todo: ""eliminate spaces after tool specs/tools"";
 					formatAttributes:
-						{{SemanticConversationEditorToolSpecAttribute toolSpec: conversation defaultToolSpec.
-						TextInspectIt on: conversation defaultToolSpec}.
+						{TextInspectIt on: copy defaultToolSpec.
+						TextInspectIt on: (copy defaultToolSpec toolNamed: #plonk).
+						TextInspectIt on: (copy defaultToolSpec toolNamed: #griffle).
+						SemanticConversationEditorToolSpecAttribute toolSpec: conversation defaultToolSpec.
 						SemanticConversationEditorMessageAttribute message: conversation messages second.
 						SemanticConversationEditorMessageAttribute message: conversation messages third.
 						TextInspectIt on: conversation messages third toolCalls first -> conversation messages fourth object.

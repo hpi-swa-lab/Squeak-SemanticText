@@ -9,27 +9,27 @@ textFromToolSpec: aToolSpec
 			withAttributes:
 				(Array
 					with: (SemanticConversationEditorToolSpecAttribute toolSpec: aToolSpec)
-					with: TextEmphasis italic
-					with:
-						(TextInspectIt on: aToolSpec))
+					with: TextEmphasis italic)
 			do:
 				[| toolsTruncated toolStringBlock |
-				stream nextPutAll: 'Available tools'.
-				self isDisplayingRawConversation ifTrue:
-					[stream
-						nextPutAll: ' (force: ';
-						nextPutAll:
-							((aToolSpec forcedTools isCollection and: [aToolSpec forcedTools isSymbol not])
-								ifTrue:
-									 [aToolSpec forcedTools collect: [:tool |
-											(tool isString or: [tool isText])
-												ifTrue: [tool asString]
-												ifFalse: [tool name]]]
-								ifFalse:
-									[aToolSpec forcedTools])
-								storeString;
-						nextPut: $)].
-				stream nextPutAll: ': '.
+				stream withAttribute: (TextInspectIt on: aToolSpec) do:
+					[stream nextPutAll: 'Available tools'.
+					self isDisplayingRawConversation ifTrue:
+						[stream
+							nextPutAll: ' (force: ';
+							nextPutAll:
+								((aToolSpec forcedTools isCollection and: [aToolSpec forcedTools isSymbol not])
+									ifTrue:
+										 [aToolSpec forcedTools collect: [:tool |
+												(tool isString or: [tool isText])
+													ifTrue: [tool asString]
+													ifFalse: [tool name]]]
+									ifFalse:
+										[aToolSpec forcedTools])
+									storeString;
+							nextPut: $)].
+					stream nextPutAll: ':'].
+				stream nextPutAll: ' '.
 				
 				toolsTruncated := 0.
 				(self isDisplayingRawConversation not and: [tools size > 4]) ifTrue:
@@ -40,11 +40,12 @@ textFromToolSpec: aToolSpec
 					ifTrue: [[:object | object isString ifTrue: [object] ifFalse: [object signatureString]]].
 				tools
 					do: [:tool |
-						stream nextPutAll: (toolStringBlock value: tool).
-						self class
-							syncContentUpdatesFrom: tool
-							stringBlock: toolStringBlock
-							to: (WeakArray with: self)]
+						stream withAttribute: (TextInspectIt on: tool) do:
+							[stream nextPutAll: (toolStringBlock value: tool).
+							self class
+								syncContentUpdatesFrom: tool
+								stringBlock: toolStringBlock
+								to: (WeakArray with: self)]]
 					separatedBy:
 						[self isDisplayingRawConversation
 							ifFalse: [stream nextPutAll: ', ']
