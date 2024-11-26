@@ -49,6 +49,7 @@
 		"getAssistantMessages:" : "ct 4/30/2024 00:10",
 		"getAssistantReplies:" : "ct 2/9/2024 23:50",
 		"getAssistantReply" : "ct 8/19/2023 21:30",
+		"getFinalAssistantReply" : "ct 11/26/2024 06:30",
 		"hasPendingToolCalls" : "ct 2/14/2024 22:18",
 		"initialize" : "ct 1/15/2024 23:49",
 		"lastMessage" : "ct 2/14/2024 22:17",
