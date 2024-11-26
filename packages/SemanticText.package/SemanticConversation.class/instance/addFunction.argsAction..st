@@ -2,4 +2,4 @@ tools
 addFunction: signatureString argsAction: argsAction
 
 	^ self addFunction:
-		(SemanticFunction fromSignatureString: signatureString action: argsAction)
+		(SemanticFunction fromSignatureString: signatureString argsAction: argsAction)
