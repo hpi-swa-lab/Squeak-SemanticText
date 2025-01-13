@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Providers-Anthropic",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "AnthropicConversationModel",
+	"pools" : [
+		 ],
+	"super" : "AnthropicModel",
+	"type" : "normal" }

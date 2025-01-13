@@ -1,0 +1,4 @@
+accessing
+maxPromptTokens
+
+	^ self maxTokens

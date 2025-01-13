@@ -28,6 +28,11 @@ addModelItemsToWindowMenu: menu
 			add: 'open OpenAI expense watcher'
 			target: accountClass
 			action: #openExpenseWatcher].
+	(Smalltalk classNamed: #AnthropicAccount) ifNotNil: [:accountClass |
+		menu
+			add: 'open Anthropic expense watcher'
+			target: accountClass
+			action: #openExpenseWatcher].
 	menu
 		add: 'edit preferences'
 		action: #openPreferences.
