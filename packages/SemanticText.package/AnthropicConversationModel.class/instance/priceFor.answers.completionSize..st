@@ -1,7 +1,7 @@
 pricing
 priceFor: aConversation answers: number completionSize: completionSizeOrNil
 	"If completionSizeOrNil is nil, the maximum possible size will be assumed.
-	Note: Prices are hardcoded and might not encompass any recent pricing updates by OpenAI. Token counts are (upper) approximations."
+	Note: Prices are hardcoded and might not encompass any recent pricing updates by Anthropic. Token counts are (upper) approximations."
 
 	| promptTokens completionTokens priceForPrompt priceForCompletion |
 	promptTokens := aConversation estimatePromptTokens.

@@ -4,8 +4,10 @@ getAnswers: number for: aConversation config: aConfigOrNil
 
 	| chatCompletion logRawOutput stream resumeStream |
 	
-	"Note: multiple responses via `n` is not supported by the Anthropic API"
-	number ~= 1 ifTrue: [self error: 'anthropic models do not support requesting multiple assistant replies'].
+	"Multiple responses via `n` are not directly supported by the Anthropic API"
+	number > 1 ifTrue: [
+		^ (1 to: number) collect: [:i | self getAnswers: 1 for: aConversation config: aConfigOrNil]
+	].
 	
 	chatCompletion := self
 		invokeWithConfig: aConfigOrNil
@@ -33,7 +35,7 @@ getAnswers: number for: aConversation config: aConfigOrNil
 				input stream: stream].
 			
 			input messages:
-				(aConversation messages collect: [:message | message asOpenAIObject]).
+				(aConversation messages collect: [:message | message asAnthropicObject]).
 			
 			aConversation activeToolSpec ifNotNil: [:toolSpec |
 				self addToolSpec: toolSpec toInput: input].

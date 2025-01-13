@@ -2,6 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
+		"anthropicRawConfig" : "zakkor 1/13/2025 18:33",
 		"argumentAt:" : "ct 8/17/2023 19:43",
 		"argumentAt:ifAbsentPut:" : "ct 1/8/2024 16:36",
 		"argumentAt:put:" : "ct 8/17/2023 17:44",

@@ -2,7 +2,7 @@ private - requests
 addToolSpec: aToolSpec toInput: input
 
 	input tools:
-		(aToolSpec tools asArray collect: [:tool | tool asOpenAIObject]).
+		(aToolSpec tools asArray collect: [:tool | tool asAnthropicObject]).
 	
 	aToolSpec forcedTools ifNotNil: [:forcedTools |
 		input tool_choice:
@@ -17,4 +17,4 @@ addToolSpec: aToolSpec toInput: input
 							forcedTool := forcedTools anyOne.
 							(forcedTool isString or: [forcedTool isText])
 								ifTrue: [forcedTool := aToolSpec toolNamed: forcedTool].
-							forcedTool asOpenAIToolChoiceObject]])]
+							forcedTool asAnthropicToolChoiceObject]])]

@@ -11,7 +11,7 @@ parseMessagesFrom: chatCompletion for: aConversation logRawOutput: logRawOutput
 	
 	logRawOutput ifTrue:
 		[messages do: [:message |
-			message rawOutput chatCompletion: chatCompletion]].
+			message rawOutput: chatCompletion]].
 	
 	chatCompletion usage ifNotNil: [:usage |
 		| expense |
