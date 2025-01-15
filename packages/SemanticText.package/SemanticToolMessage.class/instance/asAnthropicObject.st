@@ -3,6 +3,12 @@ asAnthropicObject
 
 	| jsonObject |
 	jsonObject := super asAnthropicObject.
-	jsonObject tool_call_id: self key.
-	jsonObject content: self basicContent.
+	jsonObject role: 'user'.
+	jsonObject content: {
+		(JsonObject new
+			type: 'tool_result';
+			tool_use_id: self key;
+			content: self basicContent;
+			yourself)
+	}.
 	^ jsonObject

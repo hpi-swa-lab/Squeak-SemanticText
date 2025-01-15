@@ -1,7 +1,7 @@
 private - requests
 parseMessageFrom: chatCompletionChoice for: aConversation logRawOutput: logRawOutput
 
-	| messageResult message |
+	| messageResult message toolUseBlocks |
 	messageResult := chatCompletionChoice.
 	message := SemanticMessage
 		conversation: aConversation
@@ -14,9 +14,10 @@ parseMessageFrom: chatCompletionChoice for: aConversation logRawOutput: logRawOu
 				chatCompletionChoice: chatCompletionChoice;
 				yourself)].
 	
-	messageResult tool_calls ifNotNil: [:toolCalls |
+	toolUseBlocks := messageResult content select: [:contentBlock | contentBlock type = 'tool_use'].
+	toolUseBlocks size > 0 ifTrue: [
 		message toolCalls:
-			(self parseToolCallsFrom: toolCalls toolSpec: aConversation activeToolSpec)].
+			(self parseToolCallsFrom: toolUseBlocks toolSpec: aConversation activeToolSpec)].
 	
 	chatCompletionChoice logprobs ifNotNil: [:logprobs |
 		message tokenProbabilities:
