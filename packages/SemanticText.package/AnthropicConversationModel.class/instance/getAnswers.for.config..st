@@ -35,8 +35,14 @@ getAnswers: number for: aConversation config: aConfigOrNil
 				stream := shouldStream.
 				input stream: stream].
 			
+			aConversation messages first role = 'system' ifTrue: [
+				input system: (aConversation messages first content)].
+			
 			input messages:
-				(aConversation messages collect: [:message | message asAnthropicObject]).
+				(aConversation messages
+					"System messages are specified on the top-level `input.system` field"
+					select: [:message | message role ~= 'system']
+					thenCollect: [:message | message asAnthropicObject]).
 			
 			aConversation activeToolSpec ifNotNil: [:toolSpec |
 				self addToolSpec: toolSpec toInput: input].
