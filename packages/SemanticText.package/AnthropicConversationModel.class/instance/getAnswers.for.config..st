@@ -6,8 +6,7 @@ getAnswers: number for: aConversation config: aConfigOrNil
 	
 	"Multiple responses via `n` are not directly supported by the Anthropic API"
 	number > 1 ifTrue: [
-		^ (1 to: number) collect: [:i | self getAnswers: 1 for: aConversation config: aConfigOrNil]
-	].
+		^ ((1 to: number) collect: [:i | self getAnswers: 1 for: aConversation config: aConfigOrNil]) flattened].
 	
 	chatCompletion := self
 		invokeWithConfig: aConfigOrNil
@@ -20,11 +19,13 @@ getAnswers: number for: aConversation config: aConfigOrNil
 			
 			config temperature ifNotNil: [:temperature |
 				input temperature: temperature].
+			
 			config nucleusSamplingMass ifNotNil: [:p |
 				input top_p: p].
 			
-			config shouldLogProbabilities ifNotNil: [:shouldLogProbabilities |
-				input logprobs: shouldLogProbabilities].
+			config topKSampling ifNotNil: [:k |
+				input top_k: k].
+			
 			logRawOutput := false.
 			config shouldLogRawOutput ifNotNil: [:shouldLogRawOutput |
 				logRawOutput := shouldLogRawOutput].

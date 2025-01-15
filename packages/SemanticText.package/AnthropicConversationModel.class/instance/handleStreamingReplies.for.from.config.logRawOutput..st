@@ -1,7 +1,7 @@
 private
 handleStreamingReplies: number for: aConversation from: responseBlock config: aConfig logRawOutput: logRawOutput
 
-	| promptTokens toolSpec |
+	| promptTokens toolSpec trackExpense |
 	promptTokens := self countTokensInConversation: aConversation.
 	toolSpec := aConversation activeToolSpec.
 	
@@ -18,15 +18,16 @@ handleStreamingReplies: number for: aConversation from: responseBlock config: aC
 				[messages do: [:message |
 					message rawOutput:
 						(JsonObject new
-							chatCompletionChunks: OrderedCollection new;
-							chatCompletionChunkChoices: OrderedCollection new;
+							messageChunks: OrderedCollection new;
 							yourself)]].
+					
+			trackExpense := [:usage |
+				usage ifNotNil: [:u |
+					expense := self expenseForUsage: u.
+					self assignExpense: expense toMessages: messages]].
 			
-			"[DONE] is not a thing for Anthropic. The equivalent is:
-			event: message_stop
-			data: {'type:' 'message_stop'}"
 			self flag: #todo.
-			[#('[DONE]' nil) includes: (data := dataStream next)] whileFalse:
+			[(data := dataStream next) = nil] whileFalse:
 				[| chunk msg |
 				chunk := data utf8ToSqueak parseAsJson openAIWithSqueakLineEndings.
 				msg := messages last.
@@ -38,21 +39,25 @@ handleStreamingReplies: number for: aConversation from: responseBlock config: aC
 						message: error message].
 				logRawOutput ifTrue:
 					[messages do: [:message |
-						message rawOutput chatCompletionChunks addLast: chunk]].
+						message rawOutput messageChunks addLast: chunk]].
 				
-				"TODO: Lets do caseOf:otherwise:" 
-				
-				(chunk type = 'content_block_delta') ifTrue: [
-					self parseStreamedChunk: chunk toolSpec: toolSpec addTo: msg.
-				].
-				(chunk type = 'message_delta') ifTrue: [
-					chunk usage ifNotNil: [:usage |
-					expense := self expenseForUsage: usage.
-					self assignExpense: expense toMessages: messages]
-				].
-				(chunk type = 'message_stop') ifTrue: [msg beComplete]].
+				chunk type caseOf: {
+					"Is fired at the very beginning. Only useful because it contains a `usage` field with the initial input tokens consumed (and a single output token)."
+					['message_start'] -> [trackExpense value: chunk message usage].
+					"Signals the start of a new content block (either text or tool_use). The tool_use one contains the name and ID of the function being called."
+					['content_block_start'] -> [
+						self flag: #todo.
+					].
+					"This contains the actual message text deltas"
+					['content_block_delta'] -> [self parseStreamedChunk: chunk toolSpec: toolSpec addTo: msg].
+					"Fired near the end, contains only `usage`"
+					['message_delta'] -> [trackExpense value: chunk usage].
+					"Fired when message is complete"
+					['message_stop'] -> [msg beComplete]
+				} otherwise: ["Some events are not relevant and can be safely ignored"]].
+			
 			self assert: dataStream next isNil]
-				
+
 				ensure:
 					[self account
 						noteExpense:

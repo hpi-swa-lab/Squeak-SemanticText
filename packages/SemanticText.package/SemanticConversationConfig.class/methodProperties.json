@@ -4,11 +4,13 @@
 	"instance" : {
 		"maxTokens" : "ct 2/5/2024 16:20",
 		"maxTokens:" : "ct 2/7/2024 21:50",
-		"nucleusSamplingMass" : "ct 1/15/2024 17:05",
-		"nucleusSamplingMass:" : "ct 1/15/2024 17:05",
+		"nucleusSamplingMass" : "zakkor 1/15/2025 21:47",
+		"nucleusSamplingMass:" : "zakkor 1/15/2025 21:47",
 		"shouldLogProbabilities" : "ct 1/15/2024 20:25",
 		"shouldLogProbabilities:" : "ct 1/15/2024 20:25",
 		"shouldStream" : "ct 8/19/2023 21:37",
 		"shouldStream:" : "ct 8/19/2023 21:37",
 		"temperature" : "ct 1/5/2024 20:57",
-		"temperature:" : "ct 1/5/2024 20:57" } }
+		"temperature:" : "ct 1/5/2024 20:57",
+		"topKSampling" : "zakkor 1/15/2025 22:46",
+		"topKSampling:" : "zakkor 1/15/2025 22:46" } }

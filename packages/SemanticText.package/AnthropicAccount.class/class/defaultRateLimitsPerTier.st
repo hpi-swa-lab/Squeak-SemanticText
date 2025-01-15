@@ -1,6 +1,6 @@
 constants
 defaultRateLimitsPerTier
-	"Not implemented yet"
+	"Not implemented"
 
 	self flag: #modelConstants.
 	self flag: #todo.

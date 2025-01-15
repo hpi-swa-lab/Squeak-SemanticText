@@ -24,13 +24,9 @@ streamEventDataFrom: aWebResponse
 							ifTrue: [true]]
 							whileFalse].
 					line isEmpty
-						ifFalse:
-							[Transcript show: line; cr.
-							self flag: #todo.
-							"(line beginsWith: 'event: ') ifTrue: [
-								dataStream nextPutAll: (line allButFirst: 'event: ' size).
-								dataStream cr
-							]."
+						ifFalse: [
+							"Each event is a pair of 'event: ...' and 'data: ...' separated by a newline."
+							"Since the event type itself is included in the 'data:' section, we just ignore the 'event:' lines entirely."
 							(line beginsWith: 'data: ') ifTrue: [
 								dataStream nextPutAll: (line allButFirst: 'data: ' size).
 								dataStream cr

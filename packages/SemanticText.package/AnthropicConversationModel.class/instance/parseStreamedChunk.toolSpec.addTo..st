@@ -1,27 +1,26 @@
 private - requests
-parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStreamingMessage
+parseStreamedChunk: chunk toolSpec: aToolSpecOrNil addTo: aStreamingMessage
 
-	| chunkText chunkToolCalls chunkTokenProbabilities |
-	self flag: #todo.
-	chatCompletionChoice type ~= 'content_block_delta' ifTrue: [
-		self error: 'unimplemented: did not expect something other than content_block_delta in here'
-	].
-	chatCompletionChoice delta type = 'text_delta' ifTrue: [
-		chunkText := chatCompletionChoice delta text.
-	] ifFalse: [
-		self error: 'unimplemented: did not expect something other than text_delta for content_block_delta'
-	].
+	| chunkText chunkToolCalls |
+	
+	chunk type caseOf: {
+		['content_block_delta'] -> [
+			chunk delta type caseOf: {
+				['text_delta'] -> [chunkText := chunk delta text].
+				['input_json_delta'] -> [chunkToolCalls := self parseStreamedToolCallChunksFrom: chunk delta partial_json
+					toolSpec: aToolSpecOrNil
+					message: aStreamingMessage]
+			} otherwise: [:deltaType | self error: 'got unknown content_block_delta type: ' , deltaType].
+		]
+	} otherwise: [:type | self error: 'got unknown chunk type: ' , type].
 	
 	aStreamingMessage rawOutput ifNotNil: [:rawOutput |
-		rawOutput chatCompletionChunkChoices ifNotNil: [:rawChoices |
-			rawChoices addLast: chatCompletionChoice]].
+		rawOutput messageChunks ifNotNil: [:rawChunks |
+			rawChunks addLast: chunk]].
 	
 	self flag: #todo.
 	"chunkToolCalls := chatCompletionChoice delta tool_calls ifNotNil: [:toolCalls |
 		self parseStreamedToolCallChunksFrom: toolCalls toolSpec: aToolSpecOrNil message: aStreamingMessage]."
 	
-	"chunkTokenProbabilities := chatCompletionChoice logprobs ifNotNil: [:logprobs |
-		self parseTokenProbabilitiesFrom: logprobs]."
-	
-	(chunkText isEmptyOrNil and: [chunkToolCalls isNil] and: [chunkTokenProbabilities isEmptyOrNil]) ifFalse:
-		[aStreamingMessage addChunk: chunkText toolCalls: chunkToolCalls tokenProbabilities: chunkTokenProbabilities].
+	(chunkText isEmptyOrNil and: [chunkToolCalls isNil]) ifFalse:
+		[aStreamingMessage addChunk: chunkText toolCalls: chunkToolCalls tokenProbabilities: nil].
