@@ -4,7 +4,7 @@ asOpenAIObject
 	| jsonObject |
 	jsonObject := JsonObject new
 		role: self role;
-		content: self basicContent;
+		content: self content;
 		yourself.
 	self basicToolCalls ifNotNil: [:calls |
 		jsonObject tool_calls:

@@ -1,0 +1,19 @@
+{
+	"category" : "SemanticText-Providers-Anthropic",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"DefaultAccount" ],
+	"commentStamp" : "Ed 1/10/2025 12:45",
+	"instvars" : [
+		"baseUrl",
+		"apiKey",
+		"ignoreCertificate",
+		"usageTier",
+		"customRateLimits",
+		"expensesPerUser" ],
+	"name" : "AnthropicAccount",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

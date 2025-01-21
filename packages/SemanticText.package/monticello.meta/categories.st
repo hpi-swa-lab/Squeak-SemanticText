@@ -1,10 +1,11 @@
+SystemOrganization addCategory: #'SemanticText-Help'!
 SystemOrganization addCategory: #'SemanticText-Model'!
 SystemOrganization addCategory: #'SemanticText-Model-Agents'!
 SystemOrganization addCategory: #'SemanticText-Model-Conversation'!
 SystemOrganization addCategory: #'SemanticText-Model-Conversation-Tests'!
 SystemOrganization addCategory: #'SemanticText-Model-Search'!
 SystemOrganization addCategory: #'SemanticText-Model-Speech'!
-SystemOrganization addCategory: #'SemanticText-Help'!
+SystemOrganization addCategory: #'SemanticText-Providers-Anthropic'!
 SystemOrganization addCategory: #'SemanticText-Providers-Mocks'!
 SystemOrganization addCategory: #'SemanticText-Providers-OpenAI'!
 SystemOrganization addCategory: #'SemanticText-Tools-Conversation'!
