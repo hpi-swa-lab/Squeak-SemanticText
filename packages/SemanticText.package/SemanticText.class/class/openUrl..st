@@ -9,4 +9,6 @@ openUrl: urlString
 			title: 'Open Web Page' translated) ifTrue: [browser openOnUrl: urlString].
 		^ self].
 	
-	(urlString tdbAsTextWithAttribute: (TextURL new url: urlString)) editWithLabel: 'Requested URL'.
+	^ urlString asText
+		addAttribute: (TextURL new url: urlString);
+		editWithLabel: 'Requested URL'
