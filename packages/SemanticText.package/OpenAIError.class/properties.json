@@ -8,8 +8,7 @@
 	"instvars" : [
 		"type",
 		"parameter",
-		"code",
-		"message" ],
+		"code" ],
 	"name" : "OpenAIError",
 	"pools" : [
 		 ],

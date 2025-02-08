@@ -5,4 +5,4 @@ tearDown
 		[[tearDownActions isEmpty] whileFalse:
 			[tearDownActions removeLast value]]]
 		
-		ensure: [super setUp].
+		ensure: [super tearDown].

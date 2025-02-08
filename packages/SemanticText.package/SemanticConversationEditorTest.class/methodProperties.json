@@ -6,7 +6,7 @@
 		"classToBeTested" : "ct 2/19/2024 10:18",
 		"conversationTextFixtures" : "ct 11/26/2024 07:38",
 		"setUp" : "ct 5/22/2024 15:01",
-		"tearDown" : "ct 5/22/2024 15:01",
+		"tearDown" : "ct 12/10/2024 00:17",
 		"testConversationFromText" : "ct 3/16/2024 01:11",
 		"testConversationFromTextAdvanced" : "ct 3/16/2024 16:19",
 		"testConversationFromTextMinimal" : "ct 3/16/2024 17:17",

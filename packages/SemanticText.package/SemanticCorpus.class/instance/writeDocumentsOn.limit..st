@@ -1,9 +1,8 @@
 fileIn/Out
 writeDocumentsOn: aStream limit: limit
 
-	| number start |
+	| number |
 	number := limit ifNil: [self documents size].
-	start := DateAndTime now.
 	
 	aStream binary.
 	(self documents take: number)
