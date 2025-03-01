@@ -1,6 +1,5 @@
-(PackageInfo named: 'SemanticText') postscript: '"post load actions"
-(Smalltalk globals removeKey: #SemanticTextPostLoadActions ifAbsent: [nil]) ifNotNil: [:actions |
-	actions do: #value].
+(PackageInfo named: 'SemanticText') postscript: '"openai: add any new models"
+OpenAIModel withAllSubclassesDo: #initialize.
 
 "openai: add account option to ignore certificate (599cd9c)"
 OpenAIAccount allSubInstancesDo: [:account |
