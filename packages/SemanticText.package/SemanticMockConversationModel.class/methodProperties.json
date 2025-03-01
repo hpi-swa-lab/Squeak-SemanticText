@@ -1,16 +1,21 @@
 {
 	"class" : {
+		"allAudioVoices" : "ct 2/23/2025 21:30",
 		"initialize" : "ct 11/26/2023 21:45",
 		"unload" : "ct 8/20/2023 17:01" },
 	"instance" : {
+		"canGenerateAudio" : "ct 2/23/2025 21:29",
+		"canUnderstandAudio" : "ct 2/23/2025 21:16",
 		"countTokensInConversation:" : "ct 2/18/2024 21:42",
 		"defaultConfig" : "ct 8/17/2023 18:53",
 		"defaultTokensPerSecond" : "ct 2/10/2024 20:23",
-		"generateReplyFor:config:" : "ct 5/1/2024 00:22",
+		"generateReplyAudioFor:config:" : "ct 2/23/2025 21:35",
+		"generateReplyFor:config:" : "ct 2/23/2025 21:37",
+		"generateReplyTextFor:config:" : "ct 2/23/2025 21:51",
 		"getAnswerFor:" : "ct 1/9/2024 00:14",
 		"getAnswerFor:config:" : "ct 1/8/2024 23:52",
 		"getAnswers:for:" : "ct 1/8/2024 23:42",
-		"getAnswers:for:config:" : "ct 5/1/2024 00:21",
+		"getAnswers:for:config:" : "ct 2/23/2025 21:51",
 		"maxCompletionTokens" : "ct 4/30/2024 02:09",
 		"maxPromptTokens" : "ct 4/30/2024 02:09",
 		"maxTokens" : "ct 4/30/2024 02:09",
