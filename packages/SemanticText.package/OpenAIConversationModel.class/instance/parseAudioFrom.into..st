@@ -8,7 +8,7 @@ parseAudioFrom: audio into: aMessage
 	
 	audio data ifNotNil: [:data |
 		| soundData |
-		soundData := data base64DecodedAs: ByteArray.
+		soundData := data semanticBase64DecodedAsByteArray.
 		sound := SampledSound
 			samples: (SampledSound convertBytesTo16BitSamples: soundData mostSignificantByteFirst: false)
 			samplingRate: 24000.

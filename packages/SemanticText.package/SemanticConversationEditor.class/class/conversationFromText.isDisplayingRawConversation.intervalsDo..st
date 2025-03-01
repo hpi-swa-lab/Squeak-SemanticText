@@ -31,7 +31,7 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 			role := (text copyFrom: start to: sep - 1) asString
 				ifNotEmpty: [:roleString | roleString asLegalSelector]
 				ifEmpty: [sep := sep - 1. nil].
-			contentText := (text copyFrom: sep + 1 to: stop) withBlanksTrimmed.
+			contentText := (text copyFrom: sep + 1 to: stop) semanticWithBlanksTrimmed.
 			content := contentText isText
 				ifTrue: [contentText copy
 					removeAttributesThat: [:attribute | ((attribute isKindOf: TextAnchor) or: [(attribute isKindOf: TextInspectIt) and: [attribute target semanticIsSound]]) not];
@@ -46,12 +46,12 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 				(sep2 := content asString findLastOccurrenceOfString: toolSpecPrefix startingAt: 1) > 0 ifTrue:
 					[| allItalic |
 					allItalic := true.
-					(text copyFrom: sep + 1 + sep2 to: stop) withBlanksTrimmed runs withStartStopAndValueDo: [:start2 :stop2 :attributes2 |
+					(text copyFrom: sep + 1 + sep2 to: stop) semanticWithBlanksTrimmed runs withStartStopAndValueDo: [:start2 :stop2 :attributes2 |
 						allItalic := allItalic and: [attributes2 includes: TextEmphasis italic]].
 					allItalic ifTrue:
 						[| tools |
 						toolSpec := content asString allButFirst: sep2 - 1 + toolSpecPrefix size.
-						content := (content first: sep2 - 1) withBlanksTrimmed.
+						content := (content first: sep2 - 1) semanticWithBlanksTrimmed.
 						stop := stop - content size + sep2.
 						isDisplayingRawConversation
 							ifTrue:
@@ -122,7 +122,7 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 								[| sep31 |
 								(sep31 := content indexOf: $] startingAt: 2) > 0 ifTrue:
 									[toolKey := content asString copyFrom: 2 to: sep31 - 1.
-									content := (content allButFirst: sep31) withBlanksTrimmed]]]]].
+									content := (content allButFirst: sep31) semanticWithBlanksTrimmed]]]]].
 			
 			content ifEmpty: [content := nil].
 			

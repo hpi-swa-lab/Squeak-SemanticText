@@ -26,7 +26,7 @@ parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStream
 			chunkText := chunkText ifNil: [transcript] ifNotNil: [chunkText , transcript].
 			audioUpdate at: #transcript put: [aStreamingMessage contentParts second]].
 		audio data ifNotNil: [:data |
-			chunkAudio := data base64DecodedAs: ByteArray].
+			chunkAudio := data semanticBase64DecodedAsByteArray].
 		audio at: #'expires_at' ifPresent: [:expirationTime |
 			audioUpdate at: #expirationDate put: [DateAndTime fromUnixTime: expirationTime]]].
 	
