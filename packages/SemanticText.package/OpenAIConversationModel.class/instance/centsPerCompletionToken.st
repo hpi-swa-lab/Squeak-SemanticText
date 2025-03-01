@@ -23,19 +23,34 @@ centsPerCompletionToken
 		[self class gpt4_1106Name] -> [0.003s].
 		
 		"GPT-4o"
+		[self class chatgpt4oLatestName] -> [0.0015s].
+		[self class gpt4o_20241120Name] -> [0.001s].
 		[self class gpt4o_20240806Name] -> [0.001s].
 		[self class gpt4o_20240513Name] -> [0.0015s].
-		"for later: vision: unclear"
 		
 		"GPT-4o mini"
 		[self class gpt4oMini_20240718Name] -> [0.00006s].
 		"for later: vision: unclear"
 		
-		"o1-preview"
+		"GPT-4o Audio Preview"
+		[self class gpt4oAudioPreview_20241217Name] -> [0.001s].
+		[self class gpt4oAudioPreview_20241001Name] -> [0.001s].
+		
+		"GPT-4o Mini Audio Preview"
+		[self class gpt4oMiniAudioPreview_20241217Name] -> [0.00006s].
+		
+		"GPT-4.5"
+		[self class gpt45Preview_20250227Name] -> [0.015s].
+		
+		"o1"
+		[self class o1_20241217Name] -> [0.006s].
 		[self class o1Preview_20240912Name] -> [0.006s].
 		
 		"o1-mini"
-		[self class o1Mini_20240912Name] -> [0.0012s]}
+		[self class o1Mini_20240912Name] -> [0.00044s].
+		
+		"o3-mini"
+		[self class o3Mini_20250131Name] -> [0.00044s]}
 
 "do any of the above constants have changed, based on the contents from the pricing website presented below? if yes, answer the updated source code of the above method. do not change the formatting. do not add new models that were not in included in the source code before.
 

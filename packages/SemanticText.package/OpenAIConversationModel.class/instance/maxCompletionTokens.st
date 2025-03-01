@@ -10,14 +10,24 @@ maxCompletionTokens
 		^ 4096].
 	
 	(self resolvedName beginsWith: self class gpt4Name) ifTrue:
-		[(self resolvedName = self class gpt4o_20240513Name or: [self resolvedName = self class gpt4o_20240806Name] or: [self resolvedName = self class gpt4oMini_20240718Name] or: [self resolvedName = self class gpt4_20240409Name] or: [self resolvedName = self class gpt4_0125Name] or: [self resolvedName = self class gpt4_1106Name]) ifTrue: [^ 4096].
+		[(self resolvedName = self class gpt4o_20240513Name or: [self resolvedName = self class gpt4oMini_20240718Name] or: [self resolvedName = self class gpt4_20240409Name] or: [self resolvedName = self class gpt4_0125Name] or: [self resolvedName = self class gpt4_1106Name]) ifTrue: [^ 4096].
 		(self resolvedName beginsWith: self class gpt4oMiniName) ifTrue: [^ 16384].
+		(self resolvedName beginsWithAnyOf: {self class gpt4oAudioPreviewName. self class gpt4oMiniAudioPreviewName}) ifTrue: [^ 16384].
 		(self resolvedName beginsWith: self class gpt4_32kName) ifTrue: [^ 32768].
+		(self resolvedName beginsWith: self class gpt4oName) ifTrue: [^ 16384].
+		(self resolvedName beginsWith: self class gpt45PreviewName) ifTrue: [^ 16384].
 		^ 8192].
+	self resolvedName = self class chatgpt4oLatestName ifTrue:
+		[^ 16384].
 	
 	(self resolvedName beginsWith: self class o1PreviewName) ifTrue:
 		[^ 23768].
 	(self resolvedName beginsWith: self class o1MiniName) ifTrue:
 		[^ 65536].
+	(self resolvedName beginsWith: self class o1Name) ifTrue:
+		[^ 100000].
+	
+	(self resolvedName beginsWith: self class o3MiniName) ifTrue:
+		[^ 100000].
 	
 	^ self resolvedName caseError

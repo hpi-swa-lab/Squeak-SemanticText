@@ -1,5 +1,5 @@
 constants
-allVoices
+allAudioVoices
 
 	self flag: #modelConstants.
 	
