@@ -6,4 +6,5 @@ asOpenAIToolChoiceObject
 		function:
 			(JsonObject new
 				name: self name;
-				yourself)
+				yourself);
+		yourself
