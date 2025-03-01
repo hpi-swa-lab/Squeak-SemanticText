@@ -68,6 +68,7 @@
 		"handleAsyncReplies:for:config:logRawOutput:deferStreaming:" : "ct 5/2/2024 15:52",
 		"handleStreamingReplies:for:from:config:logRawOutput:" : "ct 6/18/2024 22:59",
 		"isLegacy" : "ct 2/4/2024 20:13",
+		"knowledgeCutoffDate" : "ct 3/1/2025 20:41",
 		"maxCompletionTokens" : "ct 3/1/2025 20:41",
 		"maxPromptTokens" : "ct 2/5/2024 20:48",
 		"maxTokens" : "ct 3/1/2025 20:42",
