@@ -10,11 +10,17 @@ acceptDroppingMorph: dropee event: anEvent inMorph: targetMorph
 			[reference := dropee.
 			externalName := dropee externalName].
 	
-	"convenience for common case"
+	"convenience for common cases"
 	(reference isKindOf: InspectorField) ifTrue:
-		[reference := (reference name = 'screenshot' translated and: [reference shouldPrintValueAsIs])
-			ifTrue: [Compiler evaluate: reference valueGetterExpression for: reference inspector object]
-			ifFalse: [reference value]].
+		[reference := true
+			caseOf:
+				{[reference name = 'screenshot' translated and: [reference shouldPrintValueAsIs]] ->
+					[Compiler evaluate: reference valueGetterExpression for: reference inspector object].
+				[reference name = 'pixels' translated and: [reference shouldPrintValueAsIs]] ->
+					[reference inspector object]}
+			otherwise: [reference value]].
+	reference isMorph ifTrue:
+		[reference := reference imageForm].
 	
 	text := (reference isString or: [reference isText])
 		ifTrue: [reference asString]
@@ -24,5 +30,5 @@ acceptDroppingMorph: dropee event: anEvent inMorph: targetMorph
 				^ true].
 			reference semanticAsContentPart semanticContentPartText].
 	
-	self addDo: [text].
+	self addDo: [text] type: #append.
 	^ true

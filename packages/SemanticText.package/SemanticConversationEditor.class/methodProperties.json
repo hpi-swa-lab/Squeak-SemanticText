@@ -19,10 +19,11 @@
 		"unregisterInWorldMenu" : "ct 8/17/2023 20:46" },
 	"instance" : {
 		"aboutToStyle:" : "ct 10/15/2023 18:20",
-		"acceptDroppingMorph:event:inMorph:" : "ct 3/1/2025 21:39",
+		"acceptDroppingMorph:event:inMorph:" : "ct 3/1/2025 23:36",
 		"addAssistantMessage" : "ct 8/12/2023 21:01",
 		"addDo:" : "ct 2/15/2024 00:57",
-		"addDo:asPlaceholder:" : "ct 2/15/2024 00:58",
+		"addDo:asPlaceholder:" : "ct 3/1/2025 23:36",
+		"addDo:type:" : "ct 3/1/2025 23:37",
 		"addMessage:" : "ct 4/30/2024 23:55",
 		"addModelItemsToWindowMenu:" : "ct 2/17/2025 01:54",
 		"addRoleMessage:" : "ct 10/15/2023 18:05",
