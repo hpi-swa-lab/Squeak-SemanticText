@@ -3,6 +3,7 @@ buildTextPane: builder
 
 	^ builder pluggableTextSpec new
 		model: self;
+		name: #text;
 		getText: #text;
 		setText: #complete:;
 		editText: #editText:;

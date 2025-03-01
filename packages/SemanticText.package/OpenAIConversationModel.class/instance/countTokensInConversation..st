@@ -9,15 +9,15 @@ countTokensInConversation: aConversation
 	toolMessages := aConversation messages select: [:message | message role = #tool].
 	hasMultipleToolMessages := toolMessages size > 1.
 	tokens := aConversation messages detectSum: [:message |
-		| compiledContent |
-		compiledContent := message basicContent ifNil: [''].
+		| compiledContentParts |
+		compiledContentParts := message contentParts.
 		(pendingTools isEmptyOrNil not and: [message role = #system]) ifTrue:
-			[compiledContent := compiledContent , String cr.
+			[compiledContentParts := compiledContentParts , {String cr}.
 			pendingTools := nil].
 		self
 			countTokensInMessage:
 				(message shallowCopy
-					content: compiledContent;
+					contentParts: compiledContentParts;
 					yourself)
 			hasMultipleToolMessages: hasMultipleToolMessages].
 	
@@ -32,7 +32,7 @@ countTokensInConversation: aConversation
 	hasMultipleToolMessages ifTrue:
 		[| toolMessagesWithContentCount |
 		tokens := tokens + (toolMessages size * 2 + 1).
-		(toolMessagesWithContentCount := toolMessages count: [:message | message contentString isEmptyOrNil not]) > 0 ifTrue:
+		(toolMessagesWithContentCount := toolMessages count: [:message | message contentParts notEmpty]) > 0 ifTrue:
 			[tokens := tokens + 1 - toolMessagesWithContentCount]].
 	
 	(aConversation activeToolSpec ifNotNil: [:toolSpec | toolSpec forcedTools]) ifNotNil: [:forcedTools |

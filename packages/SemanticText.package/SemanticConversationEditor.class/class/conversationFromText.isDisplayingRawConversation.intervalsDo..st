@@ -31,19 +31,26 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 			role := (text copyFrom: start to: sep - 1) asString
 				ifNotEmpty: [:roleString | roleString asLegalSelector]
 				ifEmpty: [sep := sep - 1. nil].
-			content := (contentText := (text copyFrom: sep + 1 to: stop) withBlanksTrimmed)
-				asString.
+			contentText := (text copyFrom: sep + 1 to: stop) withBlanksTrimmed.
+			content := contentText isText
+				ifTrue: [contentText copy
+					removeAttributesThat: [:attribute | ((attribute isKindOf: TextAnchor) or: [(attribute isKindOf: TextInspectIt) and: [attribute target semanticIsSound]]) not];
+					in: [:copy |
+						copy hasAnyAttribute
+							ifTrue: [copy]
+							ifFalse: [copy asString]]]
+				ifFalse: [contentText].
 			content ifNotEmpty:
 				[| toolSpecPrefix |
 				toolSpecPrefix := isDisplayingRawConversation ifTrue: ['Available tools (force: '] ifFalse: ['Available tools: '].
-				(sep2 := content findLastOccurrenceOfString: toolSpecPrefix startingAt: 1) > 0 ifTrue:
+				(sep2 := content asString findLastOccurrenceOfString: toolSpecPrefix startingAt: 1) > 0 ifTrue:
 					[| allItalic |
 					allItalic := true.
 					(text copyFrom: sep + 1 + sep2 to: stop) withBlanksTrimmed runs withStartStopAndValueDo: [:start2 :stop2 :attributes2 |
 						allItalic := allItalic and: [attributes2 includes: TextEmphasis italic]].
 					allItalic ifTrue:
 						[| tools |
-						toolSpec := content allButFirst: sep2 - 1 + toolSpecPrefix size.
+						toolSpec := content asString allButFirst: sep2 - 1 + toolSpecPrefix size.
 						content := (content first: sep2 - 1) withBlanksTrimmed.
 						stop := stop - content size + sep2.
 						isDisplayingRawConversation
@@ -94,7 +101,7 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 											ifTrue: [sep31 := sep4 + stop2 - 1]].
 									sep31 ifNotNil:
 										[| toolCall |
-										toolCall := content copyFrom: sep4 to: sep31.
+										toolCall := content asString copyFrom: sep4 to: sep31.
 										toolCall first = $[ ifTrue:
 											[| sep32 |
 											(sep32 := toolCall indexOf: $] startingAt: 2) > 0 ifTrue:
@@ -114,7 +121,7 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 							[content first = $[ ifTrue:
 								[| sep31 |
 								(sep31 := content indexOf: $] startingAt: 2) > 0 ifTrue:
-									[toolKey := content copyFrom: 2 to: sep31 - 1.
+									[toolKey := content asString copyFrom: 2 to: sep31 - 1.
 									content := (content allButFirst: sep31) withBlanksTrimmed]]]]].
 			
 			content ifEmpty: [content := nil].

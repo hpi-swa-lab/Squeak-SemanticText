@@ -1,11 +1,13 @@
 updating
-noteMessageCompleted
+noteMessageCompleted: wasStreaming
 
 	self shouldSpeak ifTrue:
 		[| message |
 		message := self conversation lastMessage.
 		(message role = #assistant and: [message content isEmptyOrNil not]) ifTrue:
-			[self voiceAutomaton sayMessage: message]].
+			[(self voiceAutomaton shouldSynthesize not and: [wasStreaming])
+				ifFalse: [self voiceAutomaton sayMessage: message]
+				ifTrue: [self voiceAutomaton doneStreamingMessageAudio: message]]].
 	
 	(self hasPendingToolCallsFromUser: false) ifFalse:
 		[^ self noteReadyForQuestion].

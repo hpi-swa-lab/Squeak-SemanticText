@@ -1,4 +1,4 @@
 accessing
-addSystemMessage: aString
+addSystemMessage: aTextOrContentOrParts
 
-	^ self addMessageFrom: #system content: aString
+	^ self addMessageFrom: #system content: aTextOrContentOrParts

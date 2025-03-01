@@ -1,4 +1,8 @@
 accessing
-addMessageFrom: role content: content
+addMessageFrom: role content: aTextOrContentOrParts
 
-	^ self addMessage: (SemanticMessage role: role content: content)
+	| message |
+	message := (aTextOrContentOrParts isCollection and: [(aTextOrContentOrParts isString or: [aTextOrContentOrParts isText]) not])
+		ifTrue: [SemanticMessage role: role contentParts: aTextOrContentOrParts]
+		ifFalse: [SemanticMessage role: role content: aTextOrContentOrParts].
+	^ self addMessage: message

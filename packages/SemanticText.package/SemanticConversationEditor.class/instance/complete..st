@@ -14,6 +14,6 @@ complete: aText
 	response isStreaming
 		ifFalse:
 			[self changed: #text.
-			self noteMessageCompleted]
+			self noteMessageCompleted: false]
 		ifTrue:
 			[self updateStreamingMessage].

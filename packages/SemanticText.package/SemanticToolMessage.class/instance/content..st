@@ -1,10 +1,10 @@
 accessing
-content: anObjectOrString
+content: contentOrObject
 
-	anObjectOrString isString ifTrue:
-		[super content: anObjectOrString.
+	(contentOrObject isString or: [contentOrObject isText] "or: [contentOrObject isForm]" "not allowed in OpenAI") ifTrue:
+		[super content: contentOrObject.
 		object := nil.
 		^ self].
 	
-	content := [anObjectOrString asJsonString] onDNU: #jsonWriteOn: do: [anObjectOrString printString].
-	object := anObjectOrString.
+	self content: ([contentOrObject asJsonString] onDNU: #jsonWriteOn: do: [contentOrObject printString]).
+	object := contentOrObject.

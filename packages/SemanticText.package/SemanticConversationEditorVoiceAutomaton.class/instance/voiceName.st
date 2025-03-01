@@ -1,4 +1,5 @@
 accessing
 voiceName
 
-	^ #fable
+	^ self basicVoiceName ifNil:
+		[self allVoiceNames anyOne]

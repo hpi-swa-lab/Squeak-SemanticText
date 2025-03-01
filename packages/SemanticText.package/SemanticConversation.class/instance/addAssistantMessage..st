@@ -1,4 +1,4 @@
 accessing
-addAssistantMessage: aString
+addAssistantMessage: aTextOrContentOrParts
 
-	^ self addMessageFrom: #assistant content: aString
+	^ self addMessageFrom: #assistant content: aTextOrContentOrParts

@@ -14,6 +14,10 @@ addModelItemsToWindowMenu: menu
 	menu
 		add: ('{1}voice' format: {self voiceModeEnabled ifTrue: ['<on>'] ifFalse: ['<off>']})
 		action: #toggleVoiceMode.
+	self conversation model canGenerateAudio ifTrue:
+		[menu
+			add: ('choose voice... ({1})' format: {self voiceName})
+			action: #chooseVoice].
 	menu
 		add: 'generate code'
 		action: #generateCode.

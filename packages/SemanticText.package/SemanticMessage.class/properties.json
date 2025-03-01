@@ -8,11 +8,11 @@
 	"instvars" : [
 		"conversation",
 		"role",
-		"content",
+		"contentParts",
 		"toolCalls",
-		"tokenProbabilities",
 		"expense",
-		"rawOutput" ],
+		"rawOutput",
+		"properties" ],
 	"name" : "SemanticMessage",
 	"pools" : [
 		 ],

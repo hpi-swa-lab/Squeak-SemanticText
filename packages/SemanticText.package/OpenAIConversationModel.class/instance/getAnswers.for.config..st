@@ -18,6 +18,18 @@ getAnswers: number for: aConversation config: aConfigOrNil
 			config nucleusSamplingMass ifNotNil: [:p |
 				input top_p: p].
 			
+			config outputModalities ifNotNil: [:modalities |
+				input modalities: modalities.
+				
+				(modalities includes: #audio) ifTrue:
+					[input audio:
+						(JsonObject new
+							format: #pcm16;
+							yourself)]].
+			
+			config audioVoice ifNotNil: [:voice |
+				input audio voice: voice].
+			
 			config shouldLogProbabilities ifNotNil: [:shouldLogProbabilities |
 				input logprobs: shouldLogProbabilities].
 			logRawOutput := false.

@@ -3,8 +3,10 @@ postCopy
 
 	super postCopy.
 	
-	content := content copy.
+	contentParts ifNotNil:
+		[contentParts := contentParts collect: [:part | part copy]].
 	toolCalls ifNotNil:
 		[toolCalls := toolCalls collect: [:toolCall | toolCall copy]].
-	tokenProbabilities := tokenProbabilities veryDeepCopy.
 	rawOutput := rawOutput veryDeepCopy.
+	properties ifNotNil:
+		[properties := properties collect: [:value | value veryDeepCopy]].

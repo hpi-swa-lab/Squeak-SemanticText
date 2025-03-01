@@ -2,10 +2,14 @@
 	"class" : {
 		"newStreaming" : "ct 8/21/2023 02:28" },
 	"instance" : {
+		"audioVoice" : "ct 2/16/2025 22:11",
+		"audioVoice:" : "ct 2/16/2025 22:11",
 		"maxTokens" : "ct 2/5/2024 16:20",
 		"maxTokens:" : "ct 2/7/2024 21:50",
 		"nucleusSamplingMass" : "ct 1/15/2024 17:05",
 		"nucleusSamplingMass:" : "ct 1/15/2024 17:05",
+		"outputModalities" : "ct 2/16/2025 22:21",
+		"outputModalities:" : "ct 2/16/2025 22:29",
 		"shouldLogProbabilities" : "ct 1/15/2024 20:25",
 		"shouldLogProbabilities:" : "ct 1/15/2024 20:25",
 		"shouldStream" : "ct 8/19/2023 21:37",

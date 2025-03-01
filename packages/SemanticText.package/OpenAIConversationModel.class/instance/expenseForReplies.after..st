@@ -6,7 +6,5 @@ expenseForReplies: messages after: promptTokens
 		* promptTokens.
 	expenseForReplies := (OpenAIAmount approximateCents: self centsPerCompletionToken)
 		* (messages detectSum: [:message |
-			message basicContent
-				ifNil: [0]
-				ifNotNil: [:content | self countTokensIn: content]]).
+			self countTokensInMessage: message]).
 	^ expenseForPrompt + expenseForReplies

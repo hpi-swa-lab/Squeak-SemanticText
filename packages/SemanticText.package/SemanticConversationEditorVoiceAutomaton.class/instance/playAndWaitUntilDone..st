@@ -5,4 +5,6 @@ playAndWaitUntilDone: aSound
 	
 	[aSound play.
 	[aSound isPlaying] whileTrue: [0.1 seconds wait]]
-		ifCurtailed: [aSound stopGracefully].
+		ifCurtailed:
+			[self voiceState: nil.
+			aSound stopGracefully].

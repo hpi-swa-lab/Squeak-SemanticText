@@ -1,7 +1,7 @@
 instance creation
-role: role content: content
+role: role content: aTextOrContent
 
 	^ self new
 		role: role;
-		content: content;
+		content: aTextOrContent;
 		yourself

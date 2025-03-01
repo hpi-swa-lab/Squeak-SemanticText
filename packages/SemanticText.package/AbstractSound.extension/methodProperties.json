@@ -2,5 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
+		"asOpenAIContentPartObject" : "ct 2/9/2025 20:37",
+		"openAIAsWaveBase64String" : "ct 2/9/2025 20:38",
+		"openAIAsWaveBytes" : "ct 2/9/2025 20:39",
+		"openAICountTokensOrCompileTo:" : "ct 3/1/2025 20:54",
+		"semanticAsContentPart" : "ct 2/9/2025 21:09",
+		"semanticContentPartTextOn:" : "ct 2/9/2025 21:06",
+		"semanticIsSound" : "ct 2/9/2025 20:25",
 		"semanticToText" : "ct 6/18/2024 18:27",
 		"semanticToTextWithConfigDo:" : "ct 6/18/2024 18:26" } }

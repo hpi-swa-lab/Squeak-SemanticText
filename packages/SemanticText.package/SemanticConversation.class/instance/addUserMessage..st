@@ -1,4 +1,4 @@
 accessing
-addUserMessage: aString
+addUserMessage: aTextOrContentOrParts
 
-	^ self addMessageFrom: #user content: aString
+	^ self addMessageFrom: #user content: aTextOrContentOrParts

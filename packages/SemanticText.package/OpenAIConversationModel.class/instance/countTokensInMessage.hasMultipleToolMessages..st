@@ -2,27 +2,30 @@ private - tokens
 countTokensInMessage: aMessage hasMultipleToolMessages: hasMultipleToolMessages
 	"Approximation! Adopted from https://github.com/hmarr/openai-chat-tokens."
 
-	| compiledContent tokens |
+	| tokens compiledContent |
+	tokens := 0.
 	compiledContent := String streamContents: [:stream |
 		(aMessage isToolMessage and: [hasMultipleToolMessages])
 			ifFalse:
-				[aMessage basicContent ifNotNil: [:content |
-					stream nextPutAll: content]]
+				[aMessage contentParts do: [:part |
+					tokens := tokens + (part openAICountTokensOrCompileTo: stream)]]
 			ifTrue:
-				[[| object |
-				object := aMessage basicContent parseAsJson.
+				[| contentString |
+				contentString := aMessage contentString.
+				[| object |
+				object := contentString parseAsJson.
 				object isDictionary ifFalse: [self error: 'content does not represent a JSON object'].
 				self
 					printFunctionCallArguments: object
 					on: stream]
 						on: Error do:
-							[stream nextPutAll: aMessage basicContent]].
+							[stream nextPutAll: contentString]].
 		
 		"not yet implemented"
 		"aMessage messageName ifNotNil: [:messageName |
 			stream nextPutAll: messageName]."].
 	
-	tokens := self countTokensIn: compiledContent.
+	tokens := tokens + (self countTokensIn: compiledContent).
 	
 	"special tokens per input message"
 	aMessage isToolMessage
@@ -30,7 +33,7 @@ countTokensInMessage: aMessage hasMultipleToolMessages: hasMultipleToolMessages
 		ifTrue:
 			[| toolContent |
 			tokens := tokens + 2.
-			toolContent := [aMessage basicContent parseAsJson] ifError: [nil].
+			toolContent := [aMessage contentString parseAsJson] ifError: [nil].
 			(hasMultipleToolMessages and: [toolContent isDictionary]) ifTrue:
 				[tokens := tokens - toolContent keys size]].
 	

@@ -2,7 +2,7 @@ streaming
 addChunk: aStringOrNil toolCalls: newToolCallsOrNil tokenProbabilities: newTokenProbabilitiesOrNil
 
 	aStringOrNil ifNotNil:
-		[self content: (self basicContent ifNil: ['']) , aStringOrNil].
+		[self content: (self basicContent ifNil: ['']) asText , aStringOrNil].
 	
 	newToolCallsOrNil ifNotNil:
 		[self toolCalls: self toolCalls , newToolCallsOrNil asArray].

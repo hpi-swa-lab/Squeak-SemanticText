@@ -14,6 +14,9 @@ parseMessageFrom: chatCompletionChoice for: aConversation logRawOutput: logRawOu
 				chatCompletionChoice: chatCompletionChoice;
 				yourself)].
 	
+	messageResult audio ifNotNil: [:audio |
+		self parseAudioFrom: audio into: message].
+	
 	messageResult tool_calls ifNotNil: [:toolCalls |
 		message toolCalls:
 			(self parseToolCallsFrom: toolCalls toolSpec: aConversation activeToolSpec)].

@@ -8,8 +8,12 @@
 	"instvars" : [
 		"conversation",
 		"language",
+		"voiceName",
+		"shouldTranscribe",
+		"shouldSynthesize",
 		"shouldListen",
 		"shouldSpeak",
+		"shouldTranscribeOutput",
 		"voiceState",
 		"process",
 		"currentMessage",
