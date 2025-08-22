@@ -7,7 +7,7 @@ function
 	
 	originalComment := currentComment.
 	comment := currentComment copy.
-	comment ifNotEmpty: [description := comment last].
+	comment isEmptyOrNil ifFalse: [description := comment last].
 	currentComment := nil.
 	
 	signature := String streamContents: [:stream |
