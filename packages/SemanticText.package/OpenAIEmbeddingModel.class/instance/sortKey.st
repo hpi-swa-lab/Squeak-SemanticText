@@ -1,8 +1,9 @@
 comparing
 sortKey
 
-	"#majorVersionNumber descending , #name ascending"
+	"#isLegacy ascending , #majorVersionNumber descending , #name ascending"
 	| maxVersion |
 	maxVersion := 1000.
-	^ (self majorVersionNumber printStringPadded: (maxVersion log: 10) ceiling)
+	^ self isLegacy asBit asString
+		, (self majorVersionNumber printStringPadded: (maxVersion log: 10) ceiling)
 		, self name
