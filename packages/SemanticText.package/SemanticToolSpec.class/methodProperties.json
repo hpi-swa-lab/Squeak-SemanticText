@@ -10,6 +10,7 @@
 		"forcedTools:" : "ct 5/25/2024 21:57",
 		"initialize" : "ct 1/16/2024 00:29",
 		"postCopy" : "ct 5/25/2024 23:49",
+		"removeAllTools" : "ct 7/4/2025 16:08",
 		"storeForcedToolsCodeOn:" : "ct 11/23/2024 23:20",
 		"toolNamed:" : "ct 2/19/2024 14:08",
 		"toolNamed:ifAbsent:" : "ct 1/16/2024 01:11",

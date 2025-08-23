@@ -1,0 +1,4 @@
+accessing
+removeAllTools
+
+	tools removeAll.
