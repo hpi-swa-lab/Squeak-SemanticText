@@ -7,6 +7,8 @@ defaultRateLimitsPerTier
 	flat := Dictionary new
 		at: #free put:
 			(Dictionary new
+				at: 'gpt-4.1-mini' put: #(3 nil 200 nil nil 0 0 0);
+				at: 'gpt-4.1-nano' put: #(3 200 40000 nil nil 0 0 0);
 				at: 'gpt-4o-mini' put: #(3 200 40000 nil nil);
 				at: 'text-embedding-3-large' put: #(100 2000 40000 nil nil);
 				at: 'text-embedding-3-small' put: #(100 2000 40000 nil nil);
@@ -17,10 +19,17 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 1 put:
 			(Dictionary new
+				at: 'gpt-5' put: #(500 nil 30000 nil 90000); flag: #greyedOut;
+				at: 'gpt-5-mini' put: #(500 nil 200000 nil 2000000); flag: #greyedOut;
+				at: 'gpt-5-nano' put: #(500 nil 200000 nil 2000000); flag: #greyedOut;
 				at: 'gpt-4.5-preview' put: #(1000 nil 125000 nil 50000);
+				at: 'gpt-4.1' put: #(500 nil 30000 nil 90000 100 200000 2000000); flag: #greyedOut;
+				at: 'gpt-4.1-mini' put: #(500 10000 200000 nil 2000000 200 400000 5000000); flag: #greyedOut;
+				at: 'gpt-4.1-nano' put: #(500 10000 200000 nil 2000000 200 400000 5000000); flag: #greyedOut;
 				at: 'gpt-4o' put: #(500 nil 30000 nil 90000);
 				at: 'gpt-4o-mini' put: #(500 10000 200000 nil 2000000);
 				at: 'gpt-4o-realtime-preview' put: #(200 1000 40000 nil nil);
+				at: 'o3' put: #(500 nil 30000 nil 90000); flag: #greyedOut;
 				at: 'o1-preview' put: #(500 nil 30000 nil nil);
 				at: 'o1-mini' put: #(500 nil 200000 nil nil);
 				at: 'gpt-4-turbo' put: #(500 nil 30000 nil 90000);
@@ -36,10 +45,17 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 2 put:
 			(Dictionary new
+				at: 'gpt-5' put: #(5000 nil 450000 nil 1350000);
+				at: 'gpt-5-mini' put: #(5000 nil 2000000 nil 20000000);
+				at: 'gpt-5-nano' put: #(5000 nil 2000000 nil 20000000);
 				at: 'gpt-4.5-preview' put: #(5000 nil 250000 nil 500000);
+				at: 'gpt-4.1' put: #(5000 nil 450000 nil 1350000 250 500000 2000000);
+				at: 'gpt-4.1-mini' put: #(5000 nil 2000000 nil 20000000 500 1000000 40000000);
+				at: 'gpt-4.1-nano' put: #(5000 nil 2000000 nil 20000000 500 1000000 40000000);
 				at: 'gpt-4o' put: #(5000 nil 450000 nil 1350000);
 				at: 'gpt-4o-mini' put: #(5000 nil 2000000 nil 20000000);
 				at: 'gpt-4o-realtime-preview' put: #(400 nil 200000 nil nil);
+				at: 'o3' put: #(5000 nil 450000 nil 1350000);
 				at: 'o1-preview' put: #(5000 nil 450000 nil nil);
 				at: 'o1-mini' put: #(5000 nil 2000000 nil nil);
 				at: 'gpt-4-turbo' put: #(5000 nil 450000 nil 1350000);
@@ -55,10 +71,17 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 3 put:
 			(Dictionary new
+				at: 'gpt-5' put: #(5000 nil 800000 nil 100000000);
+				at: 'gpt-5-mini' put: #(5000 nil 4000000 nil 40000000);
+				at: 'gpt-5-nano' put: #(5000 nil 4000000 nil 40000000);
 				at: 'gpt-4.5-preview' put: #(5000 nil 500000 nil 50000000);
+				at: 'gpt-4.1' put: #(5000 nil 800000 nil 50000000 500 1000000 4000000);
+				at: 'gpt-4.1-mini' put: #(5000 nil 4000000 nil 40000000 1000 2000000 80000000);
+				at: 'gpt-4.1-nano' put: #(5000 nil 4000000 nil 40000000 1000 2000000 80000000);
 				at: 'gpt-4o' put: #(5000 nil 800000 nil 50000000);
 				at: 'gpt-4o-mini' put: #(5000 nil 4000000 nil 40000000);
 				at: 'gpt-4o-realtime-preview' put: #(5000 nil 800000 nil nil);
+				at: 'o3' put: #(5000 nil 800000 nil 50000000);
 				at: 'o3-mini' put: #(5000 nil 4000000 nil 40000000);
 				at: 'o1' put: #(5000 nil 800000 nil 50000000);
 				at: 'o1-preview' put: #(5000 nil 800000 nil 50000000);
@@ -76,10 +99,17 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 4 put:
 			(Dictionary new
+				at: 'gpt-5' put: #(10000 nil 2000000 nil 200000000);
+				at: 'gpt-5-mini' put: #(10000 nil 10000000 nil 1000000000);
+				at: 'gpt-5-nano' put: #(10000 nil 10000000 nil 1000000000);
 				at: 'gpt-4.5-preview' put: #(10000 nil 1000000 nil 100000000);
+				at: 'gpt-4.1' put: #(10000 nil 2000000 nil 200000000 1000 5000000 10000000);
+				at: 'gpt-4.1-mini' put: #(10000 nil 10000000 nil 1000000000 2000 10000000 200000000);
+				at: 'gpt-4.1-nano' put: #(10000 nil 10000000 nil 1000000000 2000 10000000 200000000);
 				at: 'gpt-4o' put: #(10000 nil 2000000 nil 200000000);
 				at: 'gpt-4o-mini' put: #(10000 nil 10000000 nil 1000000000);
 				at: 'gpt-4o-realtime-preview' put: #(10000 nil 4000000 nil nil);
+				at: 'o3' put: #(10000 nil 2000000 nil 200000000);
 				at: 'o1' put: #(10000 nil 2000000 nil 200000000);
 				at: 'o1-preview' put: #(10000 nil 2000000 nil 200000000);
 				at: 'o3-mini' put: #(10000 nil 10000000 nil 1000000000);
@@ -97,10 +127,17 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 5 put:
 			(Dictionary new
+				at: 'gpt-5' put: #(15000 nil 40000000 nil 15000000000);
+				at: 'gpt-5-mini' put: #(30000 nil 180000000 nil 15000000000);
+				at: 'gpt-5-nano' put: #(30000 nil 180000000 nil 15000000000);
 				at: 'gpt-4.5-preview' put: #(10000 nil 2000000 nil 5000000000);
+				at: 'gpt-4.1' put: #(10000 nil 30000000 nil 5000000000 4000 10000000 100000000);
+				at: 'gpt-4.1-mini' put: #(30000 nil 150000000 nil 15000000000 8000 20000000 2000000000);
+				at: 'gpt-4.1-nano' put: #(30000 nil 150000000 nil 15000000000 8000 20000000 2000000000);
 				at: 'gpt-4o' put: #(10000 nil 30000000 nil 5000000000);
 				at: 'gpt-4o-mini' put: #(30000 nil 150000000 nil 15000000000);
 				at: 'gpt-4o-realtime-preview' put: #(20000 nil 15000000 nil nil);
+				at: 'o3' put: #(10000 nil 30000000 nil 5000000000);
 				at: 'o1' put: #(1000 nil 30000000 nil 5000000000);
 				at: 'o1-preview' put: #(10000 nil 30000000 nil 5000000000);
 				at: 'o3-mini' put: #(30000 nil 150000000 nil 15000000000);
@@ -122,9 +159,10 @@ defaultRateLimitsPerTier
 			(self rateLimitsFromSpec: rateLimits)
 				collect: [:limit | limit ifNil: [Float infinity]]]]
 
-"update and extend these constants based on the pasted tables below. do not change the formatting of the source code unless required (also keep the tab indentations)
-the task is: output a new version of defaultRateLimitsPerTier based on the numbers provided in the tables. I'm sure you can find out the format on the numbers in the method yourself based on the tables. e.g., 3 rpm for gpt-3.5-turbo in tier free and so on. most numbers may not have changed, but some may have been added, changed, or removed in the screenshots, and I would like you to create a new version of the method that contains all numbers from the tables in the same format, and no other numbers that are not present in the tables.
-exclude the dall-e models.
 
-the tables:
+"update and extend these constants based on the pasted table for one model below. do not change the formatting of the source code unless required (also keep the tab indentations)
+the task is: output a new version of defaultRateLimitsPerTier based on the numbers provided in the tables. I'm sure you can find out the format on the numbers in the method yourself based on the tables. e.g., 3 rpm for gpt-4o-mini in tier free and so on. most numbers may not have changed, but some may have been added, changed, or removed in the tables, and I would like you to create a new version of the method that contains all numbers from the tables in the same format, and no other numbers that are not present in the tables.
+
+new model is xxx.
+the table:
 "

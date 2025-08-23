@@ -15,10 +15,13 @@ maxCompletionTokens
 		(self resolvedName beginsWithAnyOf: {self class gpt4oAudioPreviewName. self class gpt4oMiniAudioPreviewName}) ifTrue: [^ 16384].
 		(self resolvedName beginsWith: self class gpt4_32kName) ifTrue: [^ 32768].
 		(self resolvedName beginsWith: self class gpt4oName) ifTrue: [^ 16384].
+		(self resolvedName beginsWith: self class gpt41Name) ifTrue: [^ 32768].
 		(self resolvedName beginsWith: self class gpt45PreviewName) ifTrue: [^ 16384].
 		^ 8192].
 	self resolvedName = self class chatgpt4oLatestName ifTrue:
 		[^ 16384].
+	
+	(self resolvedName beginsWith: self class gpt5Name) ifTrue: [^ 128000].
 	
 	(self resolvedName beginsWith: self class o1PreviewName) ifTrue:
 		[^ 23768].
@@ -27,7 +30,9 @@ maxCompletionTokens
 	(self resolvedName beginsWith: self class o1Name) ifTrue:
 		[^ 100000].
 	
-	(self resolvedName beginsWith: self class o3MiniName) ifTrue:
+	(self resolvedName beginsWith: self class o3Name) ifTrue:
+		[^ 100000].
+	(self resolvedName beginsWith: self class o4MiniName) ifTrue:
 		[^ 100000].
 	
 	^ self resolvedName caseError

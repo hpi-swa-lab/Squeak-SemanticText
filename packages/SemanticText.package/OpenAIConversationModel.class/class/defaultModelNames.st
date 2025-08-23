@@ -5,13 +5,15 @@ defaultModelNames
 	
 	"first is default"
 	^ {"recommended"
-	self gpt4oMiniName. "cheapest"
-	self chatgpt4oLatestName. "most usual"
+	self gpt5NanoName. "cheapest"
+	self gpt5ChatLatestName. "most usual"
+	self gpt5Name. "frontier"
+	self gpt5MiniName.
+	self gpt41Name. "smartest non-reasoning"
+	"these are still popular"
 	self gpt4oName.
-	self gpt4oAudioPreviewName.
-	self gpt4oMiniAudioPreviewName.
-	self o3MiniName.
-	self o1Name.
+	self o3Name.
+	self o4MiniName.
 	
 	"all others, ordered by version ascending"
 	self gpt35TurboName.
@@ -20,6 +22,14 @@ defaultModelNames
 	self gpt4TurboName.
 	self gpt4TurboPreviewName.
 	self o1MiniName.
+	self o1Name.
+	self o3MiniName.
+	self chatgpt4oLatestName.
+	self gpt4oMiniName.
+	self gpt4oAudioPreviewName.
+	self gpt4oMiniAudioPreviewName.
+	self gpt41MiniName.
+	self gpt41NanoName.
 	self gpt45PreviewName.
 	
 	"pinned versions, ordered by version ascending, date descending"
@@ -43,4 +53,5 @@ defaultModelNames
 	self o1Preview_20240912Name.
 	self o1Mini_20240912Name.
 	self o3Mini_20250131Name.
-	self gpt45Preview_20250227Name}
+	self gpt45Preview_20250227Name.
+	self o4Mini_20250416Name}

@@ -1,4 +1,4 @@
 constants
 cheapestName
 
-	^ self gpt4oMiniName
+	^ self gpt5NanoName

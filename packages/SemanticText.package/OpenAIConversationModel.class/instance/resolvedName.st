@@ -24,6 +24,11 @@ resolvedName
 			[self class gpt4oMiniName] -> [self class gpt4oMini_20240718Name].
 			[self class gpt4oMiniAudioPreviewName] -> [self class gpt4oMiniAudioPreview_20241217Name].
 			
+			"GPT-4.1"
+			[self class gpt41Name] -> [self class gpt41_20250414Name].
+			[self class gpt41MiniName] -> [self class gpt41Mini_20250414Name].
+			[self class gpt41NanoName] -> [self class gpt41Nano_20250414Name].
+			
 			"GPT-4.5"
 			[self class gpt45PreviewName] -> [self class gpt45Preview_20250227Name].
 			
@@ -33,5 +38,14 @@ resolvedName
 			[self class o1MiniName] -> [self class o1Mini_20240912Name].
 			
 			"o3"
-			[self class o3MiniName] -> [self class o3Mini_20250131Name]}
+			[self class o3Name] -> [self class o3_20250416Name].
+			[self class o3MiniName] -> [self class o3Mini_20250131Name].
+			
+			"o4"
+			[self class o4MiniName] -> [self class o4Mini_20250416Name].
+			
+			"GPT-5"
+			[self class gpt5Name] -> [self class gpt5_20250807Name].
+			[self class gpt5MiniName] -> [self class gpt5Mini_20250807Name].
+			[self class gpt5NanoName] -> [self class gpt5Nano_20250807Name]}
 		otherwise: [:originalName | originalName]

@@ -11,18 +11,23 @@ maxTokens
 	
 	(self resolvedName beginsWith: self class gpt4Name) ifTrue:
 		[((self resolvedName beginsWithAnyOf: {self class gpt4oMiniName. self class gpt4oName}) or: [self resolvedName = self class gpt4_0125Name] or: [self resolvedName = self class gpt4_1106Name]) ifTrue: [^ 128000].
+		(self resolvedName beginsWith: self class gpt41Name) ifTrue: [^ 1047576].
 		(self resolvedName beginsWith: self class gpt45PreviewName) ifTrue: [^ 128000].
 		(self resolvedName beginsWith: self class gpt4_32kName) ifTrue: [^ 32768].
 		^ 8192].
 	self resolvedName = self class chatgpt4oLatestName ifTrue:
 		[^ 128000].
 	
+	(self resolvedName beginsWith: self class gpt5Name) ifTrue: [^ 400000].
+	
 	((self resolvedName beginsWith: self class o1PreviewName) or: [self resolvedName beginsWith: self class o1MiniName]) ifTrue:
 		[^ 128000].
 	(self resolvedName beginsWith: self class o1Name) ifTrue:
 		[^ 200000].
 	
-	(self resolvedName beginsWith: self class o3MiniName) ifTrue:
+	(self resolvedName beginsWith: self class o3Name) ifTrue:
+		[^ 200000].
+	(self resolvedName beginsWith: self class o4MiniName) ifTrue:
 		[^ 200000].
 	
 	^ self resolvedName caseError
