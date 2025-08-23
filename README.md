@@ -275,6 +275,7 @@ At the moment, the following projects are known to make use of SemanticText:
 - [SemanticSqueak](https://github.com/hpi-swa-lab/SemanticSqueak)
 - [Creative Toys/Dalí](https://improvekit.github.io/)
 - [oRAGle](https://github.com/hpi-swa-lab/sandblocks-text/tree/master/sandblocks/oRAGle)
+- [squeak-semantic-babylonian](https://github.com/hpi-swa-lab/squeak-semantic-babylonian)
 
 ### See Also
 
