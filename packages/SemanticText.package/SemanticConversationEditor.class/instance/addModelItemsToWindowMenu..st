@@ -21,6 +21,9 @@ addModelItemsToWindowMenu: menu
 	menu
 		add: 'generate code'
 		action: #generateCode.
+	menu
+		add: 'inspect conversation'
+		action: #inspectConversation.
 	
 	menu addLine.
 	menu
