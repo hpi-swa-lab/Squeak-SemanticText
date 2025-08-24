@@ -284,6 +284,7 @@ While technically unrelated, [SqueakGPT](https://github.com/LinqLover/squeak-gpt
 ## Further Reading
 
 - [\[squeak-dev\] \[ANN\] SemanticText: ChatGPT, embedding search, and retrieval-augmented generation for Squeak](https://lists.squeakfoundation.org/archives/list/squeak-dev@lists.squeakfoundation.org/thread/F6AVNH7MOVDTWYQI6WKDBWG6MBVGCIE5/)
+- [SemanticText: Improving Exploratory Programming in Squeak with Generative AI.](https://linqlover.github.io/LinqLover/docs/2024-11-27_UKSTUG_SemanticText.html) On [*UKSTUG Online Meeting: Christoph Thiede on SemanticText and Guille Amaral on Webside*](https://www.meetup.com/de-DE/ukstug/events/302453224/), November 27th, 2024. UK Smalltalk User Group.
 
 ## Acknowledgments
 
