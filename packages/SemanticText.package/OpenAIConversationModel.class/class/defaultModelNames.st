@@ -11,6 +11,8 @@ defaultModelNames
 	self gpt5MiniName.
 	self gpt41Name. "smartest non-reasoning"
 	"these are still popular"
+	self gptAudioName.
+	self gptAudioMiniName.
 	self gpt4oName.
 	self o3Name.
 	self o4MiniName.
@@ -54,4 +56,6 @@ defaultModelNames
 	self o1Mini_20240912Name.
 	self o3Mini_20250131Name.
 	self gpt45Preview_20250227Name.
-	self o4Mini_20250416Name}
+	self o4Mini_20250416Name.
+	self gptAudio20250828Name.
+	self gptAudioMini20251006Name}

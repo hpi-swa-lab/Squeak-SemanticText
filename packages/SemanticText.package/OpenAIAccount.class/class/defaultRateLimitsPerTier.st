@@ -10,6 +10,7 @@ defaultRateLimitsPerTier
 				at: 'gpt-4.1-mini' put: #(3 nil 200 nil nil 0 0 0);
 				at: 'gpt-4.1-nano' put: #(3 200 40000 nil nil 0 0 0);
 				at: 'gpt-4o-mini' put: #(3 200 40000 nil nil);
+				at: 'gpt-4o-mini-audio' put: #(3 200 40000 nil nil);
 				at: 'text-embedding-3-large' put: #(100 2000 40000 nil nil);
 				at: 'text-embedding-3-small' put: #(100 2000 40000 nil nil);
 				at: 'text-embedding-ada-002' put: #(100 2000 40000 nil nil);
@@ -19,6 +20,8 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 1 put:
 			(Dictionary new
+				at: 'gpt-audio' put: #(500 nil 30000 nil 90000);
+				at: 'gpt-audio-mini' put: #(500 nil 30000 nil nil);
 				at: 'gpt-5' put: #(500 nil 30000 nil 90000); flag: #greyedOut;
 				at: 'gpt-5-mini' put: #(500 nil 200000 nil 2000000); flag: #greyedOut;
 				at: 'gpt-5-nano' put: #(500 nil 200000 nil 2000000); flag: #greyedOut;
@@ -28,6 +31,7 @@ defaultRateLimitsPerTier
 				at: 'gpt-4.1-nano' put: #(500 10000 200000 nil 2000000 200 400000 5000000); flag: #greyedOut;
 				at: 'gpt-4o' put: #(500 nil 30000 nil 90000);
 				at: 'gpt-4o-mini' put: #(500 10000 200000 nil 2000000);
+				at: 'gpt-4o-mini-audio' put: #(500 10000 200000 nil 2000000);
 				at: 'gpt-4o-realtime-preview' put: #(200 1000 40000 nil nil);
 				at: 'o3' put: #(500 nil 30000 nil 90000); flag: #greyedOut;
 				at: 'o1-preview' put: #(500 nil 30000 nil nil);
@@ -45,6 +49,8 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 2 put:
 			(Dictionary new
+				at: 'gpt-audio' put: #(5000 nil 450000 nil 1350000);
+				at: 'gpt-audio-mini' put: #(5000 nil 450000 nil nil);
 				at: 'gpt-5' put: #(5000 nil 450000 nil 1350000);
 				at: 'gpt-5-mini' put: #(5000 nil 2000000 nil 20000000);
 				at: 'gpt-5-nano' put: #(5000 nil 2000000 nil 20000000);
@@ -54,6 +60,7 @@ defaultRateLimitsPerTier
 				at: 'gpt-4.1-nano' put: #(5000 nil 2000000 nil 20000000 500 1000000 40000000);
 				at: 'gpt-4o' put: #(5000 nil 450000 nil 1350000);
 				at: 'gpt-4o-mini' put: #(5000 nil 2000000 nil 20000000);
+				at: 'gpt-4o-mini-audio' put: #(5000 nil 2000000 nil 20000000);
 				at: 'gpt-4o-realtime-preview' put: #(400 nil 200000 nil nil);
 				at: 'o3' put: #(5000 nil 450000 nil 1350000);
 				at: 'o1-preview' put: #(5000 nil 450000 nil nil);
@@ -71,6 +78,8 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 3 put:
 			(Dictionary new
+				at: 'gpt-audio' put: #(5000 nil 800000 nil 50000000);
+				at: 'gpt-audio-mini' put: #(5000 nil 800000 nil nil);
 				at: 'gpt-5' put: #(5000 nil 800000 nil 100000000);
 				at: 'gpt-5-mini' put: #(5000 nil 4000000 nil 40000000);
 				at: 'gpt-5-nano' put: #(5000 nil 4000000 nil 40000000);
@@ -80,6 +89,7 @@ defaultRateLimitsPerTier
 				at: 'gpt-4.1-nano' put: #(5000 nil 4000000 nil 40000000 1000 2000000 80000000);
 				at: 'gpt-4o' put: #(5000 nil 800000 nil 50000000);
 				at: 'gpt-4o-mini' put: #(5000 nil 4000000 nil 40000000);
+				at: 'gpt-4o-mini-audio' put: #(5000 nil 4000000 nil 40000000);
 				at: 'gpt-4o-realtime-preview' put: #(5000 nil 800000 nil nil);
 				at: 'o3' put: #(5000 nil 800000 nil 50000000);
 				at: 'o3-mini' put: #(5000 nil 4000000 nil 40000000);
@@ -99,6 +109,8 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 4 put:
 			(Dictionary new
+				at: 'gpt-audio' put: #(10000 nil 2000000 nil 2000000);
+				at: 'gpt-audio-mini' put: #(10000 nil 2000000 nil nil);
 				at: 'gpt-5' put: #(10000 nil 2000000 nil 200000000);
 				at: 'gpt-5-mini' put: #(10000 nil 10000000 nil 1000000000);
 				at: 'gpt-5-nano' put: #(10000 nil 10000000 nil 1000000000);
@@ -108,6 +120,7 @@ defaultRateLimitsPerTier
 				at: 'gpt-4.1-nano' put: #(10000 nil 10000000 nil 1000000000 2000 10000000 200000000);
 				at: 'gpt-4o' put: #(10000 nil 2000000 nil 200000000);
 				at: 'gpt-4o-mini' put: #(10000 nil 10000000 nil 1000000000);
+				at: 'gpt-4o-mini-audio' put: #(10000 nil 10000000 nil 1000000000);
 				at: 'gpt-4o-realtime-preview' put: #(10000 nil 4000000 nil nil);
 				at: 'o3' put: #(10000 nil 2000000 nil 200000000);
 				at: 'o1' put: #(10000 nil 2000000 nil 200000000);
@@ -127,6 +140,8 @@ defaultRateLimitsPerTier
 				yourself);
 		at: 5 put:
 			(Dictionary new
+				at: 'gpt-audio' put: #(10000 nil 30000000 nil 5000000000);
+				at: 'gpt-audio-mini' put: #(10000 nil 30000000 nil nil);
 				at: 'gpt-5' put: #(15000 nil 40000000 nil 15000000000);
 				at: 'gpt-5-mini' put: #(30000 nil 180000000 nil 15000000000);
 				at: 'gpt-5-nano' put: #(30000 nil 180000000 nil 15000000000);
@@ -136,6 +151,7 @@ defaultRateLimitsPerTier
 				at: 'gpt-4.1-nano' put: #(30000 nil 150000000 nil 15000000000 8000 20000000 2000000000);
 				at: 'gpt-4o' put: #(10000 nil 30000000 nil 5000000000);
 				at: 'gpt-4o-mini' put: #(30000 nil 150000000 nil 15000000000);
+				at: 'gpt-4o-mini-audio' put: #(30000 nil 150000000 nil 15000000000);
 				at: 'gpt-4o-realtime-preview' put: #(20000 nil 15000000 nil nil);
 				at: 'o3' put: #(10000 nil 30000000 nil 5000000000);
 				at: 'o1' put: #(1000 nil 30000000 nil 5000000000);

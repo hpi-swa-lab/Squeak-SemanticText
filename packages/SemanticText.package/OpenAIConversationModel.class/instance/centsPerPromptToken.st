@@ -4,6 +4,10 @@ centsPerPromptToken
 
 	self flag: #modelConstants.
 	
+	"GPT Audio"
+	(self resolvedName beginsWith: self class gptAudioMiniName) ifTrue: [^ 0.00025s].
+	(self resolvedName beginsWith: self class gptAudioName) ifTrue: [^ 0.00006s].
+	
 	"GPT-4.1"
 	(self resolvedName beginsWith: self class gpt41MiniName) ifTrue: [^ 0.00004s].
 	(self resolvedName beginsWith: self class gpt41NanoName) ifTrue: [^ 0.00001s].

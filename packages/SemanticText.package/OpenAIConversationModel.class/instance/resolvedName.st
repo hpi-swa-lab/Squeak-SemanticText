@@ -47,5 +47,9 @@ resolvedName
 			"GPT-5"
 			[self class gpt5Name] -> [self class gpt5_20250807Name].
 			[self class gpt5MiniName] -> [self class gpt5Mini_20250807Name].
-			[self class gpt5NanoName] -> [self class gpt5Nano_20250807Name]}
+			[self class gpt5NanoName] -> [self class gpt5Nano_20250807Name].
+			
+			"GPT Audio"
+			[self class gptAudioName] -> [self class gptAudio20250828Name].
+			[self class gptAudioMiniName] -> [self class gptAudioMini20251006Name]}
 		otherwise: [:originalName | originalName]

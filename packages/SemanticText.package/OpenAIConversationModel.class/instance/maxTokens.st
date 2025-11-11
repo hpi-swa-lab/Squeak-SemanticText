@@ -3,6 +3,9 @@ maxTokens
 
 	self flag: #modelConstants.
 	
+	(self resolvedName beginsWith: self class gptAudioName) ifTrue:
+		[^ 128000].
+	
 	(self resolvedName beginsWith: self class gpt35TurboName) ifTrue:
 		["self name = self class gpt35TurboInstructName ifTrue: [^ 4096]."
 		(self resolvedName = self class gpt35Turbo1106Name or: [self resolvedName = self class gpt35Turbo0613Name]) ifTrue: [^ 4096].

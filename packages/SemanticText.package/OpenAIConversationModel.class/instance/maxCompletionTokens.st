@@ -4,6 +4,9 @@ maxCompletionTokens
 	self flag: #modelConstants.
 	self flag: #assumptions. "Documentation of maximum output lengths is incomplete! These numbers are taken from the OpenAI Playground (https://platform.openai.com/playground?mode=chat). They are inconsistent to both the official documentation (https://platform.openai.com/docs/models) and the error messages from the API. See: https://community.openai.com/t/what-is-the-maximum-response-length-output-tokens-for-each-gpt-model"
 	
+	(self resolvedName beginsWith: self class gptAudioName) ifTrue:
+		[^ 16384].
+	
 	(self resolvedName beginsWith: self class gpt35TurboName) ifTrue:
 		["self name = self class gpt35TurboInstructName ifTrue: [^ 4096]."
 		(self resolvedName beginsWith: self class gpt35Turbo16kName) ifTrue: [^ 16385].
