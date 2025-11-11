@@ -13,4 +13,4 @@ openAIAddSamples: newSamples samplingRate: rate
 	
 	initialCount := (samplesSize * self samplingRate) // originalSamplingRate.
 	
-	count := initialCount.
+	count := count ifNil: [initialCount] ifNotNil: [count + newSamples size].
