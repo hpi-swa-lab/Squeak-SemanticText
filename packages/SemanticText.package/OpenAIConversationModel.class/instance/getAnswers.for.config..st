@@ -19,7 +19,8 @@ getAnswers: number for: aConversation config: aConfigOrNil
 				input top_p: p].
 			
 			config outputModalities ifNotNil: [:modalities |
-				input modalities: modalities.
+				(self canUnderstandAudio not and: [modalities = #(text)]) ifFalse:
+					[input modalities: modalities].
 				
 				(modalities includes: #audio) ifTrue:
 					[input audio:
