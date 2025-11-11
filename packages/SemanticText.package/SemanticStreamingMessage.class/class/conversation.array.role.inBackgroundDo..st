@@ -6,7 +6,7 @@ conversation: aConversation array: size role: role inBackgroundDo: streamBlock
 	messages := size timesCollect: [self conversation: aConversation role: role content: ''].
 	process := [[streamBlock value: messages]
 		ensure: [messages do: [:message | message beComplete]]]
-			forkAt: Processor userBackgroundPriority.
+			forkAt: Processor highIOPriority. "stream sounds fluently"
 	messages do: [:message |
 		message process: process].
 	^ messages
