@@ -101,7 +101,7 @@
 		"parseAudioFrom:into:" : "ct 3/1/2025 22:16",
 		"parseMessageFrom:for:logRawOutput:" : "ct 3/1/2025 20:57",
 		"parseMessagesFrom:for:logRawOutput:" : "ct 5/25/2024 23:16",
-		"parseStreamedChunk:toolSpec:addTo:" : "ct 3/1/2025 22:17",
+		"parseStreamedChunk:toolSpec:addTo:" : "ct 11/11/2025 16:52",
 		"parseStreamedToolCallChunkFrom:toolSpec:addTo:" : "ct 10/28/2025 22:13",
 		"parseStreamedToolCallChunksFrom:toolSpec:message:" : "ct 2/13/2024 00:17",
 		"parseTokenProbabilitiesFrom:" : "ct 1/15/2024 19:37",

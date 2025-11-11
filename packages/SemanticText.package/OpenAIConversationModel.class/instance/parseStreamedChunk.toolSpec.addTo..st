@@ -45,7 +45,7 @@ parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStream
 		initAudio ifTrue:
 			[sound reset]].
 	
-	(chunkText isEmptyOrNil and: [chunkToolCalls isNil] and: [chunkTokenProbabilities isEmptyOrNil]) ifFalse:
+	(chunkText isEmptyOrNil and: [chunkToolCalls isEmptyOrNil] and: [chunkTokenProbabilities isEmptyOrNil]) ifFalse:
 		[aStreamingMessage addChunk: chunkText toolCalls: chunkToolCalls tokenProbabilities: chunkTokenProbabilities].
 	
 	audioUpdate ifNotNil:

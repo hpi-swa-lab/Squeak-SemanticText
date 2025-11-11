@@ -21,9 +21,11 @@ content: aTextOrContent
 			ifFalse: [start].
 		newPart := attributes
 			ifEmpty:
-				[aTextOrContent string copyFrom: partStart to: stop]
+				[(aTextOrContent string copyFrom: partStart to: stop) ifEmpty: [nil]]
 			ifNotEmpty:
 				[attributes size = 1 ifFalse: [self error: 'message content must not contain overlapping attributes'].
 				attributes first semanticAsContentPartFor: (aTextOrContent copyFrom: partStart to: stop)].
-		lastPart := newParts addLast: newPart].
+		newPart ifNotNil:
+			[lastPart := newParts addLast: newPart]].
+	
 	contentParts := newParts asArray.

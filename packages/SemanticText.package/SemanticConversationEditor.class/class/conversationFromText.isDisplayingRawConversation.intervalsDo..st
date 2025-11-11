@@ -99,24 +99,26 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 									toolCall0 runs withStartStopAndValueDo: [:start2 :stop2 :attributes2 |
 										(allItalic := allItalic and: [attributes2 includes: TextEmphasis italic])
 											ifTrue: [sep31 := sep4 + stop2 - 1]].
-									sep31 ifNotNil:
-										[| toolCall |
-										toolCall := content asString copyFrom: sep4 to: sep31.
-										toolCall first = $[ ifTrue:
-											[| sep32 |
-											(sep32 := toolCall indexOf: $] startingAt: 2) > 0 ifTrue:
-												[sep33 ifNil: [sep33 := sep4].
-												isDisplayingRawConversation ifTrue:
-													[toolKey := toolCall copyFrom: 2 to: sep32 - 1.
-													toolCall := (toolCall allButFirst: sep32) withBlanksTrimmed.
-													toolCall := [SemanticToolCall fromCallString: toolCall] ifError: [nil].
-													toolCall ifNotNil:
-														[toolCall key: toolKey.
-														(toolCalls ifNil: [toolCalls := OrderedCollection new])
-															addLast: toolCall]]]].
-										sep3 := content indexOfAnyOf: (CharacterSet with: Character cr) complement startingAt: sep31]].
+									sep3 := sep31
+										ifNotNil:
+											[| toolCall |
+											toolCall := content asString copyFrom: sep4 to: sep31.
+											toolCall first = $[ ifTrue:
+												[| sep32 |
+												(sep32 := toolCall indexOf: $] startingAt: 2) > 0 ifTrue:
+													[sep33 ifNil: [sep33 := sep4].
+													isDisplayingRawConversation ifTrue:
+														[toolKey := toolCall copyFrom: 2 to: sep32 - 1.
+														toolCall := (toolCall allButFirst: sep32) withBlanksTrimmed.
+														toolCall := [SemanticToolCall fromCallString: toolCall] ifError: [nil].
+														toolCall ifNotNil:
+															[toolCall key: toolKey.
+															(toolCalls ifNil: [toolCalls := OrderedCollection new])
+																addLast: toolCall]]]].
+											content indexOfAnyOf: (CharacterSet with: Character cr) complement startingAt: sep31]
+										ifNil: [sep4 + 1]].
 							sep33 ifNotNil:
-								[content := content take: sep33 - 1]]
+								[content := (content take: sep33 - 1) semanticWithBlanksTrimmed]]
 						ifTrue:
 							[content first = $[ ifTrue:
 								[| sep31 |
