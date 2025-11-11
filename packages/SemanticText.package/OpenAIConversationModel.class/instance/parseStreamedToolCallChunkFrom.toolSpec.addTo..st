@@ -12,4 +12,4 @@ parseStreamedToolCallChunkFrom: toolCallChunk toolSpec: aToolSpecOrNil addTo: aS
 				streamingToolCall tool: tool]].
 		streamingToolCall arguments isString ifTrue:
 			[streamingToolCall arguments:
-				([streamingToolCall arguments parseAsOrderedJson] ifError: [streamingToolCall arguments])]].
+				([streamingToolCall arguments withBlanksTrimmed parseAsOrderedJson] ifError: [streamingToolCall arguments])]].

@@ -12,4 +12,4 @@ parseToolCallFrom: toolCall toolSpec: aToolSpecOrNil
 	^ SemanticToolCall
 		key: toolCall id
 		tool: (function ifNil: [functionName])
-		arguments: ([arguments parseAsOrderedJson] ifError: [arguments])
+		arguments: ([arguments withBlanksTrimmed "gpt-audio does this" parseAsOrderedJson] ifError: [arguments])
