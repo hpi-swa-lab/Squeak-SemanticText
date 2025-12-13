@@ -5,7 +5,7 @@ openDockingBarMenuThat: menuBlock filterItem: filterString
 			openDockingBarMenuThat: [:m | m contents = 'Tools']
 			filterItem: 'Squeak Inbox Talk'
 	Don't delete, this has indeed senders in some TextURL attributes.
-	Copied from SemanticTextHelp class>>#openDockingBarMenuThat:filterItem:.
+	Copied from SqueakContributionHelp class>>#openDockingBarMenuThat:filterItem:.
 	"
 
 	| dockingBar menu |
