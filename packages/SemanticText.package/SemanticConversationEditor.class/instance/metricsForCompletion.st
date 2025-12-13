@@ -1,12 +1,14 @@
 accessing
 metricsForCompletion
 
-	| newConversation promptTokens |
-	newConversation := self conversationFromUserText: self editText.
+	| newConversation promptTokens promptAudioTokens |
+	newConversation := self conversationFromUserText.
 	
 	promptTokens := newConversation estimatePromptTokens.
+	promptAudioTokens := newConversation countPromptAudioTokens.
 	^ Dictionary new
 		at: #promptTokens put: promptTokens;
+		at: #promptAudioTokens put: promptAudioTokens;
 		at: #maxTokens put: newConversation model maxTokens;
 		at: #promptTokenFraction put: promptTokens / newConversation model maxPromptTokens;
 		at: #maxCompletionTokens put: newConversation maxCompletionTokens;

@@ -8,8 +8,11 @@ helpForComplete
 	
 	self metricsForCompletion in: [:metrics |
 		help := help asText ,
-			('<br><br>This will use <b>ca. {1} input tokens</b>{2} and generate up to <b>{3} output tokens.</b>' asTextFromHtml format:
+			('<br><br>This will use <b>ca. {1} input tokens{2}</b>{3} and generate up to <b>{4} output tokens.</b>' asTextFromHtml format:
 				{metrics at: #promptTokens.
+				(metrics at: #promptAudioTokens) > 0 ifFalse: [''] ifTrue:
+					[' + {1} audio input tokens' format:
+						{metrics at: #promptAudioTokens}].
 				(metrics at: #maxTokens) isInfinite ifTrue: [''] ifFalse:
 					[(' (which is <b>{1}% of the {2} context window</b>)' semanticAsTextFromHtmlKeepNewlines format:
 						{((metrics at: #promptTokenFraction) * 100) printShowingDecimalPlaces: 2.

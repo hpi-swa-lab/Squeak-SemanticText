@@ -1,8 +1,9 @@
 private
 handleStreamingReplies: number for: aConversation from: responseBlock config: aConfig logRawOutput: logRawOutput
 
-	| promptTokens toolSpec |
+	| promptTokens promptAudioTokens toolSpec |
 	promptTokens := self countTokensInConversation: aConversation.
+	promptAudioTokens := self countAudioTokensInConversation: aConversation.
 	toolSpec := aConversation activeToolSpec.
 	
 	^ SemanticStreamingMessage
@@ -48,6 +49,6 @@ handleStreamingReplies: number for: aConversation from: responseBlock config: aC
 				ensure:
 					[self account
 						noteExpense:
-							(expense ifNil: [self expenseForReplies: messages after: promptTokens])
+							(expense ifNil: [self expenseForReplies: messages after: promptTokens audio: promptAudioTokens])
 						forUser: aConfig user
 						model: self name]]

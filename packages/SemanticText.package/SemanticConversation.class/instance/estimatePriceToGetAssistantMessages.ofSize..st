@@ -2,6 +2,6 @@ accessing
 estimatePriceToGetAssistantMessages: number ofSize: completionSize
 
 	^ self model
-		priceFor: self completion
+		priceFor: self
 		answers: number
 		completionSize: completionSize

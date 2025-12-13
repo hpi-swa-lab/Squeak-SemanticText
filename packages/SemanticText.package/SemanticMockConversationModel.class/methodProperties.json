@@ -6,6 +6,7 @@
 	"instance" : {
 		"canGenerateAudio" : "ct 2/23/2025 21:29",
 		"canUnderstandAudio" : "ct 2/23/2025 21:16",
+		"countAudioTokensInConversation:" : "ct 11/12/2025 18:56",
 		"countTokensInConversation:" : "ct 2/18/2024 21:42",
 		"defaultConfig" : "ct 8/17/2023 18:53",
 		"defaultTokensPerSecond" : "ct 2/10/2024 20:23",

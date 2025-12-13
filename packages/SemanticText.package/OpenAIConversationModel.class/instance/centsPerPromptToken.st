@@ -5,8 +5,8 @@ centsPerPromptToken
 	self flag: #modelConstants.
 	
 	"GPT Audio"
-	(self resolvedName beginsWith: self class gptAudioMiniName) ifTrue: [^ 0.00025s].
-	(self resolvedName beginsWith: self class gptAudioName) ifTrue: [^ 0.00006s].
+	(self resolvedName beginsWith: self class gptAudioMiniName) ifTrue: [^ 0.00006s].
+	(self resolvedName beginsWith: self class gptAudioName) ifTrue: [^ 0.00025s].
 	
 	"GPT-4.1"
 	(self resolvedName beginsWith: self class gpt41MiniName) ifTrue: [^ 0.00004s].
@@ -66,7 +66,7 @@ centsPerPromptToken
 		[self class o1Preview_20240912Name] -> [0.0015s].
 		
 		"o1-mini"
-		[self class o1Mini_20240912Name] -> [0.0003s].
+		[self class o1Mini_20240912Name] -> [0.00011s].
 		
 		"o3"
 		[self class o3_20250416Name] -> [0.0002s].
