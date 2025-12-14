@@ -11,7 +11,7 @@ invokeWithConfig: aConfigOrNil documents: documentsOrNil editInput: inputBlock h
 		yourself.
 	inputBlock ifNotNil:
 		[inputBlock cull: input cull: config].
-	config openAIRawConfig ifNotNil: [:rawConfig |
+	config openAIRawConfigOrNil ifNotNil: [:rawConfig |
 		rawConfig keysAndValuesDo: [:key :value |
 			input at: key put: value]].
 	
