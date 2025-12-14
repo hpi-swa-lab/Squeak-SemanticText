@@ -1,4 +1,4 @@
-assistant
+completing
 getCompleteAssistantMessage
 	"Convenience. No infinite loop protection!"
 

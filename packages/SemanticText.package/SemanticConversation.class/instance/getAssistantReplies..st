@@ -1,4 +1,4 @@
-assistant
+completing
 getAssistantReplies: number
 
 	| responses |

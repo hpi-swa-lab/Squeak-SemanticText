@@ -1,4 +1,4 @@
-assistant
+completing
 getCompleteAssistantReply
 	"Convenience. No infinite loop protection!"
 
