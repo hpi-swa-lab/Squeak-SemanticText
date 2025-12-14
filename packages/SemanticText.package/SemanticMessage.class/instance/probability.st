@@ -1,4 +1,4 @@
 accessing
 probability
 
-	^ (self tokenProbabilities collect: [:ea | ea logprob]) average exp
+	^ SemanticTokenProbabilityTag probabilityProduct: self tokenProbabilities

@@ -1,0 +1,16 @@
+{
+	"class" : {
+		"annotateText:withProbabilities:" : "ct 12/13/2025 03:27",
+		"bytes:logprob:token:" : "ct 12/13/2025 03:34",
+		"probabilityProduct:" : "ct 12/14/2025 04:47" },
+	"instance" : {
+		"bytes" : "ct 12/13/2025 03:11",
+		"bytes:" : "ct 12/13/2025 03:11",
+		"emphasizeScanner:" : "ct 12/13/2025 18:46",
+		"logprob" : "ct 12/14/2025 04:47",
+		"logprob:" : "ct 12/14/2025 04:47",
+		"probability" : "ct 12/13/2025 03:12",
+		"probability:" : "ct 12/14/2025 04:39",
+		"semanticAsContentPartFor:" : "ct 12/13/2025 03:54",
+		"token" : "ct 12/13/2025 03:11",
+		"token:" : "ct 12/13/2025 03:11" } }

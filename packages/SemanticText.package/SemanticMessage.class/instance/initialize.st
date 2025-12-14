@@ -3,4 +3,4 @@ initialize
 
 	super initialize.
 	
-	contentParts := #().
+	self contentParts: #().

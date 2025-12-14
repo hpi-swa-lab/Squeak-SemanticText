@@ -43,7 +43,8 @@ textFromConversation: aConversation
 						ifFalse:
 							[message content ifNotNil: [:content |
 								needsMessageSeparator := needsMessageSeparator or: content notEmpty.
-								stream nextPutAll: content]]
+								self flag: #todo. "commit Text>>#putOn:"
+								content putOn: stream]]
 						ifTrue:
 							[stream nextPutAll: (self textFromToolMessage: message).
 							needsMessageSeparator := true].

@@ -9,6 +9,7 @@
 		"unload" : "ct 6/12/2024 00:22",
 		"whisper1Name" : "ct 6/12/2024 00:21" },
 	"instance" : {
+		"annotateText:withLogprobs:" : "ct 12/13/2025 18:42",
 		"centsPerAudioToken" : "ct 12/13/2025 02:18",
 		"centsPerInputTextToken" : "ct 12/13/2025 02:18",
 		"centsPerMinute" : "ct 6/18/2024 21:58",
@@ -18,7 +19,7 @@
 		"defaultName" : "ct 12/13/2025 02:06",
 		"expenseForUsage:" : "ct 12/13/2025 02:16",
 		"getTranscriptionFor:" : "ct 6/11/2024 22:17",
-		"getTranscriptionFor:config:" : "ct 2/10/2025 00:32",
+		"getTranscriptionFor:config:" : "ct 12/13/2025 23:52",
 		"getTranscriptionFor:withConfigDo:" : "ct 6/12/2024 21:00",
 		"isBilledPerSecond" : "ct 12/13/2025 02:20",
 		"minLength" : "ct 12/13/2025 02:48",

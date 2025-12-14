@@ -1,0 +1,16 @@
+{
+	"category" : "SemanticText-Model",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 12/13/2025 18:48",
+	"instvars" : [
+		"logprob",
+		"token",
+		"bytes" ],
+	"name" : "SemanticTokenProbabilityTag",
+	"pools" : [
+		 ],
+	"super" : "TextAttribute",
+	"type" : "normal" }

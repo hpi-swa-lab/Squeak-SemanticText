@@ -2,7 +2,11 @@
 	"class" : {
 		 },
 	"instance" : {
+		"asOpenAIContentPartObject" : "ct 12/13/2025 18:42",
+		"openAICountTokensOrCompileTo:" : "ct 12/13/2025 18:42",
 		"semanticAllAttributes" : "ct 8/18/2023 00:07",
+		"semanticAllAttributesFrom:to:" : "ct 12/13/2025 18:29",
+		"semanticContentPartTextOn:" : "ct 12/13/2025 18:36",
 		"semanticFormat:attributes:" : "ct 5/1/2024 01:40",
 		"semanticFormatAttributes:" : "ct 5/1/2024 01:46",
 		"semanticWithBlanksTrimmed" : "ct 3/1/2025 23:42" } }

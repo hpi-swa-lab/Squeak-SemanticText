@@ -14,15 +14,19 @@ parseMessageFrom: chatCompletionChoice for: aConversation logRawOutput: logRawOu
 				chatCompletionChoice: chatCompletionChoice;
 				yourself)].
 	
+	chatCompletionChoice logprobs ifNotNil: [:logprobs |
+		message tokenProbabilities:
+			(self parseTokenProbabilitiesFrom: logprobs content).
+		message content:
+			(SemanticTokenProbabilityTag
+				annotateText: message content
+				withProbabilities: message tokenProbabilities)].
+	
 	messageResult audio ifNotNil: [:audio |
 		self parseAudioFrom: audio into: message].
 	
 	messageResult tool_calls ifNotNil: [:toolCalls |
 		message toolCalls:
 			(self parseToolCallsFrom: toolCalls toolSpec: aConversation activeToolSpec)].
-	
-	chatCompletionChoice logprobs ifNotNil: [:logprobs |
-		message tokenProbabilities:
-			(self parseTokenProbabilitiesFrom: logprobs)].
 	
 	^ message

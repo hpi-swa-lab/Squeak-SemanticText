@@ -84,7 +84,8 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 							message := runMessages first.
 							newMessage ifNotNil:
 								[message role: newMessage role.
-								message content: newMessage content.
+								message content = newMessage content ifFalse: "preserve text formatting if string is unchanged"
+									[message content: newMessage content].
 								self isDisplayingRawConversation ifTrue:
 									[message toolCalls:
 										(newMessage basicToolCalls ifNotNil: [:newToolCalls |
@@ -183,4 +184,5 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 	(self isDisplayingRawConversation not and: [nextConversation defaultToolSpec isNil]) ifTrue:
 		[self conversation defaultToolSpec ifNotNil: [:defaultToolSpec |
 			nextConversation defaultToolSpec: defaultToolSpec]].
+	
 	^ nextConversation
