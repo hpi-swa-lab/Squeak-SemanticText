@@ -17,7 +17,12 @@ update: aSymbol with: arg1
 		ifTrue: [
 			self activeHand newKeyboardFocus: self.
 			^ self].
-
+	
+	aSymbol == #wantToChange
+		ifTrue: [
+			arg1 == self getTextSelector ifFalse: [^ self].
+			self canDiscardEdits ifFalse: [^ self promptForCancel: false].
+			^self].
 	
 	aSymbol == #textStyle
 		ifTrue: [
