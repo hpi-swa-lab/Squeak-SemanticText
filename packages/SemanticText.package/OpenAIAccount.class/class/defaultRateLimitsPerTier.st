@@ -44,6 +44,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-small' put: #(3000 nil 1000000 nil 3000000);
 				at: 'text-embedding-ada-002' put: #(3000 nil 1000000 nil 3000000);
 				at: 'whisper-1' put: #(500 nil nil nil nil);
+				at: 'gpt-4o-transcribe' put: #(500 nil 10000 nil nil);
+				at: 'gpt-4o-mini-transcribe' put: #(500 nil 50000 nil nil);
+				at: 'gpt-4o-transcribe-diarize' put: #(500 nil 10000 nil nil);
 				at: 'tts-1' put: #(500 nil nil nil nil);
 				at: 'tts-1-hd' put: #(500 nil nil nil nil);
 				at: 'gpt-4o-mini-tts' put: #(500 nil 50000 nil nil);
@@ -74,6 +77,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-small' put: #(5000 nil 1000000 nil 20000000);
 				at: 'text-embedding-ada-002' put: #(5000 nil 1000000 nil 20000000);
 				at: 'whisper-1' put: #(2500 nil nil nil nil);
+				at: 'gpt-4o-transcribe' put: #(2000 nil 100000 nil nil);
+				at: 'gpt-4o-mini-transcribe' put: #(2000 nil 150000 nil nil);
+				at: 'gpt-4o-transcribe-diarize' put: #(5000 nil 100000 nil nil);
 				at: 'tts-1' put: #(2500 nil nil nil nil);
 				at: 'tts-1-hd' put: #(2500 nil nil nil nil);
 				at: 'gpt-4o-mini-tts' put: #(2000 nil 150000 nil nil);
@@ -106,6 +112,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-small' put: #(5000 nil 5000000 nil 100000000);
 				at: 'text-embedding-ada-002' put: #(5000 nil 5000000 nil 100000000);
 				at: 'whisper-1' put: #(5000 nil nil nil nil);
+				at: 'gpt-4o-transcribe' put: #(5000 nil 400000 nil nil);
+				at: 'gpt-4o-mini-transcribe' put: #(5000 nil 600000 nil nil);
+				at: 'gpt-4o-transcribe-diarize' put: #(5000 nil 400000 nil nil);
 				at: 'tts-1' put: #(5000 nil nil nil nil);
 				at: 'tts-1-hd' put: #(5000 nil nil nil nil);
 				at: 'gpt-4o-mini-tts' put: #(5000 nil 600000 nil nil);
@@ -138,6 +147,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-small' put: #(10000 nil 5000000 nil 500000000);
 				at: 'text-embedding-ada-002' put: #(10000 nil 5000000 nil 500000000);
 				at: 'whisper-1' put: #(7500 nil nil nil nil);
+				at: 'gpt-4o-transcribe' put: #(10000 nil 2000000 nil nil);
+				at: 'gpt-4o-mini-transcribe' put: #(10000 nil 2000000 nil nil);
+				at: 'gpt-4o-transcribe-diarize' put: #(10000 nil 2000000 nil nil);
 				at: 'tts-1' put: #(7500 nil nil nil nil);
 				at: 'tts-1-hd' put: #(7500 nil nil nil nil);
 				at: 'gpt-4o-mini-tts' put: #(10000 nil 2000000 nil nil);
@@ -170,6 +182,9 @@ defaultRateLimitsPerTier
 				at: 'text-embedding-3-small' put: #(10000 nil 10000000 nil 4000000000);
 				at: 'text-embedding-ada-002' put: #(10000 nil 10000000 nil 4000000000);
 				at: 'whisper-1' put: #(10000 nil nil nil nil);
+				at: 'gpt-4o-transcribe' put: #(10000 nil 6000000 nil nil);
+				at: 'gpt-4o-mini-transcribe' put: #(10000 nil 8000000 nil nil);
+				at: 'gpt-4o-transcribe-diarize' put: #(10000 nil 6000000 nil nil);
 				at: 'tts-1' put: #(10000 nil nil nil nil);
 				at: 'tts-1-hd' put: #(10000 nil nil nil nil);
 				at: 'gpt-4o-mini-tts' put: #(10000 nil 8000000 nil nil);
