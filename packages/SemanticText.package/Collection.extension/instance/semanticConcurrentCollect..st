@@ -6,16 +6,16 @@ semanticConcurrentCollect: aBlock
 	
 	results := Array new: self size.
 	states := Array new: self size.
-	processes := WeakSet new.
+	processes := Array new: self size.
 	semaphores := self asArray withIndexCollect: [:ea :index |
 		| semaphore |
 		semaphore := Semaphore new.
-		processes add:
-			[[[results at: index put: (aBlock cull: ea).
+		processes at: index put:
+			([[[results at: index put: (aBlock cull: ea).
 			states at: index put: true]
-				on: Error , Warning , Halt do: [:ex |
+				on: Error , Warning ", Halt" do: [:ex |
 					states at: index put: ex]]
-						ensure: [semaphore signal]] fork.
+						ensure: [semaphore signal]] forkAt: Processor activePriority).
 		semaphore].
 	[semaphores do: [:semaphore | semaphore wait]]
 		ifCurtailed: [processes do: #terminate].
