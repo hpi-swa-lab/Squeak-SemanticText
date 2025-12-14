@@ -1,16 +1,16 @@
 {
 	"class" : {
-		"allVoices" : "ct 2/16/2025 22:13",
 		"basicNamed:" : "ct 2/16/2025 22:26",
 		"initialize" : "ct 12/11/2023 15:48",
 		"tts1HDName" : "ct 12/10/2023 21:35",
 		"tts1Name" : "ct 12/10/2023 20:29",
 		"unload" : "ct 12/11/2023 15:47" },
 	"instance" : {
+		"allVoices" : "ct 12/14/2025 03:49",
 		"centsPerCharacter" : "ct 6/18/2024 21:58",
 		"defaultConfig" : "ct 12/11/2023 15:40",
 		"defaultName" : "ct 12/10/2023 21:35",
-		"defaultVoice" : "ct 6/19/2024 23:06",
+		"defaultVoice" : "ct 12/14/2025 00:55",
 		"getSoundFor:" : "ct 12/10/2023 20:31",
 		"getSoundFor:config:" : "ct 12/11/2023 16:02",
 		"getSoundFor:withConfigDo:" : "ct 6/12/2024 21:00",

@@ -20,7 +20,7 @@ voiceModeEnabled: aBoolean
 					ifEmpty: [#(text)])]
 			ifFalse:
 				[#(text)]).
-	self changedVoiceName. "assure config contains any voice iff required"
+	self changedSpeechSynthesisConfig. "assure config contains any voice iff required"
 	
 	self voiceModeEnabled
 		ifTrue: [self voiceAutomaton startListening]

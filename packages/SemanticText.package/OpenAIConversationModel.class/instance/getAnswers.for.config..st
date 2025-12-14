@@ -28,8 +28,9 @@ getAnswers: number for: aConversation config: aConfigOrNil
 							format: #pcm16;
 							yourself)]].
 			
-			config audioVoice ifNotNil: [:voice |
-				input audio voice: voice].
+			config speechSynthesisConfigOrNil ifNotNil: [:audioConfig |
+				audioConfig voice ifNotNil: [:voice |
+					input audio voice: voice]].
 			
 			config shouldLogProbabilities ifNotNil: [:shouldLogProbabilities |
 				input logprobs: shouldLogProbabilities].

@@ -1,4 +1,5 @@
 accessing
 speechSynthesisModel
 
-	^ SemanticText defaultSpeechSynthesisModel
+	^ self basicSpeechSynthesisModel ifNil:
+		[SemanticText defaultSpeechSynthesisModel]

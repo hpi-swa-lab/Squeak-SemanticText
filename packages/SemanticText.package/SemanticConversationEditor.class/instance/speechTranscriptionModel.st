@@ -1,0 +1,4 @@
+accessing
+speechTranscriptionModel
+
+	^ self voiceAutomaton speechTranscriptionModel

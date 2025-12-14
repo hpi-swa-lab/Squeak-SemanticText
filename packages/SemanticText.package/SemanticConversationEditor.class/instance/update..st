@@ -1,8 +1,12 @@
 updating
 update: what
 
-	what = #voiceName ifTrue:
-		[self changedVoiceName].
+	what = #speechSynthesisConfig ifTrue:
+		[self changedSpeechSynthesisConfig].
+	what = #speechTranscriptionConfig ifTrue:
+		[self changedSpeechTranscriptionConfig].
+	what = #speechTranscriptionModel ifTrue:
+		[self changedSpeechTranscriptionModel].
 	what = #voiceState ifTrue:
 		[self changed: #voiceState].
 	

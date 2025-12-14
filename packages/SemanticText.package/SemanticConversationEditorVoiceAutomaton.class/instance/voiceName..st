@@ -1,5 +1,5 @@
 accessing
 voiceName: name
 
-	voiceName := name.
-	self changed: #voiceName.
+	self updateSpeechSynthesisConfig: [:config |
+		config voice: name].

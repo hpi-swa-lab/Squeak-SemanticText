@@ -1,0 +1,4 @@
+accessing
+basicSpeechSynthesisModel
+
+	^ speechSynthesisModel

@@ -5,6 +5,6 @@ exampleAudioOut
 		model: (OpenAIConversationModel named: #gpt4oAudioPreviewName);
 		withConfigDo: [:config |
 			config outputModalities: #(text audio).
-			config audioVoice: #ash];
+			config speechSynthesisConfig voice: #ash];
 		addUserMessage: 'Tell me a joke!';
 		openAndComplete.

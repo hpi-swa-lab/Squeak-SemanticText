@@ -1,0 +1,4 @@
+accessing
+speechTranscriptionConfig
+
+	^ self voiceAutomaton speechTranscriptionConfig

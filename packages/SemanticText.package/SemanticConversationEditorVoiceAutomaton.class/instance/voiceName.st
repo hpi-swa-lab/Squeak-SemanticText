@@ -1,5 +1,5 @@
 accessing
 voiceName
 
-	^ self basicVoiceName ifNil:
-		[self allVoiceNames anyOne]
+	^ self speechSynthesisConfig voice
+		ifNil: [self defaultVoiceName]

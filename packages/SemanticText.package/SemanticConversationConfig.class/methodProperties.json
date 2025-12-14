@@ -2,8 +2,6 @@
 	"class" : {
 		"newStreaming" : "ct 8/21/2023 02:28" },
 	"instance" : {
-		"audioVoice" : "ct 2/16/2025 22:11",
-		"audioVoice:" : "ct 2/16/2025 22:11",
 		"maxTokens" : "ct 2/5/2024 16:20",
 		"maxTokens:" : "ct 2/7/2024 21:50",
 		"nucleusSamplingMass" : "ct 1/15/2024 17:05",
@@ -14,5 +12,13 @@
 		"shouldLogProbabilities:" : "ct 1/15/2024 20:25",
 		"shouldStream" : "ct 8/19/2023 21:37",
 		"shouldStream:" : "ct 8/19/2023 21:37",
+		"speechSynthesisConfig" : "ct 11/16/2025 21:06",
+		"speechSynthesisConfig:" : "ct 12/14/2025 02:51",
+		"speechSynthesisConfigOrNil" : "ct 11/16/2025 21:05",
+		"speechTranscriptionConfig" : "ct 11/16/2025 21:06",
+		"speechTranscriptionConfig:" : "ct 12/14/2025 02:51",
+		"speechTranscriptionConfigOrNil" : "ct 11/16/2025 21:07",
+		"speechTranscriptionModelName" : "ct 12/8/2025 18:16",
+		"speechTranscriptionModelName:" : "ct 12/8/2025 18:16",
 		"temperature" : "ct 1/5/2024 20:57",
 		"temperature:" : "ct 1/5/2024 20:57" } }

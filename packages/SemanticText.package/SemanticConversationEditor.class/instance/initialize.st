@@ -7,7 +7,10 @@ initialize
 		addDependent: self;
 		when: #conversationRequested send: #updateConversationFromText to: self;
 		when: #conversationChanged send: #completeAsIs to: self;
-		language: self defaultLanguageForSpeech;
+		defaultLanguage: self defaultLanguageForSpeech;
+		when: #stopRequested send: #voiceModeEnabled: to: self with: false;
+		when: #continuousListeningStarted send: #startWatchingConversation to: self;
+		when: #continuousListeningStopped send: #stopWatchingConversation to: self;
 		yourself.
 	
 	self conversation: self defaultConversation.
