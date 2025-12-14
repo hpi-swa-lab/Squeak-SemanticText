@@ -37,7 +37,7 @@ countTokensInConversation: aConversation
 	
 	(aConversation activeToolSpec ifNotNil: [:toolSpec | toolSpec forcedTools]) ifNotNil: [:forcedTools |
 		tokens := tokens +
-			(forcedTools isCollection
+			((forcedTools isCollection and: [forcedTools ~= #any])
 				ifTrue:
 					[forcedTools
 						ifEmpty: [1]
