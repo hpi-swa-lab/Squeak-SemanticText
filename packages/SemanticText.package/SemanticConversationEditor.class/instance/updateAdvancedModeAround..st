@@ -1,7 +1,7 @@
-updating
+private
 updateAdvancedModeAround: updateBlock
 
-	| bounds label builder window |
+	| window builder bounds label |
 	window := self containingWindow ifNil: [^ updateBlock value].
 	
 	"Save current state"
@@ -12,13 +12,15 @@ updateAdvancedModeAround: updateBlock
 	
 	updateBlock value.
 	
-	bounds := ToolBuilder default class getBoundsForWindow: window.
+	builder := ToolBuilder default.
+	bounds := builder class getBoundsForWindow: window.
 	label := self labelString ifNil: [window label].
 	
 	"Close first because MVC fiddles around with processes."
-	self changed: #close.
+	Processor activeProcess environmentAt: #windowIsReopening put: true.
+	[self changed: #close]
+		ensure: [Processor activeProcess environmentRemoveKey: #windowIsReopening].
 	
-	builder := ToolBuilder default.
 	bounds := bounds withHeight:
 		(bounds height
 			perform: (self isAdvancedMode ifTrue: [#+] ifFalse: [#-])

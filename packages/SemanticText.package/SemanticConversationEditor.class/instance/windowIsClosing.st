@@ -1,6 +1,9 @@
 updating
 windowIsClosing
 
+	(Processor activeProcess environmentAt: #windowIsReopening ifAbsent: [false]) ifTrue:
+		[^ self].
+	
 	self cancel.
 	self voiceAutomaton stopVoice.
 	

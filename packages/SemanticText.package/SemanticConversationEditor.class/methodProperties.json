@@ -149,7 +149,7 @@
 		"toggleVoiceMode" : "ct 6/12/2024 01:54",
 		"uninstallToolCallResolver" : "ct 12/11/2025 20:36",
 		"update:" : "ct 12/14/2025 03:59",
-		"updateAdvancedModeAround:" : "ct 2/19/2024 14:04",
+		"updateAdvancedModeAround:" : "ct 12/6/2025 22:10",
 		"updateConversationFromText" : "ct 6/19/2024 01:10",
 		"updateStreamingConversation" : "ct 11/23/2025 23:31",
 		"updateStreamingMessage:" : "ct 12/11/2025 02:48",
@@ -162,5 +162,5 @@
 		"voiceName:" : "ct 2/16/2025 23:07",
 		"voiceState" : "ct 6/19/2024 23:29",
 		"wantsDroppedMorph:event:inMorph:" : "ct 2/9/2025 00:48",
-		"windowIsClosing" : "ct 12/14/2025 19:15",
+		"windowIsClosing" : "ct 12/14/2025 23:55",
 		"windowReqNewLabel:" : "ct 6/19/2024 16:52" } }
