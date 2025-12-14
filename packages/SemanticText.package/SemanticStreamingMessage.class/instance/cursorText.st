@@ -1,4 +1,4 @@
-private
+accessing
 cursorText
 
-	^ SemanticConversation streamingCursorText
+	^ self conversation streamingCursorText

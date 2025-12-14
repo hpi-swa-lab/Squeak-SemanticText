@@ -19,4 +19,4 @@ exampleHelp
 	results do: [:ea | resultsTopic addSubtopic: ea].
 	resultsTopic browse."
 	
-	(corpus newConversationForQuery: 'internet connection') open.
+	(corpus newConversationForQuery: 'download a file in squeak') open.

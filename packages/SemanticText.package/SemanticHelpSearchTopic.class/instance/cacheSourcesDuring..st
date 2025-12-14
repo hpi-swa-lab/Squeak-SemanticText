@@ -1,4 +1,4 @@
-as yet unclassified
+private
 cacheSourcesDuring: aBlock
 	"Some help topics, e.g., ClassAPIHelpTopic, frequently access the source files."
 

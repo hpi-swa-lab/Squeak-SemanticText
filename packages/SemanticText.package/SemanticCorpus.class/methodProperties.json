@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"exampleHelp" : "ct 8/18/2023 00:17",
+		"exampleHelp" : "ct 11/11/2025 15:55",
 		"exampleWorkspaces" : "ct 8/19/2023 19:32",
 		"fromFileNamed:" : "ct 8/15/2023 23:55",
 		"fromStream:" : "ct 12/8/2023 21:55",
@@ -84,8 +84,9 @@
 		"makeClusters:maxIterations:" : "ct 2/28/2024 20:53",
 		"maxTokensForConversation" : "ct 11/26/2023 20:57",
 		"maxTokensPerDocument" : "ct 11/24/2023 10:19",
-		"newConversationForQuery:" : "ct 8/15/2023 18:24",
-		"newConversationForQuery:systemMessage:" : "ct 2/7/2024 22:01",
+		"newConversationForQuery:" : "ct 11/11/2025 15:48",
+		"newConversationForQuery:systemMessage:" : "ct 12/14/2025 23:00",
+		"newConversationForQuery:systemMessagePrefix:" : "ct 11/11/2025 15:49",
 		"postCopy" : "ct 3/5/2024 19:59",
 		"postCopyAfterDocuments:" : "ct 2/9/2024 14:00",
 		"rankObjects:clusteredSampleForQuery:take:" : "ct 5/2/2024 21:05",
@@ -105,6 +106,7 @@
 		"storeMetadataIn:" : "ct 2/7/2024 21:55",
 		"swapInFromDisk" : "ct 11/30/2023 11:48",
 		"swapOutToDisk" : "ct 1/10/2024 21:02",
+		"systemMessageForConversationQueries" : "ct 11/11/2025 16:26",
 		"trySplitString:by:halvesDo:" : "ct 2/7/2024 22:00",
 		"updateEmbeddings" : "ct 7/4/2023 10:37",
 		"withEmbeddingsCompressedToSize:" : "ct 2/9/2024 18:29",

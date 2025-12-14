@@ -1,4 +1,4 @@
 search - conversation
 newConversationForQuery: aString
 
-	^ self newConversationForQuery: aString systemMessage: nil
+	^ self newConversationForQuery: aString systemMessagePrefix: nil

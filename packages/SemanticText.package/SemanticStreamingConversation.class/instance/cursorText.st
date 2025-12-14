@@ -1,0 +1,4 @@
+accessing
+cursorText
+
+	^ self streamingCursorText

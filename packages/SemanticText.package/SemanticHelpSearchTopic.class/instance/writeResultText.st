@@ -39,7 +39,18 @@ writeResultText
 					ifNil:
 						[resultText append: '<b>Smart reply (experimental, powered by AI)</b><br><br>' asTextFromHtml.
 						resultConversation ifNotNil:
-							[resultText append: resultConversation lastMessage content , String cr, String cr.
+							[| messages separator |
+							messages := resultConversation messages select: [:message |
+								message isAssistantMessage and: [message content isEmptyOrNil not]].
+							separator := String cr, String cr.
+							messages
+								do: [:message | resultText append: message content]
+								separatedBy: [resultText append: separator].
+							"ensure #cursorText while streaming conversation to reduce flickering"
+							(resultConversation isStreaming and: [resultConversation isComplete not]) ifTrue:
+								[(resultText endsWith: resultConversation cursorText) ifFalse:
+									[resultText append: resultConversation cursorText]].
+							resultText append: separator.
 							resultText append:
 								('[Chat]' asText
 									addAttribute: (PluggableTextAttribute evalBlock: [resultConversation open]);
