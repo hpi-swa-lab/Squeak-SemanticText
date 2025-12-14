@@ -1,4 +1,4 @@
 initialize-release
 defaultName
 
-	^ self class tts1Name
+	^ self class defaultModelNames first

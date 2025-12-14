@@ -11,7 +11,7 @@ priceFor: aConversation answers: number completionSize: completionSizeOrNil
 		[completionTokens := completionTokens clampHigh: (self maxTokensInStringOfSize: completionSizeOrNil)].
 	completionAudioTokens := completionSizeOrNil
 		ifNil: [0 "already estimated in completionTokens via maxCompletionTokens"]
-		ifNotNil: [self maxAudioTokensForStringOfSize: completionSizeOrNil role: #assistant].
+		ifNotNil: [self maxAudioOutputTokensForStringOfSize: completionSizeOrNil].
 	
 	priceForPrompt := self expenseForTokenSpecs:
 		{promptTokens -> #centsPerPromptToken.

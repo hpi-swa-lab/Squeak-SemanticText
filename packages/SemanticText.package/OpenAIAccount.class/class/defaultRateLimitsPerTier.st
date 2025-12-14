@@ -46,6 +46,7 @@ defaultRateLimitsPerTier
 				at: 'whisper-1' put: #(500 nil nil nil nil);
 				at: 'tts-1' put: #(500 nil nil nil nil);
 				at: 'tts-1-hd' put: #(500 nil nil nil nil);
+				at: 'gpt-4o-mini-tts' put: #(500 nil 50000 nil nil);
 				yourself);
 		at: 2 put:
 			(Dictionary new
@@ -75,6 +76,7 @@ defaultRateLimitsPerTier
 				at: 'whisper-1' put: #(2500 nil nil nil nil);
 				at: 'tts-1' put: #(2500 nil nil nil nil);
 				at: 'tts-1-hd' put: #(2500 nil nil nil nil);
+				at: 'gpt-4o-mini-tts' put: #(2000 nil 150000 nil nil);
 				yourself);
 		at: 3 put:
 			(Dictionary new
@@ -106,6 +108,7 @@ defaultRateLimitsPerTier
 				at: 'whisper-1' put: #(5000 nil nil nil nil);
 				at: 'tts-1' put: #(5000 nil nil nil nil);
 				at: 'tts-1-hd' put: #(5000 nil nil nil nil);
+				at: 'gpt-4o-mini-tts' put: #(5000 nil 600000 nil nil);
 				yourself);
 		at: 4 put:
 			(Dictionary new
@@ -137,6 +140,7 @@ defaultRateLimitsPerTier
 				at: 'whisper-1' put: #(7500 nil nil nil nil);
 				at: 'tts-1' put: #(7500 nil nil nil nil);
 				at: 'tts-1-hd' put: #(7500 nil nil nil nil);
+				at: 'gpt-4o-mini-tts' put: #(10000 nil 2000000 nil nil);
 				yourself);
 		at: 5 put:
 			(Dictionary new
@@ -168,6 +172,7 @@ defaultRateLimitsPerTier
 				at: 'whisper-1' put: #(10000 nil nil nil nil);
 				at: 'tts-1' put: #(10000 nil nil nil nil);
 				at: 'tts-1-hd' put: #(10000 nil nil nil nil);
+				at: 'gpt-4o-mini-tts' put: #(10000 nil 8000000 nil nil);
 				yourself);
 		yourself.
 	^ flat collect: [:modelRateLimits |

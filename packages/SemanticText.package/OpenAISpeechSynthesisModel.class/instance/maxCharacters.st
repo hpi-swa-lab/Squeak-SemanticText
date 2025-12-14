@@ -2,4 +2,8 @@ accessing
 maxCharacters
 
 	self flag: #modelConstants.
-	^ 4096
+	
+	(self name beginsWith: self class tts1Name) ifTrue:
+		[^ 4096].
+	
+	^ self name caseError
