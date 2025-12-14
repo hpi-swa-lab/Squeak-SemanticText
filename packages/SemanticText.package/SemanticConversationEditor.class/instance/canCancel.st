@@ -1,4 +1,4 @@
 testing
 canCancel
 
-	^ self currentStreamingMessage notNil
+	^ self isStreamingResponse

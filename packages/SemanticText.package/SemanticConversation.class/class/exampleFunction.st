@@ -1,13 +1,10 @@
 documentation
 exampleFunction
 
-	| conversation message |
+	| conversation |
 	conversation := SemanticConversation new.
-	message := conversation
+	conversation
 		addUserMessage: 'What time is it?';
 		addFunction: #getTime action: [Time now];
-		getAssistantMessage.
-	message waitUntilComplete.
-	conversation resolveAllToolCalls ifTrue:
-		[message := conversation getAssistantMessage].
+		completeConversation.
 	conversation open.

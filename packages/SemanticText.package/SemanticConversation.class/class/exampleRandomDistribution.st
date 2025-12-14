@@ -3,7 +3,7 @@ exampleRandomDistribution
 	"Compare the random distribution of using the <number> parameter of the model versus making <number> separate requests."
 
 	(SemanticConversation new
-		withConfigDo: [:config |
+		updateConfig: [:config |
 			config maxTokens: 5];
 		addUserMessage: 'tell me a joke';
 		"estimatePriceToGetAssistantMessages: 50"
@@ -12,7 +12,7 @@ exampleRandomDistribution
 	
 	((1 to: 50) semanticConcurrentCollect:
 		[SemanticConversation new
-			withConfigDo: [:config |
+			updateConfig: [:config |
 				config maxTokens: 5];
 			addUserMessage: 'tell me a joke';
 			"estimatePriceToGetAssistantMessage) * 50"

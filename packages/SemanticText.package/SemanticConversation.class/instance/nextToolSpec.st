@@ -1,4 +1,4 @@
-accessing
+accessing - tool specs
 nextToolSpec
 
 	^ toolSpecs at: #next ifAbsent:

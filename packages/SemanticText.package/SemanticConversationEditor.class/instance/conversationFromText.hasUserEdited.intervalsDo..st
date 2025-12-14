@@ -26,7 +26,7 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 		| runText newToolSpec runToolSpecs runToolSpec runMessages unresolvedTools |
 		runText := aText copyFrom: interval start to: interval stop.
 		
-		newToolSpec := (newMessageOrToolSpec isKindOf: SemanticToolSpec)
+		newToolSpec := newMessageOrToolSpec isSemanticToolSpec
 			ifTrue: [newMessageOrToolSpec]
 			ifFalse: [newToolSpecs at: newMessageOrToolSpec ifAbsent: [nil]].
 		runToolSpecs := (runText semanticAllAttributes
@@ -62,7 +62,7 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 				toolSpec]
 			ifEmpty: [newToolSpec].
 		
-		(newMessageOrToolSpec isKindOf: SemanticToolSpec)
+		newMessageOrToolSpec isSemanticToolSpec
 			ifTrue:
 				[self assert: (toolSpecs includesKey: #default) not.
 				toolSpecs at: #default put: runToolSpec.
@@ -106,7 +106,7 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 														toolCall]
 													ifNone: [newToolCall]]])]].
 							{message}].
-						[self isDisplayingRawConversation not and: [runMessages notEmpty] and: [newMessage role = #assistant]] -> [runMessages]}
+						[self isDisplayingRawConversation not and: [runMessages notEmpty] and: [newMessage isAssistantMessage]] -> [runMessages]}
 					otherwise: [{newMessage"runMessages first"}].
 				
 				messages addAll: runMessages.
@@ -133,8 +133,8 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 		"Could the method have been deleted intentionally by the user, or was it hidden due to the current display settings?"
 		((messages includes: oldMessage) not and:
 			[(oldMessage isToolMessage and: [self isDisplayingRawConversation not])
-				or: [oldMessage role = #system and: [self isDisplayingSystemMessages not]]
-				or: [oldMessage role = #assistant and: [self isDisplayingRawConversation not] and: [oldMessage hasToolCalls] and: [hasUserEdited not or: [(oldMessages allButFirst: index) anySatisfy: [:laterMessage | messages includes: laterMessage]]]]])
+				or: [oldMessage isSystemMessage and: [self isDisplayingSystemMessages not]]
+				or: [oldMessage isAssistantMessage and: [self isDisplayingRawConversation not] and: [oldMessage hasToolCalls] and: [hasUserEdited not or: [(oldMessages allButFirst: index) anySatisfy: [:laterMessage | messages includes: laterMessage]]]]])
 				ifTrue:
 					["Find a previous message that this method relates to"
 					| previousMessage |
@@ -143,20 +143,20 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 							previousMessage := oldMessages at: previousIndex.
 							(messages includes: previousMessage)
 								and: [oldMessage isToolMessage ==> [previousMessage isToolMessage not]]
-								and: [oldMessage role = #assistant ==> [self isMinimalMode or: [previousMessage role = #assistant]]]]
+								and: [oldMessage isAssistantMessage ==> [self isMinimalMode or: [previousMessage isAssistantMessage]]]]
 						ifFound: [:previousIndex |
 							((oldMessage isToolMessage ==> [((oldMessages copyFrom: previousIndex + 1 to: index - 1) allSatisfy: [:infixMessage | infixMessage isToolMessage]) and: [previousMessage toolCalls includes: oldMessage toolCall]])
-								and: [oldMessage role = #assistant ==> [self isMinimalMode or: [(oldMessages copyFrom: previousIndex + 1 to: index - 1) allSatisfy: [:infixMessage | infixMessage isToolMessage or: [infixMessage role = #assistant]]]]])
+								and: [oldMessage isAssistantMessage ==> [self isMinimalMode or: [(oldMessages copyFrom: previousIndex + 1 to: index - 1) allSatisfy: [:infixMessage | infixMessage isToolMessage or: [infixMessage isAssistantMessage]]]]])
 									ifTrue:
-										[oldMessage role = #assistant ifTrue: [previousMessage := (oldMessages copyFrom: previousIndex to: index - 1) reversed detect: [:ea | messages includes: ea]].
+										[oldMessage isAssistantMessage ifTrue: [previousMessage := (oldMessages copyFrom: previousIndex to: index - 1) reversed detect: [:ea | messages includes: ea]].
 										previousMessage]]
 						ifNone:
-							[(oldMessage isToolMessage or: [oldMessage role = #assistant]) not
+							[(oldMessage isToolMessage or: [oldMessage isAssistantMessage]) not
 								ifTrue: [#beginning]])
 						ifNotNil: [:referenceMessage |
 							| updatedReference |
 							self flag: #hacked. "Can we restore order of invisible messages from attributes of spaces anyway?"
-							updatedReference := (referenceMessage = #beginning and: [oldMessage role ~= #system])
+							updatedReference := (referenceMessage = #beginning and: [oldMessage isSystemMessage not])
 								ifTrue: [messages at: 1 ifAbsent: [#beginning]]
 								ifFalse: [referenceMessage].
 							[insertedMessages

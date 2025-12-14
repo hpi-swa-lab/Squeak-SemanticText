@@ -6,6 +6,7 @@ textFromRawToolCall: aToolCall
 			withAttributes:
 				(Array
 					with: TextEmphasis italic
+					with: aToolCall asSemanticConversationEditorAttribute
 					with:
 						(TextInspectIt on: aToolCall))
 			do:

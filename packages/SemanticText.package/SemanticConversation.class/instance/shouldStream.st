@@ -1,4 +1,4 @@
 accessing
 shouldStream
 
-	^ self config shouldStream
+	^ self effectiveConfig shouldStream

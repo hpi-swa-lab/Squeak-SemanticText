@@ -11,7 +11,8 @@
 		"messageMarkups",
 		"voiceModeEnabled",
 		"voiceAutomaton",
-		"originalLabel" ],
+		"originalLabel",
+		"conversationWatchingCounter" ],
 	"name" : "SemanticConversationEditor",
 	"pools" : [
 		 ],

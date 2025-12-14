@@ -1,0 +1,23 @@
+{
+	"class" : {
+		"newForString" : "ct 11/16/2025 20:24" },
+	"instance" : {
+		"atEnd" : "ct 11/15/2025 20:23",
+		"close" : "ct 11/15/2025 16:16",
+		"contents" : "ct 12/13/2025 20:03",
+		"contentsClass" : "ct 11/16/2025 20:23",
+		"contentsClass:" : "ct 11/16/2025 20:23",
+		"initialize" : "ct 11/15/2025 16:15",
+		"isEmpty" : "ct 11/15/2025 16:01",
+		"next" : "ct 11/15/2025 18:13",
+		"nextOrNil" : "ct 11/22/2025 20:03",
+		"nextOrNilSuchThat:" : "ct 11/15/2025 16:15",
+		"nextTimeout:" : "ct 11/15/2025 16:15",
+		"peek" : "ct 11/15/2025 16:15",
+		"position" : "ct 11/15/2025 17:51",
+		"position:" : "ct 11/15/2025 21:56",
+		"postCopy" : "ct 11/15/2025 16:03",
+		"reset" : "ct 11/15/2025 18:14",
+		"skip:" : "ct 11/15/2025 16:10",
+		"todo" : "ct 11/16/2025 20:34",
+		"upToBlocking" : "ct 7/16/2025 21:46" } }

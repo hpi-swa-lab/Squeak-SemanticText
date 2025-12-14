@@ -6,7 +6,7 @@ semanticComplete: anIntegerOrNil
 	^ (SemanticConversation new
 		addSystemMessage: ('Complete {1}the provided string. Answer only the new part of the string in a JSON object (\{"completion": "..."}).' format: {anIntegerOrNil ifNil: [''] ifNotNil: ['the next {1} characters of ' format: {anIntegerOrNil}]});
 		addUserMessage: self asJsonString;
-		withConfigDo: [:config |
+		updateConfig: [:config |
 			config temperature: 0.
 			config openAIRawConfig response_format: (JsonObject new type: 'json_object'; yourself)];
 		getAssistantReply)

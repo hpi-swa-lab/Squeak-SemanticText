@@ -2,8 +2,8 @@
 	"class" : {
 		"todo" : "ct 3/1/2025 20:21" },
 	"instance" : {
-		"addSound:" : "ct 2/16/2025 23:54",
-		"addTranscription:" : "ct 6/19/2024 22:47",
+		"addSound:" : "ct 11/23/2025 21:08",
+		"addTranscription:" : "ct 11/23/2025 21:09",
 		"affirmationSound" : "ct 6/19/2024 23:01",
 		"allVoiceNames" : "ct 11/12/2025 18:18",
 		"assureProcess" : "ct 2/17/2025 01:23",
@@ -34,7 +34,7 @@
 		"emit:" : "ct 6/19/2024 22:02",
 		"initialize" : "ct 12/14/2025 02:49",
 		"interrogativeSound" : "ct 6/19/2024 23:02",
-		"listen" : "ct 3/1/2025 20:12",
+		"listen" : "ct 11/22/2025 23:17",
 		"playAffirmationSound" : "ct 2/17/2025 00:52",
 		"playAndWaitUntilDone:" : "ct 2/17/2025 01:58",
 		"playInterrogativeSound" : "ct 2/17/2025 00:52",
@@ -67,6 +67,7 @@
 		"startListening" : "ct 6/19/2024 22:14",
 		"stopListening" : "ct 6/19/2024 22:07",
 		"stopProcess" : "ct 6/19/2024 22:13",
+		"stopRequested" : "ct 11/11/2025 22:01",
 		"stopVoice" : "ct 6/19/2024 21:59",
 		"synthesize:" : "ct 12/14/2025 02:29",
 		"transcribe:" : "ct 2/16/2025 21:55",

@@ -1,0 +1,18 @@
+{
+	"category" : "SemanticText-Model-Conversation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 12/11/2025 01:52",
+	"instvars" : [
+		"conversation",
+		"config",
+		"effectiveConfig",
+		"currentAssistantMessage",
+		"toolCallQueue" ],
+	"name" : "SemanticConversationCompletion",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,4 +1,4 @@
-accessing
+accessing - expenses
 totalExpense
 
 	^ ((self messages collect: [:message | message expense])

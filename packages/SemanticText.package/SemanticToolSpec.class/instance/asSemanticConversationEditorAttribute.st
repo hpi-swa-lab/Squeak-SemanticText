@@ -1,0 +1,4 @@
+*SemanticText-Tools-Conversation
+asSemanticConversationEditorAttribute
+
+	^ SemanticConversationEditorToolSpecAttribute toolSpec: self

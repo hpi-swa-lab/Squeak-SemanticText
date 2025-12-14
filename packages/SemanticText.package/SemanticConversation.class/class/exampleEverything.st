@@ -2,7 +2,7 @@ documentation
 exampleEverything
 
 	(SemanticConversation newStreaming
-		withConfigDo: [:config |
+		updateConfig: [:config |
 			config temperature: 1.2.
 			config shouldLogProbabilities: true.
 			config openAIRawConfig top_logprobs: 5.

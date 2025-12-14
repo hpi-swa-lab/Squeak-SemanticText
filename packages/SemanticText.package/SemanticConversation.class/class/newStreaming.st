@@ -1,6 +1,4 @@
 instance creation
 newStreaming
 
-	^ self new
-		shouldStream: true;
-		yourself
+	^ SemanticStreamingConversation new

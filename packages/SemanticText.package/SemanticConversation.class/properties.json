@@ -13,5 +13,5 @@
 	"name" : "SemanticConversation",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "SemanticConversationObject",
 	"type" : "normal" }

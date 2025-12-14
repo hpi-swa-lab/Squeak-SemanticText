@@ -4,7 +4,7 @@ semanticComplete: anInteger
 	^ (SemanticConversation new
 		addSystemMessage: ('Complete the next {1} elements of the provided sequence. Answer results in a JSON array (\{"items": [...]}).' format: {anInteger});
 		addUserMessage: self asJsonString;
-		withConfigDo: [:config |
+		updateConfig: [:config |
 			config temperature: 0.
 			config openAIRawConfig response_format: (JsonObject new type: 'json_object'; yourself)];
 		getAssistantReply)

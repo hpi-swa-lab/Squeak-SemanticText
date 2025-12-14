@@ -1,0 +1,28 @@
+{
+	"class" : {
+		"newFor:config:" : "ct 12/10/2025 02:58" },
+	"instance" : {
+		"addNewToolCall:" : "ct 12/10/2025 03:52",
+		"addNewToolCalls:" : "ct 12/10/2025 03:52",
+		"closeToolCallQueue" : "ct 12/11/2025 23:52",
+		"completeConversationAsIs:" : "ct 12/10/2025 02:34",
+		"config" : "ct 12/10/2025 02:02",
+		"config:" : "ct 12/10/2025 02:02",
+		"conversation" : "ct 12/10/2025 02:42",
+		"conversation:" : "ct 12/10/2025 02:42",
+		"currentAssistantMessage" : "ct 12/10/2025 02:21",
+		"currentAssistantMessage:" : "ct 12/10/2025 02:23",
+		"effectiveConfig" : "ct 12/10/2025 02:02",
+		"ensureAssistantMessageAsIs:" : "ct 12/10/2025 02:41",
+		"getAssistantMessage" : "ct 12/10/2025 02:04",
+		"initialize" : "ct 12/11/2025 23:51",
+		"nextAssistantMessage" : "ct 12/11/2025 01:48",
+		"processToolCallQueue" : "ct 12/11/2025 01:55",
+		"processToolCalls:" : "ct 12/13/2025 21:56",
+		"recordPendingToolCallsDuring:" : "ct 12/11/2025 21:43",
+		"resetToolCallQueue" : "ct 12/11/2025 23:52",
+		"resolveNewToolCalls" : "ct 12/13/2025 21:56",
+		"startRecordPendingToolCalls" : "ct 12/11/2025 21:43",
+		"toolCallQueue" : "ct 12/10/2025 03:02",
+		"waitAndResolveQueuedToolCalls" : "ct 12/13/2025 21:56",
+		"waitForAssistantResponse" : "ct 12/10/2025 02:18" } }

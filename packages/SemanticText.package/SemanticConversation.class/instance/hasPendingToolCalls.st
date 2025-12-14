@@ -1,4 +1,4 @@
 testing
 hasPendingToolCalls
 
-	^ self lastToolCallMessageOrNil notNil
+	^ self pendingToolCalls notEmpty

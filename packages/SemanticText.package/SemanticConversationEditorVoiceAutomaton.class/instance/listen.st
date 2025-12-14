@@ -10,7 +10,8 @@ listen
 		ensure:
 			[self playAffirmationSound].
 	
-	sound ifNil: [^ self voiceState: nil].
+	sound ifNil:
+		[^ self stopRequested].
 	
 	self transcribe: sound]
 	

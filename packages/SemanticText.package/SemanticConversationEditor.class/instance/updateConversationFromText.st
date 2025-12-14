@@ -1,4 +1,4 @@
-updating
+updating - conversation
 updateConversationFromText
 
 	self text: self editText.

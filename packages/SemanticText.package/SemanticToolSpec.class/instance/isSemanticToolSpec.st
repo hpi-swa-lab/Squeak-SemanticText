@@ -1,0 +1,4 @@
+testing
+isSemanticToolSpec
+
+	^ true

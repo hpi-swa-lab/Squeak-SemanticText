@@ -1,0 +1,17 @@
+{
+	"category" : "SemanticText-Model-Conversation-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 12/14/2025 18:53",
+	"instvars" : [
+		"consumed",
+		"closed",
+		"closedToken",
+		"contentsClass" ],
+	"name" : "SemanticBufferedChannel",
+	"pools" : [
+		 ],
+	"super" : "SharedQueue2",
+	"type" : "normal" }

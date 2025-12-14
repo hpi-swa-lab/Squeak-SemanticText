@@ -1,4 +1,4 @@
 accessing
 toolCalls
 
-	^ toolCalls ifNil: [#()]
+	^ self basicToolCalls ifNil: [#()]

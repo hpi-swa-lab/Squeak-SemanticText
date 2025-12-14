@@ -1,6 +1,6 @@
 toolbuilder
 completeOrCancel
 
-	^ self canComplete
-		ifTrue: [self complete]
-		ifFalse: [self cancel]
+	^ self isStreamingResponse
+		ifFalse: [self complete]
+		ifTrue: [self cancel]

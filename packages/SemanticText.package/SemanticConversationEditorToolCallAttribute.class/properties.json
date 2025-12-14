@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Tools-Conversation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"toolCall" ],
+	"name" : "SemanticConversationEditorToolCallAttribute",
+	"pools" : [
+		 ],
+	"super" : "TextAttribute",
+	"type" : "normal" }

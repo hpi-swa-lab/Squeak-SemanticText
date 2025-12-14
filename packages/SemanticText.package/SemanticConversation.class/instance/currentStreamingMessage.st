@@ -1,4 +1,4 @@
-accessing
+accessing - messages
 currentStreamingMessage
 	"Answer the current incomplete streaming message, if any."
 

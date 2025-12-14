@@ -1,5 +1,5 @@
 accessing
 isStreaming: aBoolean
 
-	self conversation config shouldStream: aBoolean.
+	self conversation shouldStream: aBoolean.
 	self changed: #isStreaming.

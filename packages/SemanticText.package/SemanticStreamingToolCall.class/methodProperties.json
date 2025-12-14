@@ -3,12 +3,13 @@
 		 },
 	"instance" : {
 		"addChunkKey:tool:arguments:do:" : "ct 1/16/2024 19:03",
-		"beComplete" : "ct 1/16/2024 18:17",
+		"beComplete" : "ct 12/14/2025 19:47",
 		"cursorText" : "ct 1/16/2024 18:22",
 		"initialize" : "ct 1/16/2024 18:15",
 		"isComplete" : "ct 1/16/2024 18:16",
 		"isStreaming" : "ct 1/16/2024 18:16",
 		"printCallArgumentsOn:" : "ct 1/16/2024 18:21",
-		"veryDeepFixupActionMapWith:" : "ct 1/16/2024 18:18",
-		"veryDeepFixupWith:" : "ct 1/16/2024 18:18",
-		"waitUntilComplete" : "ct 1/16/2024 18:16" } }
+		"releaseForAllEvents" : "ct 12/12/2025 19:38",
+		"releaseForEventReceiver:" : "ct 12/9/2025 22:25",
+		"sendUpdatesFromTextModel:selector:" : "ct 12/9/2025 23:20",
+		"waitUntilComplete" : "ct 12/7/2025 01:59" } }

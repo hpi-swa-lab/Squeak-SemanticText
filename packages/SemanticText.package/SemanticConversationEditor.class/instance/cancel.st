@@ -1,4 +1,4 @@
 actions
 cancel
 
-	self currentStreamingMessage ifNotNil: [:message | message cancel].
+	self canCancel ifTrue: [self conversation cancel].

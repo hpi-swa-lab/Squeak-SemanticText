@@ -26,8 +26,5 @@ exampleFunctions
 	message := conversation
 		addUserMessage: 'Is the weather better in Boston or NYC? Use all information sources you can access.';
 		pushFunctions: {temperature. rain} "force: #(getTemperature)" "force: #any";
-		getAssistantMessage.
-	message waitUntilComplete.
-	conversation resolveAllToolCalls ifTrue:
-		[message := conversation getAssistantMessage].
+		getCompleteAssistantMessage.
 	message inspect.

@@ -1,0 +1,1 @@
+I complete a SemanticConversation by adding a new assistant message and resolving any requested tool calls, iterating as necessarily. See SemanticConversation>>completeConversationAsIs:config:.

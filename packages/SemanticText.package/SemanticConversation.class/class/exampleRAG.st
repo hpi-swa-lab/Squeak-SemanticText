@@ -7,4 +7,4 @@ exampleRAG
 			(SemanticText packageInfo methods collect: #source) asSemanticCorpus
 				findObjects: 10 similarToQuery: searchTerm];
 		addUserMessage: 'how can i change the temperature of a conversation?';
-		getFinalAssistantReply
+		getCompleteAssistantReply

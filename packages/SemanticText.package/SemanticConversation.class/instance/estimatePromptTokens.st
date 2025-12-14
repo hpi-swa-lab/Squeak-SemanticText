@@ -1,4 +1,4 @@
-accessing
+accessing - expenses
 estimatePromptTokens
 
 	^ self withNextActiveToolSpecDo:

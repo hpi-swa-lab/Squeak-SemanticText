@@ -6,11 +6,12 @@
 		 ],
 	"commentStamp" : "ct 1/17/2024 01:19",
 	"instvars" : [
+		"conversation",
 		"key",
 		"tool",
 		"arguments" ],
 	"name" : "SemanticToolCall",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "SemanticConversationObject",
 	"type" : "normal" }

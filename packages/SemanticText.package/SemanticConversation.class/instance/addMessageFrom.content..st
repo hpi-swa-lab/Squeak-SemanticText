@@ -1,4 +1,4 @@
-accessing
+accessing - messages
 addMessageFrom: role content: aTextOrContentOrParts
 
 	| message |

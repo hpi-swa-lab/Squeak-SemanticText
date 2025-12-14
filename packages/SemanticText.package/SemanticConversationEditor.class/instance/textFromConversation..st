@@ -15,12 +15,12 @@ textFromConversation: aConversation
 		
 		previousPrintedMessage := nil.
 		aConversation messages do: [:message |
-			| displayMessage displayAsNewMessage messageAttribute |
-			displayMessage := message role = #system ==> [self isDisplayingSystemMessages]
-				and: [(self isMinimalMode and: [message role = #assistant]) ==> [message content isEmptyOrNil not or: [message == aConversation messages last "to avoid disappearing assistant message while calling tool"]]]
+			| displayMessage displayAsNewMessage |
+			displayMessage := message isSystemMessage ==> [self isDisplayingSystemMessages]
+				and: [(self isMinimalMode and: [message isAssistantMessage]) ==> [message content isEmptyOrNil not or: [message == aConversation messages last "to avoid disappearing assistant message while calling tool"]]]
 				and: [message isToolMessage ==> [self isDisplayingRawConversation]].
 			displayAsNewMessage := displayMessage and:
-				[self isDisplayingRawConversation not ==> [(message role = #assistant and: [previousPrintedMessage notNil] and: [previousPrintedMessage role = #assistant]) not]].
+				[self isDisplayingRawConversation not ==> [(message isAssistantMessage and: [previousPrintedMessage notNil] and: [previousPrintedMessage isAssistantMessage]) not]].
 			needsMessageSeparator ifTrue:
 				[(displayAsNewMessage or: [displayMessage and: [message content isEmptyOrNil not]])
 					ifTrue:
@@ -29,15 +29,15 @@ textFromConversation: aConversation
 					ifFalse:
 						[(displayMessage and: [message basicContent isEmptyOrNil not]) ifTrue:
 							[stream ensureASpace]]].
-			messageAttribute := SemanticConversationEditorMessageAttribute message: message.
-			stream withAttribute: messageAttribute do:
+			stream withAttribute: message asSemanticConversationEditorAttribute do:
 				[displayMessage ifTrue:
 					[displayAsNewMessage ifTrue:
 						[needsMessageSeparator := true.
 						stream withAttribute: TextEmphasis bold do: "note that bold text is not a decoration but a syntactic instruction for parsing the text!"
-							[stream
-								nextPutAll: message role capitalized;
-								nextPut: $:].
+							[stream nextPutAll: message role capitalized.
+							message isRealtimeInstructions ifTrue:
+								[stream nextPutAll: '(realtime instructions)'].
+							stream nextPut: $:].
 						stream space].
 					message isToolMessage
 						ifFalse:

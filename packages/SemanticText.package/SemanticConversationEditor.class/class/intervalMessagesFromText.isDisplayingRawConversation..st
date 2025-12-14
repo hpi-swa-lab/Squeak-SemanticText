@@ -6,4 +6,4 @@ intervalMessagesFromText: aText isDisplayingRawConversation: isDisplayingRawConv
 		isDisplayingRawConversation: isDisplayingRawConversation
 		intervalsDo: [:intervals |
 			^ intervals associationsSelect: [:messageOrToolSpecAndInterval |
-				(messageOrToolSpecAndInterval key isKindOf: SemanticToolSpec) not]].
+				messageOrToolSpecAndInterval key isSemanticToolSpec not]].

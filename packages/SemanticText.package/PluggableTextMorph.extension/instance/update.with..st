@@ -1,6 +1,12 @@
 *SemanticText-Model-Conversation-ui support-updating-override
 update: aSymbol with: arg1
 
+	aSymbol == getTextSelector
+		ifTrue: [
+			self perform: #setText: withArguments: {arg1} inSuperclass: PluggableTextMorph. "don't style here for the same reason we pass the text here, that is to avoid reporting back the old state to the model - omg, this is horrible"
+			getSelectionSelector
+				ifNotNil: [self setSelection: self getSelection].
+			^ self].
 	aSymbol == #editString
 		ifTrue: [
 			self editString: arg1.
@@ -12,6 +18,7 @@ update: aSymbol with: arg1
 			self activeHand newKeyboardFocus: self.
 			^ self].
 
+	
 	aSymbol == #textStyle
 		ifTrue: [
 			self setTextStyle: arg1.

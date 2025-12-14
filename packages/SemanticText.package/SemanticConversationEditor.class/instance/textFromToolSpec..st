@@ -8,7 +8,7 @@ textFromToolSpec: aToolSpec
 		stream
 			withAttributes:
 				(Array
-					with: (SemanticConversationEditorToolSpecAttribute toolSpec: aToolSpec)
+					with: aToolSpec asSemanticConversationEditorAttribute
 					with: TextEmphasis italic)
 			do:
 				[| toolsTruncated toolStringBlock |

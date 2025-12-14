@@ -2,7 +2,7 @@ as yet unclassified
 storeCodeOn: aStream
 
 	aStream
-		nextPutAll: self class name;
+		nextPutAll: self species name;
 		space;
 		nextPutAll:
 			((self shouldStream ifNil: [false]) ifTrue: [#newStreaming] ifFalse: [#new]);

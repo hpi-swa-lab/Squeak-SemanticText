@@ -1,0 +1,1 @@
+I am a shared queue that supports closing and going back.

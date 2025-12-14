@@ -3,7 +3,7 @@ exampleRawParameters
 	"Requires an OpenAIConversationModel."
 
 	(SemanticConversation new
-		withConfigDo: [:config |
+		updateConfig: [:config |
 			"config shouldStream: true."
 			config shouldLogProbabilities: true.
 			config openAIRawConfig top_logprobs: 5.

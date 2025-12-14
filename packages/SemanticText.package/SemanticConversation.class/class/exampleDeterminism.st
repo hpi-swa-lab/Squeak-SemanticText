@@ -6,7 +6,7 @@ exampleDeterminism
 		((1 to: 5) semanticConcurrentCollect: [:i |
 			| message |
 			message := SemanticConversation new
-				withConfigDo: [:config |
+				updateConfig: [:config |
 					config maxTokens: 5.
 					config shouldLogRawOutput: true.
 					useSeed ifTrue:

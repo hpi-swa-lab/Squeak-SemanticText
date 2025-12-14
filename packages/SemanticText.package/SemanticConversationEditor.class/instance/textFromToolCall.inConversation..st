@@ -11,6 +11,7 @@ textFromToolCall: aToolCall inConversation: aConversation
 		stream
 			withAttributes:
 				(Array
+					with: aToolCall asSemanticConversationEditorAttribute
 					with: TextEmphasis italic
 					with:
 						(TextInspectIt on: aToolCall -> (toolMessage ifNotNil: [toolMessage content])))

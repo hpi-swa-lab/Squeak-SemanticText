@@ -1,4 +1,5 @@
 accessing
 shouldStream: aBoolean
 
-	self config shouldStream: aBoolean.
+	self updateConfig: [:config |
+		config shouldStream: aBoolean].

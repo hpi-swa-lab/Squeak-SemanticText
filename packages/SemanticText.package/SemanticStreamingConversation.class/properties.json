@@ -1,0 +1,15 @@
+{
+	"category" : "SemanticText-Model-Conversation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 12/10/2025 01:44",
+	"instvars" : [
+		"complete",
+		"process" ],
+	"name" : "SemanticStreamingConversation",
+	"pools" : [
+		 ],
+	"super" : "SemanticConversation",
+	"type" : "normal" }

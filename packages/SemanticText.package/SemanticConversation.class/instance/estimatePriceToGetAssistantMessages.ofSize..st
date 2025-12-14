@@ -1,4 +1,4 @@
-accessing
+accessing - expenses
 estimatePriceToGetAssistantMessages: number ofSize: completionSize
 
 	^ self model

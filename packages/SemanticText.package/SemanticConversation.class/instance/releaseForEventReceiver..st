@@ -1,5 +1,6 @@
 initialize-release
 releaseForEventReceiver: anObject
 
+	self removeActionsWithReceiver: anObject.
 	self messages do: [:message |
-		message removeActionsWithReceiver: anObject].
+		message releaseForEventReceiver: anObject].

@@ -1,4 +1,4 @@
 accessing
 isStreamingResponse
 
-	^ self currentStreamingMessage notNil
+	^ self conversation isStreaming and: [self conversation isComplete not]

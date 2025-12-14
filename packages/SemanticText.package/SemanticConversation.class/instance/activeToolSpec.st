@@ -1,7 +1,4 @@
-accessing
+accessing - tool specs
 activeToolSpec
 
-	| active |
-	active := self toolSpecFor: #active ifAbsent: [nil].
-	^ (self defaultToolSpec ifNil: [^ active])
-		updatedWith: active
+	^ self effectiveToolSpecFor: #active

@@ -11,10 +11,9 @@
 		"contentParts",
 		"toolCalls",
 		"expense",
-		"rawOutput",
-		"properties" ],
+		"rawOutput" ],
 	"name" : "SemanticMessage",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "SemanticConversationObject",
 	"type" : "normal" }

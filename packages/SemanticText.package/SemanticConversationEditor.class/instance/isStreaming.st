@@ -1,4 +1,4 @@
 accessing
 isStreaming
 
-	^ self conversation config shouldStream ifNil: [false]
+	^ self conversation shouldStream ifNil: [false]

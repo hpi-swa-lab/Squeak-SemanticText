@@ -1,0 +1,21 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"basicProperties" : "ct 11/1/2025 20:15",
+		"copy" : "ct 12/13/2025 01:10",
+		"hasPropertyValueAt:" : "ct 11/15/2025 22:17",
+		"isSemanticMessage" : "ct 12/8/2025 19:09",
+		"isSemanticToolCall" : "ct 12/8/2025 19:09",
+		"postCopyFrom:" : "ct 12/7/2025 22:41",
+		"properties" : "ct 11/1/2025 20:15",
+		"propertyValueAt:" : "ct 11/1/2025 20:16",
+		"propertyValueAt:ifAbsent:" : "ct 11/1/2025 20:17",
+		"propertyValueAt:ifPresent:" : "ct 11/1/2025 20:18",
+		"propertyValueAt:ifPresent:ifAbsent:" : "ct 11/15/2025 22:20",
+		"propertyValueAt:put:" : "ct 2/15/2025 21:42",
+		"propertyValueRemoveAt:" : "ct 11/1/2025 20:43",
+		"propertyValueRemoveAt:ifAbsent:" : "ct 11/1/2025 20:42",
+		"releaseForAllEvents" : "ct 12/12/2025 20:02",
+		"veryDeepFixupActionMapWith:" : "ct 8/17/2023 14:57",
+		"veryDeepFixupWith:" : "ct 12/11/2025 02:28" } }
