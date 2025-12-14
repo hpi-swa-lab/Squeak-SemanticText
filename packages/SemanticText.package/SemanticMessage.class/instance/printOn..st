@@ -7,4 +7,4 @@ printOn: aStream
 	aStream space.
 	aStream print:
 		(self basicContent ifNotNil: [:basicContent |
-			basicContent truncateWithEllipsisTo: 80]).
+			basicContent asString truncateWithEllipsisTo: 80]).
