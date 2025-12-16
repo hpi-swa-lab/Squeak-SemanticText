@@ -2,6 +2,7 @@ pragmas
 function
 	<pragmaParser>
 
+	| parameterNames |
 	self flag: #experimental. "There are still some false positive matches for syntax errors."
 	
 	self scanPast: #pragmaKeyword.
@@ -11,12 +12,15 @@ function
 	
 	self failUnless: currentTokenFirst == $(.
 	self scanPast: #leftParenthesis.
+	parameterNames := OrderedCollection new.
 	[currentTokenFirst ~= $)] 
 		whileTrue:
-			[| hasType |
-			self failUnless: currentToken notNil.
-			hasType := currentToken last = $:.
-			self scanPast: #argument.
+			[| parameterName hasType |
+			parameterName := currentToken.
+			self failUnless: parameterName notNil.
+			self scanPast: ((parameterNames includes: parameterName) ifFalse: [#argument] ifTrue: [#invalid]).
+			parameterNames addLast: parameterName.
+			hasType := parameterName last = $:.
 			
 			hasType ifTrue:
 				[currentTokenFirst = ${
