@@ -1,5 +1,9 @@
 public requests
 stopListening
 
-	self currentMessageName = #listen ifTrue:
-		[self skipCurrentMessage].
+	self shouldListenContinuously
+		ifFalse:
+			[self isListening ifTrue:
+				[self skipCurrentMessage]]
+		ifTrue:
+			[self stopListenerProcess].

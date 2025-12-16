@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Conversation-Support-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SemanticEventManagerTest",
+	"pools" : [
+		 ],
+	"super" : "EventManagerTest",
+	"type" : "normal" }

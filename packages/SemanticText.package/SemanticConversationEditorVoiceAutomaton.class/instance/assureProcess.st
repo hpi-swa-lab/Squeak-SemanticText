@@ -3,5 +3,5 @@ assureProcess
 
 	process ifNotNil: [^ self].
 	process := [self runMessageLoop]
-		forkAt: 50 named:
+		forkAt: Processor highIOPriority named:
 			('{1} for {2}' format: {self className. self conversation}).

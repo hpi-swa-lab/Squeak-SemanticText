@@ -1,7 +1,7 @@
 fileIn/Out
 readFromCallString: aStringOrStream
 
-	| toolName argumentName |
+	| toolName |
 	aStringOrStream isStream ifFalse:
 		[| stream toolCall |
 		stream := aStringOrStream readStream.
@@ -11,10 +11,6 @@ readFromCallString: aStringOrStream
 	
 	toolName := (aStringOrStream upToAnyOf: '(' do: [:c |]) withBlanksTrimmed.
 	self tool: toolName.
-	[aStringOrStream skipSeparators.
-	(argumentName := (aStringOrStream upToAnyOf: '=)' do: [:c |]) withBlanksTrimmed) isEmpty] whileFalse:
-		[| argumentValue |
-		aStringOrStream skipSeparators.
-		argumentValue := Json new dictionaryClass: OrderedJsonObject; readFrom: aStringOrStream.
-		self arguments at: argumentName put: argumentValue.
-		self assert: ((aStringOrStream upToAnyOf: ',)' do: [:c |]) withBlanksTrimmed) isEmpty].
+	
+	aStringOrStream skipSeparators.
+	self readArgumentsFromCallString: aStringOrStream.

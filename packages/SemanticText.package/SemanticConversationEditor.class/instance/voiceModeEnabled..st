@@ -4,7 +4,8 @@ voiceModeEnabled: aBoolean
 	self voiceModeEnabled = aBoolean ifTrue: [^ self].
 	
 	aBoolean ifTrue:
-		[self assureSpeechAvailableOr: [^ self]].
+		[self assureSpeechAvailableOr: [^ self].
+		self updateRealtimeSession].
 	
 	voiceModeEnabled := aBoolean.
 	self changed: #voiceModeEnabled.

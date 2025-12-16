@@ -3,7 +3,7 @@ assignExpense: expense toMessages: messages
 
 	messages size = 1
 		ifTrue:
-			[messages first expense: expense]
+			[messages first addExpense: expense]
 		ifFalse:
 			[| estimatedTokenCounts |
 			estimatedTokenCounts := messages collect: [:message |
@@ -13,4 +13,4 @@ assignExpense: expense toMessages: messages
 					(expense asApproximated "because token counts are estimated"
 						distributeBulkToShares: estimatedTokenCounts)
 				do: [:message :unitPrice |
-					message expense: unitPrice]].
+					message addExpense: unitPrice]].

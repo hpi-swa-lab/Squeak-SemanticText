@@ -1,4 +1,4 @@
-updating - conversation
+updating
 noteReadyForQuestion
 
 	(self shouldListen and: [self shouldSpeak not]) ifTrue:

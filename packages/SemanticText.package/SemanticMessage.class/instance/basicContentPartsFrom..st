@@ -22,7 +22,10 @@ basicContentPartsFrom: aTextOrContent
 		allAttributes := aTextOrContent semanticAllAttributesFrom: start to: stop.
 		newPart := contentPartAttributes
 			ifEmpty:
-				[(allAttributes ifEmpty: [aTextOrContent string] ifNotEmpty: [aTextOrContent]) copyFrom: partStart to: stop]
+				[((allAttributes ifEmpty: [aTextOrContent string] ifNotEmpty: [aTextOrContent]) copyFrom: partStart to: stop) ifEmpty:
+					[start = aTextOrContent size
+						ifTrue: [''] "special case for preserving {aSound. ''} at before streaming transcription. but in the general case we don't want this because parts are naturally separated by CRs. Can we find a more generic solution?"
+						ifFalse: [nil]]]
 			ifNotEmpty:
 				[contentPartAttributes size = 1 ifFalse: [self error: 'message content must not contain overlapping attributes'].
 				contentPartAttributes first semanticAsContentPartFor: (aTextOrContent copyFrom: partStart to: stop)].

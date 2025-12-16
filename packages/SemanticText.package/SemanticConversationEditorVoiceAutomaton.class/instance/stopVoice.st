@@ -1,4 +1,5 @@
 public requests
 stopVoice
 
-	self stopProcess.
+	self discardStreamRecordingsBlock ifNotNil: [:block | block value].
+	self stopAllProcesses.

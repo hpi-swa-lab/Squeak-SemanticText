@@ -1,0 +1,1 @@
+I complete conversations in "realtime" by streaming messages from/to the OpenAI Realtime API using WebSockets. Message contents can be text, audio, and images.

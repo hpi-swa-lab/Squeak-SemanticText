@@ -1,0 +1,24 @@
+{
+	"category" : "SemanticText-Providers-OpenAI",
+	"classinstvars" : [
+		"eventHandlers" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 12/9/2025 19:31",
+	"instvars" : [
+		"conversation",
+		"model",
+		"webSocket",
+		"process",
+		"eventLog",
+		"promises",
+		"existingIds",
+		"currentSessionProperties",
+		"currentResponses",
+		"inputAudioSamples",
+		"streamingInputAudioMessages" ],
+	"name" : "OpenAIRealtimeSession",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

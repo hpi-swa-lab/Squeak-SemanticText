@@ -1,0 +1,4 @@
+*SemanticText-Providers-OpenAI-accessing
+openAIRealtimeVoiceActivityDetectionStrategy
+
+	^ self argumentAt: #openAIRealtimeVoiceActivityDetectionStrategy

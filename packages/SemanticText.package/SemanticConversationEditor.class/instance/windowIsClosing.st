@@ -6,6 +6,7 @@ windowIsClosing
 	
 	self cancel.
 	self voiceAutomaton stopVoice.
+	self conversation realtimeSession ifNotNil: [self stopRealtimeSession].
 	
 	self conversation releaseForEventReceiver: self.
 	self conversation toolCallResolver ifNotNil: [:resolver |

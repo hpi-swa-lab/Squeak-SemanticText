@@ -12,6 +12,7 @@ complete: aText
 	aText ifNotNil:
 		[self text: aText].
 	
+	self updateRealtimeSession.
 	
 	self beBusyDuring:
 		[self installToolCallResolver.

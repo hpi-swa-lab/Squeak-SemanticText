@@ -5,8 +5,9 @@ voiceButtonColor
 	
 	^ self voiceState
 		caseOf:
-			{[#listening] -> [self userInterfaceTheme get: #cancelColor for: #DialogWindow].
+			{[#listening] -> [self userInterfaceTheme get: #okColor for: #DialogWindow].
 			[#transcribing] -> [Color yellow].
-			[#speaking] -> [self userInterfaceTheme get: #okColor for: #DialogWindow]}
+			[#speaking] -> [self userInterfaceTheme get: #cancelColor for: #DialogWindow].
+			[#listeningAndSpeaking] -> [Color lightBlue]}
 		otherwise:
 			[self userInterfaceTheme get: #color for: #PluggableButtonMorph]

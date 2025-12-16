@@ -1,7 +1,7 @@
 accessing
 releaseDate
 
-	self flag: #modelConstants.
+	self flag: #modelConstants. "only hardcoded for old model names"
 	
 	^ self name
 		caseOf:

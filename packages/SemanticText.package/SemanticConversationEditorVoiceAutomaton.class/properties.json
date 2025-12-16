@@ -18,6 +18,7 @@
 		"shouldSpeak",
 		"voiceState",
 		"process",
+		"listenerProcess",
 		"currentMessage",
 		"messages" ],
 	"name" : "SemanticConversationEditorVoiceAutomaton",

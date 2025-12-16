@@ -1,10 +1,11 @@
 private
 basicSayStreamingMessageAudio: aSound at: sampleStart
 
-	self voiceState: #speaking.
+	self isSpeaking: true.
 	
 	aSound samplesRemaining = 0 ifFalse:
-		[aSound resumePlaying].
-	"[""(aSound duration - (sampleStart / aSound samplingRate))""(aSound samplesRemaining / aSound samplingRate) seconds wait]
-		ifCurtailed: [aSound stopGracefully]."
-	self waitUntilDone: aSound.
+		[self ensureCanPlayDuring:
+			[aSound resumePlaying"]".
+			"[""(aSound duration - (sampleStart / aSound samplingRate))""(aSound samplesRemaining / aSound samplingRate) seconds wait]
+				ifCurtailed: [aSound stopGracefully]."
+			self waitUntilDone: aSound] ].

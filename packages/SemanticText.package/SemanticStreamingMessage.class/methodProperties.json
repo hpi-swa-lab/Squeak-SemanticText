@@ -2,8 +2,10 @@
 	"class" : {
 		"conversation:array:role:inBackgroundDo:" : "ct 11/10/2025 18:01" },
 	"instance" : {
-		"addChunk:" : "ct 1/16/2024 16:07",
+		"addChunk:" : "ct 12/9/2025 19:28",
 		"addChunk:toolCalls:tokenProbabilities:" : "ct 12/13/2025 18:42",
+		"addSoundChunk:" : "ct 11/18/2025 22:51",
+		"addSoundChunk:samples:" : "ct 11/18/2025 22:47",
 		"addedSoundChunk:at:" : "ct 2/16/2025 23:27",
 		"beComplete" : "ct 1/16/2024 19:15",
 		"cancel" : "ct 12/7/2025 22:29",
@@ -20,4 +22,4 @@
 		"releaseForEventReceiver:" : "ct 12/9/2025 22:25",
 		"sendUpdatesFromTextModel:selector:" : "ct 12/9/2025 23:20",
 		"veryDeepFixupWith:" : "ct 12/11/2025 02:28",
-		"waitUntilComplete" : "ct 11/25/2024 04:10" } }
+		"waitUntilComplete" : "ct 12/14/2025 20:25" } }

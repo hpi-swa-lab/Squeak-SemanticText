@@ -1,4 +1,4 @@
-accessing - audio
+accessing - speech
 outputModalities: symbols
 	"Subset of #(text audio)."
 

@@ -2,13 +2,13 @@ private
 basicSayMessage: aMessage
 
 	| sound |
-	self voiceState: #speaking.
+	self isSpeaking: true.
 	
 	sound := self synthesize: aMessage.
 	
 	sound ifNotNil:
 		[[self playAndWaitUntilDone: sound]
 			ensure:
-				[self voiceState: nil]].
+				[self isSpeaking: false]].
 	
 	self basicDoneSayingMessage: aMessage.

@@ -3,6 +3,7 @@
 		 },
 	"instance" : {
 		"asOpenAIContentPartObject" : "ct 3/1/2025 20:28",
+		"asOpenAIRealtimeContentPartObjectForRole:" : "ct 11/16/2025 00:50",
 		"openAIAsDataUrl" : "ct 2/9/2025 20:36",
 		"openAICountTokensOrCompileTo:" : "ct 3/1/2025 20:53",
 		"semanticAsContentPart" : "ct 2/9/2025 21:09",

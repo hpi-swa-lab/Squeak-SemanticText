@@ -1,10 +1,6 @@
 *SemanticText-Providers-OpenAI-streaming
-openAIAddSamples: newSamples samplingRate: rate
+openAIAddSamples: newSamples
 
-	originalSamplingRate
-		ifNil: [originalSamplingRate := rate]
-		ifNotNil: [self assert: originalSamplingRate = rate].
-	
 	samples := samples ifNil: [newSamples] ifNotNil: [samples , newSamples].
 	samplesSize := samples size.
 	
@@ -13,4 +9,4 @@ openAIAddSamples: newSamples samplingRate: rate
 	
 	initialCount := (samplesSize * self samplingRate) // originalSamplingRate.
 	
-	count := count ifNil: [initialCount] ifNotNil: [count + newSamples size].
+	count := count + newSamples size.

@@ -3,4 +3,4 @@ initialize
 
 	super initialize.
 	
-	complete := false.
+	self initializeStreaming.

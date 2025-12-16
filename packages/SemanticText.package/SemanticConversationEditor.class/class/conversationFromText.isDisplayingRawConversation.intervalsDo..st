@@ -2,6 +2,9 @@ support
 conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversation intervalsDo: intervalsBlockOrNil
 
 	| text steps conversation toolSpecs intervals |
+	self flag: #todo. "optimize: very slow for large WideStrings"
+	"NB: removes formatting from content parts (e.g., SemanticTokenProbabilityTag)"
+	
 	text := aText copyReplaceAll: SemanticConversation streamingCursorText with: ''.
 	
 	steps := Array streamContents: [:stream |
@@ -23,15 +26,22 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 	toolSpecs := IdentityDictionary new.
 	steps
 		overlappingPairsDo: [:step :nextStep |
-			| start sep stop role content contentText sep2 sep3 toolSpec toolCalls toolKey message |
+			| start sep stop role isRealtimeInstructions content contentText sep2 sep3 toolSpec toolCalls toolKey message |
 			start := step first.
 			sep := step second.
 			stop := nextStep first - 1.
 			
 			role := (text copyFrom: start to: sep - 1) asString
-				ifNotEmpty: [:roleString | roleString asLegalSelector]
+				ifNotEmpty: [:roleString |
+					(roleString endsWith: '(realtime instructions)')
+						ifFalse: [roleString asLegalSelector]
+						ifTrue:
+							[isRealtimeInstructions := true.
+							(roleString allButLast: '(realtime instructions)' size) asLegalSelector]]
 				ifEmpty: [sep := sep - 1. nil].
-			contentText := (text copyFrom: sep + 1 to: stop) semanticWithBlanksTrimmed.
+			contentText := (text copyFrom: sep + 1 to: stop) withoutLeadingBlanks.
+			(contentText size >= 2 and: [(contentText last: 2) = (String cr , String cr)]) ifTrue:
+				[contentText := contentText allButLast: 2]. "manual removal of trailing blanks to preserve intended trailing carriage returns during streaming. (in particular when we create an empty contentpart at the beginning for transcriptions)"
 			content := contentText isText
 				ifTrue: [contentText copy
 					removeAttributesThat: [:attribute | ((attribute isKindOf: TextAnchor) or: [(attribute isKindOf: TextInspectIt) and: [attribute target semanticIsSound]]) not];
@@ -52,6 +62,7 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 						[| tools |
 						toolSpec := content asString allButFirst: sep2 - 1 + toolSpecPrefix size.
 						content := (content first: sep2 - 1) semanticWithBlanksTrimmed.
+						contentText := (contentText first: sep2 - 1) semanticWithBlanksTrimmed.
 						stop := stop - content size + sep2.
 						isDisplayingRawConversation
 							ifTrue:
@@ -110,7 +121,7 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 													isDisplayingRawConversation ifTrue:
 														[toolKey := toolCall copyFrom: 2 to: sep32 - 1.
 														toolCall := (toolCall allButFirst: sep32) withBlanksTrimmed.
-														toolCall := [SemanticToolCall fromCallString: toolCall] ifError: [nil].
+														toolCall := [SemanticToolCall maybeStreamingFromCallString: toolCall] ifError: [nil halt].
 														toolCall ifNotNil:
 															[toolCall key: toolKey.
 															(toolCalls ifNil: [toolCalls := OrderedCollection new])
@@ -140,7 +151,11 @@ conversationFromText: aText isDisplayingRawConversation: isDisplayingRawConversa
 					[message := role = #tool
 						ifFalse: [SemanticMessage role: role content: content]
 						ifTrue:
-							[SemanticToolMessage toolCall: toolKey content: ([content parseAsOrderedJson] ifError: [content])].
+							[SemanticToolMessage
+								toolCall: ((conversation toolCallWithKey: toolKey) ifNil: [toolKey])
+								content: ([content parseAsOrderedJson] ifError: [content])].
+					isRealtimeInstructions = true ifTrue:
+						[message isRealtimeInstructions: true].
 					toolCalls ifNotNil:
 						[message toolCalls: toolCalls].
 					

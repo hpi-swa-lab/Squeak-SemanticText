@@ -10,3 +10,5 @@ SystemOrganization addCategory: #'SemanticText-Providers-OpenAI'!
 SystemOrganization addCategory: #'SemanticText-Tools-Conversation'!
 SystemOrganization addCategory: #'SemanticText-Tools-Conversation-Tests'!
 SystemOrganization addCategory: #'SemanticText-Tools-HelpSystemSearch'!
+SystemOrganization addCategory: #'SemanticText-Model-Conversation-Support'!
+SystemOrganization addCategory: #'SemanticText-Model-Conversation-Support-Tests'!

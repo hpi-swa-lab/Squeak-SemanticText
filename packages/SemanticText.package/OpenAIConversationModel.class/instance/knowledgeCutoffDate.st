@@ -3,6 +3,7 @@ knowledgeCutoffDate
 
 	self flag: #modelConstants.
 	
+	(self resolvedName beginsWith: self class gptRealtimeName) ifTrue: [^ DateAndTime year: 2023 month: 10 day: 1].
 	(self resolvedName beginsWith: self class gptAudioName) ifTrue: [^ DateAndTime year: 2023 month: 10 day: 1].
 	(self resolvedName beginsWith: self class gpt4oMiniName) ifTrue: [^ DateAndTime year: 2023 month: 10 day: 1].
 	(self resolvedName beginsWithAnyOf: {self class gpt4oName. self class chatgpt4oLatestName}) ifTrue: [^ DateAndTime year: 2023 month: 10 day: 1].

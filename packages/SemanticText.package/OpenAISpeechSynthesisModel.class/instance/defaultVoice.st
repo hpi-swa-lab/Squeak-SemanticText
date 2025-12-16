@@ -1,4 +1,4 @@
-initialize-release
+accessing
 defaultVoice
 
 	^ self allVoices first

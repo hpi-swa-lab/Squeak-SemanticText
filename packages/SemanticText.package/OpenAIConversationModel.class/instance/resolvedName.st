@@ -19,10 +19,12 @@ resolvedName
 			"GPT-4o"
 			[self class gpt4oName] -> [self class gpt4o_20240806Name].
 			[self class gpt4oAudioPreviewName] -> [self class gpt4oAudioPreview_20241001Name].
+			[self class gpt4oRealtimeName] -> [self class gpt4oRealtime20250603Name].
 			
 			"GPT-4o mini"
 			[self class gpt4oMiniName] -> [self class gpt4oMini_20240718Name].
 			[self class gpt4oMiniAudioPreviewName] -> [self class gpt4oMiniAudioPreview_20241217Name].
+			[self class gpt4oMiniRealtimeName] -> [self class gpt4oMiniRealtime20241217Name].
 			
 			"GPT-4.1"
 			[self class gpt41Name] -> [self class gpt41_20250414Name].
@@ -51,5 +53,9 @@ resolvedName
 			
 			"GPT Audio"
 			[self class gptAudioName] -> [self class gptAudio20250828Name].
-			[self class gptAudioMiniName] -> [self class gptAudioMini20251006Name]}
+			[self class gptAudioMiniName] -> [self class gptAudioMini20251006Name].
+			
+			"GPT Realtime"
+			[self class gptRealtimeName] -> [self class gptRealtime20250828Name].
+			[self class gptRealtimeMiniName] -> [self class gptRealtimeMini20251006Name]}
 		otherwise: [:originalName | originalName]

@@ -3,6 +3,7 @@
 		 },
 	"instance" : {
 		"asOpenAIContentPartObject" : "ct 2/8/2025 23:53",
+		"asOpenAIRealtimeContentPartObjectForRole:" : "ct 11/13/2025 00:59",
 		"openAICountTokensOrCompileTo:" : "ct 3/1/2025 20:52",
 		"openAIWithSqueakLineEndings" : "ct 6/18/2024 22:58",
 		"openAIWithUnixLineEndings" : "ct 6/18/2024 22:58",

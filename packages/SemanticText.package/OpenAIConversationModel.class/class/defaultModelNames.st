@@ -8,9 +8,10 @@ defaultModelNames
 	self gpt5NanoName. "cheapest"
 	self gpt5ChatLatestName. "most usual"
 	self gpt5Name. "frontier"
-	self gpt5MiniName.
 	self gpt41Name. "smartest non-reasoning"
+	self gptRealtimeName.
 	"these are still popular"
+	self gpt5MiniName.
 	self gptAudioName.
 	self gptAudioMiniName.
 	self gpt4oName.
@@ -30,9 +31,12 @@ defaultModelNames
 	self gpt4oMiniName.
 	self gpt4oAudioPreviewName.
 	self gpt4oMiniAudioPreviewName.
+	self gpt4oRealtimeName.
+	self gpt4oMiniRealtimeName.
 	self gpt41MiniName.
 	self gpt41NanoName.
 	self gpt45PreviewName.
+	self gptRealtimeMiniName.
 	
 	"pinned versions, ordered by version ascending, date descending"
 	self gpt35Turbo0125Name.
@@ -51,6 +55,10 @@ defaultModelNames
 	self gpt4oAudioPreview_20241217Name.
 	self gpt4oAudioPreview_20241001Name.
 	self gpt4oMiniAudioPreview_20241217Name.
+	self gpt4oRealtime20241001Name.
+	self gpt4oRealtime20241217Name.
+	self gpt4oRealtime20250603Name.
+	self gpt4oMiniRealtime20241217Name.
 	self o1Preview_20240912Name.
 	self o1Preview_20240912Name.
 	self o1Mini_20240912Name.
@@ -58,4 +66,6 @@ defaultModelNames
 	self gpt45Preview_20250227Name.
 	self o4Mini_20250416Name.
 	self gptAudio20250828Name.
-	self gptAudioMini20251006Name}
+	self gptAudioMini20251006Name.
+	self gptRealtime20250828Name.
+	self gptRealtimeMini20251006Name}

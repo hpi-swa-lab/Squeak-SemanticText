@@ -11,7 +11,7 @@ testPasteText
 	otherEditor completeAsIs.
 	self assert: 'plonk griffle' reversed equals: otherEditor conversation messages last content.
 	index := otherEditor text findString: 'plonk'.
-	copy := otherEditor text copyFrom: index to: index + 'plonk' size.
+	copy := otherEditor text copyFrom: index to: index + 'plonk' size - 1.
 	
 	placeholder := editor textFromMessages: {SemanticMessage role: #user content: ''}.
 	editor complete: placeholder , copy.

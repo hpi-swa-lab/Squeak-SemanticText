@@ -6,8 +6,13 @@ getAssistantMessageWithConfig: aConfigOrNil
 	| effectiveConfig response |
 	self realtimeSession ifNotNil: [:session |
 		^ self popToolSpecDuring: [session getResponseWithConfig: aConfigOrNil]].
+	self supportsOnlyRealtimeSession ifTrue:
+		[self startRealtimeSession.
+		^ (self getAssistantMessageWithConfig: aConfigOrNil)
+				when: #responseCompleted evaluate: [self stopRealtimeSession];
+				yourself].
 	
-	self flag: #todo. "if not realtime, assert no other streaming messages in progress in the receiver"
+	self assert: self currentStreamingMessage isNil.
 	
 	effectiveConfig := self config.
 	aConfigOrNil ifNotNil:

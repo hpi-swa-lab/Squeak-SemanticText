@@ -7,11 +7,9 @@ parseAudioFrom: audio into: aMessage
 		aMessage content: transcript].
 	
 	audio data ifNotNil: [:data |
-		| soundData |
-		soundData := data semanticBase64DecodedAsByteArray.
 		sound := SampledSound
-			samples: (SampledSound convertBytesTo16BitSamples: soundData mostSignificantByteFirst: false)
-			samplingRate: 24000.
+			samples: (self parseAudioSamplesFrom: data soundClass: SampledSound)
+			samplingRate: self audioOutputSamplingRate.
 		aMessage contentParts: (aMessage contentParts copyWithFirst: sound)].
 	
 	aMessage propertyValueAt: #audio put:

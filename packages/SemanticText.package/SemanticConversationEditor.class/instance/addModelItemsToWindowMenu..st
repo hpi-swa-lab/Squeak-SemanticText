@@ -28,6 +28,10 @@ addModelItemsToWindowMenu: menu
 	menu
 		add: ('choose voice... ({1})' format: {self voiceName})
 		action: #chooseVoice.
+	self conversation supportsRealtimeSession ifTrue:
+		[menu
+			add: ('{1}voice activity detection' format: {self voiceActivityDetectionEnabled semanticAsMarkerString})
+			action: #toggleVoiceActivityDetection].
 	
 	menu
 		add: 'inspect conversation'

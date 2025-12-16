@@ -16,12 +16,9 @@ invokeWithConfig: aConfigOrNil documents: documentsOrNil editInput: inputBlock h
 			input at: key put: value]].
 	
 	self handleTransientServerErrorsDuring:
-		[response := self account controlConnectionDuring:
-			[| client authorizeBlock |
+		[response := self account connectWith: [:authorizeBlock |
+			| client |
 			client := WebClient new.
-			authorizeBlock := [:request |
-				self account apiKey ifNotNil: [:apiKey |
-					request headerAt: 'Authorization' put: 'Bearer ' , apiKey]].
 			documentsOrNil
 				ifNil:
 					[client

@@ -2,14 +2,20 @@
 	"class" : {
 		 },
 	"instance" : {
-		"addChunkKey:tool:arguments:do:" : "ct 1/16/2024 19:03",
-		"beComplete" : "ct 12/14/2025 19:47",
+		"addArgumentsChunk:" : "ct 12/16/2025 01:57",
+		"arguments" : "ct 12/13/2025 18:54",
+		"beComplete" : "ct 12/16/2025 01:58",
 		"cursorText" : "ct 12/14/2025 23:21",
-		"initialize" : "ct 1/16/2024 18:15",
+		"initialize" : "ct 12/8/2025 18:03",
+		"initializeStreaming" : "ct 12/8/2025 18:03",
 		"isComplete" : "ct 1/16/2024 18:16",
 		"isStreaming" : "ct 1/16/2024 18:16",
+		"parseArguments:" : "ct 12/9/2025 21:47",
 		"printCallArgumentsOn:" : "ct 1/16/2024 18:21",
+		"readArgumentsFromCallString:" : "ct 12/9/2025 22:12",
 		"releaseForAllEvents" : "ct 12/12/2025 19:38",
 		"releaseForEventReceiver:" : "ct 12/9/2025 22:25",
 		"sendUpdatesFromTextModel:selector:" : "ct 12/9/2025 23:20",
-		"waitUntilComplete" : "ct 12/7/2025 01:59" } }
+		"streamedArgumentsString" : "ct 12/9/2025 22:19",
+		"streamedArgumentsString:" : "ct 12/9/2025 22:16",
+		"waitUntilComplete" : "ct 12/14/2025 20:26" } }

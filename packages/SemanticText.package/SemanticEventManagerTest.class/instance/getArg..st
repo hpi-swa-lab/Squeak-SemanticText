@@ -1,0 +1,4 @@
+private
+getArg: anArg
+
+	^anArg

@@ -1,7 +1,7 @@
 private - requests
 parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStreamingMessage
 
-	| chunkText sound chunkToolCalls chunkTokenProbabilities chunkAudio audioUpdate audioSampleStart |
+	| chunkText sound chunkToolCalls chunkTokenProbabilities chunkAudioData audioUpdate |
 	aStreamingMessage rawOutput ifNotNil: [:rawOutput |
 		rawOutput chatCompletionChunkChoices ifNotNil: [:rawChoices |
 			rawChoices addLast: chatCompletionChoice]].
@@ -18,7 +18,7 @@ parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStream
 			detect: [:part | part semanticIsSound]
 			ifFound: [:part | sound := part]
 			ifNone:
-				[sound := SampledSound new.
+				[sound := SampledSound samples: #() samplingRate: self audioOutputSamplingRate.
 				chunkText := sound semanticContentPartText.
 				audio transcript ifNotNil: [chunkText := chunkText , String cr].
 				audioUpdate at: #sound put: [WeakArray with: sound]].
@@ -26,7 +26,7 @@ parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStream
 			chunkText := chunkText ifNil: [transcript] ifNotNil: [chunkText , transcript].
 			audioUpdate at: #transcript put: [aStreamingMessage contentParts second]].
 		audio data ifNotNil: [:data |
-			chunkAudio := data semanticBase64DecodedAsByteArray].
+			chunkAudioData := data].
 		audio at: #'expires_at' ifPresent: [:expirationTime |
 			audioUpdate at: #expirationDate put: [DateAndTime fromUnixTime: expirationTime]]].
 	
@@ -36,14 +36,9 @@ parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStream
 	chunkTokenProbabilities := chatCompletionChoice logprobs ifNotNil: [:logprobs |
 		self parseTokenProbabilitiesFrom: logprobs content].
 	
-	chunkAudio ifNotNil:
-		["assumes pcm16"
-		| initAudio |
-		initAudio := sound samples isNil.
-		audioSampleStart := initAudio ifTrue: [1] ifFalse: [sound samples size + 1].
-		sound openAIAddSamples: (sound class convertBytesTo16BitSamples: chunkAudio mostSignificantByteFirst: false) samplingRate: 24000.
-		initAudio ifTrue:
-			[sound reset]].
+	chunkAudioData ifNotNil:
+		[aStreamingMessage addSoundChunk: sound samples:
+			(self parseAudioSamplesFrom: chunkAudioData soundClass: sound class)].
 	
 	(chunkText isEmptyOrNil and: [chunkToolCalls isEmptyOrNil] and: [chunkTokenProbabilities isEmptyOrNil]) ifFalse:
 		[aStreamingMessage addChunk: chunkText toolCalls: chunkToolCalls tokenProbabilities: chunkTokenProbabilities].
@@ -55,6 +50,3 @@ parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStream
 					audioUpdate keysAndValuesDo: [:key :valueBlock |
 						audio at: key put: valueBlock value]];
 				yourself)].
-	
-	audioSampleStart ifNotNil:
-		[aStreamingMessage addedSoundChunk: sound at: audioSampleStart].

@@ -3,6 +3,9 @@ maxTokens
 
 	self flag: #modelConstants.
 	
+	(self resolvedName beginsWith: self class gptRealtimeName) ifTrue:
+		[^ 32000].
+	
 	(self resolvedName beginsWith: self class gptAudioName) ifTrue:
 		[^ 128000].
 	
@@ -13,7 +16,9 @@ maxTokens
 		^ 16385].
 	
 	(self resolvedName beginsWith: self class gpt4Name) ifTrue:
-		[((self resolvedName beginsWithAnyOf: {self class gpt4oMiniName. self class gpt4oName}) or: [self resolvedName = self class gpt4_0125Name] or: [self resolvedName = self class gpt4_1106Name]) ifTrue: [^ 128000].
+		[(self resolvedName beginsWith: self class gpt4oRealtimeName) ifTrue: [^ 32000].
+		(self resolvedName beginsWith: self class gpt4oMiniRealtimeName) ifTrue: [^ 16000].
+		((self resolvedName beginsWithAnyOf: {self class gpt4oMiniName. self class gpt4oName}) or: [self resolvedName = self class gpt4_0125Name] or: [self resolvedName = self class gpt4_1106Name]) ifTrue: [^ 128000].
 		(self resolvedName beginsWith: self class gpt41Name) ifTrue: [^ 1047576].
 		(self resolvedName beginsWith: self class gpt45PreviewName) ifTrue: [^ 128000].
 		(self resolvedName beginsWith: self class gpt4_32kName) ifTrue: [^ 32768].

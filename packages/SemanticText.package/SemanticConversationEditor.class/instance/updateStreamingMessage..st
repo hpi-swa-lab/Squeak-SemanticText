@@ -1,6 +1,7 @@
 updating - conversation
 updateStreamingMessage: aMessage
 
+	self future changed: #isStreamingResponse.
 	(aMessage isStreaming and: [aMessage isComplete not]) ifFalse:
 		[^ self noteMessageCompleted: self conversation lastMessage wasStreaming: true].
 	

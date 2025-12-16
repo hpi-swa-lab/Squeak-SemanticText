@@ -3,4 +3,5 @@ model: aModel
 
 	model := aModel.
 	
-	self configChanged.
+	self realtimeSession ifNotNil: [:session |
+		session model: aModel; updateSession].

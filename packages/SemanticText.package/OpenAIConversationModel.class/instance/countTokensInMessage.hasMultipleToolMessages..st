@@ -49,10 +49,11 @@ countTokensInMessage: aMessage hasMultipleToolMessages: hasMultipleToolMessages
 				toolCall type = #function ifTrue:
 					[toolCallTokens := toolCallTokens + ((self countTokensIn: toolCall toolName) * 2).
 					toolCall arguments ifNotEmpty: [:arguments |
-						toolCallTokens := toolCallTokens +
-							(self countTokensIn:
-								(String streamContents: [:stream |
-									self printFunctionCallArguments: arguments on: stream]))]].
+						(arguments isString or: [arguments semanticIsStreamingJson]) ifFalse:
+							[toolCallTokens := toolCallTokens +
+								(self countTokensIn:
+									(String streamContents: [:stream |
+										self printFunctionCallArguments: arguments on: stream]))]]].
 					toolCallTokens]).
 		tokens := tokens +
 			(toolCalls size > 1

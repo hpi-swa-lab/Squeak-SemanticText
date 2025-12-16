@@ -2,12 +2,16 @@ accessing
 conversation: aConversation
 
 	conversation ifNotNil:
-		[conversation
+		[conversation realtimeSession ifNotNil: [self stopRealtimeSession].
+		conversation
 			removeActionsWithReceiver: self;
 			removeActionsWithReceiver: self voiceAutomaton].
 	
 	conversation := aConversation.
 	
+	self conversation
+		when: #streamingStarted send: #updateStreamingConversation to: self;
+		when: #responseCancelled send: #stopSpeaking to: self voiceAutomaton.
 	self voiceAutomaton
 		conversation: self conversation;
 		speechTranscriptionConfig: self conversation effectiveConfig speechTranscriptionConfigOrNil;

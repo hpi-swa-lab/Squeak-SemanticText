@@ -1,0 +1,15 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"getArg:" : "ct 12/13/2025 20:18",
+		"testFutureWhen" : "ct 12/13/2025 20:23",
+		"testFutureWhenArg" : "ct 12/13/2025 20:24",
+		"testFutureWhenUntil" : "ct 12/13/2025 20:24",
+		"testFutureWhenUntilArg" : "ct 12/13/2025 20:24",
+		"testFutureWhenWith" : "ct 12/13/2025 20:25",
+		"testFutureWhenWithArg" : "ct 12/13/2025 20:25",
+		"testWhenWithEvaluate" : "ct 12/13/2025 20:20",
+		"testWhenWithEvaluateWith" : "ct 12/13/2025 20:20",
+		"testWhenWithSendTo" : "ct 12/13/2025 20:16",
+		"testWhenWithSendToWith" : "ct 12/13/2025 20:18" } }

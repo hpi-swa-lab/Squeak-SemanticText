@@ -87,7 +87,10 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 								message content = newMessage content ifFalse: "preserve text formatting if string is unchanged"
 									[message content: newMessage content].
 								self isDisplayingRawConversation ifTrue:
-									[message toolCalls:
+									[(newMessage isSystemMessage and:
+										[newMessage isRealtimeInstructions or: [message hasPropertyValueAt: #isRealtimeInstructions]])
+											ifTrue: [message isRealtimeInstructions: newMessage isRealtimeInstructions].
+									message toolCalls:
 										(newMessage basicToolCalls ifNotNil: [:newToolCalls |
 											newToolCalls collect: [:newToolCall |
 												message toolCalls
@@ -102,7 +105,12 @@ conversationFromText: aText hasUserEdited: hasUserEdited intervalsDo: intervalsB
 																ifFalse: [newToolCall]).
 														toolCall tool isString ifTrue:
 															[unresolvedTools add: toolCall].
-														toolCall arguments: newToolCall arguments.
+														(toolCall isStreaming and: [toolCall isComplete not])
+															ifTrue:
+																[toolCall streamedArgumentsString: newToolCall streamedArgumentsString.
+																(newToolCall isStreaming and: [newToolCall isComplete not])
+																	ifTrue: [toolCall arguments: newToolCall arguments]]
+															ifFalse: [toolCall arguments: newToolCall arguments].
 														toolCall]
 													ifNone: [newToolCall]]])]].
 							{message}].

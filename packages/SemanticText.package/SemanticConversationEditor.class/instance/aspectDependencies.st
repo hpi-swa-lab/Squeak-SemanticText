@@ -3,7 +3,7 @@ aspectDependencies
 
 	^ OrderedDictionary new
 		at: #canComplete put: #(editText);
-		at: #canCompleteOrCancel put: #(canComplete);
+		at: #canCompleteOrCancel put: #(canComplete isStreamingResponse);
 		at: #completeCancelLabel put: #(isStreamingResponse);
 		at: #editText put: #(text);
 		at: #hasPendingToolCalls put: #(conversation editText);

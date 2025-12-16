@@ -1,0 +1,4 @@
+testing
+isCurrentlyResponding
+
+	^ currentResponses notEmpty

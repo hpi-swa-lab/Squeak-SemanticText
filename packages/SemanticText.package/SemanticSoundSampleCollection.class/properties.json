@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Conversation-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SemanticSoundSampleCollection",
+	"pools" : [
+		 ],
+	"super" : "NonPointersOrderedCollection",
+	"type" : "normal" }
