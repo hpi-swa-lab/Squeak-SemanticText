@@ -34,7 +34,12 @@ function
 								[currentTokenSourcePosition := sourcePosition.
 								sourcePosition := stream position + 1.
 								currentToken := source copyFrom: currentTokenSourcePosition to: sourcePosition - 1]]
-									on: JsonSyntaxError do: [self fail].
+									on: JsonSyntaxError do:
+										[self
+											addRangeType: #externalCallType
+											start: currentTokenSourcePosition
+											end: stream position - 1.
+										self fail].
 						self scanPast: #externalCallType]].
 			
 			(currentTokenFirst = $? or: [currentTokenFirst = $!])
