@@ -19,6 +19,8 @@ acceptDroppingMorph: dropee event: anEvent inMorph: targetMorph
 				[reference name = 'pixels' translated and: [reference shouldPrintValueAsIs]] ->
 					[reference inspector object]}
 			otherwise: [reference value]].
+	(reference isKindOf: Association "hack for explorers because i broken drag'n'drop from inspectors...") ifTrue:
+		[reference := reference value].
 	reference isMorph ifTrue:
 		[reference := reference imageForm].
 	
