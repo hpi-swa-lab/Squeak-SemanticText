@@ -9,7 +9,8 @@
 		"name",
 		"description",
 		"parameters",
-		"action" ],
+		"action",
+		"supportsStreamingArguments" ],
 	"name" : "SemanticFunction",
 	"pools" : [
 		 ],

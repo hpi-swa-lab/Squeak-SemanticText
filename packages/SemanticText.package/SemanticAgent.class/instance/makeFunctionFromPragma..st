@@ -10,4 +10,7 @@ makeFunctionFromPragma: aPragma
 			invokeFunction: function
 			selector: aPragma selector
 			withRawArguments: args].
+	function basicSupportsStreamingArguments ifNil:
+		[function supportsStreamingArguments: self supportsStreamingArguments].
+		
 	^ function

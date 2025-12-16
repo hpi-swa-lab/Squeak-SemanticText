@@ -1,0 +1,4 @@
+private
+basicComplete
+
+	^ self requirement

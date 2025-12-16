@@ -45,5 +45,11 @@ function
 	self failUnless: currentTokenFirst == $).
 	self scanPast: #rightParenthesis.
 	
+	currentToken = 'streamingArguments:' ifTrue:
+		[self scanPast: #pragmaKeyword.
+		self currentTokenType = #name
+			ifTrue: [self scanPast: (self resolvePragmaArgument: currentToken)] 
+			ifFalse: [self parseLiteral: false]].
+	
 	self failUnless: currentToken = '>'.
 	self scanPast: #primitiveOrExternalCallEnd.

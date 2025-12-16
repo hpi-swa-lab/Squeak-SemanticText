@@ -1,0 +1,8 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"classToBeTested" : "ct 12/13/2025 19:38",
+		"expectedFailures" : "ct 12/13/2025 19:34",
+		"testInverseGenerator" : "ct 12/13/2025 19:38",
+		"testInverseGeneratorWithError" : "ct 12/13/2025 19:38" } }

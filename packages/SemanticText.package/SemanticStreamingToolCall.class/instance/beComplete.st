@@ -3,8 +3,14 @@ beComplete
 
 	self isComplete ifTrue: [^ self].
 	
-	super parseArguments: (self propertyValueRemoveAt: #streamedArgumentsString).
+	(self propertyValueRemoveAt: #argumentsReader ifAbsent: [nil])
+		ifNotNil: [:gen |
+			gen nextPut: nil. "for channel"
+			gen semanticCloseProducer]
+		ifNil:
+			[super parseArguments: (self propertyValueRemoveAt: #streamedArgumentsString)].
 	
 	complete := true.
 	self triggerEvent: #completed.
-	self conversation triggerEvent: #newToolCallReady with: self.
+	self tool supportsStreamingArguments ifFalse:
+		[self conversation triggerEvent: #newToolCallReady with: self].

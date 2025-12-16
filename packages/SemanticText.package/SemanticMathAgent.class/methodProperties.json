@@ -4,6 +4,7 @@
 	"instance" : {
 		"calc:" : "ct 11/9/2024 20:00",
 		"exampleFunction:arg2:arg3:arg4:arg5:" : "ct 5/2/2024 15:10",
+		"exampleFunction:arg4:arg5:" : "ct 12/16/2025 04:43",
 		"initializeConversation:" : "ct 4/28/2024 22:05",
 		"makeCalcPatterns" : "ct 4/28/2024 22:45",
 		"parseNumber:" : "ct 4/28/2024 19:24",

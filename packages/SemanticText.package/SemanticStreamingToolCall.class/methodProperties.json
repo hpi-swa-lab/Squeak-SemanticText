@@ -2,9 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"addArgumentsChunk:" : "ct 12/16/2025 01:57",
+		"addArgumentsChunk:" : "ct 12/16/2025 05:06",
 		"arguments" : "ct 12/13/2025 18:54",
-		"beComplete" : "ct 12/16/2025 01:58",
+		"beComplete" : "ct 12/16/2025 05:06",
 		"cursorText" : "ct 12/14/2025 23:21",
 		"initialize" : "ct 12/8/2025 18:03",
 		"initializeStreaming" : "ct 12/8/2025 18:03",
@@ -16,6 +16,8 @@
 		"releaseForAllEvents" : "ct 12/12/2025 19:38",
 		"releaseForEventReceiver:" : "ct 12/9/2025 22:25",
 		"sendUpdatesFromTextModel:selector:" : "ct 12/9/2025 23:20",
+		"startArgumentsReader" : "ct 12/16/2025 05:06",
+		"startStreaming" : "ct 12/16/2025 05:06",
 		"streamedArgumentsString" : "ct 12/9/2025 22:19",
 		"streamedArgumentsString:" : "ct 12/9/2025 22:16",
 		"waitUntilComplete" : "ct 12/14/2025 20:26" } }

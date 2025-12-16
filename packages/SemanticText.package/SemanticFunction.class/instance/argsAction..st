@@ -8,5 +8,7 @@ argsAction: argsBlock
 		[:args |
 			argsBlock valueWithEnoughArguments:
 				(self parameters
-					collect: [:parameter | args at: parameter name ifAbsent: [nil]]
+					collect: [:parameter |
+						args semanticFindFunctionArgumentFor: parameter]
 					as: Array)].
+	self supportsStreamingArguments: false.

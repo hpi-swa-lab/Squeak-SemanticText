@@ -1,0 +1,1 @@
+I can read JSON strings in a streaming/incremental way and expose partial results as SemanticStreamingJsonObjects and SemanticBufferedChannels before they are completed. Experimental.

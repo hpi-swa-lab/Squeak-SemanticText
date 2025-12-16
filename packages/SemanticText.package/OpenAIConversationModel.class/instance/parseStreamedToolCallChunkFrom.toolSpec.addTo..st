@@ -8,7 +8,9 @@ parseStreamedToolCallChunkFrom: toolCallChunk toolSpec: aToolSpecOrNil addTo: aS
 		function name ifNotNil: [:name |
 			aStreamingToolCall tool:
 				((aToolSpecOrNil ifNotNil: [aToolSpecOrNil toolNamed: name ifAbsent: [nil]])
-					ifNil: [name])].
+					ifNil: [name]).
+			aStreamingToolCall tool isString ifFalse:
+				[aStreamingToolCall startStreaming]].
 		
 		function arguments ifNotNil: [:argumentsChunk |
 			aStreamingToolCall addArgumentsChunk: argumentsChunk]].

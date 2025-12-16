@@ -1,0 +1,14 @@
+{
+	"category" : "SemanticText-Model-Conversation-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "ct 12/16/2025 05:04",
+	"instvars" : [
+		"publishBlock" ],
+	"name" : "SemanticStreamingJson",
+	"pools" : [
+		 ],
+	"super" : "Json",
+	"type" : "normal" }

@@ -14,6 +14,8 @@ parseFunctionCallFrom: json
 		ifNone: [nil].
 	(self conversation effectiveToolSpecFor: userMessage) ifNotNil: [:toolSpec |
 		toolSpec toolNamed: functionCall tool ifPresent: [:tool |
-			functionCall tool: tool]].
+			functionCall tool: tool.
+			functionCall isStreaming ifTrue:
+				[functionCall startStreaming]]].
 	
 	^ functionCall

@@ -1,0 +1,4 @@
+testing
+jsonIsComplete
+
+	^ self basicComplete

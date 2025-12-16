@@ -1,0 +1,1 @@
+I describe a partial JSON object that possibly has not yet fully arrived. Regular property accesses to not-yet-existing keys are blocking and might fail after completion of the object. Alternatively, my new streaming interfaces allow accessing incomplete or absent properties optimistically as further streaming objects or arrays. Experimental.

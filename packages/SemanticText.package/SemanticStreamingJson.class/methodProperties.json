@@ -1,0 +1,10 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"initialize" : "ct 11/16/2025 18:22",
+		"onInitialResult:" : "ct 11/16/2025 18:37",
+		"readArray" : "ct 12/15/2025 19:37",
+		"readDictionary" : "ct 12/15/2025 19:29",
+		"readOrderedFrom:" : "ct 11/16/2025 18:31",
+		"readString" : "ct 12/15/2025 19:37" } }

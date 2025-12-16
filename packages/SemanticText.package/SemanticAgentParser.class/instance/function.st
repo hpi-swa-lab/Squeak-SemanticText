@@ -2,8 +2,9 @@ pragmas
 function
 	<pragmaParser>
 
-	| originalComment comment startMark description function signature |
+	| keyword originalComment comment description signature streamingArguments startMark function |
 	here = #function: ifFalse: [^ false].
+	keyword := here.
 	
 	originalComment := currentComment.
 	comment := currentComment copy.
@@ -13,6 +14,11 @@ function
 	signature := String streamContents: [:stream |
 		[self advance.
 		startMark ifNil: [startMark := hereMark].
+		here = 'streamingArguments:' ifTrue:
+			[keyword := keyword , here.
+			self advance.
+			(#('true' 'false' 'nil') includes: here) ifFalse: [^ self expected: 'boolean'].
+			streamingArguments := (Scanner new scanTokens: self advance) first].
 		here = #>] whileFalse:
 			[stream nextPutAll: here asString.
 			currentComment ifNotNil:
@@ -27,8 +33,15 @@ function
 		[^ self notify: 'function signature expected' at: startMark + requestorOffset].
 	(function description isNil and: [description notNil]) ifTrue:
 		[function description: description].
+	function supportsStreamingArguments: streamingArguments.
 	
-	self addPragma: (Pragma keyword: #function: arguments: {function}).
+	keyword := keyword asSymbol.
+	self addPragma:
+		(Pragma keyword: keyword arguments:
+			(keyword caseOf:
+				{[#function:] -> [{function}].
+				[#function:streamingArguments:] -> [{function. streamingArguments}]})).
+	 
 	
 	currentComment := originalComment.
 	^  true

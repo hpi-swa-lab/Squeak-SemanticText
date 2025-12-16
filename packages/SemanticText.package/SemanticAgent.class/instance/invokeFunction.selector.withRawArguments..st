@@ -5,7 +5,7 @@ invokeFunction: aFunction selector: aSymbol withRawArguments: rawArguments
 	arguments :=
 		[self assert: aFunction parameters isDictionary description: 'arguments must be a dictionary'.
 		[aFunction parameters
-			collect: [:parameter | rawArguments at: parameter name]
+			collect: [:parameter | rawArguments semanticFindFunctionArgumentFor: parameter]
 			as: Array]
 				on: Error do: [:ex |
 					self error: 'Invalid function call: ', ex]]

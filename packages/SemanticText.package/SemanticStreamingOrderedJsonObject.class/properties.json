@@ -1,0 +1,16 @@
+{
+	"category" : "SemanticText-Model-Conversation-Support",
+	"classinstvars" : [
+		 ],
+	"classtraitcomposition" : "TSemanticStreamingJsonObject classTrait",
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"complete" ],
+	"name" : "SemanticStreamingOrderedJsonObject",
+	"pools" : [
+		 ],
+	"super" : "OrderedJsonObject",
+	"traitcomposition" : "TSemanticStreamingJsonObject",
+	"type" : "normal" }

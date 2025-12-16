@@ -129,7 +129,7 @@
 		"parseMessageFrom:for:logRawOutput:" : "ct 12/13/2025 18:42",
 		"parseMessagesFrom:for:logRawOutput:" : "ct 5/25/2024 23:16",
 		"parseStreamedChunk:toolSpec:addTo:" : "ct 12/15/2025 19:50",
-		"parseStreamedToolCallChunkFrom:toolSpec:addTo:" : "ct 12/16/2025 03:02",
+		"parseStreamedToolCallChunkFrom:toolSpec:addTo:" : "ct 11/16/2025 01:29",
 		"parseStreamedToolCallChunksFrom:toolSpec:message:" : "ct 12/9/2025 21:44",
 		"parseToolCallFrom:toolSpec:" : "ct 12/9/2025 21:32",
 		"parseToolCallsFrom:toolSpec:" : "ct 1/16/2024 00:47",
