@@ -2,7 +2,7 @@ documentation
 exampleTokenProbabilities
 
 	(SemanticConversation new
-		model: (SemanticText conversationModelNamed: OpenAIConversationModel gpt4oName);
+		model: ((Smalltalk classNamed: #OpenAIConversationModel) named: #gpt4oName);
 		updateConfig: [:config |
 			config shouldLogProbabilities: true];
 		addSystemMessage: 'complete up to ten';

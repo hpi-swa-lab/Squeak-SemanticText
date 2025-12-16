@@ -1,4 +1,7 @@
 support
 named: selector
 
-	^ self basicNamed: (self perform: selector)
+	| model |
+	model := self basicNamed: (self perform: selector).
+	self assert: (model isKindOf: self).
+	^ model

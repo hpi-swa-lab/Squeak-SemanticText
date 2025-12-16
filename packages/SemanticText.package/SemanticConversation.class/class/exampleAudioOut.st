@@ -2,7 +2,7 @@ documentation
 exampleAudioOut
 
 	SemanticConversation newStreaming
-		model: (OpenAIConversationModel named: #gpt4oAudioPreviewName);
+		model: ((Smalltalk classNamed: #OpenAIConversationModel) named: #gpt4oAudioPreviewName);
 		updateConfig: [:config |
 			config outputModalities: #(text audio).
 			config speechSynthesisConfig voice: #ash];
