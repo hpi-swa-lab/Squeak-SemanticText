@@ -2,4 +2,10 @@
 	"class" : {
 		"semanticWebSocket13:protocol:do:" : "ct 12/13/2025 20:56" },
 	"instance" : {
-		"openAIHttpPost:multipartFields:do:" : "ct 6/12/2024 01:17" } }
+		"connect" : "ct 12/16/2025 23:05",
+		"defaultPort" : "ct 12/16/2025 23:05",
+		"initializeFromUrl:" : "ct 12/16/2025 23:06",
+		"isSchemeSupported" : "ct 12/16/2025 23:06",
+		"isSecure" : "ct 12/16/2025 23:07",
+		"openAIHttpPost:multipartFields:do:" : "ct 6/12/2024 01:17",
+		"writeRequestLine:on:" : "ct 12/16/2025 23:06" } }
