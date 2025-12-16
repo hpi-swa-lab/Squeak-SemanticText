@@ -1,0 +1,15 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"addShapeNamed:type:x:y:width:height:color:" : "ct 12/13/2025 23:19",
+		"area" : "ct 12/11/2025 22:26",
+		"changeShapeNamed:color:" : "ct 12/13/2025 23:19",
+		"changeShapeNamed:type:" : "ct 12/13/2025 23:19",
+		"changeShapeNamed:x:y:width:height:" : "ct 12/13/2025 23:20",
+		"initialize" : "ct 12/11/2025 23:24",
+		"initializeConversation:" : "ct 12/11/2025 23:09",
+		"openNewConversation" : "ct 12/11/2025 22:24",
+		"removeShapeNamed:" : "ct 12/13/2025 23:20",
+		"shapes" : "ct 12/13/2025 23:20",
+		"supportsStreamingArguments" : "ct 12/16/2025 05:28" } }

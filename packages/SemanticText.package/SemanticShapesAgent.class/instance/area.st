@@ -1,0 +1,4 @@
+accessing
+area
+
+	^ area

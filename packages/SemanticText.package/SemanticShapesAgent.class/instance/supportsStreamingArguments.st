@@ -1,0 +1,4 @@
+testing
+supportsStreamingArguments
+
+	^ false

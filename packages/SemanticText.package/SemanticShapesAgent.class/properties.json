@@ -1,0 +1,15 @@
+{
+	"category" : "SemanticText-Model-Agents",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"area",
+		"shapes" ],
+	"name" : "SemanticShapesAgent",
+	"pools" : [
+		 ],
+	"super" : "SemanticAgent",
+	"type" : "normal" }
