@@ -14,9 +14,13 @@ getAnswers: number for: aConversation config: aConfigOrNil
 				input max_tokens: maxTokens].
 			
 			config temperature ifNotNil: [:temperature |
-				input temperature: temperature].
+				self supportsTemperature
+					ifTrue: [input temperature: temperature]
+					ifFalse: [RemarkNotification signal: 'skipping temperature for incompatible model']].
 			config nucleusSamplingMass ifNotNil: [:p |
-				input top_p: p].
+				self supportsNucleusSamplingMass
+					ifTrue: [input top_p: p]
+					ifFalse: [RemarkNotification signal: 'skipping nuclues sampling mass for incompatible model']].
 			
 			config outputModalities ifNotNil: [:modalities |
 				(self canUnderstandAudio not and: [modalities = #(text)]) ifFalse:
@@ -57,7 +61,7 @@ getAnswers: number for: aConversation config: aConfigOrNil
 			
 			(stream and: [self shouldStreamRequests]) ifTrue:
 				["For faster feedback, send even the request asynchronously."
-				^ self handleAsyncReplies: number for: aConversation config: config  logRawOutput: logRawOutput deferStreaming:
+				^ self handleAsyncReplies: number for: aConversation config: config logRawOutput: logRawOutput deferStreaming:
 					[:resumeBlock | resumeStream := resumeBlock]]]
 		handleResponse: [:response :config |
 			(stream and: [response isSuccess]) ifTrue:

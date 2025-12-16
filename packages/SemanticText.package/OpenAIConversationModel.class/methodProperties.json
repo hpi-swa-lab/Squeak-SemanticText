@@ -109,7 +109,7 @@
 		"getAnswerFor:" : "ct 1/9/2024 00:14",
 		"getAnswerFor:config:" : "ct 1/8/2024 23:52",
 		"getAnswers:for:" : "ct 1/8/2024 22:28",
-		"getAnswers:for:config:" : "ct 12/14/2025 04:24",
+		"getAnswers:for:config:" : "ct 12/15/2025 00:06",
 		"handleAsyncReplies:for:config:logRawOutput:deferStreaming:" : "ct 5/2/2024 15:52",
 		"handleStreamingReplies:for:from:config:logRawOutput:" : "ct 11/12/2025 19:26",
 		"isAudioModel" : "ct 11/12/2025 18:21",
@@ -152,4 +152,6 @@
 		"shouldStreamRequests" : "ct 5/2/2024 01:50",
 		"sortKey" : "ct 8/23/2025 23:41",
 		"startRealtimeSessionFor:" : "ct 11/16/2025 22:11",
-		"streamEventDataFrom:" : "ct 8/20/2023 20:19" } }
+		"streamEventDataFrom:" : "ct 8/20/2023 20:19",
+		"supportsNucleusSamplingMass" : "ct 12/15/2025 00:07",
+		"supportsTemperature" : "ct 12/14/2025 23:59" } }
