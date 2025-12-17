@@ -44,7 +44,7 @@ textFromConversation: aConversation
 							[message content ifNotNil: [:content |
 								needsMessageSeparator := needsMessageSeparator or: content notEmpty.
 								self flag: #todo. "commit Text>>#putOn:"
-								content putOn: stream]]
+								content semanticPutTextOn: stream]]
 						ifTrue:
 							[stream nextPutAll: (self textFromToolMessage: message).
 							needsMessageSeparator := true].

@@ -14,6 +14,7 @@
 		"semanticHandle:if:thenSend:" : "ct 12/13/2025 20:15",
 		"semanticHandle:with:if:thenSend:" : "ct 12/13/2025 20:15",
 		"semanticIsSound" : "ct 2/9/2025 20:25",
+		"semanticPutTextOn:" : "ct 12/17/2025 00:39",
 		"semanticWhen:with:evaluate:" : "ct 12/13/2025 00:40",
 		"semanticWhen:with:send:to:" : "ct 11/16/2025 19:00",
 		"semanticWhen:with:send:to:with:" : "ct 11/16/2025 19:10",
