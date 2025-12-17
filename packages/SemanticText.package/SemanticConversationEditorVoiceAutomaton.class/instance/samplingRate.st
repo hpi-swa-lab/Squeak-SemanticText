@@ -1,6 +1,5 @@
 accessing
 samplingRate
 
-	^ self shouldTranscribe
-		ifTrue: [self defaultSamplingRate]
-		ifFalse: [self conversation model audioInputSamplingRate]
+	^ (self shouldTranscribe ifFalse: [self conversation model audioInputSamplingRate])
+		ifNil: [self defaultSamplingRate]
