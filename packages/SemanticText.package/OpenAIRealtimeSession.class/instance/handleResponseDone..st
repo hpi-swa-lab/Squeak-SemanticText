@@ -16,7 +16,9 @@ handleResponseDone: event
 				message].
 		expense := self expenseForUsage: usage.
 		expense isZero "e.g. when cancelled" ifFalse:
-			[self model assignExpense: expense toMessages: messages.
+			[messages
+				ifEmpty: [RemarkNotification signal: ('cannot attribute {1} to zero messages' format: {expense})]
+				ifNotEmpty: [self model assignExpense: expense toMessages: messages].
 			self model account
 				noteExpense: expense
 				forUser: self config user
