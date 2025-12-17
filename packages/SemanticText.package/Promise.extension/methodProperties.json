@@ -2,5 +2,6 @@
 	"class" : {
 		 },
 	"instance" : {
+		"semanticResolveWithValue:" : "ct 12/16/2025 23:18",
 		"semanticWhenSettled:" : "ct 12/12/2025 22:00",
 		"shallowCopy" : "ct 12/14/2025 19:52" } }

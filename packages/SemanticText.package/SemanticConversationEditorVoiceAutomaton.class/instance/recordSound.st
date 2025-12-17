@@ -14,7 +14,7 @@ recordSound
 		[recorder := recorder as: SoundInputStream.
 		recorder bufferSize:
 			recorder samplingRate *
-				(window fullSeconds clampLow: 0.1 "recorder seems to drop smaller buffers?")].
+				(window semanticFullSeconds clampLow: 0.1 "recorder seems to drop smaller buffers?")].
 	recorder startRecording; resumeRecording.
 	maxLevel := 0.
 	accepted := nil.

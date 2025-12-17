@@ -2,7 +2,9 @@ positioning
 skip: n
 
 	(consumed atEnd and: [n >= 0]) ifFalse:
-		[consumed skip: (n clampHigh: consumed readLimit).
-		n > consumed readLimit ifTrue: [super skip: consumed readLimit - n].
+		[| limit |
+		limit := consumed semanticReadLimit.
+		consumed skip: (n clampHigh: limit).
+		n > limit ifTrue: [super skip: limit - n].
 		^ self].
 	^ super skip: n
