@@ -66,6 +66,8 @@ defaultModelNames
 	self gpt45Preview_20250227Name.
 	self o4Mini_20250416Name.
 	self gptAudio20250828Name.
+	self gptAudioMini20251215Name.
 	self gptAudioMini20251006Name.
 	self gptRealtime20250828Name.
+	self gptRealtimeMini20251215Name.
 	self gptRealtimeMini20251006Name}

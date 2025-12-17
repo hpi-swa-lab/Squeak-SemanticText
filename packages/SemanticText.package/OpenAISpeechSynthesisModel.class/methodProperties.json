@@ -1,7 +1,9 @@
 {
 	"class" : {
 		"basicNamed:" : "ct 12/15/2025 00:16",
-		"defaultModelNames" : "ct 12/14/2025 00:45",
+		"defaultModelNames" : "ct 12/17/2025 04:50",
+		"gpt4oMiniTts20250320Name" : "ct 12/17/2025 04:49",
+		"gpt4oMiniTts20251215Name" : "ct 12/17/2025 04:49",
 		"gpt4oMiniTtsName" : "ct 12/14/2025 00:07",
 		"initialize" : "ct 12/17/2025 00:44",
 		"samples" : "ct 12/14/2025 02:27",
@@ -9,10 +11,10 @@
 		"tts1Name" : "ct 12/10/2023 20:29",
 		"unload" : "ct 12/11/2023 15:47" },
 	"instance" : {
-		"allVoices" : "ct 12/14/2025 00:56",
+		"allVoices" : "ct 12/17/2025 04:52",
 		"centsPerCharacter" : "ct 6/18/2024 21:58",
-		"centsPerInputToken" : "ct 12/14/2025 00:22",
-		"centsPerOutputAudioToken" : "ct 12/14/2025 00:22",
+		"centsPerInputToken" : "ct 12/17/2025 04:51",
+		"centsPerOutputAudioToken" : "ct 12/17/2025 04:51",
 		"defaultConfig" : "ct 12/11/2023 15:40",
 		"defaultName" : "ct 12/14/2025 00:30",
 		"defaultVoice" : "ct 12/14/2025 00:55",
@@ -21,9 +23,10 @@
 		"getSoundFor:withConfigDo:" : "ct 6/12/2024 21:00",
 		"isBilledPerCharacter" : "ct 12/14/2025 00:20",
 		"maxCharacters" : "ct 12/14/2025 00:26",
-		"maxInputTokens" : "ct 12/14/2025 00:26",
+		"maxInputTokens" : "ct 12/17/2025 04:50",
 		"pathToEndpoint" : "ct 12/10/2023 20:34",
 		"priceFor:" : "ct 12/14/2025 00:19",
 		"printOn:" : "ct 12/14/2025 00:25",
+		"resolvedName" : "ct 12/17/2025 04:52",
 		"soundFromMp3FileNamed:" : "ct 6/19/2024 23:49",
 		"soundFromMp3Stream:" : "ct 6/11/2024 21:40" } }

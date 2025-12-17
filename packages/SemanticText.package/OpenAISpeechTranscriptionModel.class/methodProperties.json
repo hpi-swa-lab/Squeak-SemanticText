@@ -1,7 +1,9 @@
 {
 	"class" : {
 		"basicNamed:" : "ct 12/15/2025 00:16",
-		"defaultModelNames" : "ct 12/13/2025 01:51",
+		"defaultModelNames" : "ct 12/17/2025 04:43",
+		"gpt4oMiniTranscribe20250320Name" : "ct 12/17/2025 04:40",
+		"gpt4oMiniTranscribe20251215Name" : "ct 12/17/2025 04:40",
 		"gpt4oMiniTranscribeName" : "ct 12/13/2025 01:47",
 		"gpt4oTranscribeDiarizeName" : "ct 12/13/2025 01:48",
 		"gpt4oTranscribeName" : "ct 12/13/2025 01:47",
@@ -10,10 +12,10 @@
 		"whisper1Name" : "ct 6/12/2024 00:21" },
 	"instance" : {
 		"annotateText:withLogprobs:" : "ct 12/13/2025 18:42",
-		"centsPerAudioToken" : "ct 12/13/2025 02:18",
-		"centsPerInputTextToken" : "ct 12/13/2025 02:18",
+		"centsPerAudioToken" : "ct 12/17/2025 04:47",
+		"centsPerInputTextToken" : "ct 12/17/2025 04:47",
 		"centsPerMinute" : "ct 6/18/2024 21:58",
-		"centsPerOutputTextToken" : "ct 12/13/2025 02:17",
+		"centsPerOutputTextToken" : "ct 12/17/2025 04:47",
 		"centsPerSecond" : "ct 6/11/2024 22:16",
 		"defaultConfig" : "ct 6/12/2024 00:39",
 		"defaultName" : "ct 12/13/2025 02:06",
@@ -26,4 +28,5 @@
 		"pathToEndpoint" : "ct 6/11/2024 22:17",
 		"priceFor:" : "ct 12/13/2025 02:35",
 		"printOn:" : "ct 12/13/2025 02:22",
+		"resolvedName" : "ct 12/17/2025 04:52",
 		"tokensPerMinute" : "ct 6/18/2024 22:14" } }

@@ -4,4 +4,8 @@ centsPerCachedImagePromptToken
 
 	self flag: #modelConstants.
 	
+	"GPT Realtime"
+	(self resolvedName beginsWith: self class gptRealtimeMiniName) ifTrue: [^ 0.00008s].
+	(self resolvedName beginsWith: self class gptRealtimeName) ifTrue: [^ 0.00005s].
+	
 	^ self name caseError
