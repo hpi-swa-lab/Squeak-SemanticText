@@ -13,5 +13,6 @@ changeShapeNamed: name type: type
 			(type caseOf:
 				{[#rectangle] -> [RectangleMorph].
 				[#oval] -> [EllipseMorph]})).
+	shape changed.
 	
 	^ true
