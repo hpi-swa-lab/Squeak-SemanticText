@@ -1,0 +1,9 @@
+{
+	"class" : {
+		"h:s:l:" : "ct 12/17/2025 00:10",
+		"h:s:l:alpha:" : "ct 12/13/2025 04:38" },
+	"instance" : {
+		"adjustLightness:" : "ct 12/17/2025 00:11",
+		"hueToRGB:q:t:" : "ct 12/13/2025 04:40",
+		"lightness" : "ct 12/13/2025 04:36",
+		"setHue:saturation:lightness:" : "ct 12/13/2025 04:40" } }
