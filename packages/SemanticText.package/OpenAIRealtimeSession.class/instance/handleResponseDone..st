@@ -24,4 +24,7 @@ handleResponseDone: event
 				forUser: self config user
 				model: self model name]].
 	
+	event response status = #cancelled ifTrue:
+		[self conversation triggerEvent: #responseCancelled with: event response id].
+	
 	self triggerEvent: #'response.done' with: event response id.

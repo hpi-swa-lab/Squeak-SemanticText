@@ -1,4 +1,4 @@
-server events
+server events - responses
 handleResponseCreated: event
 	<serverEvent: #'response.created'>
 
@@ -10,8 +10,12 @@ handleResponseCreated: event
 		with: event response id
 		until: #stopped.
 	responsePromise := event response status = 'in_progress'
-		ifTrue: [self semanticFutureWhen: #'response.done' with: event response id until: #stopped]
+		ifTrue:
+			[Promise race:
+				{self semanticFutureWhen: #'response.done' with: event response id until: #stopped.
+				self semanticFutureUntil: #'response.cancelled' with: event response id}]
 		ifFalse: [Promise unit: event response id].
+	messagePromise := Promise race: {messagePromise. responsePromise}.
 	messagePromise := messagePromise >>= [:message |
 		message
 			propertyValueAt: #responseCompleted put: responsePromise;
@@ -25,10 +29,12 @@ handleResponseCreated: event
 			withArguments: {constructionId. messagePromise}].
 	
 	event response status = #cancelled ifTrue:
-		[self conversation triggerEvent: #responseCancelled].
+		[self conversation triggerEvent: #responseCancelled withArguments:
+			{event response id.
+			event response status_details reason = 'turn_detected' ifTrue: [Error new tag: #responseInterrupted]}].
 	
 	completion := SemanticConversationCompletion newFor: self conversation config: nil.
 	completion startRecordPendingToolCalls.
 	self conversation streamDoing:
-		[messagePromise wait.
-		completion completeConversationAsIs: true].
+		[(messagePromise ifRejected: ["response was legitimately canceled"]) wait
+			ifNotNil: [completion completeConversationAsIs: true]].

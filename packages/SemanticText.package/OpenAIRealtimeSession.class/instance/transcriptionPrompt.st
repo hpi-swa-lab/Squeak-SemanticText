@@ -1,4 +1,4 @@
 private - configuration
 transcriptionPrompt
 
-	^ self speechTranscriptionConfig prompt
+	^ self speechTranscriptionConfig ifNotNil: [:config | config prompt]
