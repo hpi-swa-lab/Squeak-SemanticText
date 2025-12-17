@@ -6,12 +6,13 @@ startArgumentsReader
 	readPromise := Promise new.
 	reader :=
 		[readPromise fulfillWith:
-			[SemanticStreamingJson new
+			[| char |
+			SemanticStreamingJson new
 				onInitialResult: [:obj |
 					self arguments: obj.
 					self conversation triggerEvent: #newToolCallReady with: self];
 				readOrderedFrom: channel.
-			[channel next] whileNotNil: [:char | self assert: char isSeparator]]]
+			[char := channel next] whileNotNil: [self assert: char isSeparator]]]
 				forkAt: Processor activePriority.
 	self propertyValueAt: #argumentsReader put:
 		(Generator semanticOnConsumer: [:gen |
