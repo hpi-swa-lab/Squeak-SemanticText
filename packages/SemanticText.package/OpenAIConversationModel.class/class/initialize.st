@@ -3,7 +3,7 @@ initialize
 
 	self defaultModelNames do: [:modelName |
 		| model |
-		model := self new name: modelName.
+		model := self newWithName: modelName.
 		SemanticText registeredConversationModels
 			detect: [:ea | ea name = model name]
 			ifNone:

@@ -2,6 +2,7 @@
 	"class" : {
 		"basicNamed:" : "ct 2/16/2025 22:25",
 		"named:" : "ct 12/15/2025 00:17",
+		"newWithName:" : "ct 12/17/2025 00:44",
 		"updateModels" : "ct 11/28/2023 12:44" },
 	"instance" : {
 		"account" : "ct 8/17/2023 17:29",
@@ -19,6 +20,7 @@
 		"expenseForUsage:" : "ct 12/11/2023 15:59",
 		"handleTransientServerErrorsDuring:" : "ct 2/9/2024 20:21",
 		"initialize" : "ct 8/17/2023 19:27",
+		"initializeWithName:" : "ct 12/17/2025 02:10",
 		"invokeWithConfig:documents:editInput:" : "ct 6/12/2024 00:38",
 		"invokeWithConfig:documents:editInput:handleResponse:" : "ct 12/7/2025 00:49",
 		"invokeWithConfig:editInput:" : "ct 8/20/2023 19:43",
