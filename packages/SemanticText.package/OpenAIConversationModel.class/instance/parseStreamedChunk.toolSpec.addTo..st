@@ -34,7 +34,8 @@ parseStreamedChunk: chatCompletionChoice toolSpec: aToolSpecOrNil addTo: aStream
 		self parseStreamedToolCallChunksFrom: toolCalls toolSpec: aToolSpecOrNil message: aStreamingMessage].
 	
 	chunkTokenProbabilities := chatCompletionChoice logprobs ifNotNil: [:logprobs |
-		self parseTokenProbabilitiesFrom: logprobs content].
+		logprobs content ifNotNil: [:content |
+			self parseTokenProbabilitiesFrom: content]].
 	
 	chunkAudioData ifNotNil:
 		[aStreamingMessage addSoundChunk: sound samples:

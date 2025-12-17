@@ -128,7 +128,7 @@
 		"parseAudioSamplesFrom:soundClass:" : "ct 11/18/2025 22:47",
 		"parseMessageFrom:for:logRawOutput:" : "ct 12/13/2025 18:42",
 		"parseMessagesFrom:for:logRawOutput:" : "ct 5/25/2024 23:16",
-		"parseStreamedChunk:toolSpec:addTo:" : "ct 12/15/2025 19:50",
+		"parseStreamedChunk:toolSpec:addTo:" : "ct 12/17/2025 00:43",
 		"parseStreamedToolCallChunkFrom:toolSpec:addTo:" : "ct 11/16/2025 01:29",
 		"parseStreamedToolCallChunksFrom:toolSpec:message:" : "ct 12/9/2025 21:44",
 		"parseToolCallFrom:toolSpec:" : "ct 12/9/2025 21:32",
