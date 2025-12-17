@@ -5,7 +5,7 @@ transcribe: aSound
 	
 	self commitStreamRecordingsBlock ifNotNil: [:block |
 		| message |
-		message := block value: aSound.
+		message := block value.
 		^ self emit: [self triggerEvent: #conversationChanged with: message]].
 	
 	self shouldTranscribe ifFalse:

@@ -1,4 +1,4 @@
-parsing
+private - input audio
 startConsumingInputAudioFor: aMessage start: start
 
 	aMessage addSoundChunk:

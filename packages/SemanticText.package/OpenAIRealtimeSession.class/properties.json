@@ -16,6 +16,7 @@
 		"currentSessionProperties",
 		"currentResponses",
 		"inputAudioSamples",
+		"inputAudioConsumptionIndex",
 		"streamingInputAudioMessages" ],
 	"name" : "OpenAIRealtimeSession",
 	"pools" : [

@@ -49,4 +49,4 @@ recordSound
 			
 			recorder stopRecording].
 	
-	^ accepted = true ifTrue: [recorder recordedSound ifNil: [true]]
+	^ accepted = true ifTrue: [recorder recordedSound ifNil: [#stream]]

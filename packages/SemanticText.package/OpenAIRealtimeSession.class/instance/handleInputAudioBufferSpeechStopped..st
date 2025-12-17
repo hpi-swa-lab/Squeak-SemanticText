@@ -7,8 +7,7 @@ handleInputAudioBufferSpeechStopped: event
 	
 	stop := event audio_end_ms -  1 "exclusive to inclusive" / 1000.
 	
-	streamingInputAudioMessages remove: message.
-	self flag: #todo. "remove superfluous audio samples after stop from message?"
+	self stopConsumingInputAudioFor: message stop: stop.
 	
 	self
 		triggerEvent: #speechStopped
