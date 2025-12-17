@@ -1,7 +1,13 @@
 printing
 printCallArgumentsOn: aStream
 
-	super printCallArgumentsOn: aStream.
+	self isComplete ifTrue:
+		[^ super printCallArgumentsOn: aStream].
 	
-	self isComplete ifFalse:
-		[aStream nextPutAll: self cursorText].
+	self streamedArgumentsString
+		ifNotNil: [:string |
+			aStream nextPutAll: string]
+		ifNil:
+			[super printCallArgumentsOn: aStream].
+	
+	aStream nextPutAll: self cursorText.
