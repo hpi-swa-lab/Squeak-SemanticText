@@ -241,6 +241,8 @@ Get [Squeak Inbox Talk](https://github.com/hpi-swa-lab/squeak-inbox-talk) (world
 
 #### Inspector Integration/Talking to Objects in Natural Language for Exploratory Programming
 
+![Exploratory programming agent](https://raw.githubusercontent.com/hpi-swa-lab/SemanticSqueak/0e5c96dde1fccd271ecdd6e4de55d57a85cf341d/assets/agent-order.png)
+
 This is an experimental research project. Check out [SemanticSqueak](https://github.com/hpi-swa-lab/SemanticSqueak), our [paper](https://dl.acm.org/doi/10.1145/3689492.3690049), or [my thesis](https://github.com/LinqLover/semexp-thesis) for more information.
 
 ### Additional Tools
