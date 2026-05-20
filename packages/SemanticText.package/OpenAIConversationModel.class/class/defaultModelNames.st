@@ -9,7 +9,7 @@ defaultModelNames
 	self gpt5ChatLatestName. "most usual"
 	self gpt5Name. "frontier"
 	self gpt41Name. "smartest non-reasoning"
-	self gptRealtimeName.
+	self gptRealtime2Name.
 	"these are still popular"
 	self gpt5MiniName.
 	self gptAudioName.
@@ -37,6 +37,8 @@ defaultModelNames
 	self gpt41NanoName.
 	self gpt45PreviewName.
 	self gptRealtimeMiniName.
+	self gptRealtimeName.
+	self gptRealtime15Name.
 	
 	"pinned versions, ordered by version ascending, date descending"
 	self gpt35Turbo0125Name.

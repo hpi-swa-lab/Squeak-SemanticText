@@ -40,6 +40,8 @@ defaultRateLimitsPerTier
 				at: 'gpt-3.5-turbo' put: #(3500 10000 200000 nil 2000000);
 				at: 'gpt-realtime' put: #(200 1000 40000 nil nil);
 				at: 'gpt-realtime-mini' put: #(200 nil 40000 nil nil);
+				at: 'gpt-realtime-1.5' put: #(200 1000 40000 nil nil);
+				at: 'gpt-realtime-2' put: #(200 1000 40000 nil nil);
 				at: 'gpt-4o-realtime-preview' put: #(200 1000 40000 nil nil);
 				at: 'gpt-4o-mini-realtime-preview' put: #(200 1000 40000 nil nil);
 				at: 'omni-moderation-*' put: #(500 10000 10000 nil nil);
@@ -76,6 +78,8 @@ defaultRateLimitsPerTier
 				at: 'gpt-3.5-turbo' put: #(3500 nil 2000000 nil 5000000);
 				at: 'gpt-realtime' put: #(400 nil 200000 nil nil);
 				at: 'gpt-realtime-mini' put: #(400 nil 200000 nil nil);
+				at: 'gpt-realtime-1.5' put: #(400 nil 200000 nil nil);
+				at: 'gpt-realtime-2' put: #(400 nil 200000 nil nil);
 				at: 'gpt-4o-realtime-preview' put: #(400 nil 200000 nil nil);
 				at: 'gpt-4o-mini-realtime-preview' put: #(400 nil 200000 nil nil);
 				at: 'omni-moderation-*' put: #(500 nil 20000 nil nil);
@@ -114,6 +118,8 @@ defaultRateLimitsPerTier
 				at: 'gpt-3.5-turbo' put: #(3500 nil 4000000 nil 100000000);
 				at: 'gpt-realtime' put: #(5000 nil 800000 nil nil);
 				at: 'gpt-realtime-mini' put: #(5000 nil 800000 nil nil);
+				at: 'gpt-realtime-1.5' put: #(5000 nil 800000 nil nil);
+				at: 'gpt-realtime-2' put: #(5000 nil 800000 nil nil);
 				at: 'gpt-4o-realtime-preview' put: #(5000 nil 800000 nil nil);
 				at: 'gpt-4o-mini-realtime-preview' put: #(5000 nil 800000 nil nil);
 				at: 'omni-moderation-*' put: #(1000 nil 50000 nil nil);
@@ -152,6 +158,8 @@ defaultRateLimitsPerTier
 				at: 'gpt-3.5-turbo' put: #(10000 nil 10000000 nil 1000000000);
 				at: 'gpt-realtime' put: #(10000 nil 4000000 nil nil);
 				at: 'gpt-realtime-mini' put: #(10000 nil 4000000 nil nil);
+				at: 'gpt-realtime-1.5' put: #(10000 nil 4000000 nil nil);
+				at: 'gpt-realtime-2' put: #(10000 nil 4000000 nil nil);
 				at: 'gpt-4o-realtime-preview' put: #(10000 nil 4000000 nil nil);
 				at: 'gpt-4o-mini-realtime-preview' put: #(10000 nil 4000000 nil nil);
 				at: 'omni-moderation-*' put: #(2000 nil 250000 nil nil);
@@ -190,6 +198,8 @@ defaultRateLimitsPerTier
 				at: 'gpt-3.5-turbo' put: #(10000 nil 50000000 nil 10000000000);
 				at: 'gpt-realtime' put: #(20000 nil 15000000 nil nil);
 				at: 'gpt-realtime-mini' put: #(20000 nil 15000000 nil nil);
+				at: 'gpt-realtime-1.5' put: #(20000 nil 15000000 nil nil);
+				at: 'gpt-realtime-2' put: #(20000 nil 15000000 nil nil);
 				at: 'gpt-4o-realtime-preview' put: #(20000 nil 15000000 nil nil);
 				at: 'gpt-4o-mini-realtime-preview' put: #(20000 nil 15000000 nil nil);
 				at: 'omni-moderation-*' put: #(5000 nil 500000 nil nil);
