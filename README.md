@@ -278,6 +278,7 @@ At the moment, the following projects are known to make use of SemanticText:
 - [Creative Toys/Dalí](https://improvekit.github.io/)
 - [oRAGle](https://github.com/hpi-swa-lab/sandblocks-text/tree/master/sandblocks/oRAGle)
 - [squeak-semantic-babylonian](https://github.com/hpi-swa-lab/squeak-semantic-babylonian)
+- [XRVoice](https://github.com/hpi-swa-teaching/swd26-voiceprogramming/tree/main)
 
 ### See Also
 
