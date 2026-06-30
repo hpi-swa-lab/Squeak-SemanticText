@@ -17,4 +17,5 @@ commitInputAudio
 				self shouldTranscribe ifTrue:
 					[stream nextPut: '']]).
 	newMessage id: messageId.
+	newMessage propertyValueAt: #provisionalMessageAdded put: Promise new.
 	^ self addMessageFromServer: newMessage

@@ -6,4 +6,6 @@ handleResponseOutputItemAdded: event
 	message := self parseMessageFrom: event item.
 	self logEvent: event forItem: message.
 	self addMessageFromServer: message.
+	message propertyValueRemoveAt: #provisionalMessageAdded ifPresent: [:promise |
+		promise resolve].
 	self triggerEvent: #newResponseMessage withArguments: {event response_id. message}.

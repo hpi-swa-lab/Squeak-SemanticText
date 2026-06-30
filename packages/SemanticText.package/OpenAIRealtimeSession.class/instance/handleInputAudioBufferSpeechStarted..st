@@ -16,6 +16,7 @@ handleInputAudioBufferSpeechStarted: event
 					self shouldTranscribe ifTrue:
 						[stream nextPut: '']]).
 		message id: messageId.
+		message propertyValueAt: #provisionalMessageAdded put: Promise new.
 		self addMessageFromServer: message].
 	
 	start := event audio_start_ms / 1000.

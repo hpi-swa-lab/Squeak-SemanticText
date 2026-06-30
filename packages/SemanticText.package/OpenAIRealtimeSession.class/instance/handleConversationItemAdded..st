@@ -13,3 +13,5 @@ handleConversationItemAdded: event
 	item := self parseMessageFrom: event item.
 	self logEvent: event forItem: item.
 	self addMessageFromServer: item.
+	item propertyValueRemoveAt: #provisionalMessageAdded ifPresent: [:promise |
+		promise resolve].

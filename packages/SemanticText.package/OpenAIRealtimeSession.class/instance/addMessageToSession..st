@@ -15,13 +15,19 @@ addMessageToSession: aMessage
 		[previous hasToolCalls ifTrue: [previous := previous toolCalls last]].
 	(aMessage isAssistantMessage and: [aMessage content isNil])
 		ifFalse:
-			[(self
+			[previous ifNotNil:
+				[previous propertyValueAt: #provisionalMessageAdded ifPresent: [:promise |
+					promise wait]].
+			(self
 				sendConversationItemCreate: aMessage
 				after: previous) wait.
 			previous := aMessage]
 		ifTrue:
 			[self assert: aMessage hasToolCalls].
 	aMessage toolCalls do: [:toolCall |
+		previous ifNotNil:
+			[previous propertyValueAt: #provisionalMessageAdded ifPresent: [:promise |
+				promise wait]].
 		(self
 			sendConversationItemCreate: toolCall
 			after: previous) wait.
