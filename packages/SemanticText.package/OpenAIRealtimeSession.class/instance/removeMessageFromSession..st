@@ -6,9 +6,14 @@ removeMessageFromSession: aMessage
 	
 	(aMessage isAssistantMessage and: [aMessage content isNil])
 		ifFalse:
-			[(self sendConversationItemDelete: aMessage) wait]
+			[aMessage propertyValueAt: #provisionalMessageAdded ifPresent: [:promise |
+				promise wait].
+			(self sendConversationItemDelete: aMessage) wait]
 		ifTrue:
 			[self assert: aMessage hasToolCalls.
+			aMessage toolCalls do: [:toolCall |
+				toolCall propertyValueAt: #provisionalMessageAdded ifPresent: [:promise |
+					promise wait]].
 			(Promise all:
 				(aMessage toolCalls collect: [:toolCall |
 					self sendConversationItemDelete: toolCall])) wait].
