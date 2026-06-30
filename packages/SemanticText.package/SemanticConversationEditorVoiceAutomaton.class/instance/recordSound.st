@@ -5,8 +5,10 @@ recordSound
 	self flag: #todo. "refactor! make this an own class??"
 	window := 20 milliSeconds.
 	volumeThresholdForStop := "0.9"Float infinity. "clap detection (currently disabled)"
-	maxDuration := 5 minutes.
 	streamBlock := self streamRecordingsBlock.
+	maxDuration := streamBlock
+		ifNil: [15 minutes]
+		ifNotNil: [60 minutes "max length of OpenAI realtime session"].
 	
 	recorder := SoundRecorder new.
 	recorder samplingRate: self samplingRate.
