@@ -36,6 +36,7 @@ buildButtonBar: builder
 						label: 'Voice';
 						action: #toggleVoiceMode;
 						state: #voiceModeEnabled;
+						help: #helpForVoice;
 						color: #voiceButtonColor;
 						yourself);
 				yourself);
