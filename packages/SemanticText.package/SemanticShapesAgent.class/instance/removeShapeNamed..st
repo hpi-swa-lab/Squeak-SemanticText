@@ -5,7 +5,7 @@ removeShapeNamed: name
 	)>
 
 	| shape |
-	shape := self shapes at: name.
+	shape := self shapes removeKey: name.
 	
 	shape delete.
 	
