@@ -7,7 +7,8 @@ startWebSocket
 	
 	pingProcess := webSocket openAIStartPingPong.
 	webSocket onError: [:ex |
-		ex pass].
+		(ConnectionClosed handles: ex) ifFalse:
+			[ex pass]].
 	webSocket onClose:
 		[pingProcess terminate.
 		webSocket := nil.
