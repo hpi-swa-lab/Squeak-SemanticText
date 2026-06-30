@@ -18,7 +18,7 @@ handleResponseCreated: event
 	messagePromise := Promise race: {messagePromise. responsePromise}.
 	messagePromise := messagePromise >>= [:message |
 		message
-			propertyValueAt: #responseCompleted put: responsePromise;
+			ifNotNil: [message propertyValueAt: #responseCompleted put: responsePromise];
 			yourself].
 	
 	constructionId := event response metadata ifNotNil: [:meta | meta constructionId].
