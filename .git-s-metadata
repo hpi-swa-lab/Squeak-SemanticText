@@ -1,0 +1,42 @@
+GSMetadata {
+	#version : 1,
+	#mappers : OrderedCollection [
+		GSCypressMapper {
+			#version : 1,
+			#package : MCPackage {
+				#name : 'BaselineOfSemanticText'
+			},
+			#path : FSAbsolutePath [
+				'packages'
+			]
+		},
+		GSCypressMapper {
+			#version : 1,
+			#package : MCPackage {
+				#name : 'SemanticText'
+			},
+			#path : FSAbsolutePath [
+				'packages'
+			]
+		},
+		GSCypressMapper {
+			#version : 1,
+			#package : MCPackage {
+				#name : 'SemanticTextCompatibility-Squeak60'
+			},
+			#path : FSAbsolutePath [
+				'packages'
+			]
+		},
+		GSCypressMapper {
+			#version : 1,
+			#package : MCPackage {
+				#name : 'SemanticTextProviders-Klatt'
+			},
+			#path : FSAbsolutePath [
+				'packages'
+			]
+		}
+	],
+	#name : 'Squeak-SemanticText'
+}
